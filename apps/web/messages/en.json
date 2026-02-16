@@ -1,0 +1,712 @@
+{
+	"Header": {
+		"companyName": "Global Technology Innovations",
+		"nav": {
+			"home": "Home",
+			"about": "About Us",
+			"services": "Services",
+			"portfolio": "Portfolio",
+			"careers": "Careers",
+			"outstaffing": "Outstaffing",
+			"blog": "Blog",
+			"contact": "Contact"
+		}
+	},
+	"Media": {
+		"videoNotSupported": "Your browser does not support the video tag.",
+		"videoIndicator": "Video",
+		"noImages": "No images",
+		"mediaThumbnail": "media {index}",
+		"thumbnail": "thumbnail {index}"
+	},
+	"Portfolio": {
+		"backToPortfolio": "Back to portfolio",
+		"projectNotFound": "Project not found",
+		"projectNotFoundDesc": "The requested project does not exist or has been deleted.",
+		"projectDescription": "Project description",
+		"projectInfo": "Project information",
+		"projectGallery": "Project gallery",
+		"client": "Client",
+		"location": "Location",
+		"executionPeriod": "Execution period",
+		"technologies": "Technologies",
+		"category": "Category",
+		"status": {
+			"completed": "Completed",
+			"inProgress": "In progress",
+			"planned": "Planned"
+		},
+		"interestedInProject": "Interested in our project?",
+		"interestedDesc": "We are ready to discuss your ideas and create something similar for you. Contact us for a free consultation.",
+		"contactUs": "Contact us",
+		"ourServices": "Our services"
+	},
+	"Footer": {
+		"privacy": "Privacy Policy",
+		"cookies": "Cookie Policy",
+
+		"email": "Email",
+
+		"address": "Address",
+		"rights": "© 2025 Global Technology Innovations. All rights reserved."
+	},
+	"HomePage": {
+		"HeroSection": {
+			"title": "Comprehensive Turnkey Construction Solutions",
+			"description": "We provide a full range of construction services for residential, commercial, and specialized facilities.",
+			"button": "Contact Us"
+		},
+		"AboutUsSection": {
+			"title": "About Us",
+			"description": "Our goal is to deliver exceptional construction services, focusing on quality, safety, and customer satisfaction.",
+			"features": [
+				{
+					"title": "Our Mission",
+					"desc": "To exceed client expectations through innovation and efficiency.",
+					"icon": "🏁"
+				},
+				{
+					"title": "Our Team",
+					"desc": "Experienced and qualified professionals committed to excellence.",
+					"icon": "👥"
+				},
+				{
+					"title": "Our Values",
+					"desc": "Integrity, reliability, and collaboration in all aspects of our work.",
+					"icon": "🤝"
+				}
+			]
+		},
+		"FAQSection": {
+			"title": "Frequently Asked Questions",
+			"items": [
+				{
+					"question": "How does the cooperation process with a client work?",
+					"answer": "We start with a free consultation to determine the client’s needs. Then, we prepare a cost estimate, agree on timelines, and sign a contract. After that, we begin project implementation with regular progress reports."
+				},
+				{
+					"question": "Can you purchase materials on your own?",
+					"answer": "Yes, we can fully handle the procurement and delivery of materials. This saves you time and ensures all materials meet the project’s technical requirements."
+				},
+				{
+					"question": "Do you only do renovations, or new construction as well?",
+					"answer": "We provide the full range of construction services — from major renovations to new builds, including concrete works, masonry, facades, roofing, interior finishes, and more."
+				},
+				{
+					"question": "Can I order a turnkey apartment with furniture?",
+					"answer": "Yes, we offer a turnkey service that includes all construction and finishing works, material procurement, and even complete furnishing of the premises."
+				},
+				{
+					"question": "What are the project completion times?",
+					"answer": "The duration depends on the scope of the project. A small renovation may take a few weeks, while a full-scale construction may take several months. We always agree on timelines before starting and stick to the schedule."
+				}
+			]
+		},
+		"FeaturedProjects": {
+			"title": "Our Best Projects",
+			"description": "Explore selected works that demonstrate our expertise and quality in construction",
+			"viewAllButton": "View All Projects"
+		}
+	},
+	"AboutPage": {
+		"title": "About the Company",
+		"description": "Tailored solutions for every client. Strict adherence to deadlines. Competitive pricing, proven quality, and reliable guarantee.\n\n",
+		"Hero": {
+			"badge": "About Us",
+			"title": "Building trust that lasts",
+			"description": "We combine expertise, innovation, and transparent processes to deliver quality projects on time."
+		},
+		"CompanyHistory": {
+			"badge": "Our History",
+			"title": "15 years of construction experience",
+			"description": "From a small company to a market leader in construction services — we've come a long way thanks to our clients' trust.",
+			"founding": {
+				"title": "Foundation and Development",
+				"description": "Our family's construction business began back in 2009. Since then, we have implemented hundreds of projects of various scales. Today, Global Technology Innovations is a team of experienced engineers and builders that combines the experience of the previous generation with modern innovations."
+			},
+			"milestones": {
+				"projects": {
+					"title": "Over 500 projects",
+					"description": "Successfully completed from private homes to large commercial facilities"
+				},
+				"team": {
+					"title": "Team of 50+ specialists",
+					"description": "Experienced engineers, architects and builders"
+				},
+				"expansion": {
+					"title": "Service expansion",
+					"description": "From classic construction to innovative technologies"
+				}
+			},
+			"stats": {
+				"years": "years of experience",
+				"projects": "completed projects",
+				"employees": "employees",
+				"satisfaction": "satisfied clients",
+				"support": "customer support"
+			}
+		},
+		"OurValues": {
+			"badge": "Our Values",
+			"title": "Principles that guide us",
+			"description": "Our core values shape the company culture and determine the quality of our services.",
+			"trust": {
+				"title": "Trust and reliability",
+				"description": "We build trusting relationships with clients, honor all commitments and ensure transparency at all stages of cooperation."
+			},
+			"quality": {
+				"title": "Impeccable quality",
+				"description": "We use only certified materials and modern technologies. Each project undergoes multi-level quality control."
+			},
+			"innovation": {
+				"title": "Innovation and development",
+				"description": "We constantly improve work methods, implement new technologies and follow trends in construction."
+			},
+			"excellence": {
+				"title": "Pursuit of excellence",
+				"description": "We execute each project with maximum attention to detail, striving to exceed client expectations."
+			},
+			"sustainability": {
+				"title": "Environmental responsibility",
+				"description": "We care about the environment, use eco-friendly materials and energy-efficient solutions."
+			},
+			"teamwork": {
+				"title": "Teamwork",
+				"description": "We value each team member, support professional development and create a comfortable work environment."
+			}
+		},
+		"Team": {
+			"badge": "Our Team",
+			"title": "Professionals in their field",
+			"description": "Experienced specialists who bring your dreams to reality through expertise and dedication.",
+			"ceo": {
+				"name": "Alexander Petrenko",
+				"position": "Chief Executive Officer",
+				"description": "15 years in the construction industry. Leads strategic company development and ensures high quality standards."
+			},
+			"cto": {
+				"name": "Marina Ivanenko",
+				"position": "Chief Technical Officer",
+				"description": "Construction engineer with 12 years of experience. Responsible for technical aspects of all projects and quality control."
+			},
+			"projectManager": {
+				"name": "Andrew Kovalenko",
+				"position": "Project Manager",
+				"description": "Coordinates work execution, ensures deadlines are met and effective communication with clients."
+			},
+			"architect": {
+				"name": "Catherine Melnyk",
+				"position": "Chief Architect",
+				"description": "Creates unique architectural solutions, combining functionality, aesthetics and modern trends."
+			},
+			"culture": {
+				"title": "Our company culture",
+				"description": "We create an environment where everyone can unlock their potential and contribute to shared success.",
+				"learning": {
+					"title": "Continuous learning",
+					"description": "We support team professional development"
+				},
+				"collaboration": {
+					"title": "Open collaboration",
+					"description": "We value ideas from every team member"
+				},
+				"innovation": {
+					"title": "Innovative approach",
+					"description": "We experiment with new methods and technologies"
+				}
+			}
+		},
+		"MissionVision": {
+			"badge": "Mission and Vision",
+			"title": "Our goal and development direction",
+			"description": "We clearly understand our role in the construction industry and strive to create value for all stakeholders.",
+			"mission": {
+				"title": "Our Mission",
+				"description": "To create comfortable and functional spaces that improve people's quality of life, using best construction practices and an individual approach to each client.",
+				"points": {
+					"quality": "Ensuring the highest quality of work",
+					"innovation": "Implementing innovative solutions",
+					"satisfaction": "Maximum satisfaction of client needs"
+				}
+			},
+			"vision": {
+				"title": "Our Vision",
+				"description": "To be a leading construction company that sets standards for quality and innovation in the industry, creating sustainable and eco-friendly solutions for future generations.",
+				"points": {
+					"sustainability": "Development of eco-friendly technologies",
+					"technology": "Use of advanced technologies",
+					"community": "Contribution to community development"
+				}
+			},
+			"strategy": {
+				"title": "Strategic Priorities",
+				"description": "Our strategy focuses on sustainable development, expanding capabilities and ensuring market leadership positions.",
+				"growth": {
+					"title": "Growth",
+					"description": "Expanding geography and range of services"
+				},
+				"efficiency": {
+					"title": "Efficiency",
+					"description": "Process optimization and productivity improvement"
+				},
+				"expansion": {
+					"title": "Expansion",
+					"description": "Entering new markets and segments"
+				}
+			}
+		}
+	},
+	"CareersPage": {
+		"title": "Careers",
+		"Hero": {
+			"badge": "Careers",
+			"title": "Join a team of professionals",
+			"description": "Grow with us: exciting projects, mentor support, and transparent conditions."
+		},
+		"apply": "Apply",
+		"jobType": "Job Type",
+		"location": "Location",
+		"errorTitle": "An Error Occurred",
+		"errorLoadingJobs": "Failed to load job listings. Please try again later.",
+		"noJobs": "No job openings",
+		"checkBackLater": "Please check back later."
+	},
+	"OurServicesPage": {
+		"title": "Our Services",
+		"button": "Learn More",
+		"order": "Order",
+		"Hero": {
+			"badge": "Services",
+			"title": "Full-cycle solutions, turnkey",
+			"description": "From concept and design to execution and service — we take responsibility for the result."
+		}
+	},
+	"ContactPage": {
+		"Hero": {
+			"badge": "Contact Information",
+			"title": "Get in touch with us in seconds",
+			"description": "We are always ready to answer your questions and provide professional consultation"
+		},
+		"form": {
+			"title": "Get in touch with us",
+			"description": "Fill out the form, and our manager will contact you during the business day for a detailed consultation.",
+			"formTitle": "Contact Form",
+			"formSubtitle": "Fill in all required fields",
+			"benefits": {
+				"quick": "Quick response within a day",
+				"professional": "Professional consultation",
+				"free": "Free project evaluation"
+			},
+			"responseTime": {
+				"title": "Response Time",
+				"description": "We respond to all inquiries during business hours. Outside of business hours, your message will be processed the next business day."
+			}
+		},
+		"map": {
+			"title": "Find us on the map",
+			"description": "Our office is located in Košice, Slovakia",
+			"iframeTitle": "Office location map",
+			"addressTitle": "Address",
+			"address": "Jenisejská 45A, 040 12 Košice-Nad Jazerom",
+			"viewOnGoogleMaps": "View on Google Maps",
+			"getDirections": "Get directions"
+		},
+		"contacts": {
+			"phones": "Phones",
+			"whatsapp": "WhatsApp",
+			"facebook": "Facebook",
+			"email": "Email",
+			"call": "Call",
+			"open": "Open",
+			"workingHours": "Working hours: Mon–Fri: 09:00–18:00. Weekends: Sat–Sun."
+		}
+	},
+	"ContactFormSection": {
+		"title": "HAVE A QUESTION OR PROPOSAL?",
+		"description": "To ask a question, request a consultation, or simply get acquainted, contact us using the provided details or fill out the form so we can get back to you.",
+		"phoneLabel": "Our phone:",
+		"emailLabel": "Our e-mail:"
+	},
+	"ContactForm": {
+		"title": "Enter your details for feedback",
+		"namePlaceholder": "Your name *",
+		"nameError": "Name is required",
+		"phoneErrorRequired": "Phone number is required",
+		"phoneErrorPattern": "Invalid phone number format",
+		"emailPlaceholder": "E-mail *",
+		"emailErrorRequired": "Email is required",
+		"emailError": "Invalid email format",
+		"messagePlaceholder": "Message text *",
+		"messageError": "Message is required",
+		"privacyConsentStart": "I agree to the processing of personal data in accordance with the",
+		"privacyConsentEnd": "",
+		"privacyConsentLink": "Privacy Policy",
+		"privacyError": "You must consent to the processing of personal data",
+		"submitButton": "Get a Consultation",
+		"success": {
+			"title": "Thank you for contacting us!",
+			"message": "Your message has been sent successfully. Our manager will contact you soon."
+		}
+	},
+	"ApplicationFormModal": {
+		"title": "Apply for Job",
+		"triggerLabel": "Apply",
+		"namePlaceholder": "Your name *",
+		"nameError": "Name is required",
+		"phoneErrorRequired": "Phone number is required",
+		"phoneErrorPattern": "Invalid phone number format",
+		"emailPlaceholder": "E-mail",
+		"emailError": "Invalid email format",
+		"coverPlaceholder": "Cover Letter *",
+		"coverError": "Cover letter is required",
+		"fileInput": {
+			"dragDropText": "Drag and drop your CV here, or click to browse",
+			"fileSelected": "File selected: {fileName}",
+			"fileTooLarge": "File is too large (max 10MB)",
+			"invalidFileType": "Please select a PDF, DOC, or DOCX file"
+		},
+		"privacyConsentStart": "I agree to the processing of my personal data in accordance with the",
+		"privacyConsentEnd": "",
+		"privacyConsentLink": "Privacy Policy",
+		"privacyError": "You must accept privacy policy",
+		"submitButton": "Submit Application",
+		"sendingButton": "Sending...",
+		"errorMessage": "Application failed:",
+		"success": {
+			"title": "Application sent!",
+			"message": "Thank you for your application. We will contact you soon."
+		}
+	},
+	"CookiesPage": {
+		"title": "Cookie Policy",
+		"description": "Information about cookie usage on our website and cookie management options.",
+		"Hero": {
+			"badge": "Cookie Policy",
+			"title": "Cookie Usage Policy",
+			"description": "Information about how we use cookies on our website and how you can manage your cookie preferences."
+		},
+		"whatAreCookies": {
+			"title": "What are cookies?",
+			"description": "Cookies are small text files that are stored on your device when visiting websites. They help us ensure proper website functionality and improve your user experience."
+		},
+		"categories": {
+			"title": "Cookie categories we use",
+			"necessary": {
+				"title": "Necessary cookies",
+				"description": "Required for basic website functionality. Some features may not work without them. They cannot be disabled.",
+				"badge": "Required"
+			},
+			"functional": {
+				"title": "Functional cookies",
+				"description": "Remember your preferences (language, region) for personalized experience."
+			},
+			"analytics": {
+				"title": "Analytics cookies",
+				"description": "Help us understand how users interact with the website to improve its functionality."
+			},
+			"marketing": {
+				"title": "Marketing cookies",
+				"description": "Used to display relevant advertising and measure the effectiveness of advertising campaigns."
+			}
+		},
+		"management": {
+			"title": "Managing your choices",
+			"description": "You can change your cookie settings at any time. Your choices will be saved and applied to all future visits."
+		},
+		"additionalInfo": {
+			"title": "Additional information",
+			"privacyPolicyText": "More information about personal data processing can be found in our",
+			"privacyPolicyLink": "Privacy Policy",
+			"contactText": "If you have questions about cookie usage, contact us at",
+			"contactEmail": "info@global-technology-innovations.com"
+		}
+	},
+	"CookieBanner": {
+		"description": "We use cookies for website functionality, personalization, and analytics. You can accept all, reject, or configure categories.",
+		"buttons": {
+			"configure": "Configure",
+			"reject": "Reject",
+			"acceptAll": "Accept All",
+			"rejectAll": "Reject All",
+			"saveSettings": "Save Settings"
+		},
+		"settings": {
+			"title": "Cookie Settings",
+			"categories": {
+				"necessary": {
+					"title": "Necessary",
+					"description": "Required for website functionality. Cannot be disabled."
+				},
+				"functional": {
+					"title": "Functional",
+					"description": "Remember your preferences."
+				},
+				"analytics": {
+					"title": "Analytics",
+					"description": "Help improve the website."
+				},
+				"marketing": {
+					"title": "Marketing",
+					"description": "For relevant advertising."
+				}
+			}
+		}
+	},
+	"ChangeConsentButton": {
+		"buttonText": "Change cookie preferences",
+		"currentStatus": "current status",
+		"statusActive": "categories active",
+		"statusNone": "not selected"
+	},
+	"PrivacyPolicy": {
+		"title": "Privacy Policy",
+		"updated": "Updated: August 19, 2025",
+		"intro": "This Privacy Policy describes how Global Technology Innovations s. r. o., ID: 57 066 566, located at Jenisejská 45A, 040 12 Košice-Nad Jazerom (hereinafter 'Company', 'we'), processes personal data of website visitors innovations.sk in accordance with the General Data Protection Regulation (GDPR).",
+		"sections": {
+			"1": {
+				"title": "1. Who we are and contacts",
+				"text": "Data Controller: Global Technology Innovations s. r. o.\nAddress: Jenisejská 45A, 040 12 Košice-Nad Jazerom\nE-mail: info@global-technology-innovations.com\nPhone: +421 917 896 18"
+			},
+			"2": {
+				"title": "2. What data we collect",
+				"list": [
+					"Form data (contact/estimate request/call order): name, e-mail, phone, message content and related metadata.",
+					"Candidate data (Career form): resume/portfolio, experience, contact details.",
+					"Technical data: IP address, browser type/version, language settings, pages, access time, cookies.",
+					"Analytics: anonymized visit statistics (e.g., Google Analytics, Plausible, etc.)."
+				]
+			},
+			"3": {
+				"title": "3. Purpose and legal basis for processing",
+				"list": [
+					"Responding to inquiries/estimates — contract performance or steps toward its conclusion (Art. 6(1)(b) GDPR), as well as our legitimate interest in effective communication (Art. 6(1)(f)).",
+					"Personnel recruitment — legitimate interest (Art. 6(1)(f)); if we request additional data — by consent (Art. 6(1)(a)).",
+					"Analytics and site improvement — legitimate interest (Art. 6(1)(f)); for marketing/non-essential cookies — consent (Art. 6(1)(a)).",
+					"Legal obligations — fulfillment of legal obligations (Art. 6(1)(c))."
+				]
+			},
+			"4": {
+				"title": "4. Cookies and analytics",
+				"text": "We use essential cookies for site operation and analytical/marketing cookies with your consent. You can manage consent through the cookie banner or browser settings. See 'Cookie settings' section or separate Cookie Policy (if available) for details."
+			},
+			"5": {
+				"title": "5. Who we share data with",
+				"list": [
+					"IT service providers (hosting, e-mail, CRM, analytics) acting as processors under processing agreements.",
+					"Partners/subcontractors if needed for estimate preparation or work execution (we provide only minimally necessary data).",
+					"Government agencies if required by law."
+				]
+			},
+			"6": {
+				"title": "6. International transfers",
+				"text": "If data is transferred outside the EEA, we will ensure appropriate safeguards (e.g., EC Standard Contractual Clauses)."
+			},
+			"7": {
+				"title": "7. Retention period",
+				"list": [
+					"Form inquiries: up to 12 months or longer during active dialogue/contract.",
+					"Candidate data: up to 6 months (or longer with separate consent).",
+					"Contractual/accounting data: according to legal requirements (5-10 years depending on document type).",
+					"Analytics: according to service retention (e.g., 14-26 months)."
+				]
+			},
+			"8": {
+				"title": "8. Your rights",
+				"text": "You have rights of access, rectification, erasure, restriction, data portability, objection to processing, and withdrawal of consent without affecting the lawfulness of previous processing. Contact: info@global-technology-innovations.com."
+			},
+			"9": {
+				"title": "9. Complaints",
+				"text": "You can also file a complaint with the supervisory authority — Úrad na ochranu osobných údajov SR (Slovak Republic)."
+			},
+			"10": {
+				"title": "10. Security",
+				"text": "We implement technical and organizational measures (TLS, access controls, logging) to protect data from unauthorized access."
+			},
+			"11": {
+				"title": "11. Children's data",
+				"text": "The site is not intended for children under 16. If you believe a child has provided us with data, contact us for deletion."
+			},
+			"12": {
+				"title": "12. Changes to this policy",
+				"text": "We may periodically update this Policy. The new version takes effect from the moment of publication on the Site."
+			}
+		},
+		"contactInfo": {
+			"title": "Contact Information",
+			"description": "If you have any questions about this Privacy Policy, please contact us:",
+			"email": "Email",
+			"address": "Address",
+			"phone": "Phone"
+		}
+	},
+	"OutstaffingPage": {
+		"Hero": {
+			"badge": "Personnel Outstaffing",
+			"title": "Personnel Outstaffing for Construction Projects",
+			"description": "We provide experienced specialists for your construction without unnecessary costs for searching and maintaining staff.",
+			"ctaButton": "Order Specialists"
+		},
+		"WhatIs": {
+			"title": "What is outstaffing?",
+			"description": "Outstaffing is when you get our company's employees to perform specific tasks at your facility. They work under your management but remain in our official staff."
+		},
+		"Specialists": {
+			"badge": "Our Specialists",
+			"title": "Who we can provide",
+			"subtitle": "Our team includes a wide range of qualified specialists for various types of construction work",
+			"list": {
+				"bricklayers": "Bricklayers",
+				"drywallers": "Drywall Specialists",
+				"tilers": "Tilers",
+				"facade": "Facade Workers",
+				"electricians": "Electricians",
+				"plumbers": "Plumbers",
+				"universal": "Universal Craftsmen",
+				"cleaners": "Cleaners"
+			}
+		},
+		"Benefits": {
+			"badge": "Why Choose Us",
+			"title": "Benefits for the client",
+			"subtitle": "Why choose our outstaffing for your construction project",
+			"list": {
+				"speed": {
+					"title": "Quick personnel recruitment",
+					"description": "No long searches — we have a ready team of specialists"
+				},
+				"savings": {
+					"title": "Tax and HR savings",
+					"description": "We take care of all official personnel matters"
+				},
+				"experience": {
+					"title": "Experienced specialists",
+					"description": "Practice-tested craftsmen with years of experience"
+				},
+				"flexibility": {
+					"title": "Time flexibility",
+					"description": "Need for a week or a year — we'll select the optimal team"
+				}
+			}
+		},
+		"HowItWorks": {
+			"badge": "Process",
+			"title": "How it works",
+			"subtitle": "Simple process to get the specialists you need in 4 steps",
+			"steps": {
+				"request": {
+					"title": "You submit a request",
+					"description": "Tell us about your needs and project timelines"
+				},
+				"selection": {
+					"title": "We select specialists",
+					"description": "Find the best craftsmen for your tasks"
+				},
+				"contract": {
+					"title": "We sign an agreement",
+					"description": "Process all documents quickly and transparently"
+				},
+				"work": {
+					"title": "Craftsmen go to the site",
+					"description": "Specialists start work at the specified time"
+				}
+			}
+		},
+		"CTA": {
+			"title": "Need craftsmen tomorrow?",
+			"description": "Submit a request and we'll contact you within an hour to discuss details and select a team of specialists.",
+			"benefits": {
+				"immediate": "Immediate response within an hour",
+				"experienced": "Experienced specialists with 5+ years of experience",
+				"flexible": "Flexible cooperation and payment terms"
+			},
+			"guarantee": {
+				"title": "Quality guarantee",
+				"description": "All our specialists have confirmed qualifications and work experience"
+			},
+			"form": {
+				"title": "Order Specialists",
+				"subtitle": "Fill out the form and get a personalized offer"
+			}
+		}
+	},
+	"PortfolioPage": {
+		"Hero": {
+			"badge": "Project Portfolio",
+			"title": "Our Completed Construction Projects",
+			"description": "From residential complexes to commercial facilities - we create quality buildings for our clients"
+		},
+		"ProjectCard": {
+			"viewDetails": "View Details",
+			"status": {
+				"completed": "Completed",
+				"inProgress": "In Progress",
+				"planned": "Planned"
+			},
+			"dateNotAvailable": "Date not specified"
+		},
+		"ProjectsList": {
+			"results": {
+				"noResults": {
+					"title": "No projects found",
+					"description": "Please try again later or contact us for more information",
+					"resetFilters": "Clear filters"
+				}
+			},
+			"error": {
+				"title": "Error loading projects",
+				"description": "Try refreshing the page"
+			}
+		},
+		"CTA": {
+			"title": "Ready to start your project?",
+			"description": "Contact us for a free consultation and get a personalized proposal for your construction project",
+			"benefits": {
+				"quality": "Quality guarantee",
+				"experience": "Team experience",
+				"timeline": "Timeline compliance",
+				"support": "24/7 support",
+				"warranty": "Work warranty",
+				"transparency": "Process transparency"
+			},
+			"contactMethods": {
+				"phone": {
+					"title": "Phone",
+					"description": "Quick consultation by phone",
+					"action": "Call now"
+				},
+				"email": {
+					"title": "Email",
+					"description": "Detailed proposal by email",
+					"action": "Write to us"
+				},
+				"form": {
+					"title": "Form",
+					"description": "Fill out online application",
+					"action": "Fill out"
+				},
+				"meeting": {
+					"title": "Meeting",
+					"description": "Personal meeting and discussion",
+					"action": "Schedule"
+				}
+			},
+			"consultation": {
+				"title": "Free consultation",
+				"description": "Our experts are ready to help you with planning and implementing your construction project",
+				"features": [
+					"Analysis of your needs and requirements",
+					"Technical justification of the project",
+					"Calculation of cost and timelines",
+					"Selection of optimal solutions",
+					"Consultation on materials and technologies"
+				],
+				"primaryButton": "Get consultation",
+				"secondaryButton": "Our services",
+				"guarantee": {
+					"title": "Result guarantee",
+					"description": "We guarantee the quality of work and compliance with all agreements"
+				}
+			}
+		}
+	}
+}

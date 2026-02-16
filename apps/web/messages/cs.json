@@ -1,0 +1,707 @@
+{
+	"Header": {
+		"companyName": "Global Technology Innovations",
+		"nav": {
+			"home": "Domů",
+			"about": "O nás",
+			"services": "Služby",
+			"portfolio": "Portfólio",
+			"careers": "Kariéra",
+			"outstaffing": "Outstaffing",
+			"blog": "Blog",
+			"contact": "Kontakt"
+		}
+	},
+	"Media": {
+		"videoNotSupported": "Váš prohlížeč nepodporuje video značku.",
+		"videoIndicator": "Video",
+		"noImages": "Žádné obrázky",
+		"mediaThumbnail": "média {index}",
+		"thumbnail": "náhled {index}"
+	},
+	"Portfolio": {
+		"backToPortfolio": "Zpět k portfoliu",
+		"projectNotFound": "Projekt nenalezen",
+		"projectNotFoundDesc": "Požadovaný projekt neexistuje nebo byl smazán.",
+		"projectDescription": "Popis projektu",
+		"projectInfo": "Informace o projektu",
+		"projectGallery": "Galerie projektu",
+		"client": "Klient",
+		"location": "Umístění",
+		"executionPeriod": "Období realizace",
+		"technologies": "Technologie",
+		"category": "Kategorie",
+		"status": {
+			"completed": "Dokončeno",
+			"inProgress": "V procesu",
+			"planned": "Plánováno"
+		},
+		"interestedInProject": "Zajímá vás náš projekt?",
+		"interestedDesc": "Jsme připraveni prodiskutovat vaše nápady a vytvořit něco podobného pro vás. Kontaktujte nás pro bezplatnou konzultaci.",
+		"contactUs": "Kontaktujte nás",
+		"ourServices": "Naše služby"
+	},
+	"Footer": {
+		"privacy": "Zásady ochrany osobních údajů",
+		"cookies": "Zásady cookies",
+
+		"email": "E-mail",
+
+		"address": "Adresa",
+		"rights": "© 2025 Global Technology Innovations. Všechna práva vyhrazena."
+	},
+	"HomePage": {
+		"HeroSection": {
+			"title": "Komplexní stavební řešení na klíč",
+			"description": "Poskytujeme kompletní škálu stavebních služeb pro obytné, komerční a specializované objekty.",
+			"button": "Kontaktujte nás"
+		},
+		"AboutUsSection": {
+			"title": "O nás",
+			"description": "Naším cílem je poskytovat výjimečné stavební služby se zaměřením na kvalitu, bezpečnost a spokojenost zákazníků.",
+			"features": [
+				{
+					"title": "Naše poslání",
+					"desc": "Překonávat očekávání klientů prostřednictvím inovací a efektivity.",
+					"icon": "🏁"
+				},
+				{
+					"title": "Náš tým",
+					"desc": "Zkušení a kvalifikovaní profesionálové oddaní dokonalosti.",
+					"icon": "👥"
+				},
+				{
+					"title": "Naše hodnoty",
+					"desc": "Integrita, spolehlivost a spolupráce ve všech aspektech naší práce.",
+					"icon": "🤝"
+				}
+			]
+		},
+		"FAQSection": {
+			"title": "Často kladené otázky",
+			"items": [
+				{
+					"question": "Jak probíhá spolupráce s klientem?",
+					"answer": "Začínáme bezplatnou konzultací, během které zjišťujeme potřeby klienta. Poté připravíme cenovou nabídku, dohodneme termíny a podepíšeme smlouvu. Následně začínáme realizaci projektu s pravidelným podáváním zpráv."
+				},
+				{
+					"question": "Můžete nakoupit materiály samostatně?",
+					"answer": "Ano, můžeme kompletně zajistit nákup a dodávku materiálů. Ušetří to váš čas a zaručí, že všechny materiály budou splňovat technické požadavky projektu."
+				},
+				{
+					"question": "Provádíte pouze rekonstrukce, nebo i novou výstavbu?",
+					"answer": "Provádíme kompletní škálu stavebních prací — od rozsáhlých rekonstrukcí po novou výstavbu, včetně monolitů, zdění, fasád, střech, vnitřních úprav a dalších."
+				},
+				{
+					"question": "Je možné objednat byt „na klíč“ s nábytkem?",
+					"answer": "Ano, nabízíme službu „na klíč“, která zahrnuje veškeré stavební a dokončovací práce, nákup materiálů a také kompletní vybavení prostor."
+				},
+				{
+					"question": "Jaké jsou termíny dokončení prací?",
+					"answer": "Délka trvání závisí na rozsahu projektu. Menší rekonstrukce může trvat několik týdnů, komplexní výstavba několik měsíců. Termíny vždy stanovíme před zahájením a dodržujeme harmonogram."
+				}
+			]
+		}
+	},
+	"AboutPage": {
+		"title": "O společnosti",
+		"description": "Individuální řešení pro každého klienta. Přísné dodržování termínů. Výhodná cena, ověřená kvalita a spolehlivá záruka.\n\n",
+		"Hero": {
+			"badge": "O nás",
+			"title": "Budujeme důvěru, která vydrží",
+			"description": "Spojujeme odbornost, inovace a transparentní procesy, abychom včas dodali kvalitní projekty."
+		},
+		"CompanyHistory": {
+			"badge": "Naše Historie",
+			"title": "15 let zkušeností ve stavebnictví",
+			"description": "Od malé společnosti k lídrovi trhu stavebních služeb — prošli jsme dlouhou cestu díky důvěře našich klientů.",
+			"founding": {
+				"title": "Založení a rozvoj",
+				"description": "Stavební podnikání naší rodiny začalo již v roce 2009. Od té doby jsme realizovali stovky projektů různých měřítek. Dnes je Global Technology Innovations tým zkušených inženýrů a stavbařů, který spojuje zkušenosti předchozí generace s moderními inovacemi."
+			},
+			"milestones": {
+				"projects": {
+					"title": "Více než 500 projektů",
+					"description": "Úspěšně dokončeno od soukromých domů po velké komerční objekty"
+				},
+				"team": {
+					"title": "Tým 50+ specialistů",
+					"description": "Zkušení inženýři, architekti a stavbaři"
+				},
+				"expansion": {
+					"title": "Rozšíření služeb",
+					"description": "Od klasického stavebnictví k inovativním technologiím"
+				}
+			},
+			"stats": {
+				"years": "let zkušeností",
+				"projects": "dokončených projektů",
+				"employees": "zaměstnanců",
+				"satisfaction": "spokojených klientů",
+				"support": "zákaznická podpora"
+			}
+		},
+		"OurValues": {
+			"badge": "Naše Hodnoty",
+			"title": "Principy, kterými se řídíme",
+			"description": "Naše základní hodnoty formují firemní kulturu a určují kvalitu našich služeb.",
+			"trust": {
+				"title": "Důvěra a spolehlivost",
+				"description": "Budujeme důvěryhodné vztahy s klienty, dodržujeme všechny závazky a zajišťujeme transparentnost ve všech fázích spolupráce."
+			},
+			"quality": {
+				"title": "Bezchybná kvalita",
+				"description": "Používáme pouze certifikované materiály a moderní technologie. Každý projekt prochází víceúrovňovou kontrolou kvality."
+			},
+			"innovation": {
+				"title": "Inovace a rozvoj",
+				"description": "Neustále zdokonalujeme pracovní metody, implementujeme nové technologie a sledujeme trendy ve stavebnictví."
+			},
+			"excellence": {
+				"title": "Stremování k dokonalosti",
+				"description": "Každý projekt realizujeme s maximální pozorností k detailům a snažíme se překonat očekávání klientů."
+			},
+			"sustainability": {
+				"title": "Environmentální odpovědnost",
+				"description": "Staráme se o životní prostředí, používáme ekologické materiály a energeticky účinná řešení."
+			},
+			"teamwork": {
+				"title": "Týmová práce",
+				"description": "Ceníme si každého člena týmu, podporujeme profesní rozvoj a vytváříme komfortní pracovní prostředí."
+			}
+		},
+		"Team": {
+			"badge": "Náš Tým",
+			"title": "Profesionálové ve svém oboru",
+			"description": "Zkušení specialisté, kteří díky odbornosti a oddanosti realizují vaše sny.",
+			"ceo": {
+				"name": "Alexander Petrenko",
+				"position": "Generální ředitel",
+				"description": "15 let ve stavebním průmyslu. Řídí strategický rozvoj společnosti a zajišťuje vysoké standardy kvality."
+			},
+			"cto": {
+				"name": "Marina Ivanenko",
+				"position": "Technická ředitelka",
+				"description": "Stavební inženýrka s 12letou praxí. Odpovídá za technické aspekty všech projektů a kontrolu kvality."
+			},
+			"projectManager": {
+				"name": "Andrew Kovalenko",
+				"position": "Projektový manažer",
+				"description": "Koordinuje provedení prací, zajišťuje dodržování termínů a efektivní komunikaci s klienty."
+			},
+			"architect": {
+				"name": "Catherine Melnyk",
+				"position": "Hlavní architektka",
+				"description": "Vytváří jedinečná architektonická řešení, spojující funkcionalitu, estetiku a moderní trendy."
+			},
+			"culture": {
+				"title": "Kultura naší společnosti",
+				"description": "Vytváříme prostředí, kde každý může naplno rozvinout svůj potenciál a přispět ke společnému úspěchu.",
+				"learning": {
+					"title": "Kontinuální učení",
+					"description": "Podporujeme profesní rozvoj týmu"
+				},
+				"collaboration": {
+					"title": "Otevřená spolupráce",
+					"description": "Ceníme si nápadů každého člena týmu"
+				},
+				"innovation": {
+					"title": "Inovativní přístup",
+					"description": "Experimentujeme s novými metodami a technologiemi"
+				}
+			}
+		},
+		"MissionVision": {
+			"badge": "Mise a Vize",
+			"title": "Náš cíl a směr rozvoje",
+			"description": "Jasně chápeme svou roli ve stavebním průmyslu a snažíme se vytvářet hodnotu pro všechny zainteresované strany.",
+			"mission": {
+				"title": "Naše Mise",
+				"description": "Vytvářet pohodlné a funkční prostory, které zlepšují kvalitu života lidí, s využitím nejlepších stavebních praktik a individuálního přístupu ke každému klientovi.",
+				"points": {
+					"quality": "Zajištění nejvyšší kvality práce",
+					"innovation": "Implementace inovativních řešení",
+					"satisfaction": "Maximální uspokojení potřeb klientů"
+				}
+			},
+			"vision": {
+				"title": "Naše Vize",
+				"description": "Být vedoucí stavební společností, která stanovuje standardy kvality a inovací v oboru, vytvářející udržitelná a ekologická řešení pro budoucí generace.",
+				"points": {
+					"sustainability": "Rozvoj ekologických technologií",
+					"technology": "Využívání pokročilých technologií",
+					"community": "Příspěvek k rozvoji komunity"
+				}
+			},
+			"strategy": {
+				"title": "Strategické Priority",
+				"description": "Naše strategie se zaměřuje na udržitelný rozvoj, rozšiřování možností a zajišťování vedoucích pozic na trhu.",
+				"growth": {
+					"title": "Růst",
+					"description": "Rozšiřování geografie a spektra služeb"
+				},
+				"efficiency": {
+					"title": "Efektivnost",
+					"description": "Optimalizace procesů a zvyšování produktivity"
+				},
+				"expansion": {
+					"title": "Expanze",
+					"description": "Vstup na nové trhy a segmenty"
+				}
+			}
+		}
+	},
+	"CareersPage": {
+		"title": "Kariéra",
+		"Hero": {
+			"badge": "Kariéra",
+			"title": "Přidejte se k týmu profesionálů",
+			"description": "Rostěte s námi: zajímavé projekty, mentorské vedení a transparentní podmínky."
+		},
+		"apply": "Odeslat žádost",
+		"jobType": "Typ práce",
+		"location": "Lokalita",
+		"errorTitle": "Došlo k chybě",
+		"errorLoadingJobs": "Nepodařilo se načíst pracovní nabídky. Zkuste to prosím později.",
+		"noJobs": "Žádná volná pracovní místa",
+		"checkBackLater": "Zkontrolujte prosím později."
+	},
+	"OurServicesPage": {
+		"title": "Naše služby",
+		"button": "Zjistit více",
+		"order": "Objednat",
+		"Hero": {
+			"badge": "Služby",
+			"title": "Komplexní řešení na klíč",
+			"description": "Od konceptu a návrhu po realizaci a servis — přebíráme odpovědnost za výsledek."
+		}
+	},
+	"PortfolioPage": {
+		"Hero": {
+			"badge": "Portfólio projektů",
+			"title": "Naše realizované stavební projekty",
+			"description": "Od rezidenčních komplexů po komerční objekty - vytváříme kvalitní budovy pro naše klienty"
+		},
+		"ProjectCard": {
+			"viewDetails": "Zobrazit detaily",
+			"status": {
+				"completed": "Dokončeno",
+				"inProgress": "V procesu",
+				"planned": "Plánováno"
+			},
+			"dateNotAvailable": "Datum není uvedeno"
+		},
+		"ProjectsList": {
+			"results": {
+				"noResults": {
+					"title": "Projekty nenalezeny",
+					"description": "Zkuste to prosím později nebo nás kontaktujte pro více informací",
+					"resetFilters": "Vymazat filtry"
+				}
+			},
+			"error": {
+				"title": "Chyba při načítání projektů",
+				"description": "Zkuste obnovit stránku"
+			}
+		},
+		"CTA": {
+			"title": "Jste připraveni začít svůj projekt?",
+			"description": "Spojte se s námi pro bezplatnou konzultaci a získejte osobní nabídku pro váš stavební projekt",
+			"benefits": {
+				"quality": "Záruka kvality",
+				"experience": "Zkušenosti týmu",
+				"timeline": "Dodržování termínů",
+				"support": "Podpora 24/7",
+				"warranty": "Záruka na práce",
+				"transparency": "Transparentnost procesu"
+			},
+			"contactMethods": {
+				"phone": {
+					"title": "Telefon",
+					"description": "Rychlá konzultace po telefonu",
+					"action": "Zavolat"
+				},
+				"email": {
+					"title": "Email",
+					"description": "Detailní nabídka na poštu",
+					"action": "Napsat"
+				},
+				"form": {
+					"title": "Formulář",
+					"description": "Vyplnit žádost online",
+					"action": "Vyplnit"
+				},
+				"meeting": {
+					"title": "Setkání",
+					"description": "Osobní setkání a diskuse",
+					"action": "Naplánovat"
+				}
+			},
+			"consultation": {
+				"title": "Bezplatná konzultace",
+				"description": "Naši experti jsou připraveni pomoci vám s plánováním a realizací stavebního projektu",
+				"features": [
+					"Analýza vašich potřeb a požadavků",
+					"Technické zdůvodnění projektu",
+					"Výpočet nákladů a termínů",
+					"Výběr optimálních řešení",
+					"Konzultace o materiálech a technologiích"
+				],
+				"primaryButton": "Získat konzultaci",
+				"secondaryButton": "Naše služby",
+				"guarantee": {
+					"title": "Záruka výsledku",
+					"description": "Garantujeme kvalitu prací a dodržování všech dohod"
+				}
+			}
+		}
+	},
+	"ContactPage": {
+		"Hero": {
+			"badge": "Kontaktní informace",
+			"title": "Spojte se s námi za pár sekund",
+			"description": "Vždy jsme připraveni odpovědět na vaše otázky a poskytnout odbornou konzultaci"
+		},
+		"form": {
+			"title": "Spojte se s námi",
+			"description": "Vyplňte formulář a náš manažer vás bude kontaktovat během pracovního dne pro podrobnou konzultaci.",
+			"formTitle": "Kontaktní formulář",
+			"formSubtitle": "Vyplňte všechna povinná pole",
+			"benefits": {
+				"quick": "Rychlá odpověď do jednoho dne",
+				"professional": "Odborná konzultace",
+				"free": "Bezplatné vyhodnocení projektu"
+			},
+			"responseTime": {
+				"title": "Doba odezvy",
+				"description": "Na všechny dotazy odpovídáme během pracovních hodin. Mimo pracovní dobu bude vaše zpráva zpracována následující pracovní den."
+			}
+		},
+		"map": {
+			"title": "Najděte nás na mapě",
+			"description": "Naše kancelář se nachází v Košicích",
+			"iframeTitle": "Mapa umístění kanceláře",
+			"addressTitle": "Adresa",
+			"address": "Jenisejská 45A, 040 12 Košice-Nad Jazerom",
+			"viewOnGoogleMaps": "Zobrazit v Google Maps",
+			"getDirections": "Získat pokyny"
+		},
+		"contacts": {
+			"phones": "Telefony",
+			"whatsapp": "WhatsApp",
+			"facebook": "Facebook",
+			"email": "E-mail",
+			"call": "Zavolat",
+			"open": "Otevřít",
+			"workingHours": "Pracovní doba: Po–Pá: 09:00–18:00. Víkendy: So–Ne."
+		}
+	},
+	"ContactFormSection": {
+		"title": "MÁTE DOTAZ NEBO NABÍDKU?",
+		"description": "Chcete-li položit otázku, požádat o konzultaci nebo se jednoduše seznámit, kontaktujte nás prostřednictvím uvedených kontaktů nebo vyplňte formulář, abychom vás mohli kontaktovat.",
+		"phoneLabel": "Náš telefon:",
+		"emailLabel": "Náš e-mail:"
+	},
+	"ContactForm": {
+		"title": "Uveďte své údaje pro zpětnou vazbu",
+		"namePlaceholder": "Vaše jméno *",
+		"nameError": "Jméno je povinné",
+		"phoneErrorRequired": "Telefon je povinný",
+		"phoneErrorPattern": "Neplatný formát telefonního čísla",
+		"emailPlaceholder": "E-mail *",
+		"emailErrorRequired": "Email je povinný",
+		"emailError": "Neplatný formát e-mailu",
+		"messagePlaceholder": "Text zprávy *",
+		"messageError": "Zpráva je povinná",
+		"privacyConsentStart": "Souhlasím se zpracováním osobních údajů v souladu s",
+		"privacyConsentEnd": "",
+		"privacyConsentLink": "Zásadami ochrany osobních údajů",
+		"privacyError": "Musíte souhlasit se zpracováním osobních údajů",
+		"submitButton": "Získat konzultaci",
+		"success": {
+			"title": "Děkujeme za kontakt!",
+			"message": "Vaše zpráva byla úspěšně odeslána. Náš manažer vás bude brzy kontaktovat."
+		}
+	},
+	"ApplicationFormModal": {
+		"title": "Přihlásit se na pozici",
+		"triggerLabel": "Přihlásit se",
+		"namePlaceholder": "Vaše jméno *",
+		"nameError": "Jméno je povinné",
+		"phoneErrorRequired": "Telefon je povinný",
+		"phoneErrorPattern": "Neplatný formát telefonního čísla",
+		"emailPlaceholder": "E-mail",
+		"emailError": "Neplatný formát e-mailu",
+		"coverPlaceholder": "Motivační dopis *",
+		"coverError": "Motivační dopis je povinný",
+		"fileInput": {
+			"dragDropText": "Přetáhněte svůj životopis sem nebo klikněte pro procházení",
+			"fileSelected": "Soubor vybrán: {fileName}",
+			"fileTooLarge": "Soubor je příliš velký (max 10MB)",
+			"invalidFileType": "Prosím vyberte soubor PDF, DOC nebo DOCX"
+		},
+		"privacyConsentStart": "Souhlasím se zpracováním mých osobních údajů v souladu s",
+		"privacyConsentEnd": "",
+		"privacyConsentLink": "Zásadami ochrany osobních údajů",
+		"privacyError": "Musíte souhlasit se zásadami ochrany osobních údajů",
+		"submitButton": "Odeslat přihlášku",
+		"sendingButton": "Odesílání...",
+		"errorMessage": "Přihláška selhala:",
+		"success": {
+			"title": "Přihláška odeslána!",
+			"message": "Děkujeme za vaši přihlášku. Brzy vás budeme kontaktovat."
+		}
+	},
+	"CookiesPage": {
+		"title": "Zásady cookies",
+		"description": "Informace o používání cookies na našich stránkách a možnosti jejich správy.",
+		"Hero": {
+			"badge": "Zásady cookies",
+			"title": "Zásady používání cookies",
+			"description": "Informace o tom, jak používáme cookies na našich stránkách a jak můžete spravovat své preference cookies."
+		},
+		"whatAreCookies": {
+			"title": "Co jsou cookies?",
+			"description": "Cookies jsou malé textové soubory, které se ukládají na vašem zařízení při návštěvě webových stránek. Pomáhají nám zajistit správnou funkčnost webu a zlepšit vaši uživatelskou zkušenost."
+		},
+		"categories": {
+			"title": "Kategorie cookies, které používáme",
+			"necessary": {
+				"title": "Nezbytné cookies",
+				"description": "Potřebné pro základní funkčnost webu. Bez nich některé funkce nemusí fungovat. Nelze je vypnout.",
+				"badge": "Povinné"
+			},
+			"functional": {
+				"title": "Funkční cookies",
+				"description": "Pamatují si vaše preference (jazyk, region) pro personalizovaný zážitek."
+			},
+			"analytics": {
+				"title": "Analytické cookies",
+				"description": "Pomáhají nám pochopit, jak uživatelé interagují s webem, abychom jej mohli vylepšit."
+			},
+			"marketing": {
+				"title": "Marketingové cookies",
+				"description": "Používají se k zobrazování relevantní reklamy a měření účinnosti reklamních kampaní."
+			}
+		},
+		"management": {
+			"title": "Správa vašich voleb",
+			"description": "Nastavení cookies můžete kdykoli změnit. Vaše volby budou uloženy a aplikovány na všechny budoucí návštěvy."
+		},
+		"additionalInfo": {
+			"title": "Další informace",
+			"privacyPolicyText": "Více informací o zpracování osobních údajů najdete v našich",
+			"privacyPolicyLink": "Zásadách ochrany osobních údajů",
+			"contactText": "Pokud máte otázky ohledně používání cookies, kontaktujte nás na adrese",
+			"contactEmail": "info@global-technology-innovations.com"
+		}
+	},
+	"CookieBanner": {
+		"description": "Používáme cookies pro funkčnost webu, personalizaci a analytiku. Můžete přijmout vše, odmítnout nebo nakonfigurovat kategorie.",
+		"buttons": {
+			"configure": "Konfigurovat",
+			"reject": "Odmítnout",
+			"acceptAll": "Přijmout vše",
+			"rejectAll": "Odmítnout vše",
+			"saveSettings": "Uložit nastavení"
+		},
+		"settings": {
+			"title": "Nastavení cookies",
+			"categories": {
+				"necessary": {
+					"title": "Nezbytné",
+					"description": "Potřebné pro funkci webu. Nelze zakázat."
+				},
+				"functional": {
+					"title": "Funkční",
+					"description": "Pamatují si vaše preference."
+				},
+				"analytics": {
+					"title": "Analytické",
+					"description": "Pomoc při zlepšování webu."
+				},
+				"marketing": {
+					"title": "Marketingové",
+					"description": "Pro relevantní reklamu."
+				}
+			}
+		}
+	},
+	"ChangeConsentButton": {
+		"buttonText": "Změnit preference cookies",
+		"currentStatus": "aktuální stav",
+		"statusActive": "aktivních kategorií",
+		"statusNone": "nevybráno"
+	},
+	"PrivacyPolicy": {
+		"title": "Zásady ochrany osobních údajů",
+		"updated": "Aktualizováno: 19. srpna 2025",
+		"intro": "Tyto Zásady ochrany osobních údajů popisují, jak Global Technology Innovations s. r. o., IČO: 57 066 566, se sídlem Jenisejská 45A, 040 12 Košice-Nad Jazerom (dále jen 'Společnost', 'my'), zpracovává osobní údaje návštěvníků stránky innovations.sk v souladu s Obecným nařízením o ochraně údajů (GDPR).",
+		"sections": {
+			"1": {
+				"title": "1. Kdo jsme a kontakty",
+				"text": "Správce údajů: Global Technology Innovations s. r. o.\nAdresa: Jenisejská 45A, 040 12 Košice-Nad Jazerom\nE-mail: info@global-technology-innovations.com\nTelefon: +421 917 089 618"
+			},
+			"2": {
+				"title": "2. Jaké údaje sbíráme",
+				"list": [
+					"Údaje z formulářů (kontakt/žádost o odhad/objednávka hovoru): jméno, e-mail, telefon, obsah zprávy a související metadata.",
+					"Údaje kandidátů (formulář 'Kariéra'): životopis/portfolio, zkušenosti, kontaktní údaje.",
+					"Technické údaje: IP adresa, typ/verze prohlížeče, jazykové nastavení, stránky, čas přístupu, cookies.",
+					"Analytika: anonymizovaná statistika návštěvnosti (např. Google Analytics, Plausible apod.)."
+				]
+			},
+			"3": {
+				"title": "3. Účel a právní základ zpracování",
+				"list": [
+					"Odpovědi na dotazy/odhady — plnění smlouvy nebo kroky k jejímu uzavření (čl. 6(1)(b) GDPR), jakož i náš oprávněný zájem na efektivní komunikaci (čl. 6(1)(f)).",
+					"Výběr personálu — oprávněný zájem (čl. 6(1)(f)); pokud žádáme dodatečné údaje — se souhlasem (čl. 6(1)(a)).",
+					"Analytika a zlepšování stránky — oprávněný zájem (čl. 6(1)(f)); pro marketingové/nepovinné cookies — souhlas (čl. 6(1)(a)).",
+					"Právní povinnosti — plnění zákonných povinností (čl. 6(1)(c))."
+				]
+			},
+			"4": {
+				"title": "4. Soubory cookies a analytika",
+				"text": "Používáme povinné cookies pro fungování stránky a analytické/marketingové cookies s vaším souhlasem. Souhlas můžete spravovat prostřednictvím banneru cookies nebo nastavení prohlížeče. Podrobnosti viz sekce 'Nastavení cookies' nebo samostatné Zásady cookies (pokud existují)."
+			},
+			"5": {
+				"title": "5. S kým sdílíme údaje",
+				"list": [
+					"Poskytovatelé IT služeb (hosting, e-mail, CRM, analytika), kteří jednají jako zpracovatelé podle smluv o zpracování.",
+					"Partneři/subdodavatelé, pokud je to potřebné pro přípravu odhadu nebo provedení prací (poskytujeme pouze minimálně nutné údaje).",
+					"Státní orgány, pokud to vyžaduje zákon."
+				]
+			},
+			"6": {
+				"title": "6. Mezinárodní přenosy",
+				"text": "Pokud se údaje přenášejí mimo EHP, zajistíme odpovídající záruky (např. Standardní smluvní doložky EK)."
+			},
+			"7": {
+				"title": "7. Doba uchovávání",
+				"list": [
+					"Dotazy z formulářů: do 12 měsíců nebo déle při aktivním dialogu/kontraktu.",
+					"Údaje kandidátů: do 6 měsíců (nebo déle se samostatným souhlasem).",
+					"Smluvní/účetní údaje: podle zákonných požadavků (5-10 let v závislosti na typu dokumentu).",
+					"Analytika: podle retention ve službě (např. 14-26 měsíců)."
+				]
+			},
+			"8": {
+				"title": "8. Vaše práva",
+				"text": "Máte práva na přístup, opravu, vymazání, omezení, přenosnost údajů, námitku proti zpracování a odvolání souhlasu bez vlivu na zákonnost předchozího zpracování. Kontakt: info@global-technology-innovations.com."
+			},
+			"9": {
+				"title": "9. Stížnosti",
+				"text": "Můžete také podat stížnost u dozorového orgánu — Úřad na ochranu osobních údajů SR (Slovenská republika)."
+			},
+			"10": {
+				"title": "10. Bezpečnost",
+				"text": "Implementujeme technická a organizační opatření (TLS, kontroly přístupu, logování) pro ochranu údajů před neoprávněným přístupem."
+			},
+			"11": {
+				"title": "11. Údaje dětí",
+				"text": "Stránka není určena pro děti do 16 let. Pokud si myslíte, že nám dítě poskytlo údaje, kontaktujte nás pro jejich vymazání."
+			},
+			"12": {
+				"title": "12. Změny této politiky",
+				"text": "Můžeme tuto Politiku pravidelně aktualizovat. Nová verze nabývá účinnosti okamžikem zveřejnění na Stránce."
+			}
+		},
+		"contactInfo": {
+			"title": "Kontaktní informace",
+			"description": "Pokud máte jakékoli otázky k těmto Zásadám ochrany osobních údajů, kontaktujte nás:",
+			"email": "E-mail",
+			"address": "Adresa",
+			"phone": "Telefon"
+		}
+	},
+	"OutstaffingPage": {
+		"Hero": {
+			"badge": "Outstaffing personálu",
+			"title": "Outstaffing personálu pro stavební projekty",
+			"description": "Poskytujeme zkušené specialisty pro vaši výstavbu bez zbytečných nákladů na hledání a udržování zaměstnanců.",
+			"ctaButton": "Objednat specialisty"
+		},
+		"WhatIs": {
+			"title": "Co je outstaffing?",
+			"description": "Outstaffing je když získáte zaměstnance naší společnosti k vykonávání konkrétních úkolů na vašem objektu. Pracují pod vaším vedením, ale zůstávají v našem oficiálním kádru."
+		},
+		"Specialists": {
+			"badge": "Naši specialisté",
+			"title": "Koho můžeme poskytnout",
+			"subtitle": "Náš tým zahrnuje širokou škálu kvalifikovaných specialistů pro různé druhy stavebních prací",
+			"list": {
+				"bricklayers": "Zedníci",
+				"drywallers": "Sádrokartonáři",
+				"tilers": "Obkladači",
+				"facade": "Fasádníci",
+				"electricians": "Elektrikáři",
+				"plumbers": "Instalatéři",
+				"universal": "Univerzální řemeslníci",
+				"cleaners": "Uklízečky"
+			}
+		},
+		"Benefits": {
+			"badge": "Proč si vybrat nás",
+			"title": "Výhody pro klienta",
+			"subtitle": "Proč si vybrat náš outstaffing pro váš stavební projekt",
+			"list": {
+				"speed": {
+					"title": "Rychlé získání personálu",
+					"description": "Bez dlouhého hledání — máme připravený tým specialistů"
+				},
+				"savings": {
+					"title": "Úspora na daních a HR",
+					"description": "Všechny oficiální záležitosti s personálem bereme na sebe"
+				},
+				"experience": {
+					"title": "Zkušení specialisté",
+					"description": "Praxí ověření řemeslníci s víceletými zkušenostmi"
+				},
+				"flexibility": {
+					"title": "Flexibilita termínů",
+					"description": "Potřebujete na týden nebo na rok — vybereme optimální tým"
+				}
+			}
+		},
+		"HowItWorks": {
+			"badge": "Proces",
+			"title": "Jak to funguje",
+			"subtitle": "Jednoduchý proces získání potřebných specialistů ve 4 krocích",
+			"steps": {
+				"request": {
+					"title": "Zanecháte žádost",
+					"description": "Řekněte nám o vašich potřebách a termínech projektu"
+				},
+				"selection": {
+					"title": "Vybereme specialisty",
+					"description": "Najdeme nejlepší řemeslníky pro vaše úkoly"
+				},
+				"contract": {
+					"title": "Podepíšeme smlouvu",
+					"description": "Vyřídíme všechny dokumenty rychle a transparentně"
+				},
+				"work": {
+					"title": "Řemeslníci jdou na objekt",
+					"description": "Specialisté začnou práci v dohodnutém čase"
+				}
+			}
+		},
+		"CTA": {
+			"title": "Potřebujete řemeslníky už zítra?",
+			"description": "Zanechte žádost a spojíme se s vámi do hodiny k prodiskutování detailů a výběru týmu specialistů.",
+			"benefits": {
+				"immediate": "Okamžitá odpověď do hodiny",
+				"experienced": "Zkušení specialisté s 5+ lety zkušeností",
+				"flexible": "Flexibilní podmínky spolupráce a platby"
+			},
+			"guarantee": {
+				"title": "Záruka kvality",
+				"description": "Všichni naši specialisté mají potvrzenou kvalifikaci a pracovní zkušenosti"
+			},
+			"form": {
+				"title": "Objednat specialisty",
+				"subtitle": "Vyplňte formulář a získejte personalizovanou nabídku"
+			}
+		}
+	}
+}

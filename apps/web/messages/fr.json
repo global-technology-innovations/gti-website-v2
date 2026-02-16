@@ -1,0 +1,707 @@
+{
+	"Header": {
+		"companyName": "Global Technology Innovations",
+		"nav": {
+			"home": "Accueil",
+			"about": "À propos",
+			"services": "Services",
+			"portfolio": "Portfolio",
+			"careers": "Carrière",
+			"outstaffing": "Externalisation",
+			"blog": "Blog",
+			"contact": "Contact"
+		}
+	},
+	"Media": {
+		"videoNotSupported": "Votre navigateur ne prend pas en charge la balise vidéo.",
+		"videoIndicator": "Vidéo",
+		"noImages": "Aucune image",
+		"mediaThumbnail": "média {index}",
+		"thumbnail": "miniature {index}"
+	},
+	"Portfolio": {
+		"backToPortfolio": "Retour au portfolio",
+		"projectNotFound": "Projet introuvable",
+		"projectNotFoundDesc": "Le projet demandé n'existe pas ou a été supprimé.",
+		"projectDescription": "Description du projet",
+		"projectInfo": "Informations sur le projet",
+		"projectGallery": "Galerie du projet",
+		"client": "Client",
+		"location": "Localisation",
+		"executionPeriod": "Période d'exécution",
+		"technologies": "Technologies",
+		"category": "Catégorie",
+		"status": {
+			"completed": "Terminé",
+			"inProgress": "En cours",
+			"planned": "Planifié"
+		},
+		"interestedInProject": "Intéressé par notre projet ?",
+		"interestedDesc": "Nous sommes prêts à discuter de vos idées et à créer quelque chose de similaire pour vous. Contactez-nous pour une consultation gratuite.",
+		"contactUs": "Contactez-nous",
+		"ourServices": "Nos services"
+	},
+	"Footer": {
+		"privacy": "Politique de confidentialité",
+		"cookies": "Politique des cookies",
+
+		"email": "E-mail",
+
+		"address": "Adresse",
+		"rights": "© 2025 Global Technology Innovations. Tous droits réservés."
+	},
+	"HomePage": {
+		"HeroSection": {
+			"title": "Solutions complètes de construction clé en main",
+			"description": "Nous offrons une gamme complète de services de construction pour les bâtiments résidentiels, commerciaux et spécialisés.",
+			"button": "Nous contacter"
+		},
+		"AboutUsSection": {
+			"title": "À propos",
+			"description": "Notre objectif est de fournir des services de construction exceptionnels, en mettant l'accent sur la qualité, la sécurité et la satisfaction du client.",
+			"features": [
+				{
+					"title": "Notre mission",
+					"desc": "Dépasser les attentes des clients grâce à l'innovation et à l'efficacité.",
+					"icon": "🏁"
+				},
+				{
+					"title": "Notre équipe",
+					"desc": "Des professionnels expérimentés et qualifiés, engagés vers l’excellence.",
+					"icon": "👥"
+				},
+				{
+					"title": "Nos valeurs",
+					"desc": "Intégrité, fiabilité et collaboration dans tous les aspects de notre travail.",
+					"icon": "🤝"
+				}
+			]
+		},
+		"FAQSection": {
+			"title": "Questions fréquentes",
+			"items": [
+				{
+					"question": "Comment se déroule la collaboration avec un client ?",
+					"answer": "Nous commençons par une consultation gratuite afin de comprendre les besoins du client. Ensuite, nous préparons un devis, convenons des délais et signons un contrat. Après cela, nous lançons la réalisation du projet avec des rapports réguliers."
+				},
+				{
+					"question": "Pouvez-vous acheter les matériaux vous-même ?",
+					"answer": "Oui, nous pouvons nous occuper entièrement de l'achat et de la livraison des matériaux. Cela vous fait gagner du temps et garantit que tous les matériaux répondent aux exigences techniques du projet."
+				},
+				{
+					"question": "Faites-vous uniquement des rénovations ou aussi des constructions neuves ?",
+					"answer": "Nous effectuons l'ensemble des travaux de construction — des rénovations majeures aux constructions neuves, y compris le béton armé, la maçonnerie, les façades, les toitures, les aménagements intérieurs, etc."
+				},
+				{
+					"question": "Est-il possible de commander un appartement clé en main avec mobilier ?",
+					"answer": "Oui, nous proposons un service clé en main comprenant tous les travaux de construction et de finition, l'achat des matériaux et même l'ameublement complet du logement."
+				},
+				{
+					"question": "Quels sont les délais d'exécution des travaux ?",
+					"answer": "La durée dépend de l'ampleur du projet. Une petite rénovation peut prendre quelques semaines, tandis qu'une construction complète peut durer plusieurs mois. Nous convenons toujours des délais avant le début et respectons le calendrier."
+				}
+			]
+		}
+	},
+	"AboutPage": {
+		"title": "À propos de l'entreprise",
+		"description": "Des solutions sur mesure pour chaque client. Respect strict des délais. Prix compétitifs, qualité éprouvée et garantie fiable.\n\n",
+		"Hero": {
+			"badge": "À propos",
+			"title": "Construire une confiance durable",
+			"description": "Nous allions expertise, innovation et transparence pour livrer des projets de qualité dans les délais."
+		},
+		"CompanyHistory": {
+			"badge": "Notre Histoire",
+			"title": "15 ans d'expérience en construction",
+			"description": "D'une petite entreprise à un leader du marché des services de construction — nous avons parcouru un long chemin grâce à la confiance de nos clients.",
+			"founding": {
+				"title": "Fondation et Développement",
+				"description": "L'entreprise de construction de notre famille a commencé en 2009. Depuis lors, nous avons réalisé des centaines de projets de différentes échelles. Aujourd'hui, Global Technology Innovations est une équipe d'ingénieurs et de constructeurs expérimentés qui combine l'expérience de la génération précédente avec les innovations modernes."
+			},
+			"milestones": {
+				"projects": {
+					"title": "Plus de 500 projets",
+					"description": "Terminés avec succès, des maisons privées aux grandes installations commerciales"
+				},
+				"team": {
+					"title": "Équipe de 50+ spécialistes",
+					"description": "Ingénieurs expérimentés, architectes et constructeurs"
+				},
+				"expansion": {
+					"title": "Expansion des services",
+					"description": "De la construction classique aux technologies innovantes"
+				}
+			},
+			"stats": {
+				"years": "années d'expérience",
+				"projects": "projets terminés",
+				"employees": "employés",
+				"satisfaction": "clients satisfaits",
+				"support": "support client"
+			}
+		},
+		"OurValues": {
+			"badge": "Nos Valeurs",
+			"title": "Principes qui nous guident",
+			"description": "Nos valeurs fondamentales façonnent la culture d'entreprise et déterminent la qualité de nos services.",
+			"trust": {
+				"title": "Confiance et fiabilité",
+				"description": "Nous construisons des relations de confiance avec les clients, respectons tous les engagements et assurons la transparence à toutes les étapes de la coopération."
+			},
+			"quality": {
+				"title": "Qualité irréprochable",
+				"description": "Nous utilisons uniquement des matériaux certifiés et des technologies modernes. Chaque projet subit un contrôle qualité à plusieurs niveaux."
+			},
+			"innovation": {
+				"title": "Innovation et développement",
+				"description": "Nous améliorons constamment les méthodes de travail, implémentons de nouvelles technologies et suivons les tendances de la construction."
+			},
+			"excellence": {
+				"title": "Quête d'excellence",
+				"description": "Nous exécutons chaque projet avec une attention maximale aux détails, cherchant à dépasser les attentes des clients."
+			},
+			"sustainability": {
+				"title": "Responsabilité environnementale",
+				"description": "Nous nous soucions de l'environnement, utilisons des matériaux écologiques et des solutions énergétiquement efficaces."
+			},
+			"teamwork": {
+				"title": "Travail d'équipe",
+				"description": "Nous valorisons chaque membre de l'équipe, soutenons le développement professionnel et créons un environnement de travail confortable."
+			}
+		},
+		"Team": {
+			"badge": "Notre Équipe",
+			"title": "Professionnels dans leur domaine",
+			"description": "Spécialistes expérimentés qui donnent vie à vos rêves grâce à leur expertise et leur dévouement.",
+			"ceo": {
+				"name": "Alexander Petrenko",
+				"position": "Directeur Général",
+				"description": "15 ans dans l'industrie de la construction. Dirige le développement stratégique de l'entreprise et assure des standards de qualité élevés."
+			},
+			"cto": {
+				"name": "Marina Ivanenko",
+				"position": "Directrice Technique",
+				"description": "Ingénieur en construction avec 12 ans d'expérience. Responsable des aspects techniques de tous les projets et du contrôle qualité."
+			},
+			"projectManager": {
+				"name": "Andrew Kovalenko",
+				"position": "Chef de Projet",
+				"description": "Coordonne l'exécution des travaux, assure le respect des délais et une communication efficace avec les clients."
+			},
+			"architect": {
+				"name": "Catherine Melnyk",
+				"position": "Architecte en Chef",
+				"description": "Crée des solutions architecturales uniques, alliant fonctionnalité, esthétique et tendances modernes."
+			},
+			"culture": {
+				"title": "Culture de notre entreprise",
+				"description": "Nous créons un environnement où chacun peut libérer son potentiel et contribuer au succès commun.",
+				"learning": {
+					"title": "Apprentissage continu",
+					"description": "Nous soutenons le développement professionnel de l'équipe"
+				},
+				"collaboration": {
+					"title": "Collaboration ouverte",
+					"description": "Nous valorisons les idées de chaque membre de l'équipe"
+				},
+				"innovation": {
+					"title": "Approche innovante",
+					"description": "Nous expérimentons avec de nouvelles méthodes et technologies"
+				}
+			}
+		},
+		"MissionVision": {
+			"badge": "Mission et Vision",
+			"title": "Notre objectif et direction de développement",
+			"description": "Nous comprenons clairement notre rôle dans l'industrie de la construction et nous nous efforçons de créer de la valeur pour toutes les parties prenantes.",
+			"mission": {
+				"title": "Notre Mission",
+				"description": "Créer des espaces confortables et fonctionnels qui améliorent la qualité de vie des gens, en utilisant les meilleures pratiques de construction et une approche individuelle pour chaque client.",
+				"points": {
+					"quality": "Assurer la plus haute qualité de travail",
+					"innovation": "Implémenter des solutions innovantes",
+					"satisfaction": "Satisfaction maximale des besoins clients"
+				}
+			},
+			"vision": {
+				"title": "Notre Vision",
+				"description": "Être une entreprise de construction leader qui établit les standards de qualité et d'innovation dans l'industrie, créant des solutions durables et écologiques pour les générations futures.",
+				"points": {
+					"sustainability": "Développement de technologies écologiques",
+					"technology": "Utilisation de technologies avancées",
+					"community": "Contribution au développement communautaire"
+				}
+			},
+			"strategy": {
+				"title": "Priorités Stratégiques",
+				"description": "Notre stratégie se concentre sur le développement durable, l'expansion des capacités et l'assurance de positions de leadership sur le marché.",
+				"growth": {
+					"title": "Croissance",
+					"description": "Expansion géographique et de la gamme de services"
+				},
+				"efficiency": {
+					"title": "Efficacité",
+					"description": "Optimisation des processus et amélioration de la productivité"
+				},
+				"expansion": {
+					"title": "Expansion",
+					"description": "Entrée sur de nouveaux marchés et segments"
+				}
+			}
+		}
+	},
+	"CareersPage": {
+		"title": "Carrière",
+		"Hero": {
+			"badge": "Carrière",
+			"title": "Rejoignez une équipe de professionnels",
+			"description": "Évoluez avec nous : projets stimulants, mentorat et conditions transparentes."
+		},
+		"apply": "Postuler",
+		"jobType": "Type de poste",
+		"location": "Lieu",
+		"errorTitle": "Une erreur est survenue",
+		"errorLoadingJobs": "Impossible de charger les offres d'emploi. Veuillez réessayer plus tard.",
+		"noJobs": "Aucune offre d'emploi",
+		"checkBackLater": "Veuillez vérifier à nouveau plus tard."
+	},
+	"OurServicesPage": {
+		"title": "Nos services",
+		"button": "En savoir plus",
+		"order": "Commander",
+		"Hero": {
+			"badge": "Services",
+			"title": "Des solutions clés en main, de A à Z",
+			"description": "Du concept et du design à l’exécution et au service — nous prenons la responsabilité du résultat."
+		}
+	},
+	"PortfolioPage": {
+		"Hero": {
+			"badge": "Portfolio de projets",
+			"title": "Nos projets de construction réalisés",
+			"description": "Des complexes résidentiels aux installations commerciales - nous créons des bâtiments de qualité pour nos clients"
+		},
+		"ProjectCard": {
+			"viewDetails": "Voir les détails",
+			"status": {
+				"completed": "Terminé",
+				"inProgress": "En cours",
+				"planned": "Planifié"
+			},
+			"dateNotAvailable": "Date non spécifiée"
+		},
+		"ProjectsList": {
+			"results": {
+				"noResults": {
+					"title": "Aucun projet trouvé",
+					"description": "Veuillez réessayer plus tard ou nous contacter pour plus d'informations",
+					"resetFilters": "Effacer les filtres"
+				}
+			},
+			"error": {
+				"title": "Erreur lors du chargement des projets",
+				"description": "Essayez de rafraîchir la page"
+			}
+		},
+		"CTA": {
+			"title": "Prêt à commencer votre projet ?",
+			"description": "Contactez-nous pour une consultation gratuite et obtenez une offre personnalisée pour votre projet de construction",
+			"benefits": {
+				"quality": "Garantie de qualité",
+				"experience": "Expérience de l'équipe",
+				"timeline": "Respect des délais",
+				"support": "Support 24/7",
+				"warranty": "Garantie sur les travaux",
+				"transparency": "Transparence du processus"
+			},
+			"contactMethods": {
+				"phone": {
+					"title": "Téléphone",
+					"description": "Consultation rapide par téléphone",
+					"action": "Appeler"
+				},
+				"email": {
+					"title": "Email",
+					"description": "Proposition détaillée par email",
+					"action": "Écrire"
+				},
+				"form": {
+					"title": "Formulaire",
+					"description": "Remplir une demande en ligne",
+					"action": "Remplir"
+				},
+				"meeting": {
+					"title": "Réunion",
+					"description": "Rencontre personnelle et discussion",
+					"action": "Planifier"
+				}
+			},
+			"consultation": {
+				"title": "Consultation gratuite",
+				"description": "Nos experts sont prêts à vous aider avec la planification et la réalisation de votre projet de construction",
+				"features": [
+					"Analyse de vos besoins et exigences",
+					"Justification technique du projet",
+					"Calcul des coûts et délais",
+					"Sélection des solutions optimales",
+					"Consultation sur les matériaux et technologies"
+				],
+				"primaryButton": "Obtenir une consultation",
+				"secondaryButton": "Nos services",
+				"guarantee": {
+					"title": "Garantie de résultat",
+					"description": "Nous garantissons la qualité des travaux et le respect de tous les accords"
+				}
+			}
+		}
+	},
+	"ContactPage": {
+		"Hero": {
+			"badge": "Informations de contact",
+			"title": "Contactez-nous en quelques secondes",
+			"description": "Nous sommes toujours prêts à répondre à vos questions et à fournir une consultation professionnelle"
+		},
+		"form": {
+			"title": "Contactez-nous",
+			"description": "Remplissez le formulaire et notre gestionnaire vous contactera pendant les heures de bureau pour une consultation détaillée.",
+			"formTitle": "Formulaire de contact",
+			"formSubtitle": "Remplissez tous les champs obligatoires",
+			"benefits": {
+				"quick": "Réponse rapide en une journée",
+				"professional": "Consultation professionnelle",
+				"free": "Évaluation gratuite du projet"
+			},
+			"responseTime": {
+				"title": "Temps de réponse",
+				"description": "Nous répondons à toutes les demandes pendant les heures de bureau. En dehors des heures de bureau, votre message sera traité le jour ouvrable suivant."
+			}
+		},
+		"map": {
+			"title": "Trouvez-nous sur la carte",
+			"description": "Notre bureau est situé à Košice",
+			"iframeTitle": "Carte de localisation du bureau",
+			"addressTitle": "Adresse",
+			"address": "Jenisejská 45A, 040 12 Košice-Nad Jazerom",
+			"viewOnGoogleMaps": "Voir sur Google Maps",
+			"getDirections": "Obtenir l'itinéraire"
+		},
+		"contacts": {
+			"phones": "Téléphones",
+			"whatsapp": "WhatsApp",
+			"facebook": "Facebook",
+			"email": "E-mail",
+			"call": "Appeler",
+			"open": "Ouvrir",
+			"workingHours": "Heures de travail : Lun–Ven : 09h00–18h00. Week-ends : Sam–Dim."
+		}
+	},
+	"ContactFormSection": {
+		"title": "VOUS AVEZ UNE QUESTION OU UNE PROPOSITION ?",
+		"description": "Pour poser une question, demander une consultation ou simplement faire connaissance, contactez-nous via les coordonnées fournies ou remplissez le formulaire pour que nous puissions vous recontacter.",
+		"phoneLabel": "Notre téléphone :",
+		"emailLabel": "Notre e-mail :"
+	},
+	"ContactForm": {
+		"title": "Indiquez vos coordonnées pour un retour",
+		"namePlaceholder": "Votre nom *",
+		"nameError": "Le nom est obligatoire",
+		"phoneErrorRequired": "Le téléphone est obligatoire",
+		"phoneErrorPattern": "Format de numéro invalide",
+		"emailPlaceholder": "E-mail *",
+		"emailErrorRequired": "L'e-mail est requis",
+		"emailError": "Format d'e-mail invalide",
+		"messagePlaceholder": "Texte du message *",
+		"messageError": "Le message est obligatoire",
+		"privacyConsentStart": "J'accepte le traitement des données personnelles conformément à la",
+		"privacyConsentEnd": "",
+		"privacyConsentLink": "Politique de confidentialité",
+		"privacyError": "Vous devez consentir au traitement des données personnelles",
+		"submitButton": "Obtenir une consultation",
+		"success": {
+			"title": "Merci de nous avoir contactés !",
+			"message": "Votre message a été envoyé avec succès. Notre manager vous contactera bientôt."
+		}
+	},
+	"ApplicationFormModal": {
+		"title": "Postuler à l'emploi",
+		"triggerLabel": "Postuler",
+		"namePlaceholder": "Votre nom *",
+		"nameError": "Le nom est obligatoire",
+		"phoneErrorRequired": "Le téléphone est obligatoire",
+		"phoneErrorPattern": "Format de numéro invalide",
+		"emailPlaceholder": "E-mail",
+		"emailError": "Format d'e-mail invalide",
+		"coverPlaceholder": "Lettre de motivation *",
+		"coverError": "La lettre de motivation est obligatoire",
+		"fileInput": {
+			"dragDropText": "Glissez-déposez votre CV ici ou cliquez pour parcourir",
+			"fileSelected": "Fichier sélectionné : {fileName}",
+			"fileTooLarge": "Le fichier est trop volumineux (max 10MB)",
+			"invalidFileType": "Veuillez sélectionner un fichier PDF, DOC ou DOCX"
+		},
+		"privacyConsentStart": "J'accepte le traitement de mes données personnelles conformément à la",
+		"privacyConsentEnd": "",
+		"privacyConsentLink": "Politique de confidentialité",
+		"privacyError": "Vous devez accepter la politique de confidentialité",
+		"submitButton": "Soumettre la candidature",
+		"sendingButton": "Envoi en cours...",
+		"errorMessage": "Échec de la candidature :",
+		"success": {
+			"title": "Candidature envoyée !",
+			"message": "Merci pour votre candidature. Nous vous contacterons bientôt."
+		}
+	},
+	"CookiesPage": {
+		"title": "Politique des cookies",
+		"description": "Informations sur l'utilisation des cookies sur notre site web et les options de gestion des cookies.",
+		"Hero": {
+			"badge": "Politique des cookies",
+			"title": "Politique d'utilisation des cookies",
+			"description": "Informations sur la façon dont nous utilisons les cookies sur notre site web et comment vous pouvez gérer vos préférences de cookies."
+		},
+		"whatAreCookies": {
+			"title": "Que sont les cookies ?",
+			"description": "Les cookies sont de petits fichiers texte qui sont stockés sur votre appareil lors de la visite de sites web. Ils nous aident à assurer le bon fonctionnement du site web et à améliorer votre expérience utilisateur."
+		},
+		"categories": {
+			"title": "Catégories de cookies que nous utilisons",
+			"necessary": {
+				"title": "Cookies nécessaires",
+				"description": "Requis pour la fonctionnalité de base du site web. Certaines fonctionnalités peuvent ne pas fonctionner sans eux. Ils ne peuvent pas être désactivés.",
+				"badge": "Requis"
+			},
+			"functional": {
+				"title": "Cookies fonctionnels",
+				"description": "Se souviennent de vos préférences (langue, région) pour une expérience personnalisée."
+			},
+			"analytics": {
+				"title": "Cookies analytiques",
+				"description": "Nous aident à comprendre comment les utilisateurs interagissent avec le site web pour améliorer sa fonctionnalité."
+			},
+			"marketing": {
+				"title": "Cookies marketing",
+				"description": "Utilisés pour afficher des publicités pertinentes et mesurer l'efficacité des campagnes publicitaires."
+			}
+		},
+		"management": {
+			"title": "Gestion de vos choix",
+			"description": "Vous pouvez modifier vos paramètres de cookies à tout moment. Vos choix seront sauvegardés et appliqués à toutes les visites futures."
+		},
+		"additionalInfo": {
+			"title": "Informations supplémentaires",
+			"privacyPolicyText": "Plus d'informations sur le traitement des données personnelles peuvent être trouvées dans notre",
+			"privacyPolicyLink": "Politique de confidentialité",
+			"contactText": "Si vous avez des questions sur l'utilisation des cookies, contactez-nous à",
+			"contactEmail": "info@global-technology-innovations.com"
+		}
+	},
+	"CookieBanner": {
+		"description": "Nous utilisons des cookies pour la fonctionnalité du site, la personnalisation et l'analyse. Vous pouvez tout accepter, rejeter ou configurer les catégories.",
+		"buttons": {
+			"configure": "Configurer",
+			"reject": "Rejeter",
+			"acceptAll": "Tout accepter",
+			"rejectAll": "Tout rejeter",
+			"saveSettings": "Enregistrer les paramètres"
+		},
+		"settings": {
+			"title": "Paramètres des cookies",
+			"categories": {
+				"necessary": {
+					"title": "Nécessaires",
+					"description": "Requis pour la fonctionnalité du site. Ne peut pas être désactivé."
+				},
+				"functional": {
+					"title": "Fonctionnels",
+					"description": "Se souviennent de vos préférences."
+				},
+				"analytics": {
+					"title": "Analytiques",
+					"description": "Aident à améliorer le site."
+				},
+				"marketing": {
+					"title": "Marketing",
+					"description": "Pour la publicité pertinente."
+				}
+			}
+		}
+	},
+	"ChangeConsentButton": {
+		"buttonText": "Modifier les préférences de cookies",
+		"currentStatus": "statut actuel",
+		"statusActive": "catégories actives",
+		"statusNone": "non sélectionné"
+	},
+	"PrivacyPolicy": {
+		"title": "Politique de confidentialité",
+		"updated": "Mis à jour : 19 août 2025",
+		"intro": "Cette Politique de confidentialité décrit comment Global Technology Innovations s. r. o., ID : 57 066 566, située à Jenisejská 45A, 040 12 Košice-Nad Jazerom (ci-après 'Société', 'nous'), traite les données personnelles des visiteurs du site innovations.sk conformément au Règlement général sur la protection des données (RGPD).",
+		"sections": {
+			"1": {
+				"title": "1. Qui nous sommes et contacts",
+				"text": "Responsable du traitement : Global Technology Innovations s. r. o.\nAdresse : Jenisejská 45A, 040 12 Košice-Nad Jazerom\nE-mail : info@global-technology-innovations.com\nTéléphone : +421 917 089 618"
+			},
+			"2": {
+				"title": "2. Quelles données nous collectons",
+				"list": [
+					"Données de formulaires (contact/demande de devis/commande d'appel) : nom, e-mail, téléphone, contenu du message et métadonnées associées.",
+					"Données des candidats (formulaire 'Carrière') : CV/portfolio, expérience, coordonnées.",
+					"Données techniques : adresse IP, type/version du navigateur, paramètres de langue, pages, heure d'accès, cookies.",
+					"Analytique : statistiques de visite anonymisées (ex. Google Analytics, Plausible, etc.)."
+				]
+			},
+			"3": {
+				"title": "3. Finalité et base légale du traitement",
+				"list": [
+					"Réponses aux demandes/devis — exécution du contrat ou étapes vers sa conclusion (art. 6(1)(b) RGPD), ainsi que notre intérêt légitime à une communication efficace (art. 6(1)(f)).",
+					"Recrutement de personnel — intérêt légitime (art. 6(1)(f)) ; si nous demandons des données supplémentaires — avec consentement (art. 6(1)(a)).",
+					"Analytique et amélioration du site — intérêt légitime (art. 6(1)(f)) ; pour les cookies marketing/non-essentiels — consentement (art. 6(1)(a)).",
+					"Obligations légales — exécution d'obligations légales (art. 6(1)(c))."
+				]
+			},
+			"4": {
+				"title": "4. Cookies et analytique",
+				"text": "Nous utilisons des cookies essentiels pour le fonctionnement du site et des cookies analytiques/marketing avec votre consentement. Vous pouvez gérer le consentement via la bannière de cookies ou les paramètres du navigateur. Voir la section 'Paramètres de cookies' ou la Politique de cookies séparée (si disponible) pour plus de détails."
+			},
+			"5": {
+				"title": "5. Avec qui nous partageons les données",
+				"list": [
+					"Prestataires de services IT (hébergement, e-mail, CRM, analytique) agissant comme sous-traitants selon des contrats de traitement.",
+					"Partenaires/sous-traitants si nécessaire pour la préparation de devis ou l'exécution de travaux (nous ne fournissons que les données minimalement nécessaires).",
+					"Autorités publiques si requis par la loi."
+				]
+			},
+			"6": {
+				"title": "6. Transferts internationaux",
+				"text": "Si les données sont transférées hors EEE, nous assurerons des garanties appropriées (ex. Clauses contractuelles types de la CE)."
+			},
+			"7": {
+				"title": "7. Durée de conservation",
+				"list": [
+					"Demandes de formulaires : jusqu'à 12 mois ou plus longtemps lors d'un dialogue/contrat actif.",
+					"Données des candidats : jusqu'à 6 mois (ou plus longtemps avec consentement séparé).",
+					"Données contractuelles/comptables : selon les exigences légales (5-10 ans selon le type de document).",
+					"Analytique : selon la rétention du service (ex. 14-26 mois)."
+				]
+			},
+			"8": {
+				"title": "8. Vos droits",
+				"text": "Vous avez des droits d'accès, de rectification, d'effacement, de limitation, de portabilité des données, d'opposition au traitement et de retrait du consentement sans affecter la licéité du traitement antérieur. Contact : info@global-technology-innovations.com."
+			},
+			"9": {
+				"title": "9. Réclamations",
+				"text": "Vous pouvez également déposer une plainte auprès de l'autorité de contrôle — Úrad na ochranu osobných údajov SR (République slovaque)."
+			},
+			"10": {
+				"title": "10. Sécurité",
+				"text": "Nous mettons en œuvre des mesures techniques et organisationnelles (TLS, contrôles d'accès, journalisation) pour protéger les données contre l'accès non autorisé."
+			},
+			"11": {
+				"title": "11. Données des enfants",
+				"text": "Le site n'est pas destiné aux enfants de moins de 16 ans. Si vous pensez qu'un enfant nous a fourni des données, contactez-nous pour suppression."
+			},
+			"12": {
+				"title": "12. Modifications de cette politique",
+				"text": "Nous pouvons mettre à jour périodiquement cette Politique. La nouvelle version prend effet dès sa publication sur le Site."
+			}
+		},
+		"contactInfo": {
+			"title": "Informations de contact",
+			"description": "Si vous avez des questions concernant cette Politique de confidentialité, veuillez nous contacter :",
+			"email": "E-mail",
+			"address": "Adresse",
+			"phone": "Téléphone"
+		}
+	},
+	"OutstaffingPage": {
+		"Hero": {
+			"badge": "Externalisation du personnel",
+			"title": "Externalisation du personnel pour projets de construction",
+			"description": "Nous fournissons des spécialistes expérimentés pour votre construction sans coûts inutiles de recherche et de maintien du personnel.",
+			"ctaButton": "Commander des spécialistes"
+		},
+		"WhatIs": {
+			"title": "Qu'est-ce que l'externalisation ?",
+			"description": "L'externalisation, c'est quand vous obtenez les employés de notre société pour effectuer des tâches spécifiques sur votre site. Ils travaillent sous votre direction mais restent dans notre personnel officiel."
+		},
+		"Specialists": {
+			"badge": "Nos spécialistes",
+			"title": "Qui pouvons-nous fournir",
+			"subtitle": "Notre équipe comprend une large gamme de spécialistes qualifiés pour différents types de travaux de construction",
+			"list": {
+				"bricklayers": "Maçons",
+				"drywallers": "Plaquistes",
+				"tilers": "Carreleurs",
+				"facade": "Façadiers",
+				"electricians": "Électriciens",
+				"plumbers": "Plombiers",
+				"universal": "Artisans universels",
+				"cleaners": "Femmes de ménage"
+			}
+		},
+		"Benefits": {
+			"badge": "Pourquoi nous choisir",
+			"title": "Avantages pour le client",
+			"subtitle": "Pourquoi choisir notre externalisation pour votre projet de construction",
+			"list": {
+				"speed": {
+					"title": "Recrutement rapide du personnel",
+					"description": "Pas de longues recherches — nous avons une équipe de spécialistes prête"
+				},
+				"savings": {
+					"title": "Économies sur les taxes et RH",
+					"description": "Nous prenons en charge toutes les questions officielles du personnel"
+				},
+				"experience": {
+					"title": "Spécialistes expérimentés",
+					"description": "Artisans testés par la pratique avec des années d'expérience"
+				},
+				"flexibility": {
+					"title": "Flexibilité des délais",
+					"description": "Besoin pour une semaine ou un an — nous sélectionnerons l'équipe optimale"
+				}
+			}
+		},
+		"HowItWorks": {
+			"badge": "Processus",
+			"title": "Comment ça marche",
+			"subtitle": "Processus simple pour obtenir les spécialistes dont vous avez besoin en 4 étapes",
+			"steps": {
+				"request": {
+					"title": "Vous soumettez une demande",
+					"description": "Parlez-nous de vos besoins et des délais du projet"
+				},
+				"selection": {
+					"title": "Nous sélectionnons les spécialistes",
+					"description": "Trouvons les meilleurs artisans pour vos tâches"
+				},
+				"contract": {
+					"title": "Nous signons un contrat",
+					"description": "Traitons tous les documents rapidement et de manière transparente"
+				},
+				"work": {
+					"title": "Les artisans vont sur le site",
+					"description": "Les spécialistes commencent le travail au moment convenu"
+				}
+			}
+		},
+		"CTA": {
+			"title": "Besoin d'artisans dès demain ?",
+			"description": "Soumettez une demande et nous vous contacterons dans l'heure pour discuter des détails et sélectionner une équipe de spécialistes.",
+			"benefits": {
+				"immediate": "Réponse immédiate dans l'heure",
+				"experienced": "Spécialistes expérimentés avec 5+ années d'expérience",
+				"flexible": "Conditions de coopération et de paiement flexibles"
+			},
+			"guarantee": {
+				"title": "Garantie de qualité",
+				"description": "Tous nos spécialistes ont des qualifications confirmées et une expérience de travail"
+			},
+			"form": {
+				"title": "Commander des spécialistes",
+				"subtitle": "Remplissez le formulaire et obtenez une offre personnalisée"
+			}
+		}
+	}
+}

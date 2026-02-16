@@ -1,0 +1,38 @@
+# Node
+node_modules
+.pnpm-store
+.npm
+
+# Build
+.next
+dist
+build
+.cache
+.turbo
+
+# Strapi
+apps/cms/.cache
+apps/cms/build
+apps/cms/.tmp
+apps/cms/database/*.db
+apps/cms/database/*.sqlite
+
+# Env files
+.env
+.env.local
+.env.*.local
+apps/*/.env
+apps/*/.env.local
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+
+# IDE
+.vscode
+.idea

@@ -1,0 +1,707 @@
+{
+	"Header": {
+		"companyName": "Global Technology Innovations",
+		"nav": {
+			"home": "Startseite",
+			"about": "Über uns",
+			"services": "Leistungen",
+			"portfolio": "Portfolio",
+			"careers": "Karriere",
+			"outstaffing": "Outstaffing",
+			"blog": "Blog",
+			"contact": "Kontakt"
+		}
+	},
+	"Media": {
+		"videoNotSupported": "Ihr Browser unterstützt das Video-Tag nicht.",
+		"videoIndicator": "Video",
+		"noImages": "Keine Bilder",
+		"mediaThumbnail": "Medien {index}",
+		"thumbnail": "Miniaturansicht {index}"
+	},
+	"Portfolio": {
+		"backToPortfolio": "Zurück zum Portfolio",
+		"projectNotFound": "Projekt nicht gefunden",
+		"projectNotFoundDesc": "Das angeforderte Projekt existiert nicht oder wurde gelöscht.",
+		"projectDescription": "Projektbeschreibung",
+		"projectInfo": "Projektinformationen",
+		"projectGallery": "Projektgalerie",
+		"client": "Kunde",
+		"location": "Standort",
+		"executionPeriod": "Ausführungszeitraum",
+		"technologies": "Technologien",
+		"category": "Kategorie",
+		"status": {
+			"completed": "Abgeschlossen",
+			"inProgress": "In Bearbeitung",
+			"planned": "Geplant"
+		},
+		"interestedInProject": "Interessiert an unserem Projekt?",
+		"interestedDesc": "Wir sind bereit, Ihre Ideen zu besprechen und etwas Ähnliches für Sie zu schaffen. Kontaktieren Sie uns für eine kostenlose Beratung.",
+		"contactUs": "Kontaktieren Sie uns",
+		"ourServices": "Unsere Dienstleistungen"
+	},
+	"Footer": {
+		"privacy": "Datenschutzrichtlinie",
+		"cookies": "Cookie-Richtlinie",
+
+		"email": "E-Mail",
+
+		"address": "Adresse",
+		"rights": "© 2025 Global Technology Innovations. Alle Rechte vorbehalten."
+	},
+	"HomePage": {
+		"HeroSection": {
+			"title": "Umfassende schlüsselfertige Bau­lösungen",
+			"description": "Wir bieten ein vollständiges Spektrum an Bauleistungen für Wohn-, Geschäfts- und Spezialobjekte.",
+			"button": "Kontaktieren Sie uns"
+		},
+		"AboutUsSection": {
+			"title": "Über uns",
+			"description": "Unser Ziel ist es, außergewöhnliche Bauleistungen zu erbringen, wobei wir uns auf Qualität, Sicherheit und Kundenzufriedenheit konzentrieren.",
+			"features": [
+				{
+					"title": "Unsere Mission",
+					"desc": "Die Erwartungen der Kunden durch Innovation und Effizienz übertreffen.",
+					"icon": "🏁"
+				},
+				{
+					"title": "Unser Team",
+					"desc": "Erfahrene und qualifizierte Fachleute, die sich der Exzellenz verschrieben haben.",
+					"icon": "👥"
+				},
+				{
+					"title": "Unsere Werte",
+					"desc": "Integrität, Zuverlässigkeit und Zusammenarbeit in allen Bereichen unserer Arbeit.",
+					"icon": "🤝"
+				}
+			]
+		},
+		"FAQSection": {
+			"title": "Häufig gestellte Fragen",
+			"items": [
+				{
+					"question": "Wie läuft die Zusammenarbeit mit einem Kunden ab?",
+					"answer": "Wir beginnen mit einer kostenlosen Beratung, um die Bedürfnisse des Kunden zu ermitteln. Anschließend erstellen wir einen Kostenvoranschlag, vereinbaren die Fristen und unterzeichnen den Vertrag. Danach beginnen wir mit der Umsetzung des Projekts und berichten regelmäßig über den Fortschritt."
+				},
+				{
+					"question": "Können Sie die Materialien selbst beschaffen?",
+					"answer": "Ja, wir können den Einkauf und die Lieferung der Materialien vollständig übernehmen. Das spart Ihnen Zeit und stellt sicher, dass alle Materialien den technischen Anforderungen des Projekts entsprechen."
+				},
+				{
+					"question": "Führen Sie nur Renovierungen oder auch Neubauten durch?",
+					"answer": "Wir führen das gesamte Spektrum an Bauarbeiten durch – von umfassenden Renovierungen bis hin zu Neubauten, einschließlich Betonbau, Mauerwerk, Fassaden, Dacharbeiten, Innenausbau und mehr."
+				},
+				{
+					"question": "Kann man eine schlüsselfertige Wohnung mit Möbeln bestellen?",
+					"answer": "Ja, wir bieten einen schlüsselfertigen Service an, der alle Bau- und Ausbauarbeiten, den Materialeinkauf und sogar die vollständige Möblierung der Räumlichkeiten umfasst."
+				},
+				{
+					"question": "Wie sind die Ausführungsfristen für die Arbeiten?",
+					"answer": "Die Dauer hängt vom Umfang des Projekts ab. Eine kleine Renovierung kann einige Wochen dauern, ein umfassender Neubau mehrere Monate. Wir vereinbaren die Fristen immer vor Beginn und halten den Zeitplan ein."
+				}
+			]
+		}
+	},
+	"AboutPage": {
+		"title": "Über das Unternehmen",
+		"description": "Individuelle Lösungen für jeden Kunden. Strikte Einhaltung von Terminen. Attraktive Preise, bewährte Qualität und zuverlässige Garantie.\n\n",
+		"Hero": {
+			"badge": "Über uns",
+			"title": "Wir schaffen Vertrauen, das bleibt",
+			"description": "Wir verbinden Expertise, Innovation und transparente Prozesse, um qualitativ hochwertige Projekte termingerecht zu liefern."
+		},
+		"CompanyHistory": {
+			"badge": "Unsere Geschichte",
+			"title": "15 Jahre Bauerfahrung",
+			"description": "Von einem kleinen Unternehmen zum Marktführer im Bauwesen — wir haben einen langen Weg dank des Vertrauens unserer Kunden zurückgelegt.",
+			"founding": {
+				"title": "Gründung und Entwicklung",
+				"description": "Unser Familienbauunternehmen begann bereits im Jahr 2009. Seitdem haben wir Hunderte von Projekten verschiedener Größenordnungen realisiert. Heute ist Global Technology Innovations ein Team erfahrener Ingenieure und Bauarbeiter, das die Erfahrung der vorherigen Generation mit modernen Innovationen verbindet."
+			},
+			"milestones": {
+				"projects": {
+					"title": "Über 500 Projekte",
+					"description": "Erfolgreich abgeschlossen von Privathäusern bis hin zu großen Gewerbeimmobilien"
+				},
+				"team": {
+					"title": "Team von 50+ Spezialisten",
+					"description": "Erfahrene Ingenieure, Architekten und Bauarbeiter"
+				},
+				"expansion": {
+					"title": "Serviceerweiterung",
+					"description": "Vom klassischen Bauwesen zu innovativen Technologien"
+				}
+			},
+			"stats": {
+				"years": "Jahre Erfahrung",
+				"projects": "abgeschlossene Projekte",
+				"employees": "Mitarbeiter",
+				"satisfaction": "zufriedene Kunden",
+				"support": "Kundensupport"
+			}
+		},
+		"OurValues": {
+			"badge": "Unsere Werte",
+			"title": "Prinzipien, die uns leiten",
+			"description": "Unsere Grundwerte prägen die Unternehmenskultur und bestimmen die Qualität unserer Dienstleistungen.",
+			"trust": {
+				"title": "Vertrauen und Zuverlässigkeit",
+				"description": "Wir bauen vertrauensvolle Beziehungen zu Kunden auf, halten alle Verpflichtungen ein und sorgen für Transparenz in allen Phasen der Zusammenarbeit."
+			},
+			"quality": {
+				"title": "Tadellose Qualität",
+				"description": "Wir verwenden nur zertifizierte Materialien und moderne Technologien. Jedes Projekt durchläuft eine mehrstufige Qualitätskontrolle."
+			},
+			"innovation": {
+				"title": "Innovation und Entwicklung",
+				"description": "Wir verbessern kontinuierlich Arbeitsmethoden, implementieren neue Technologien und verfolgen Trends im Bauwesen."
+			},
+			"excellence": {
+				"title": "Streben nach Exzellenz",
+				"description": "Wir führen jedes Projekt mit maximaler Aufmerksamkeit für Details aus und streben danach, die Erwartungen der Kunden zu übertreffen."
+			},
+			"sustainability": {
+				"title": "Umweltverantwortung",
+				"description": "Wir kümmern uns um die Umwelt, verwenden umweltfreundliche Materialien und energieeffiziente Lösungen."
+			},
+			"teamwork": {
+				"title": "Teamarbeit",
+				"description": "Wir schätzen jedes Teammitglied, unterstützen die berufliche Entwicklung und schaffen ein komfortables Arbeitsumfeld."
+			}
+		},
+		"Team": {
+			"badge": "Unser Team",
+			"title": "Profis in ihrem Fach",
+			"description": "Erfahrene Spezialisten, die Ihre Träume durch Expertise und Hingabe Wirklichkeit werden lassen.",
+			"ceo": {
+				"name": "Alexander Petrenko",
+				"position": "Geschäftsführer",
+				"description": "15 Jahre in der Baubranche. Leitet die strategische Unternehmensentwicklung und gewährleistet hohe Qualitätsstandards."
+			},
+			"cto": {
+				"name": "Marina Ivanenko",
+				"position": "Technische Direktorin",
+				"description": "Bauingenieurin mit 12 Jahren Erfahrung. Verantwortlich für technische Aspekte aller Projekte und Qualitätskontrolle."
+			},
+			"projectManager": {
+				"name": "Andrew Kovalenko",
+				"position": "Projektmanager",
+				"description": "Koordiniert Arbeitsausführung, gewährleistet Termineinhaltung und effektive Kommunikation mit Kunden."
+			},
+			"architect": {
+				"name": "Catherine Melnyk",
+				"position": "Chefarchitektin",
+				"description": "Entwickelt einzigartige architektonische Lösungen und verbindet Funktionalität, Ästhetik und moderne Trends."
+			},
+			"culture": {
+				"title": "Unsere Unternehmenskultur",
+				"description": "Wir schaffen ein Umfeld, in dem jeder sein Potenzial entfalten und zum gemeinsamen Erfolg beitragen kann.",
+				"learning": {
+					"title": "Kontinuierliches Lernen",
+					"description": "Wir unterstützen die berufliche Entwicklung des Teams"
+				},
+				"collaboration": {
+					"title": "Offene Zusammenarbeit",
+					"description": "Wir schätzen Ideen von jedem Teammitglied"
+				},
+				"innovation": {
+					"title": "Innovativer Ansatz",
+					"description": "Wir experimentieren mit neuen Methoden und Technologien"
+				}
+			}
+		},
+		"MissionVision": {
+			"badge": "Mission und Vision",
+			"title": "Unser Ziel und unsere Entwicklungsrichtung",
+			"description": "Wir verstehen unsere Rolle in der Baubranche klar und streben danach, Wert für alle Stakeholder zu schaffen.",
+			"mission": {
+				"title": "Unsere Mission",
+				"description": "Komfortable und funktionale Räume zu schaffen, die die Lebensqualität der Menschen verbessern, unter Verwendung bester Baupraktiken und einem individuellen Ansatz für jeden Kunden.",
+				"points": {
+					"quality": "Gewährleistung höchster Arbeitsqualität",
+					"innovation": "Umsetzung innovativer Lösungen",
+					"satisfaction": "Maximale Zufriedenstellung der Kundenbedürfnisse"
+				}
+			},
+			"vision": {
+				"title": "Unsere Vision",
+				"description": "Ein führendes Bauunternehmen zu sein, das Standards für Qualität und Innovation in der Branche setzt und nachhaltige sowie umweltfreundliche Lösungen für zukünftige Generationen schafft.",
+				"points": {
+					"sustainability": "Entwicklung umweltfreundlicher Technologien",
+					"technology": "Nutzung fortschrittlicher Technologien",
+					"community": "Beitrag zur Gemeinschaftsentwicklung"
+				}
+			},
+			"strategy": {
+				"title": "Strategische Prioritäten",
+				"description": "Unsere Strategie konzentriert sich auf nachhaltige Entwicklung, Erweiterung der Möglichkeiten und Sicherstellung von Marktführungspositionen.",
+				"growth": {
+					"title": "Wachstum",
+					"description": "Erweiterung der Geografie und des Servicespektrums"
+				},
+				"efficiency": {
+					"title": "Effizienz",
+					"description": "Prozessoptimierung und Produktivitätssteigerung"
+				},
+				"expansion": {
+					"title": "Expansion",
+					"description": "Erschließung neuer Märkte und Segmente"
+				}
+			}
+		}
+	},
+	"CareersPage": {
+		"title": "Karriere",
+		"Hero": {
+			"badge": "Karriere",
+			"title": "Werden Sie Teil eines Profi‑Teams",
+			"description": "Wachsen Sie mit uns: spannende Projekte, Mentoren‑Support und transparente Bedingungen."
+		},
+		"apply": "Bewerben",
+		"jobType": "Art der Stelle",
+		"location": "Standort",
+		"errorTitle": "Ein Fehler ist aufgetreten",
+		"errorLoadingJobs": "Die Stellenangebote konnten nicht geladen werden. Bitte versuchen Sie es später erneut.",
+		"noJobs": "Keine offenen Stellen",
+		"checkBackLater": "Bitte versuchen Sie es später erneut."
+	},
+	"OurServicesPage": {
+		"title": "Unsere Leistungen",
+		"button": "Mehr erfahren",
+		"order": "Bestellen",
+		"Hero": {
+			"badge": "Leistungen",
+			"title": "Komplettlösungen aus einer Hand",
+			"description": "Von Konzept und Planung bis Umsetzung und Service – wir übernehmen Verantwortung für das Ergebnis."
+		}
+	},
+	"PortfolioPage": {
+		"Hero": {
+			"badge": "Projektportfolio",
+			"title": "Unsere realisierten Bauprojekte",
+			"description": "Von Wohnkomplexen bis zu Gewerbeobjekten - wir schaffen qualitativ hochwertige Gebäude für unsere Kunden"
+		},
+		"ProjectCard": {
+			"viewDetails": "Details anzeigen",
+			"status": {
+				"completed": "Abgeschlossen",
+				"inProgress": "In Bearbeitung",
+				"planned": "Geplant"
+			},
+			"dateNotAvailable": "Datum nicht angegeben"
+		},
+		"ProjectsList": {
+			"results": {
+				"noResults": {
+					"title": "Keine Projekte gefunden",
+					"description": "Bitte versuchen Sie es später erneut oder kontaktieren Sie uns für weitere Informationen",
+					"resetFilters": "Filter löschen"
+				}
+			},
+			"error": {
+				"title": "Fehler beim Laden der Projekte",
+				"description": "Versuchen Sie, die Seite zu aktualisieren"
+			}
+		},
+		"CTA": {
+			"title": "Bereit, Ihr Projekt zu starten?",
+			"description": "Kontaktieren Sie uns für eine kostenlose Beratung und erhalten Sie ein persönliches Angebot für Ihr Bauprojekt",
+			"benefits": {
+				"quality": "Qualitätsgarantie",
+				"experience": "Teamerfahrung",
+				"timeline": "Einhaltung der Termine",
+				"support": "Support 24/7",
+				"warranty": "Gewährleistung der Arbeiten",
+				"transparency": "Transparenz des Prozesses"
+			},
+			"contactMethods": {
+				"phone": {
+					"title": "Telefon",
+					"description": "Schnelle Beratung am Telefon",
+					"action": "Anrufen"
+				},
+				"email": {
+					"title": "E-Mail",
+					"description": "Detailliertes Angebot per E-Mail",
+					"action": "Schreiben"
+				},
+				"form": {
+					"title": "Formular",
+					"description": "Online-Anfrage ausfüllen",
+					"action": "Ausfüllen"
+				},
+				"meeting": {
+					"title": "Treffen",
+					"description": "Persönliches Treffen und Diskussion",
+					"action": "Planen"
+				}
+			},
+			"consultation": {
+				"title": "Kostenlose Beratung",
+				"description": "Unsere Experten sind bereit, Ihnen bei der Planung und Umsetzung Ihres Bauprojekts zu helfen",
+				"features": [
+					"Analyse Ihrer Bedürfnisse und Anforderungen",
+					"Technische Begründung des Projekts",
+					"Berechnung der Kosten und Termine",
+					"Auswahl optimaler Lösungen",
+					"Beratung zu Materialien und Technologien"
+				],
+				"primaryButton": "Beratung erhalten",
+				"secondaryButton": "Unsere Dienstleistungen",
+				"guarantee": {
+					"title": "Ergebnisgarantie",
+					"description": "Wir garantieren die Qualität der Arbeiten und die Einhaltung aller Vereinbarungen"
+				}
+			}
+		}
+	},
+	"ContactPage": {
+		"Hero": {
+			"badge": "Kontaktinformationen",
+			"title": "Kontaktieren Sie uns in Sekunden",
+			"description": "Wir sind immer bereit, Ihre Fragen zu beantworten und eine professionelle Beratung zu bieten"
+		},
+		"form": {
+			"title": "Kontaktieren Sie uns",
+			"description": "Füllen Sie das Formular aus und unser Manager wird Sie während der Geschäftszeiten für eine detaillierte Beratung kontaktieren.",
+			"formTitle": "Kontaktformular",
+			"formSubtitle": "Füllen Sie alle Pflichtfelder aus",
+			"benefits": {
+				"quick": "Schnelle Antwort innerhalb eines Tages",
+				"professional": "Professionelle Beratung",
+				"free": "Kostenlose Projektbewertung"
+			},
+			"responseTime": {
+				"title": "Antwortzeit",
+				"description": "Wir antworten auf alle Anfragen während der Geschäftszeiten. Außerhalb der Geschäftszeiten wird Ihre Nachricht am nächsten Geschäftstag bearbeitet."
+			}
+		},
+		"map": {
+			"title": "Finden Sie uns auf der Karte",
+			"description": "Unser Büro befindet sich in Košice",
+			"iframeTitle": "Karte der Bürolage",
+			"addressTitle": "Adresse",
+			"address": "Jenisejská 45A, 040 12 Košice-Nad Jazerom",
+			"viewOnGoogleMaps": "In Google Maps anzeigen",
+			"getDirections": "Wegbeschreibung abrufen"
+		},
+		"contacts": {
+			"phones": "Telefone",
+			"whatsapp": "WhatsApp",
+			"facebook": "Facebook",
+			"email": "E-Mail",
+			"call": "Anrufen",
+			"open": "Öffnen",
+			"workingHours": "Arbeitszeiten: Mo–Fr: 09:00–18:00. Wochenenden: Sa–So."
+		}
+	},
+	"ContactFormSection": {
+		"title": "HABEN SIE EINE FRAGE ODER EIN ANGEBOT?",
+		"description": "Um eine Frage zu stellen, eine Beratung anzufordern oder uns einfach kennenzulernen, kontaktieren Sie uns über die angegebenen Kontaktdaten oder füllen Sie das Formular aus, damit wir uns bei Ihnen melden können.",
+		"phoneLabel": "Unsere Telefonnummer:",
+		"emailLabel": "Unsere E-Mail:"
+	},
+	"ContactForm": {
+		"title": "Geben Sie Ihre Kontaktdaten für eine Rückmeldung an",
+		"namePlaceholder": "Ihr Name *",
+		"nameError": "Name ist erforderlich",
+		"phoneErrorRequired": "Telefonnummer ist erforderlich",
+		"phoneErrorPattern": "Ungültiges Telefonnummernformat",
+		"emailPlaceholder": "E-Mail *",
+		"emailErrorRequired": "E-Mail ist erforderlich",
+		"emailError": "Ungültiges E-Mail-Format",
+		"messagePlaceholder": "Nachrichtentext *",
+		"messageError": "Nachricht ist erforderlich",
+		"privacyConsentStart": "Ich stimme der Verarbeitung personenbezogener Daten gemäß der",
+		"privacyConsentEnd": "zu",
+		"privacyConsentLink": "Datenschutzrichtlinie",
+		"privacyError": "Sie müssen der Verarbeitung personenbezogener Daten zustimmen",
+		"submitButton": "Beratung anfordern",
+		"success": {
+			"title": "Vielen Dank für Ihre Kontaktaufnahme!",
+			"message": "Ihre Nachricht wurde erfolgreich gesendet. Unser Manager wird sich bald bei Ihnen melden."
+		}
+	},
+	"ApplicationFormModal": {
+		"title": "Sich für Stelle bewerben",
+		"triggerLabel": "Bewerben",
+		"namePlaceholder": "Ihr Name *",
+		"nameError": "Name ist erforderlich",
+		"phoneErrorRequired": "Telefonnummer ist erforderlich",
+		"phoneErrorPattern": "Ungültiges Telefonnummernformat",
+		"emailPlaceholder": "E-Mail",
+		"emailError": "Ungültiges E-Mail-Format",
+		"coverPlaceholder": "Anschreiben *",
+		"coverError": "Anschreiben ist erforderlich",
+		"fileInput": {
+			"dragDropText": "Ziehen Sie Ihren Lebenslauf hierher oder klicken Sie zum Durchsuchen",
+			"fileSelected": "Datei ausgewählt: {fileName}",
+			"fileTooLarge": "Datei ist zu groß (max. 10MB)",
+			"invalidFileType": "Bitte wählen Sie eine PDF-, DOC- oder DOCX-Datei"
+		},
+		"privacyConsentStart": "Ich stimme der Verarbeitung meiner personenbezogenen Daten gemäß der",
+		"privacyConsentEnd": "zu",
+		"privacyConsentLink": "Datenschutzrichtlinie",
+		"privacyError": "Sie müssen der Datenschutzrichtlinie zustimmen",
+		"submitButton": "Bewerbung einreichen",
+		"sendingButton": "Wird gesendet...",
+		"errorMessage": "Bewerbung fehlgeschlagen:",
+		"success": {
+			"title": "Bewerbung gesendet!",
+			"message": "Vielen Dank für Ihre Bewerbung. Wir werden uns bald bei Ihnen melden."
+		}
+	},
+	"CookiesPage": {
+		"title": "Cookie-Richtlinie",
+		"description": "Informationen über die Verwendung von Cookies auf unserer Website und Cookie-Verwaltungsoptionen.",
+		"Hero": {
+			"badge": "Cookie-Richtlinie",
+			"title": "Cookie-Verwendungsrichtlinie",
+			"description": "Informationen darüber, wie wir Cookies auf unserer Website verwenden und wie Sie Ihre Cookie-Einstellungen verwalten können."
+		},
+		"whatAreCookies": {
+			"title": "Was sind Cookies?",
+			"description": "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie Websites besuchen. Sie helfen uns, die ordnungsgemäße Funktionalität der Website zu gewährleisten und Ihre Benutzererfahrung zu verbessern."
+		},
+		"categories": {
+			"title": "Cookie-Kategorien, die wir verwenden",
+			"necessary": {
+				"title": "Notwendige Cookies",
+				"description": "Erforderlich für die grundlegende Website-Funktionalität. Einige Funktionen funktionieren ohne sie möglicherweise nicht. Sie können nicht deaktiviert werden.",
+				"badge": "Erforderlich"
+			},
+			"functional": {
+				"title": "Funktionale Cookies",
+				"description": "Merken sich Ihre Präferenzen (Sprache, Region) für eine personalisierte Erfahrung."
+			},
+			"analytics": {
+				"title": "Analytische Cookies",
+				"description": "Helfen uns zu verstehen, wie Benutzer mit der Website interagieren, um ihre Funktionalität zu verbessern."
+			},
+			"marketing": {
+				"title": "Marketing-Cookies",
+				"description": "Werden verwendet, um relevante Werbung anzuzeigen und die Wirksamkeit von Werbekampagnen zu messen."
+			}
+		},
+		"management": {
+			"title": "Verwaltung Ihrer Auswahl",
+			"description": "Sie können Ihre Cookie-Einstellungen jederzeit ändern. Ihre Auswahl wird gespeichert und auf alle zukünftigen Besuche angewendet."
+		},
+		"additionalInfo": {
+			"title": "Zusätzliche Informationen",
+			"privacyPolicyText": "Weitere Informationen zur Verarbeitung personenbezogener Daten finden Sie in unserer",
+			"privacyPolicyLink": "Datenschutzrichtlinie",
+			"contactText": "Wenn Sie Fragen zur Cookie-Verwendung haben, kontaktieren Sie uns unter",
+			"contactEmail": "info@global-technology-innovations.com"
+		}
+	},
+	"CookieBanner": {
+		"description": "Wir verwenden Cookies für Website-Funktionalität, Personalisierung und Analytik. Sie können alle akzeptieren, ablehnen oder Kategorien konfigurieren.",
+		"buttons": {
+			"configure": "Konfigurieren",
+			"reject": "Ablehnen",
+			"acceptAll": "Alle akzeptieren",
+			"rejectAll": "Alle ablehnen",
+			"saveSettings": "Einstellungen speichern"
+		},
+		"settings": {
+			"title": "Cookie-Einstellungen",
+			"categories": {
+				"necessary": {
+					"title": "Notwendig",
+					"description": "Erforderlich für Website-Funktionalität. Kann nicht deaktiviert werden."
+				},
+				"functional": {
+					"title": "Funktional",
+					"description": "Merken sich Ihre Präferenzen."
+				},
+				"analytics": {
+					"title": "Analytisch",
+					"description": "Helfen bei der Verbesserung der Website."
+				},
+				"marketing": {
+					"title": "Marketing",
+					"description": "Für relevante Werbung."
+				}
+			}
+		}
+	},
+	"ChangeConsentButton": {
+		"buttonText": "Cookie-Einstellungen ändern",
+		"currentStatus": "aktueller Status",
+		"statusActive": "Kategorien aktiv",
+		"statusNone": "nicht ausgewählt"
+	},
+	"PrivacyPolicy": {
+		"title": "Datenschutzrichtlinie",
+		"updated": "Aktualisiert: 19. August 2025",
+		"intro": "Diese Datenschutzrichtlinie beschreibt, wie Global Technology Innovations s. r. o., ID: 57 066 566, mit Sitz in Jenisejská 45A, 040 12 Košice-Nad Jazerom (im Folgenden 'Unternehmen', 'wir'), personenbezogene Daten von Website-Besuchern innovations.sk gemäß der Datenschutz-Grundverordnung (DSGVO) verarbeitet.",
+		"sections": {
+			"1": {
+				"title": "1. Wer wir sind und Kontakte",
+				"text": "Datenverantwortlicher: Global Technology Innovations s. r. o.\nAdresse: Jenisejská 45A, 040 12 Košice-Nad Jazerom\nE-Mail: info@global-technology-innovations.com\nTelefon: +421 917 089 618"
+			},
+			"2": {
+				"title": "2. Welche Daten wir sammeln",
+				"list": [
+					"Formulardaten (Kontakt/Kostenvoranschlag/Anrufbestellung): Name, E-Mail, Telefon, Nachrichteninhalt und zugehörige Metadaten.",
+					"Bewerberdaten (Karriereformular): Lebenslauf/Portfolio, Erfahrung, Kontaktdaten.",
+					"Technische Daten: IP-Adresse, Browser-Typ/-Version, Spracheinstellungen, Seiten, Zugriffszeit, Cookies.",
+					"Analytik: Anonymisierte Besuchsstatistiken (z.B. Google Analytics, Plausible usw.)."
+				]
+			},
+			"3": {
+				"title": "3. Zweck und Rechtsgrundlage der Verarbeitung",
+				"list": [
+					"Beantwortung von Anfragen/Kostenvoranschlägen — Vertragserfüllung oder Schritte zu dessen Abschluss (Art. 6(1)(b) DSGVO) sowie unser berechtigtes Interesse an effektiver Kommunikation (Art. 6(1)(f)).",
+					"Personalrekrutierung — berechtigtes Interesse (Art. 6(1)(f)); bei Anfrage zusätzlicher Daten — mit Einwilligung (Art. 6(1)(a)).",
+					"Analytik und Website-Verbesserung — berechtigtes Interesse (Art. 6(1)(f)); für Marketing-/nicht-wesentliche Cookies — Einwilligung (Art. 6(1)(a)).",
+					"Rechtliche Verpflichtungen — Erfüllung gesetzlicher Verpflichtungen (Art. 6(1)(c))."
+				]
+			},
+			"4": {
+				"title": "4. Cookies und Analytik",
+				"text": "Wir verwenden wesentliche Cookies für den Website-Betrieb und analytische/Marketing-Cookies mit Ihrer Einwilligung. Sie können die Einwilligung über das Cookie-Banner oder Browser-Einstellungen verwalten. Details finden Sie im Abschnitt 'Cookie-Einstellungen' oder in separaten Cookie-Richtlinien (falls vorhanden)."
+			},
+			"5": {
+				"title": "5. Mit wem wir Daten teilen",
+				"list": [
+					"IT-Dienstleister (Hosting, E-Mail, CRM, Analytik), die als Auftragsverarbeiter nach Verarbeitungsverträgen handeln.",
+					"Partner/Subunternehmer, falls für Kostenvoranschlagserstellung oder Arbeitsausführung erforderlich (wir geben nur minimal notwendige Daten weiter).",
+					"Behörden, falls gesetzlich vorgeschrieben."
+				]
+			},
+			"6": {
+				"title": "6. Internationale Übertragungen",
+				"text": "Falls Daten außerhalb des EWR übertragen werden, stellen wir angemessene Garantien sicher (z.B. EU-Standardvertragsklauseln)."
+			},
+			"7": {
+				"title": "7. Speicherdauer",
+				"list": [
+					"Formularanfragen: bis zu 12 Monate oder länger bei aktivem Dialog/Vertrag.",
+					"Bewerberdaten: bis zu 6 Monate (oder länger mit separater Einwilligung).",
+					"Vertrags-/Buchhaltungsdaten: nach gesetzlichen Anforderungen (5-10 Jahre je nach Dokumenttyp).",
+					"Analytik: nach Service-Retention (z.B. 14-26 Monate)."
+				]
+			},
+			"8": {
+				"title": "8. Ihre Rechte",
+				"text": "Sie haben Rechte auf Zugang, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch gegen Verarbeitung und Widerruf der Einwilligung ohne Beeinträchtigung der Rechtmäßigkeit vorheriger Verarbeitung. Kontakt: info@global-technology-innovations.com."
+			},
+			"9": {
+				"title": "9. Beschwerden",
+				"text": "Sie können auch eine Beschwerde bei der Aufsichtsbehörde einreichen — Úrad na ochranu osobných údajov SR (Slowakische Republik)."
+			},
+			"10": {
+				"title": "10. Sicherheit",
+				"text": "Wir implementieren technische und organisatorische Maßnahmen (TLS, Zugangskontrollen, Protokollierung) zum Schutz der Daten vor unbefugtem Zugriff."
+			},
+			"11": {
+				"title": "11. Kinderdaten",
+				"text": "Die Website ist nicht für Kinder unter 16 Jahren bestimmt. Falls Sie glauben, dass ein Kind uns Daten zur Verfügung gestellt hat, kontaktieren Sie uns zur Löschung."
+			},
+			"12": {
+				"title": "12. Änderungen dieser Richtlinie",
+				"text": "Wir können diese Richtlinie regelmäßig aktualisieren. Die neue Fassung tritt mit der Veröffentlichung auf der Website in Kraft."
+			}
+		},
+		"contactInfo": {
+			"title": "Kontaktinformationen",
+			"description": "Falls Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte:",
+			"email": "E-Mail",
+			"address": "Adresse",
+			"phone": "Telefon"
+		}
+	},
+	"OutstaffingPage": {
+		"Hero": {
+			"badge": "Personal-Outstaffing",
+			"title": "Personal-Outstaffing für Bauprojekte",
+			"description": "Wir stellen erfahrene Spezialisten für Ihren Bau zur Verfügung ohne unnötige Kosten für Suche und Personalerhaltung.",
+			"ctaButton": "Spezialisten bestellen"
+		},
+		"WhatIs": {
+			"title": "Was ist Outstaffing?",
+			"description": "Outstaffing bedeutet, dass Sie Mitarbeiter unseres Unternehmens für spezifische Aufgaben an Ihrem Objekt erhalten. Sie arbeiten unter Ihrer Leitung, bleiben aber in unserem offiziellen Personal."
+		},
+		"Specialists": {
+			"badge": "Unsere Spezialisten",
+			"title": "Wen können wir bereitstellen",
+			"subtitle": "Unser Team umfasst eine breite Palette qualifizierter Spezialisten für verschiedene Arten von Bauarbeiten",
+			"list": {
+				"bricklayers": "Maurer",
+				"drywallers": "Trockenbauer",
+				"tilers": "Fliesenleger",
+				"facade": "Fassadenbauer",
+				"electricians": "Elektriker",
+				"plumbers": "Klempner",
+				"universal": "Universal-Handwerker",
+				"cleaners": "Reinigungskräfte"
+			}
+		},
+		"Benefits": {
+			"badge": "Warum uns wählen",
+			"title": "Vorteile für den Kunden",
+			"subtitle": "Warum unser Outstaffing für Ihr Bauprojekt wählen",
+			"list": {
+				"speed": {
+					"title": "Schnelle Personalgewinnung",
+					"description": "Keine lange Suche — wir haben ein fertiges Team von Spezialisten"
+				},
+				"savings": {
+					"title": "Steuer- und HR-Einsparungen",
+					"description": "Alle offiziellen Personalangelegenheiten übernehmen wir"
+				},
+				"experience": {
+					"title": "Erfahrene Spezialisten",
+					"description": "Praxiserprobte Handwerker mit jahrelanger Erfahrung"
+				},
+				"flexibility": {
+					"title": "Zeitflexibilität",
+					"description": "Benötigt für eine Woche oder ein Jahr — wir wählen das optimale Team"
+				}
+			}
+		},
+		"HowItWorks": {
+			"badge": "Prozess",
+			"title": "Wie es funktioniert",
+			"subtitle": "Einfacher Prozess, um die benötigten Spezialisten in 4 Schritten zu erhalten",
+			"steps": {
+				"request": {
+					"title": "Sie stellen eine Anfrage",
+					"description": "Erzählen Sie uns von Ihren Bedürfnissen und Projektterminen"
+				},
+				"selection": {
+					"title": "Wir wählen Spezialisten aus",
+					"description": "Finden die besten Handwerker für Ihre Aufgaben"
+				},
+				"contract": {
+					"title": "Wir unterzeichnen einen Vertrag",
+					"description": "Bearbeiten alle Dokumente schnell und transparent"
+				},
+				"work": {
+					"title": "Handwerker gehen zum Objekt",
+					"description": "Spezialisten beginnen die Arbeit zur vereinbarten Zeit"
+				}
+			}
+		},
+		"CTA": {
+			"title": "Brauchen Sie Handwerker schon morgen?",
+			"description": "Stellen Sie eine Anfrage und wir kontaktieren Sie innerhalb einer Stunde, um Details zu besprechen und ein Spezialistenteam auszuwählen.",
+			"benefits": {
+				"immediate": "Sofortige Antwort innerhalb einer Stunde",
+				"experienced": "Erfahrene Spezialisten mit 5+ Jahren Erfahrung",
+				"flexible": "Flexible Kooperations- und Zahlungsbedingungen"
+			},
+			"guarantee": {
+				"title": "Qualitätsgarantie",
+				"description": "Alle unsere Spezialisten haben bestätigte Qualifikationen und Arbeitserfahrung"
+			},
+			"form": {
+				"title": "Spezialisten bestellen",
+				"subtitle": "Füllen Sie das Formular aus und erhalten Sie ein personalisiertes Angebot"
+			}
+		}
+	}
+}
