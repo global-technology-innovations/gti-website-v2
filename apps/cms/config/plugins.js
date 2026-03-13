@@ -7,6 +7,11 @@ module.exports = ({ env }) => ({
     },
   },
 
+  "translate-from-locale": {
+    enabled: true,
+    resolve: "./src/plugins/translate-from-locale",
+  },
+
   email: {
     config: {
       provider: "nodemailer",

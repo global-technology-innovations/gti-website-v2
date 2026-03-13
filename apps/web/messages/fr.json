@@ -270,6 +270,8 @@
 		"title": "Nos services",
 		"button": "En savoir plus",
 		"order": "Commander",
+		"showMore": "Plus de services",
+		"showLess": "Réduire la liste",
 		"Hero": {
 			"badge": "Services",
 			"title": "Des solutions clés en main, de A à Z",

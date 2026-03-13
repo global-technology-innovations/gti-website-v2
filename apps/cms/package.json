@@ -8,11 +8,11 @@
     "name": "A Strapi developer"
   },
   "scripts": {
-    "dev": "strapi develop",
-    "build": "strapi build",
-    "deploy": "strapi deploy",
-    "start": "strapi start",
-    "strapi": "strapi"
+    "dev": "node ../../scripts/with-node20.cjs strapi develop",
+    "build": "node ../../scripts/with-node20.cjs strapi build",
+    "deploy": "node ../../scripts/with-node20.cjs strapi deploy",
+    "start": "node ../../scripts/with-node20.cjs strapi start",
+    "strapi": "node ../../scripts/with-node20.cjs strapi"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.25.23",

@@ -270,6 +270,8 @@
 		"title": "Naše služby",
 		"button": "Zjistit více",
 		"order": "Objednat",
+		"showMore": "Více služeb",
+		"showLess": "Méně služeb",
 		"Hero": {
 			"badge": "Služby",
 			"title": "Komplexní řešení na klíč",

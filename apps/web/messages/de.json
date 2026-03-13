@@ -270,6 +270,8 @@
 		"title": "Unsere Leistungen",
 		"button": "Mehr erfahren",
 		"order": "Bestellen",
+		"showMore": "Mehr Leistungen",
+		"showLess": "Weniger Leistungen",
 		"Hero": {
 			"badge": "Leistungen",
 			"title": "Komplettlösungen aus einer Hand",

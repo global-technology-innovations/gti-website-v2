@@ -3,10 +3,10 @@
   "private": true,
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
-    "lint": "turbo lint",
-    "typecheck": "turbo typecheck"
+    "dev": "node ./scripts/with-node20.cjs turbo dev",
+    "build": "node ./scripts/with-node20.cjs turbo build",
+    "lint": "node ./scripts/with-node20.cjs turbo lint",
+    "typecheck": "node ./scripts/with-node20.cjs turbo typecheck"
   },
   "devDependencies": {
     "turbo": "^2.0.0"

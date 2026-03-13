@@ -1,0 +1,25 @@
+{
+  "name": "strapi-plugin-translate-from-locale",
+  "version": "0.0.1",
+  "private": true,
+  "strapi": {
+    "name": "translate-from-locale",
+    "displayName": "Translate From Locale",
+    "kind": "plugin"
+  },
+  "exports": {
+    "./strapi-admin": {
+      "source": "./admin/src/index.js",
+      "import": "./admin/src/index.js",
+      "require": "./admin/src/index.js",
+      "default": "./admin/src/index.js"
+    },
+    "./strapi-server": {
+      "source": "./server/index.js",
+      "import": "./server/index.js",
+      "require": "./server/index.js",
+      "default": "./server/index.js"
+    },
+    "./package.json": "./package.json"
+  }
+}
