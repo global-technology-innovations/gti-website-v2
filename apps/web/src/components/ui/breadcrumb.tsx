@@ -1,6 +1,6 @@
-import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { ChevronRight, MoreHorizontal } from "lucide-react";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -12,23 +12,14 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
 	return (
 		<ol
 			data-slot="breadcrumb-list"
-			className={cn(
-				"text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5",
-				className
-			)}
+			className={cn("text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5", className)}
 			{...props}
 		/>
 	);
 }
 
 function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
-	return (
-		<li
-			data-slot="breadcrumb-item"
-			className={cn("inline-flex items-center gap-1.5", className)}
-			{...props}
-		/>
-	);
+	return <li data-slot="breadcrumb-item" className={cn("inline-flex items-center gap-1.5", className)} {...props} />;
 }
 
 function BreadcrumbLink({
@@ -40,13 +31,7 @@ function BreadcrumbLink({
 }) {
 	const Comp = asChild ? Slot : "a";
 
-	return (
-		<Comp
-			data-slot="breadcrumb-link"
-			className={cn("hover:text-foreground transition-colors", className)}
-			{...props}
-		/>
-	);
+	return <Comp data-slot="breadcrumb-link" className={cn("hover:text-foreground transition-colors", className)} {...props} />;
 }
 
 function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
@@ -56,7 +41,7 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
 			role="link"
 			aria-disabled="true"
 			aria-current="page"
-			className={cn("text-foreground font-normal", className)}
+			className={cn("text-primary-foreground font-normal", className)}
 			{...props}
 		/>
 	);
@@ -91,12 +76,4 @@ function BreadcrumbEllipsis({ className, ...props }: React.ComponentProps<"span"
 	);
 }
 
-export {
-	Breadcrumb,
-	BreadcrumbList,
-	BreadcrumbItem,
-	BreadcrumbLink,
-	BreadcrumbPage,
-	BreadcrumbSeparator,
-	BreadcrumbEllipsis,
-};
+export { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator };

@@ -34,7 +34,7 @@ export function BlogCard({ article }: Props) {
 					) : null}
 				</div>
 				<div className="flex min-h-[220px] flex-col p-6">
-					<h3 className="text-primary text-2xl font-bold uppercase">{article.title}</h3>
+					<h2 className="!text-lg !leading-[26px] text-primary uppercase">{article.title}</h2>
 					<p className="mt-4 line-clamp-4 text-primary-foreground">{article.excerpt}</p>
 					<div className="mt-auto flex items-center justify-between gap-2 pt-6 text-sm font-medium text-primary">
 						<time dateTime={article.publishedAt}>{publishedAt}</time>

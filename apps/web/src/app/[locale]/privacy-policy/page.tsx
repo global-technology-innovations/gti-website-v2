@@ -95,9 +95,7 @@ export default function PrivacyPolicyPage() {
 
 											{hasText && text && (
 												<div className="mb-4">
-													<p className="text-gray-700 leading-relaxed whitespace-pre-line">
-														{text}
-													</p>
+													<p className="text-gray-700 leading-relaxed whitespace-pre-line">{text}</p>
 												</div>
 											)}
 
@@ -132,9 +130,7 @@ export default function PrivacyPolicyPage() {
 					<Reveal>
 						<Card className="mt-8 bg-primary/5 border-primary/20">
 							<CardContent className="p-6 text-center">
-								<h3 className="text-lg font-semibold text-gray-900 mb-2">
-									{t("contactInfo.title")}
-								</h3>
+								<h3 className="text-lg font-semibold text-gray-900 mb-2">{t("contactInfo.title")}</h3>
 								<p className="text-gray-700 mb-4">{t("contactInfo.description")}</p>
 								<div className="space-y-2 text-sm text-gray-600">
 									<p>{t("contactInfo.email")}: info@global-technology-innovations.com</p>

@@ -1,14 +1,17 @@
 "use client";
 
-import { BlogCategories, BlogGrid, Reveal } from "@/components";
+import { BlogCategories, BlogGrid, BlogPagination, Reveal } from "@/components";
 import { useBlogArticlesQuery, useBlogCategoriesQuery } from "@/queries";
 import { AlertCircle, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+const ARTICLES_PER_PAGE = 1;
 
 export default function BlogPage() {
 	const t = useTranslations("BlogPage");
 	const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null);
+	const [currentPage, setCurrentPage] = useState(1);
 	const { data: categories = [], isLoading: isCategoriesLoading, error: categoriesError } = useBlogCategoriesQuery();
 	const { data: articles = [], isLoading: isArticlesLoading, error: articlesError } = useBlogArticlesQuery();
 
@@ -19,6 +22,18 @@ export default function BlogPage() {
 
 		return articles.filter((article) => article.category?.id === activeCategoryId);
 	}, [activeCategoryId, articles]);
+
+	const totalPages = Math.max(1, Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE));
+	const paginatedArticles = useMemo(() => {
+		const start = (currentPage - 1) * ARTICLES_PER_PAGE;
+		return filteredArticles.slice(start, start + ARTICLES_PER_PAGE);
+	}, [currentPage, filteredArticles]);
+
+	useEffect(() => {
+		if (currentPage > totalPages) {
+			setCurrentPage(totalPages);
+		}
+	}, [currentPage, totalPages]);
 
 	if (isCategoriesLoading || isArticlesLoading) {
 		return (
@@ -60,18 +75,29 @@ export default function BlogPage() {
 							id: "all",
 							name: t("allCategories"),
 							isActive: activeCategoryId === null,
-							onClick: () => setActiveCategoryId(null),
+							onClick: () => {
+								setActiveCategoryId(null);
+								setCurrentPage(1);
+							},
 						},
 						...categories.map((category) => ({
 							...category,
 							isActive: category.id === activeCategoryId,
-							onClick: () => setActiveCategoryId(category.id),
+							onClick: () => {
+								setActiveCategoryId(category.id);
+								setCurrentPage(1);
+							},
 						})),
 					]}
 				/>
 
 				{filteredArticles.length > 0 ? (
-					<BlogGrid articles={filteredArticles} />
+					<>
+						<BlogGrid articles={paginatedArticles} />
+						{totalPages > 1 ? (
+							<BlogPagination currentPage={currentPage} totalPages={totalPages} onChange={setCurrentPage} />
+						) : null}
+					</>
 				) : (
 					<div className="flex min-h-[240px] items-center justify-center rounded-3xl border border-dashed border-border text-center text-primary-foreground">
 						{t("noResults")}

@@ -188,15 +188,27 @@ a {
 h1 {
 	@apply text-[24px] sm:text-[32px] md:text-[40px] lg:text-[64px] leading-[74px] font-bold;
 }
-
+.h1 {
+	@apply text-[24px] sm:text-[32px] md:text-[40px] lg:text-[64px] leading-[74px] font-bold;
+}
 h2 {
 	@apply text-[32px] lg:text-[56px] leading-[48px] lg:leading-[54px] font-bold;
 }
-
-h3 {
-	@apply text-[16px] lg:text-[18px] leading-[24px] lg:leading-[26px] font-semibold;
+.h2 {
+	@apply text-[32px] lg:text-[56px] leading-[48px] lg:leading-[54px] font-bold;
 }
-
+h3 {
+	@apply text-[28px] lg:text-[44px] leading-[36px] lg:leading-[48px] font-semibold;
+}
+.h3 {
+	@apply text-[28px] lg:text-[44px] leading-[36px] lg:leading-[48px] font-semibold;
+}
+h4 {
+	@apply text-[24px] lg:text-[32px] leading-[36px] lg:leading-[40px] font-semibold;
+}
+.h4 {
+	@apply text-[24px] lg:text-[32px] leading-[36px] lg:leading-[40px] font-semibold;
+}
 p {
 	@apply text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] font-normal;
 }

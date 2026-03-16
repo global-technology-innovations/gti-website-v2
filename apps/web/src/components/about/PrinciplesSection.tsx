@@ -6,8 +6,7 @@ import Image from "next/image";
 const PRINCIPLES = [
 	{
 		title: "Довіра та надійність",
-		description:
-			"Будуємо довірчі відносини з клієнтами, дотримуємось всіх зобов'язань та забезпечуємо прозорість на всіх етапах.",
+		description: "Будуємо довірчі відносини з клієнтами, дотримуємось всіх зобов'язань та забезпечуємо прозорість на всіх етапах.",
 		icon: "/icons/crown-line.svg",
 	},
 	{
@@ -18,26 +17,22 @@ const PRINCIPLES = [
 	},
 	{
 		title: "Інновації та розвиток",
-		description:
-			"Постійно вдосконалюємо методи роботи, впроваджуємо нові технології та слідкуємо за тенденціями у будівництві.",
+		description: "Постійно вдосконалюємо методи роботи, впроваджуємо нові технології та слідкуємо за тенденціями у будівництві.",
 		icon: "/icons/share-circle.svg",
 	},
 	{
 		title: "Прагнення до досконалості",
-		description:
-			"Кожен проєкт виконуємо з максимальною увагою до деталей, прагнучи перевищити очікування клієнтів.",
+		description: "Кожен проєкт виконуємо з максимальною увагою до деталей, прагнучи перевищити очікування клієнтів.",
 		icon: "/icons/chart-square.svg",
 	},
 	{
 		title: "Екологічність",
-		description:
-			"Турбуємося про навколишнє середовище, використовуємо екологічні матеріали та енергоефективні рішення.",
+		description: "Турбуємося про навколишнє середовище, використовуємо екологічні матеріали та енергоефективні рішення.",
 		icon: "/icons/paw.svg",
 	},
 	{
 		title: "Командна робота",
-		description:
-			"Цінуємо кожного члена команди, підтримуємо професійний розвиток та створюємо комфортні умови для роботи.",
+		description: "Цінуємо кожного члена команди, підтримуємо професійний розвиток та створюємо комфортні умови для роботи.",
 		icon: "/icons/mask-happly.svg",
 	},
 ] as const;
@@ -51,8 +46,7 @@ export function PrinciplesSection() {
 						Принципи, якими ми <span className="text-secondary">керуємося</span>
 					</h2>
 					<p className="text-primary-foreground mt-4">
-						Ми дотримуємося принципів, які визначають наш підхід до роботи, взаємодію з клієнтами та
-						результат кожного проєкту.
+						Ми дотримуємося принципів, які визначають наш підхід до роботи, взаємодію з клієнтами та результат кожного проєкту.
 					</p>
 				</div>
 
@@ -60,14 +54,7 @@ export function PrinciplesSection() {
 					{PRINCIPLES.map((principle, index) => (
 						<Card key={index} variant="default" className="items-center text-center">
 							<div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 mx-auto">
-								<Image
-									src={principle.icon}
-									alt=""
-									width={24}
-									height={24}
-									className="text-primary"
-									aria-hidden
-								/>
+								<Image src={principle.icon} alt="" width={24} height={24} className="text-primary" aria-hidden />
 							</div>
 							<h3 className="text-primary font-semibold uppercase">{principle.title}</h3>
 							<p className="text-primary-foreground mt-2 text-sm">{principle.description}</p>

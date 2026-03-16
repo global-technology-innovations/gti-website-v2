@@ -1,22 +1,11 @@
-import {
-	Badge,
-	Card,
-	CardContent,
-	ChangeConsentButton,
-	MultiHeroSection,
-	Reveal,
-} from "@/components";
+import { Badge, Card, CardContent, ChangeConsentButton, MultiHeroSection, Reveal } from "@/components";
 import { BarChart3, Megaphone, Settings, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
-export async function generateMetadata({
-	params,
-}: {
-	params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: "CookiesPage" });
 
@@ -68,11 +57,7 @@ export default function CookiesPage() {
 	];
 	return (
 		<>
-			<MultiHeroSection
-				badgeText={t("Hero.badge")}
-				title={t("Hero.title")}
-				description={t("Hero.description")}
-			/>
+			<MultiHeroSection badgeText={t("Hero.badge")} title={t("Hero.title")} description={t("Hero.description")} />
 
 			<section className="py-16">
 				<div className="container mx-auto max-w-4xl">
@@ -80,9 +65,7 @@ export default function CookiesPage() {
 					<Reveal>
 						<Card className="mb-8">
 							<CardContent className="p-6">
-								<h2 className="text-xl font-semibold text-gray-900 mb-4">
-									{t("whatAreCookies.title")}
-								</h2>
+								<h2 className="text-xl font-semibold text-gray-900 mb-4">{t("whatAreCookies.title")}</h2>
 								<p className="text-gray-700 leading-relaxed">{t("whatAreCookies.description")}</p>
 							</CardContent>
 						</Card>
@@ -91,9 +74,7 @@ export default function CookiesPage() {
 					{/* Категорії cookie */}
 					<Reveal>
 						<div className="mb-8">
-							<h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-								{t("categories.title")}
-							</h2>
+							<h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">{t("categories.title")}</h2>
 
 							<div className="grid gap-6 md:grid-cols-2">
 								{cookieCategories.map((category, index) => {
@@ -107,9 +88,7 @@ export default function CookiesPage() {
 													</div>
 													<div className="flex-1">
 														<div className="flex items-center gap-2 mb-2">
-															<h3 className="text-lg font-semibold text-gray-900">
-																{category.title}
-															</h3>
+															<h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
 															{category.required && (
 																<Badge variant="outline" className="text-xs">
 																	{category.badge}
@@ -131,9 +110,7 @@ export default function CookiesPage() {
 					<Reveal>
 						<Card className="mb-8 bg-primary/5 border-primary/20">
 							<CardContent className="p-6">
-								<h2 className="text-xl font-semibold text-gray-900 mb-4">
-									{t("management.title")}
-								</h2>
+								<h2 className="text-xl font-semibold text-gray-900 mb-4">{t("management.title")}</h2>
 								<p className="text-gray-700 leading-relaxed mb-6">{t("management.description")}</p>
 
 								<div className="flex justify-center">
@@ -147,16 +124,11 @@ export default function CookiesPage() {
 					<Reveal>
 						<Card className="mb-8">
 							<CardContent className="p-6">
-								<h2 className="text-xl font-semibold text-gray-900 mb-4">
-									{t("additionalInfo.title")}
-								</h2>
+								<h2 className="text-xl font-semibold text-gray-900 mb-4">{t("additionalInfo.title")}</h2>
 								<div className="space-y-4 text-gray-700 leading-relaxed">
 									<p>
 										{t("additionalInfo.privacyPolicyText")}{" "}
-										<Link
-											href="/privacy-policy"
-											className="text-primary hover:underline font-medium"
-										>
+										<Link href="/privacy-policy" className="text-primary hover:underline font-medium">
 											{t("additionalInfo.privacyPolicyLink")}
 										</Link>
 										.

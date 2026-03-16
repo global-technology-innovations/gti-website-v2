@@ -12,36 +12,25 @@ import {
 } from "@/components";
 import { Link } from "@/i18n/navigation";
 import renderRichText from "@/lib/renderRichText";
-import {
-	getServiceDetail,
-	type ServiceDetail,
-} from "@/lib/services/getServiceDetail";
+import { getServiceDetail, type ServiceDetail } from "@/lib/services/getServiceDetail";
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 const CONTENT_CLASSNAMES: Parameters<typeof renderRichText>[1] = {
-	heading:
-		"text-[28px] leading-[36px] font-bold uppercase text-primary sm:text-[32px] sm:leading-[40px]",
+	heading: "text-[28px] leading-[36px] font-bold uppercase text-primary sm:text-[32px] sm:leading-[40px]",
 	heading2: "!text-[32px] text-primary",
-	heading3:
-		"text-[24px] leading-[32px] font-bold uppercase text-primary sm:text-[28px] sm:leading-[36px]",
-	paragraph:
-		"!text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
+	heading3: "text-[24px] leading-[32px] font-bold uppercase text-primary sm:text-[28px] sm:leading-[36px]",
+	paragraph: "!text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
 	ul: "!list-outside list-disc pl-5 space-y-3 marker:text-secondary",
 	ol: "!list-outside list-decimal pl-5 space-y-3 marker:text-secondary",
 	li: "!pl-1 !text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
 	link: "!text-secondary underline underline-offset-4",
-	blockquote:
-		"!my-0 border-l-2 !border-secondary/30 !pl-5 !text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
+	blockquote: "!my-0 border-l-2 !border-secondary/30 !pl-5 !text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
 	image: "rounded-3xl",
 };
 
-export async function generateMetadata({
-	params,
-}: {
-	params: Promise<{ locale: string; slug: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
 	const { locale, slug } = await params;
 	const service = await getServiceDetail(slug, locale);
 
@@ -57,16 +46,9 @@ export async function generateMetadata({
 	});
 }
 
-export default async function ServiceDetailPage({
-	params,
-}: {
-	params: Promise<{ locale: string; slug: string }>;
-}) {
+export default async function ServiceDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
 	const { locale, slug } = await params;
-	const [service, tNav] = await Promise.all([
-		getServiceDetail(slug, locale),
-		getTranslations({ locale, namespace: "Header.nav" }),
-	]);
+	const [service, tNav] = await Promise.all([getServiceDetail(slug, locale), getTranslations({ locale, namespace: "Header.nav" })]);
 
 	if (!service) {
 		notFound();
@@ -77,26 +59,13 @@ export default async function ServiceDetailPage({
 			<Reveal>
 				<section className="relative mx-4 bg-background bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] rounded-b-3xl">
 					<div className="container py-22 flex flex-col relative mx-auto">
-						<ServiceBreadcrumb
-							title={service.title}
-							homeLabel={tNav("home")}
-							servicesLabel={tNav("services")}
-						/>
+						<ServiceBreadcrumb title={service.title} homeLabel={tNav("home")} servicesLabel={tNav("services")} />
 						<div className="mt-8 flex flex-col items-start">
-							<h1 className="text-center text-primary uppercase md:text-left">
-								{service.title}
-							</h1>
-							<p className="mt-6 max-w-2xl text-left text-primary">
-								{service.shortDescription}
-							</p>
-							<Button
-								asChild
-								variant="secondary"
-								className="mt-8"
-							>
+							<h1 className="h3 text-center text-primary uppercase md:text-left">{service.title}</h1>
+							<p className="mt-6 max-w-2xl text-left text-primary">{service.shortDescription}</p>
+							<Button asChild variant="secondary" className="mt-8">
 								<Link href="/contact">
-									Замовити послугу{" "}
-									<ArrowRight className="w-4 h-4" />
+									Замовити послугу <ArrowRight className="w-4 h-4" />
 								</Link>
 							</Button>
 						</div>
@@ -107,12 +76,7 @@ export default async function ServiceDetailPage({
 			{service.description.length > 0 ? (
 				<section className="px-4 py-16 md:py-20">
 					<div className="container mx-auto">
-						<div className="mx-auto max-w-[1024px] space-y-6">
-							{renderRichText(
-								service.description,
-								CONTENT_CLASSNAMES
-							)}
-						</div>
+						<div className="mx-auto max-w-[1100px] space-y-6">{renderRichText(service.description, CONTENT_CLASSNAMES)}</div>
 					</div>
 				</section>
 			) : null}
@@ -145,9 +109,7 @@ function ServiceBreadcrumb({
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
-					<BreadcrumbPage className="text-primary-foreground">
-						{title}
-					</BreadcrumbPage>
+					<BreadcrumbPage>{title}</BreadcrumbPage>
 				</BreadcrumbItem>
 			</BreadcrumbList>
 		</Breadcrumb>
