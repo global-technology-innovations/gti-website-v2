@@ -23,8 +23,7 @@ import { notFound } from "next/navigation";
 const CONTENT_CLASSNAMES: Parameters<typeof renderRichText>[1] = {
 	heading:
 		"text-[28px] leading-[36px] font-bold uppercase text-primary sm:text-[32px] sm:leading-[40px]",
-	heading2:
-		"text-[28px] leading-[36px] font-bold uppercase text-primary sm:text-[32px] sm:leading-[40px]",
+	heading2: "!text-[32px] text-primary",
 	heading3:
 		"text-[24px] leading-[32px] font-bold uppercase text-primary sm:text-[28px] sm:leading-[36px]",
 	paragraph:
@@ -35,7 +34,7 @@ const CONTENT_CLASSNAMES: Parameters<typeof renderRichText>[1] = {
 	link: "!text-secondary underline underline-offset-4",
 	blockquote:
 		"!my-0 border-l-2 !border-secondary/30 !pl-5 !text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
-	image: "grayscale rounded-3xl",
+	image: "rounded-3xl",
 };
 
 export async function generateMetadata({
@@ -64,9 +63,8 @@ export default async function ServiceDetailPage({
 	params: Promise<{ locale: string; slug: string }>;
 }) {
 	const { locale, slug } = await params;
-	const [service, tServices, tNav] = await Promise.all([
+	const [service, tNav] = await Promise.all([
 		getServiceDetail(slug, locale),
-		getTranslations({ locale, namespace: "OurServicesPage" }),
 		getTranslations({ locale, namespace: "Header.nav" }),
 	]);
 
@@ -75,33 +73,50 @@ export default async function ServiceDetailPage({
 	}
 
 	return (
-		<Reveal>
-			<section className="relative mx-4 bg-background bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] rounded-b-3xl">
-				<div className="container py-22 flex flex-col relative mx-auto">
-					<ServiceBreadcrumb
-						title={service.title}
-						homeLabel={tNav("home")}
-						servicesLabel={tNav("services")}
-					/>
-					<div className="flex flex-col items-start mt-8">
-						<h1 className="text-primary text-center md:text-left uppercase">
-							Штукатурка
-						</h1>
-						<p className="text-primary mt-6 text-left max-w-1/2">
-							Якісне вирівнювання та підготовка поверхонь для
-							подальших оздоблювальних робітіз дотриманням
-							сучасних технологій та стандартів будівництва.
-						</p>
-						<Button asChild variant="secondary" className="mt-8">
-							<Link href="/contact">
-								Замовити послугу{" "}
-								<ArrowRight className="w-4 h-4" />
-							</Link>
-						</Button>
+		<>
+			<Reveal>
+				<section className="relative mx-4 bg-background bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] rounded-b-3xl">
+					<div className="container py-22 flex flex-col relative mx-auto">
+						<ServiceBreadcrumb
+							title={service.title}
+							homeLabel={tNav("home")}
+							servicesLabel={tNav("services")}
+						/>
+						<div className="mt-8 flex flex-col items-start">
+							<h1 className="text-center text-primary uppercase md:text-left">
+								{service.title}
+							</h1>
+							<p className="mt-6 max-w-2xl text-left text-primary">
+								{service.shortDescription}
+							</p>
+							<Button
+								asChild
+								variant="secondary"
+								className="mt-8"
+							>
+								<Link href="/contact">
+									Замовити послугу{" "}
+									<ArrowRight className="w-4 h-4" />
+								</Link>
+							</Button>
+						</div>
 					</div>
-				</div>
-			</section>
-		</Reveal>
+				</section>
+			</Reveal>
+
+			{service.description.length > 0 ? (
+				<section className="px-4 py-16 md:py-20">
+					<div className="container mx-auto">
+						<div className="mx-auto max-w-[1024px] space-y-6">
+							{renderRichText(
+								service.description,
+								CONTENT_CLASSNAMES
+							)}
+						</div>
+					</div>
+				</section>
+			) : null}
+		</>
 	);
 }
 

@@ -424,6 +424,147 @@ export interface ApiApplicationApplication extends Schema.CollectionType {
 	};
 }
 
+export interface ApiBlogArticleBlogArticle extends Schema.CollectionType {
+	collectionName: "blog_articles";
+	info: {
+		description: "";
+		displayName: "BlogArticle";
+		pluralName: "blog-articles";
+		singularName: "blog-article";
+	};
+	options: {
+		draftAndPublish: true;
+	};
+	pluginOptions: {
+		i18n: {
+			localized: true;
+		};
+	};
+	attributes: {
+		blog_category: Attribute.Relation<
+			"api::blog-article.blog-article",
+			"manyToOne",
+			"api::blog-category.blog-category"
+		>;
+		content: Attribute.Blocks &
+			Attribute.Required &
+			Attribute.SetPluginOptions<{
+				i18n: {
+					localized: true;
+				};
+			}>;
+		createdAt: Attribute.DateTime;
+		createdBy: Attribute.Relation<
+			"api::blog-article.blog-article",
+			"oneToOne",
+			"admin::user"
+		> &
+			Attribute.Private;
+		excerpt: Attribute.Text &
+			Attribute.Required &
+			Attribute.SetPluginOptions<{
+				i18n: {
+					localized: true;
+				};
+			}>;
+		featured: Attribute.Boolean &
+			Attribute.Required &
+			Attribute.SetPluginOptions<{
+				i18n: {
+					localized: false;
+				};
+			}> &
+			Attribute.DefaultTo<false>;
+		image: Attribute.Media<"images"> &
+			Attribute.Required &
+			Attribute.SetPluginOptions<{
+				i18n: {
+					localized: true;
+				};
+			}>;
+		locale: Attribute.String;
+		localizations: Attribute.Relation<
+			"api::blog-article.blog-article",
+			"oneToMany",
+			"api::blog-article.blog-article"
+		>;
+		publishedAt: Attribute.DateTime;
+		slug: Attribute.UID<"api::blog-article.blog-article", "title"> &
+			Attribute.Required &
+			Attribute.SetPluginOptions<{
+				i18n: {
+					localized: true;
+				};
+			}>;
+		title: Attribute.String &
+			Attribute.Required &
+			Attribute.SetPluginOptions<{
+				i18n: {
+					localized: true;
+				};
+			}>;
+		updatedAt: Attribute.DateTime;
+		updatedBy: Attribute.Relation<
+			"api::blog-article.blog-article",
+			"oneToOne",
+			"admin::user"
+		> &
+			Attribute.Private;
+	};
+}
+
+export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
+	collectionName: "blog_categories";
+	info: {
+		displayName: "BlogCategory";
+		pluralName: "blog-categories";
+		singularName: "blog-category";
+	};
+	options: {
+		draftAndPublish: true;
+	};
+	pluginOptions: {
+		i18n: {
+			localized: true;
+		};
+	};
+	attributes: {
+		blog_articles: Attribute.Relation<
+			"api::blog-category.blog-category",
+			"oneToMany",
+			"api::blog-article.blog-article"
+		>;
+		createdAt: Attribute.DateTime;
+		createdBy: Attribute.Relation<
+			"api::blog-category.blog-category",
+			"oneToOne",
+			"admin::user"
+		> &
+			Attribute.Private;
+		locale: Attribute.String;
+		localizations: Attribute.Relation<
+			"api::blog-category.blog-category",
+			"oneToMany",
+			"api::blog-category.blog-category"
+		>;
+		name: Attribute.String &
+			Attribute.Required &
+			Attribute.SetPluginOptions<{
+				i18n: {
+					localized: true;
+				};
+			}>;
+		publishedAt: Attribute.DateTime;
+		updatedAt: Attribute.DateTime;
+		updatedBy: Attribute.Relation<
+			"api::blog-category.blog-category",
+			"oneToOne",
+			"admin::user"
+		> &
+			Attribute.Private;
+	};
+}
+
 export interface ApiJobJob extends Schema.CollectionType {
 	collectionName: "jobs";
 	info: {
@@ -1112,6 +1253,8 @@ declare module "@strapi/types" {
 			"admin::transfer-token-permission": AdminTransferTokenPermission;
 			"admin::user": AdminUser;
 			"api::application.application": ApiApplicationApplication;
+			"api::blog-article.blog-article": ApiBlogArticleBlogArticle;
+			"api::blog-category.blog-category": ApiBlogCategoryBlogCategory;
 			"api::job.job": ApiJobJob;
 			"api::project.project": ApiProjectProject;
 			"api::service.service": ApiServiceService;

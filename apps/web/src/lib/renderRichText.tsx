@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import { STRAPI_API_URL } from "@/lib/api";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
@@ -76,42 +76,13 @@ function renderNode(
 				</li>
 			);
 
-		case "heading":
-			return (
-				<h1 key={key} className={cn("", className?.heading)}>
-					{children}
-				</h1>
-			);
 		case "heading2":
-			return (
-				<h2 key={key} className={cn("", className?.heading2)}>
-					{children}
-				</h2>
-			);
 		case "heading3":
-			return (
-				<h3 key={key} className={cn("", className?.heading3)}>
-					{children}
-				</h3>
-			);
 		case "heading4":
-			return (
-				<h4 key={key} className={cn("", className?.heading4)}>
-					{children}
-				</h4>
-			);
 		case "heading5":
-			return (
-				<h5 key={key} className={cn("", className?.heading5)}>
-					{children}
-				</h5>
-			);
 		case "heading6":
-			return (
-				<h6 key={key} className={cn("", className?.heading6)}>
-					{children}
-				</h6>
-			);
+		case "heading":
+			return renderHeading(node, key, children, className);
 
 		case "quote":
 		case "blockquote":
@@ -176,6 +147,38 @@ function renderNode(
 	}
 }
 
+function renderHeading(
+	node: RichTextHeadingNode,
+	key: React.Key,
+	children: React.ReactNode,
+	className?: Partial<Record<RichTextElementType, string>>
+) {
+	const level = getHeadingLevel(node);
+	const tagByLevel = {
+		1: "h1",
+		2: "h2",
+		3: "h3",
+		4: "h4",
+		5: "h5",
+		6: "h6",
+	} satisfies Record<HeadingLevel, keyof React.JSX.IntrinsicElements>;
+	const classNameByLevel = {
+		1: className?.heading,
+		2: className?.heading2,
+		3: className?.heading3,
+		4: className?.heading4,
+		5: className?.heading5,
+		6: className?.heading6,
+	} satisfies Record<HeadingLevel, string | undefined>;
+	const Tag = tagByLevel[level];
+
+	return (
+		<Tag key={key} className={cn("", classNameByLevel[level])}>
+			{children}
+		</Tag>
+	);
+}
+
 function hasChildren(node: unknown): node is RichTextBaseNode {
 	return (
 		typeof node === "object" &&
@@ -195,7 +198,33 @@ function resolveMediaUrl(url?: string) {
 		: `${STRAPI_API_URL.replace("/api", "")}${url}`;
 }
 
+function getHeadingLevel(node: RichTextHeadingNode): HeadingLevel {
+	if (node.type === "heading") {
+		return isHeadingLevel(node.level) ? node.level : 1;
+	}
+
+	const headingLevelMap = {
+		heading2: 2,
+		heading3: 3,
+		heading4: 4,
+		heading5: 5,
+		heading6: 6,
+	} as const;
+
+	return headingLevelMap[node.type] ?? 1;
+}
+
+function isHeadingLevel(value: unknown): value is HeadingLevel {
+	return (
+		typeof value === "number" &&
+		Number.isInteger(value) &&
+		value >= 1 &&
+		value <= 6
+	);
+}
+
 interface RichTextChild {
+	type?: "text";
 	text: string;
 	bold?: boolean;
 	italic?: boolean;
@@ -225,6 +254,7 @@ interface RichTextImage {
 interface RichTextImageNode {
 	type: "image";
 	image: RichTextImage;
+	children?: RichTextChild[];
 }
 
 interface RichTextBaseNode {
@@ -234,7 +264,24 @@ interface RichTextBaseNode {
 	children: Array<RichTextNode | RichTextChild>;
 }
 
-type RichTextNode = RichTextBaseNode | RichTextImageNode;
+interface RichTextHeadingBaseNode extends RichTextBaseNode {
+	level?: HeadingLevel;
+}
+
+type RichTextHeadingNode =
+	| (RichTextHeadingBaseNode & { type: "heading" })
+	| (RichTextBaseNode & {
+			type:
+				| "heading2"
+				| "heading3"
+				| "heading4"
+				| "heading5"
+				| "heading6";
+	  });
+
+type RichTextNode = RichTextBaseNode | RichTextImageNode | RichTextHeadingNode;
+
+type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
 type RichTextElementType =
 	| "paragraph"

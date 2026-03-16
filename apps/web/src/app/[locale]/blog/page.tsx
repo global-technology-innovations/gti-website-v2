@@ -57,11 +57,12 @@ export default function BlogPage() {
 		<div className="container mx-auto pt-20 px-4">
 			<div className="mb-10">
 				<h2 className="text-primary text-left uppercase">
-					Будівельні статті <span className="text-secondary">та аналітика</span>
+					Будівельні статті{" "}
+					<span className="text-secondary">та аналітика</span>
 				</h2>
 				<p className="text-primary-foreground text-left mt-4">
-					У цьому розділі зібрані інформаційні матеріали про будівництво, оновлення об’єктів та
-					сучасні підходи.
+					У цьому розділі зібрані інформаційні матеріали про
+					будівництво, оновлення об’єктів та сучасні підходи.
 				</p>
 			</div>
 			<BlogCategories categories={categories} />
