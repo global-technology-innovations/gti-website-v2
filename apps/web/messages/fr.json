@@ -266,6 +266,15 @@
 		"noJobs": "Aucune offre d'emploi",
 		"checkBackLater": "Veuillez vérifier à nouveau plus tard."
 	},
+	"BlogPage": {
+		"title": "Articles de construction",
+		"highlight": "et analyses",
+		"description": "Cette section regroupe des contenus utiles sur la construction, la rénovation des bâtiments et les approches modernes.",
+		"allCategories": "Toutes les catégories",
+		"errorTitle": "Impossible de charger le blog",
+		"errorDescription": "Veuillez réessayer dans quelques instants.",
+		"noResults": "Aucun article pour le moment."
+	},
 	"OurServicesPage": {
 		"title": "Nos services",
 		"button": "En savoir plus",

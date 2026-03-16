@@ -1,12 +1,16 @@
+"use client";
+
 import { Button } from "@/components";
+import type { BlogCategory } from "@/queries";
 
 export function BlogCategories({ categories }: Props) {
 	return (
-		<div className="flex gap-3 mb-8">
+		<div className="mb-8 flex flex-wrap gap-3">
 			{categories.map((cat) => (
 				<Button
 					key={cat.id}
-					variant="outline"
+					onClick={() => cat.onClick?.()}
+					variant={cat.isActive ? "secondary" : "outline"}
 					size="small"
 					className="font-normal"
 				>
@@ -17,8 +21,9 @@ export function BlogCategories({ categories }: Props) {
 	);
 }
 
-interface Category {
-	id: number;
+interface Category extends BlogCategory {
+	isActive?: boolean;
+	onClick?: () => void;
 	name: string;
 }
 

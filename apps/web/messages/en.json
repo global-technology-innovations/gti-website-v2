@@ -271,6 +271,15 @@
 		"noJobs": "No job openings",
 		"checkBackLater": "Please check back later."
 	},
+	"BlogPage": {
+		"title": "Construction articles",
+		"highlight": "and insights",
+		"description": "This section contains practical materials about construction, building upgrades, and modern approaches.",
+		"allCategories": "All categories",
+		"errorTitle": "Failed to load the blog",
+		"errorDescription": "Please try refreshing the page a bit later.",
+		"noResults": "No articles yet."
+	},
 	"OurServicesPage": {
 		"title": "Our Services",
 		"button": "Learn More",

@@ -264,6 +264,15 @@
 		"noJobs": "Žiadne voľné pracovné miesta",
 		"checkBackLater": "Skontrolujte prosím neskôr."
 	},
+	"BlogPage": {
+		"title": "Stavebné články",
+		"highlight": "a analytika",
+		"description": "V tejto sekcii nájdete informačné materiály o výstavbe, obnove objektov a moderných prístupoch.",
+		"allCategories": "Všetky kategórie",
+		"errorTitle": "Nepodarilo sa načítať blog",
+		"errorDescription": "Skúste stránku obnoviť o chvíľu neskôr.",
+		"noResults": "Zatiaľ tu nie sú žiadne články."
+	},
 	"OurServicesPage": {
 		"title": "Naše služby",
 		"button": "Zistiť viac",

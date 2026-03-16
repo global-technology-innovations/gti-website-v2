@@ -266,6 +266,15 @@
 		"noJobs": "Keine offenen Stellen",
 		"checkBackLater": "Bitte versuchen Sie es später erneut."
 	},
+	"BlogPage": {
+		"title": "Bauartikel",
+		"highlight": "und Analysen",
+		"description": "In diesem Bereich finden Sie informative Inhalte über Bauwesen, Modernisierung von Objekten und zeitgemäße Ansätze.",
+		"allCategories": "Alle Kategorien",
+		"errorTitle": "Der Blog konnte nicht geladen werden",
+		"errorDescription": "Bitte versuchen Sie es etwas später erneut.",
+		"noResults": "Derzeit sind noch keine Artikel vorhanden."
+	},
 	"OurServicesPage": {
 		"title": "Unsere Leistungen",
 		"button": "Mehr erfahren",

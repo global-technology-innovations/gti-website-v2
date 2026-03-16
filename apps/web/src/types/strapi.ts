@@ -131,3 +131,27 @@ export interface StrapiProject {
 		featured: boolean;
 	};
 }
+
+export interface StrapiBlogCategory {
+	id: number;
+	attributes: {
+		name: string;
+		slug?: string;
+	};
+}
+
+export interface StrapiBlogArticle {
+	id: number;
+	attributes: {
+		title: string;
+		slug: string;
+		excerpt: string;
+		content: unknown;
+		image: StrapiMedia;
+		featured: boolean;
+		publishedAt?: string;
+		blog_category?: {
+			data: StrapiBlogCategory | null;
+		};
+	};
+}

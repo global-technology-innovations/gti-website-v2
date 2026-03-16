@@ -1,73 +1,83 @@
-import { BlogCategories, BlogGrid, BlogPagination } from "@/components";
+"use client";
+
+import { BlogCategories, BlogGrid, Reveal } from "@/components";
+import { useBlogArticlesQuery, useBlogCategoriesQuery } from "@/queries";
+import { AlertCircle, Loader2 } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useMemo, useState } from "react";
 
 export default function BlogPage() {
-	const categories = [
-		{
-			id: 1,
-			name: "Category 1",
-		},
-		{
-			id: 2,
-			name: "Category 2",
-		},
-		{
-			id: 3,
-			name: "Category 3",
-		},
-	];
-	const articles = [
-		{
-			id: 1,
-			title: "Article 1",
-			content: "Content 1",
-			category: "Category 1",
-		},
-		{
-			id: 2,
-			title: "Article 2",
-			content: "Content 2",
-			category: "Category 2",
-		},
-		{
-			id: 3,
-			title: "Article 3",
-			content: "Content 3",
-			category: "Category 3",
-		},
-		{
-			id: 4,
-			title: "Article 4",
-			content: "Content 4",
-			category: "Category 1",
-		},
-		{
-			id: 5,
-			title: "Article 5",
-			content: "Content 5",
-			category: "Category 2",
-		},
-		{
-			id: 6,
-			title: "Article 6",
-			content: "Content 6",
-			category: "Category 3",
-		},
-	];
+	const t = useTranslations("BlogPage");
+	const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null);
+	const { data: categories = [], isLoading: isCategoriesLoading, error: categoriesError } = useBlogCategoriesQuery();
+	const { data: articles = [], isLoading: isArticlesLoading, error: articlesError } = useBlogArticlesQuery();
+
+	const filteredArticles = useMemo(() => {
+		if (!activeCategoryId) {
+			return articles;
+		}
+
+		return articles.filter((article) => article.category?.id === activeCategoryId);
+	}, [activeCategoryId, articles]);
+
+	if (isCategoriesLoading || isArticlesLoading) {
+		return (
+			<Reveal>
+				<section className="container mx-auto flex min-h-[400px] items-center justify-center px-4 py-20">
+					<Loader2 className="h-12 w-12 animate-spin text-primary" />
+				</section>
+			</Reveal>
+		);
+	}
+
+	if (categoriesError || articlesError) {
+		return (
+			<Reveal>
+				<section className="container mx-auto px-4 py-20">
+					<div className="flex min-h-[320px] flex-col items-center justify-center text-center">
+						<AlertCircle className="mb-4 h-16 w-16 text-destructive" />
+						<h2 className="mb-2 text-2xl font-bold text-primary">{t("errorTitle")}</h2>
+						<p className="text-primary-foreground">{t("errorDescription")}</p>
+					</div>
+				</section>
+			</Reveal>
+		);
+	}
+
 	return (
-		<div className="container mx-auto pt-20 px-4">
-			<div className="mb-10">
-				<h2 className="text-primary text-left uppercase">
-					Будівельні статті{" "}
-					<span className="text-secondary">та аналітика</span>
-				</h2>
-				<p className="text-primary-foreground text-left mt-4">
-					У цьому розділі зібрані інформаційні матеріали про
-					будівництво, оновлення об’єктів та сучасні підходи.
-				</p>
+		<Reveal>
+			<div className="container mx-auto px-4 pb-16 pt-20">
+				<div className="mb-10">
+					<h2 className="text-left uppercase text-primary">
+						{t("title")} <span className="text-secondary">{t("highlight")}</span>
+					</h2>
+					<p className="mt-4 max-w-3xl text-left text-primary-foreground">{t("description")}</p>
+				</div>
+
+				<BlogCategories
+					categories={[
+						{
+							id: "all",
+							name: t("allCategories"),
+							isActive: activeCategoryId === null,
+							onClick: () => setActiveCategoryId(null),
+						},
+						...categories.map((category) => ({
+							...category,
+							isActive: category.id === activeCategoryId,
+							onClick: () => setActiveCategoryId(category.id),
+						})),
+					]}
+				/>
+
+				{filteredArticles.length > 0 ? (
+					<BlogGrid articles={filteredArticles} />
+				) : (
+					<div className="flex min-h-[240px] items-center justify-center rounded-3xl border border-dashed border-border text-center text-primary-foreground">
+						{t("noResults")}
+					</div>
+				)}
 			</div>
-			<BlogCategories categories={categories} />
-			<BlogGrid articles={articles} />
-			<BlogPagination currentPage={1} totalPages={10} />
-		</div>
+		</Reveal>
 	);
 }

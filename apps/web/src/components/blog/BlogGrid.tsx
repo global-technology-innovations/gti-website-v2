@@ -1,27 +1,16 @@
-import { Card, CardContent, CardDescription, CardTitle } from "@/components";
+import type { BlogArticle } from "@/queries";
+import { BlogCard } from "./BlogCard";
 
 export function BlogGrid({ articles }: Props) {
 	return (
-		<div className="grid md:grid-cols-3 gap-6">
+		<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 			{articles.map((article) => (
-				<Card key={article.id} variant="outline">
-					<CardContent>
-						<CardTitle>{article.title}</CardTitle>
-						<CardDescription>{article.content}</CardDescription>
-					</CardContent>
-				</Card>
+				<BlogCard key={article.id} article={article} />
 			))}
 		</div>
 	);
 }
 
-interface Article {
-	id: number;
-	title: string;
-	content: string;
-	category: string;
-}
-
 interface Props {
-	articles: Article[];
+	articles: BlogArticle[];
 }
