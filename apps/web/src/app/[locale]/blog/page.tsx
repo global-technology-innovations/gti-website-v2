@@ -48,10 +48,10 @@ export default function BlogPage() {
 		<Reveal>
 			<div className="container mx-auto px-4 pb-16 pt-20">
 				<div className="mb-10">
-					<h2 className="text-left uppercase text-primary">
+					<h2 className="text-center uppercase text-primary">
 						{t("title")} <span className="text-secondary">{t("highlight")}</span>
 					</h2>
-					<p className="mt-4 max-w-3xl text-left text-primary-foreground">{t("description")}</p>
+					<p className="mt-4 text-center text-primary-foreground">{t("description")}</p>
 				</div>
 
 				<BlogCategories

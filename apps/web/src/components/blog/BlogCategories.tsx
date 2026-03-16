@@ -5,7 +5,7 @@ import type { BlogCategory } from "@/queries";
 
 export function BlogCategories({ categories }: Props) {
 	return (
-		<div className="mb-8 flex flex-wrap gap-3">
+		<div className="mb-8 flex flex-wrap justify-center items-center gap-3">
 			{categories.map((cat) => (
 				<Button
 					key={cat.id}

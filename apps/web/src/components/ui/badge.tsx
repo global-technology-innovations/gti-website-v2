@@ -11,6 +11,7 @@ const badgeVariants = cva(
 				default: "bg-blue-100 text-blue-700 border-transparent",
 				secondary: "bg-secondary/10 !text-secondary border-none",
 				outline: "text-gray-800",
+				blur: "bg-primary/35 backdrop-blur-sm text-white border-none",
 			},
 		},
 		defaultVariants: {
@@ -19,15 +20,11 @@ const badgeVariants = cva(
 	}
 );
 
-export interface BadgeProps
-	extends React.HTMLAttributes<HTMLSpanElement>,
-		VariantProps<typeof badgeVariants> {}
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof badgeVariants> {}
 
-const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-	({ className, variant, ...props }, ref) => {
-		return <span ref={ref} className={cn(badgeVariants({ variant }), className)} {...props} />;
-	}
-);
+const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(({ className, variant, ...props }, ref) => {
+	return <span ref={ref} className={cn(badgeVariants({ variant }), className)} {...props} />;
+});
 Badge.displayName = "Badge";
 
 export { Badge, badgeVariants };
