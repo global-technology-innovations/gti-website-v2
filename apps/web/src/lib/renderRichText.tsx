@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { STRAPI_API_URL } from "@/lib/api";
 import Image from "next/image";
 import React from "react";
 
@@ -26,7 +27,10 @@ function renderNode(
 			content = (
 				<code
 					key={key}
-					className={cn("bg-gray-100 px-1 py-0.5 rounded text-sm font-mono", className?.code)}
+					className={cn(
+						"bg-gray-100 px-1 py-0.5 rounded text-sm font-mono",
+						className?.code
+					)}
 				>
 					{content}
 				</code>
@@ -50,11 +54,17 @@ function renderNode(
 
 		case "list":
 			return node.format === "ordered" ? (
-				<ol key={key} className={cn("list-decimal list-inside", className?.ol)}>
+				<ol
+					key={key}
+					className={cn("list-decimal list-inside", className?.ol)}
+				>
 					{children}
 				</ol>
 			) : (
-				<ul key={key} className={cn("list-disc list-inside", className?.ul)}>
+				<ul
+					key={key}
+					className={cn("list-disc list-inside", className?.ul)}
+				>
 					{children}
 				</ul>
 			);
@@ -132,23 +142,31 @@ function renderNode(
 
 		case "image":
 			const imageNode = node as RichTextImageNode;
+			const imageSrc = resolveMediaUrl(
+				imageNode.image?.formats?.medium?.url || imageNode.image?.url
+			);
+
+			if (!imageSrc) {
+				return null;
+			}
+
 			return (
-				<div key={key} className="my-6">
-					{/*<img*/}
-					{/*  src={imageNode.image?.formats?.medium?.url || imageNode.image?.url}*/}
-					{/*  alt={imageNode.image?.alternativeText || "Image"}*/}
-					{/*  className="w-full max-w-xl mx-auto rounded shadow"*/}
-					{/*/>*/}
+				<div key={key} className="my-8 overflow-hidden rounded-3xl">
 					<Image
-						src={imageNode.image?.formats?.medium?.url || imageNode.image?.url}
+						src={imageSrc}
 						alt={imageNode.image?.alternativeText || "Image"}
 						width={imageNode.image?.width || 800}
 						height={imageNode.image?.height || 600}
-						className="w-full mx-auto rounded shadow"
+						className={cn(
+							"h-auto w-full object-cover",
+							className?.image
+						)}
 						unoptimized
 					/>
 					{imageNode.image?.caption && (
-						<p className="text-sm text-center text-gray-500 mt-2">{imageNode.image.caption}</p>
+						<p className="mt-3 text-center text-sm text-primary-foreground/70">
+							{imageNode.image.caption}
+						</p>
 					)}
 				</div>
 			);
@@ -165,6 +183,16 @@ function hasChildren(node: unknown): node is RichTextBaseNode {
 		"children" in node &&
 		Array.isArray((node as { children?: unknown }).children)
 	);
+}
+
+function resolveMediaUrl(url?: string) {
+	if (!url) {
+		return "";
+	}
+
+	return url.startsWith("http")
+		? url
+		: `${STRAPI_API_URL.replace("/api", "")}${url}`;
 }
 
 interface RichTextChild {

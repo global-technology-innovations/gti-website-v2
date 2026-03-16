@@ -1,5 +1,3 @@
-"use client";
-
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -8,65 +6,135 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 	Button,
+	generateCanonicalUrl,
+	generatePageMetadata,
+	Reveal,
 } from "@/components";
 import { Link } from "@/i18n/navigation";
 import renderRichText from "@/lib/renderRichText";
-import { useSingleServiceQuery } from "@/queries";
-import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
-import { notFound, useParams } from "next/navigation";
+import {
+	getServiceDetail,
+	type ServiceDetail,
+} from "@/lib/services/getServiceDetail";
+import { ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
 
-export default function ServiceDetailPage() {
-	const { slug } = useParams<{ slug: string }>();
-	const locale = useLocale();
-	const t = useTranslations("OurServicesPage");
-	const { data: service, isLoading, error } = useSingleServiceQuery(slug, locale);
+const CONTENT_CLASSNAMES: Parameters<typeof renderRichText>[1] = {
+	heading:
+		"text-[28px] leading-[36px] font-bold uppercase text-primary sm:text-[32px] sm:leading-[40px]",
+	heading2:
+		"text-[28px] leading-[36px] font-bold uppercase text-primary sm:text-[32px] sm:leading-[40px]",
+	heading3:
+		"text-[24px] leading-[32px] font-bold uppercase text-primary sm:text-[28px] sm:leading-[36px]",
+	paragraph:
+		"!text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
+	ul: "!list-outside list-disc pl-5 space-y-3 marker:text-secondary",
+	ol: "!list-outside list-decimal pl-5 space-y-3 marker:text-secondary",
+	li: "!pl-1 !text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
+	link: "!text-secondary underline underline-offset-4",
+	blockquote:
+		"!my-0 border-l-2 !border-secondary/30 !pl-5 !text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
+	image: "grayscale rounded-3xl",
+};
 
-	if (isLoading) return <p>Завантаження...</p>;
-	if (error || !service) notFound();
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string; slug: string }>;
+}) {
+	const { locale, slug } = await params;
+	const service = await getServiceDetail(slug, locale);
+
+	if (!service) {
+		return {};
+	}
+
+	return generatePageMetadata({
+		title: service.title,
+		description: service.shortDescription,
+		canonicalUrl: generateCanonicalUrl(locale, `/our-services/${slug}`),
+		locale,
+	});
+}
+
+export default async function ServiceDetailPage({
+	params,
+}: {
+	params: Promise<{ locale: string; slug: string }>;
+}) {
+	const { locale, slug } = await params;
+	const [service, tServices, tNav] = await Promise.all([
+		getServiceDetail(slug, locale),
+		getTranslations({ locale, namespace: "OurServicesPage" }),
+		getTranslations({ locale, namespace: "Header.nav" }),
+	]);
+
+	if (!service) {
+		notFound();
+	}
 
 	return (
-		<>
-			<Breadcrumb>
-				<BreadcrumbList>
-					<BreadcrumbItem>
-						<BreadcrumbLink href="/our-services">{t("title")}</BreadcrumbLink>
-					</BreadcrumbItem>
-					<BreadcrumbSeparator />
-					<BreadcrumbItem>
-						<BreadcrumbPage>{service.title}</BreadcrumbPage>
-					</BreadcrumbItem>
-				</BreadcrumbList>
-			</Breadcrumb>
-
-			<h1 className="pt-6">{service.title}</h1>
-
-			<div className="flex flex-col lg:flex-row gap-4 mt-6">
-				<div className="flex flex-col gap-4 w-full lg:w-1/2">
-					{service.image && (
-						<Image
-							src={service.image}
-							alt={service.title}
-							width={800}
-							height={400}
-							className="w-full object-cover rounded-lg"
-						/>
-					)}
-				</div>
-				<div className="flex flex-col justify-between gap-4 w-full lg:w-1/2">
-					<div className="flex flex-col gap-3 lg:gap-2">
-						{renderRichText(service.description, {
-							paragraph: "!text-[14px] md:!text-[18px] lg:!text-[16px] !leading-5",
-						})}
-					</div>
-
-					<div className="flex lg:justify-end">
-						<Button asChild className="w-full">
-							<Link href="/contact">{t("order")}</Link>
+		<Reveal>
+			<section className="relative mx-4 bg-background bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] rounded-b-3xl">
+				<div className="container py-22 flex flex-col relative mx-auto">
+					<ServiceBreadcrumb
+						title={service.title}
+						homeLabel={tNav("home")}
+						servicesLabel={tNav("services")}
+					/>
+					<div className="flex flex-col items-start mt-8">
+						<h1 className="text-primary text-center md:text-left uppercase">
+							Штукатурка
+						</h1>
+						<p className="text-primary mt-6 text-left max-w-1/2">
+							Якісне вирівнювання та підготовка поверхонь для
+							подальших оздоблювальних робітіз дотриманням
+							сучасних технологій та стандартів будівництва.
+						</p>
+						<Button asChild variant="secondary" className="mt-8">
+							<Link href="/contact">
+								Замовити послугу{" "}
+								<ArrowRight className="w-4 h-4" />
+							</Link>
 						</Button>
 					</div>
 				</div>
-			</div>
-		</>
+			</section>
+		</Reveal>
+	);
+}
+
+function ServiceBreadcrumb({
+	title,
+	homeLabel,
+	servicesLabel,
+}: {
+	title: ServiceDetail["title"];
+	homeLabel: string;
+	servicesLabel: string;
+}) {
+	return (
+		<Breadcrumb>
+			<BreadcrumbList className="text-[14px] font-medium text-primary-foreground/60">
+				<BreadcrumbItem>
+					<BreadcrumbLink asChild>
+						<Link href="/">{homeLabel}</Link>
+					</BreadcrumbLink>
+				</BreadcrumbItem>
+				<BreadcrumbSeparator />
+				<BreadcrumbItem>
+					<BreadcrumbLink asChild>
+						<Link href="/our-services">{servicesLabel}</Link>
+					</BreadcrumbLink>
+				</BreadcrumbItem>
+				<BreadcrumbSeparator />
+				<BreadcrumbItem>
+					<BreadcrumbPage className="text-primary-foreground">
+						{title}
+					</BreadcrumbPage>
+				</BreadcrumbItem>
+			</BreadcrumbList>
+		</Breadcrumb>
 	);
 }

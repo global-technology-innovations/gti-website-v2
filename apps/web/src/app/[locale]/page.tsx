@@ -12,9 +12,16 @@ import {
 } from "@/components";
 import { getTranslations } from "next-intl/server";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}) {
 	const { locale } = await params;
-	const t = await getTranslations({ locale, namespace: "HomePage.HeroSection" });
+	const t = await getTranslations({
+		locale,
+		namespace: "HomePage.HeroSection",
+	});
 
 	// Ключові слова залежно від мови
 	const keywordsMap = {
@@ -29,16 +36,24 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 	return generatePageMetadata({
 		title: t("title"),
 		description: t("description"),
-		keywords: keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
+		keywords:
+			keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
 		canonicalUrl: generateCanonicalUrl(locale, ""),
 		hreflang: generateHreflangUrls(""),
 		locale,
 	});
 }
 
-export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function HomePage({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}) {
 	const { locale } = await params;
-	const tFAQ = await getTranslations({ locale, namespace: "HomePage.FAQSection" });
+	const tFAQ = await getTranslations({
+		locale,
+		namespace: "HomePage.FAQSection",
+	});
 
 	const faqData = [];
 	let i = 0;

@@ -28,18 +28,28 @@ export function AboutHeroSection() {
 				<div className="container relative z-10 py-22 flex justify-between items-center mx-auto">
 					<div className="flex flex-col items-center justify-center w-full">
 						<h2 className="text-primary text-center uppercase">
-							Будуємо <span className="text-secondary"> - простори,</span> <br />
+							Будуємо{" "}
+							<span className="text-secondary"> - простори,</span>{" "}
+							<br />
 							яким довіряють
 						</h2>
 						<p className="!text-primary-foreground mt-6 text-center max-w-[700px] !text-[18px]">
-							Global Technology Innovations — будівельна компанія з повним циклом робіт. З 2009 року
-							ми реалізуємо житлові, комерційні та промислові проєкти, забезпечуючи стабільну
-							якість, безпеку та дотримання термінів.
+							Global Technology Innovations — будівельна компанія
+							з повним циклом робіт. З 2009 року ми реалізуємо
+							житлові, комерційні та промислові проєкти,
+							забезпечуючи стабільну якість, безпеку та дотримання
+							термінів.
 						</p>
 						<div className="flex gap-3 mt-12">
-							<Badge variant="secondary">Комплексні рішення під ключ</Badge>
-							<Badge variant="secondary">Контроль якості на усіх етапах</Badge>
-							<Badge variant="secondary">Ефективність у кожному проекті</Badge>
+							<Badge variant="secondary">
+								Комплексні рішення під ключ
+							</Badge>
+							<Badge variant="secondary">
+								Контроль якості на усіх етапах
+							</Badge>
+							<Badge variant="secondary">
+								Ефективність у кожному проекті
+							</Badge>
 						</div>
 					</div>
 				</div>

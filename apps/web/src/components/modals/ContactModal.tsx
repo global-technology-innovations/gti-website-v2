@@ -15,7 +15,10 @@ import { useSendContactForm } from "@/queries";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-export default function ContactModal({ triggerText, className }: ContactModalProps) {
+export default function ContactModal({
+	triggerText,
+	className,
+}: ContactModalProps) {
 	const t = useTranslations("HomePage.HeroSection");
 	const tContactForm = useTranslations("ContactForm");
 

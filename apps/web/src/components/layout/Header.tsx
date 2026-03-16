@@ -24,7 +24,9 @@ export const Header = () => {
 	const pathname = usePathname();
 	const pathWithoutLocale = `/${pathname.split("/").slice(2).join("/")}`;
 	const PAGES_WITH_BACKGROUND = ["/", "/about"];
-	const useHeaderBackground = PAGES_WITH_BACKGROUND.includes(pathWithoutLocale);
+	const useHeaderBackground =
+		PAGES_WITH_BACKGROUND.includes(pathWithoutLocale) ||
+		pathWithoutLocale.startsWith("/our-services/");
 
 	return (
 		<header
@@ -36,7 +38,12 @@ export const Header = () => {
 			<div className="mx-auto flex justify-between items-center container mx-auto h-16">
 				<div className="flex items-center gap-1">
 					<Link href="/">
-						<Image src={Logo} alt="GTI Logo" width={56} height={56} />
+						<Image
+							src={Logo}
+							alt="GTI Logo"
+							width={56}
+							height={56}
+						/>
 					</Link>
 					{/*<Link href="/">{t("companyName")} </Link>*/}
 					<Link
@@ -64,7 +71,8 @@ export const Header = () => {
 						className={cn(
 							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
 							pathWithoutLocale !== "/about" && "",
-							pathWithoutLocale === "/about" && "bg-primary text-white"
+							pathWithoutLocale === "/about" &&
+								"bg-primary text-white"
 						)}
 					>
 						{t("nav.about")}
@@ -74,7 +82,8 @@ export const Header = () => {
 						className={cn(
 							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
 							pathWithoutLocale !== "/our-services" && "",
-							pathWithoutLocale === "/our-services" && "bg-primary text-white"
+							pathWithoutLocale === "/our-services" &&
+								"bg-primary text-white"
 						)}
 					>
 						{t("nav.services")}
@@ -84,7 +93,8 @@ export const Header = () => {
 						className={cn(
 							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
 							pathWithoutLocale !== "/portfolio" && "",
-							pathWithoutLocale === "/portfolio" && "bg-primary text-white"
+							pathWithoutLocale === "/portfolio" &&
+								"bg-primary text-white"
 						)}
 					>
 						{t("nav.portfolio")}
@@ -94,7 +104,8 @@ export const Header = () => {
 						className={cn(
 							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
 							pathWithoutLocale !== "/careers" && "",
-							pathWithoutLocale === "/careers" && "bg-primary text-white"
+							pathWithoutLocale === "/careers" &&
+								"bg-primary text-white"
 						)}
 					>
 						{t("nav.careers")}
@@ -104,7 +115,8 @@ export const Header = () => {
 						className={cn(
 							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
 							pathWithoutLocale !== "/outstaffing" && "",
-							pathWithoutLocale === "/outstaffing" && "bg-primary text-white"
+							pathWithoutLocale === "/outstaffing" &&
+								"bg-primary text-white"
 						)}
 					>
 						{t("nav.outstaffing")}
@@ -114,7 +126,8 @@ export const Header = () => {
 						className={cn(
 							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
 							pathWithoutLocale !== "/blog" && "",
-							pathWithoutLocale === "/blog" && "bg-primary text-white"
+							pathWithoutLocale === "/blog" &&
+								"bg-primary text-white"
 						)}
 					>
 						{t("nav.blog")}
@@ -124,7 +137,8 @@ export const Header = () => {
 						className={cn(
 							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
 							pathWithoutLocale !== "/contact" && "",
-							pathWithoutLocale === "/contact" && "bg-primary text-white"
+							pathWithoutLocale === "/contact" &&
+								"bg-primary text-white"
 						)}
 					>
 						{t("nav.contact")}
@@ -144,28 +158,58 @@ export const Header = () => {
 						</SheetTrigger>
 						<SheetContent side="bottom">
 							<SheetTitle>
-								<VisuallyHidden>Mobile navigation menu</VisuallyHidden>
+								<VisuallyHidden>
+									Mobile navigation menu
+								</VisuallyHidden>
 							</SheetTitle>
 							<nav className="flex flex-col justify-center items-center h-full py-12 gap-4 font-normal">
-								<Link href="/" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/"
+									onClick={() => setOpen(false)}
+									className="!text-ml"
+								>
 									{t("nav.home")}
 								</Link>
-								<Link href="/about" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/about"
+									onClick={() => setOpen(false)}
+									className="!text-ml"
+								>
 									{t("nav.about")}
 								</Link>
-								<Link href="/our-services" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/our-services"
+									onClick={() => setOpen(false)}
+									className="!text-ml"
+								>
 									{t("nav.services")}
 								</Link>
-								<Link href="/portfolio" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/portfolio"
+									onClick={() => setOpen(false)}
+									className="!text-ml"
+								>
 									{t("nav.portfolio")}
 								</Link>
-								<Link href="/careers" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/careers"
+									onClick={() => setOpen(false)}
+									className="!text-ml"
+								>
 									{t("nav.careers")}
 								</Link>
-								<Link href="/outstaffing" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/outstaffing"
+									onClick={() => setOpen(false)}
+									className="!text-ml"
+								>
 									{t("nav.outstaffing")}
 								</Link>
-								<Link href="/contact" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/contact"
+									onClick={() => setOpen(false)}
+									className="!text-ml"
+								>
 									{t("nav.contact")}
 								</Link>
 								<LanguageSwitcher />
