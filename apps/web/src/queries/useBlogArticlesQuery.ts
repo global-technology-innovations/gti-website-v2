@@ -28,14 +28,10 @@ export function resolveStrapiMediaUrl(url?: string) {
 		return "";
 	}
 
-	return url.startsWith("http")
-		? url
-		: `${STRAPI_API_URL.replace("/api", "")}${url}`;
+	return url.startsWith("http") ? url : `${STRAPI_API_URL.replace("/api", "")}${url}`;
 }
 
-export function normalizeBlogArticleContent(
-	value: unknown
-): BlogArticleContent {
+export function normalizeBlogArticleContent(value: unknown): BlogArticleContent {
 	if (Array.isArray(value)) {
 		return value as BlogArticleContent;
 	}
@@ -55,20 +51,28 @@ export function normalizeBlogArticleContent(
 	return [] as BlogArticleContent;
 }
 
-async function fetchBlogArticles(locale: string): Promise<BlogArticle[]> {
-	const response = await api.get<StrapiResponse<StrapiBlogArticle>>(
-		"/blog-articles",
-		{
-			params: {
-				locale,
-				populate: {
-					image: true,
-					blog_category: true,
-				},
-				sort: ["featured:desc", "publishedAt:desc", "createdAt:desc"],
+async function fetchBlogArticles(locale: string, categoryId?: string): Promise<BlogArticle[]> {
+	const response = await api.get<StrapiResponse<StrapiBlogArticle>>("/blog-articles", {
+		params: {
+			locale,
+			populate: {
+				image: true,
+				blog_category: true,
 			},
-		}
-	);
+			...(categoryId
+				? {
+						filters: {
+							blog_category: {
+								id: {
+									$eq: categoryId,
+								},
+							},
+						},
+					}
+				: {}),
+			sort: ["featured:desc", "publishedAt:desc", "createdAt:desc"],
+		},
+	});
 
 	return response.data.data.map((item) => ({
 		id: String(item.id),
@@ -77,8 +81,7 @@ async function fetchBlogArticles(locale: string): Promise<BlogArticle[]> {
 		excerpt: item.attributes.excerpt,
 		content: normalizeBlogArticleContent(item.attributes.content),
 		image: resolveStrapiMediaUrl(
-			item.attributes.image?.data?.attributes?.formats?.medium?.url ||
-				item.attributes.image?.data?.attributes?.url
+			item.attributes.image?.data?.attributes?.formats?.medium?.url || item.attributes.image?.data?.attributes?.url
 		),
 		featured: item.attributes.featured,
 		publishedAt: item.attributes.publishedAt,
@@ -91,12 +94,12 @@ async function fetchBlogArticles(locale: string): Promise<BlogArticle[]> {
 	}));
 }
 
-export function useBlogArticlesQuery() {
+export function useBlogArticlesQuery(categoryId?: string) {
 	const locale = useLocale();
 
 	return useQuery<BlogArticle[]>({
-		queryKey: ["blog-articles", locale],
-		queryFn: () => fetchBlogArticles(locale),
+		queryKey: ["blog-articles", locale, categoryId ?? "all"],
+		queryFn: () => fetchBlogArticles(locale, categoryId),
 		staleTime: 1000 * 60 * 5,
 	});
 }

@@ -1,32 +1,43 @@
 "use client";
 
-import { Button, ProjectCard, Reveal } from "@/components";
-import { useProjectsQuery } from "@/queries";
+import { FilterChips, ProjectCard, Reveal } from "@/components";
+import { ProjectStatusFilter, useProjectsQuery } from "@/queries";
 import { AlertCircle, Loader2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
-
-type ProjectStatusFilter = "all" | "planned" | "in-progress" | "completed";
+import { useState } from "react";
 
 export function PortfolioListSection() {
 	const t = useTranslations("PortfolioPage");
 	const locale = useLocale();
-	const { data: projects = [], isLoading, error } = useProjectsQuery();
-	const [activeStatus, setActiveStatus] = useState<ProjectStatusFilter>("all");
-
-	const filteredProjects = useMemo(() => {
-		if (activeStatus === "all") {
-			return projects;
-		}
-
-		return projects.filter((project) => project.attributes.status === activeStatus);
-	}, [activeStatus, projects]);
+	const [activeStatus, setActiveStatus] = useState<"all" | ProjectStatusFilter>("all");
+	const selectedStatus = activeStatus === "all" ? undefined : activeStatus;
+	const { data: projects = [], isLoading, error } = useProjectsQuery(selectedStatus);
 
 	const statusFilters = [
-		{ id: "all" as const, label: t("allProjects") },
-		{ id: "planned" as const, label: t("ProjectCard.status.planned") },
-		{ id: "in-progress" as const, label: t("ProjectCard.status.inProgress") },
-		{ id: "completed" as const, label: t("ProjectCard.status.completed") },
+		{
+			id: "all",
+			label: t("allProjects"),
+			isActive: activeStatus === "all",
+			onClick: () => setActiveStatus("all"),
+		},
+		{
+			id: "planned",
+			label: t("ProjectCard.status.planned"),
+			isActive: activeStatus === "planned",
+			onClick: () => setActiveStatus("planned"),
+		},
+		{
+			id: "in-progress",
+			label: t("ProjectCard.status.inProgress"),
+			isActive: activeStatus === "in-progress",
+			onClick: () => setActiveStatus("in-progress"),
+		},
+		{
+			id: "completed",
+			label: t("ProjectCard.status.completed"),
+			isActive: activeStatus === "completed",
+			onClick: () => setActiveStatus("completed"),
+		},
 	];
 
 	if (isLoading) {
@@ -56,23 +67,11 @@ export function PortfolioListSection() {
 	return (
 		<Reveal>
 			<div className="container mx-auto px-4 pb-16 pt-16">
-				<div className="mb-8 flex flex-wrap items-center justify-center gap-3">
-					{statusFilters.map((status) => (
-						<Button
-							key={status.id}
-							onClick={() => setActiveStatus(status.id)}
-							variant={activeStatus === status.id ? "secondary" : "outline"}
-							size="small"
-							className="font-normal"
-						>
-							{status.label}
-						</Button>
-					))}
-				</div>
+				<FilterChips options={statusFilters} />
 
-				{filteredProjects.length > 0 ? (
+				{projects.length > 0 ? (
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-						{filteredProjects.map((project) => (
+						{projects.map((project) => (
 							<ProjectCard key={project.id} project={project} locale={locale} />
 						))}
 					</div>

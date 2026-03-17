@@ -3,11 +3,13 @@ import { StrapiProject, StrapiResponse } from "@/types/strapi";
 import { api } from "@/lib/api";
 import { useLocale } from "next-intl";
 
-export const useProjectsQuery = () => {
+export type ProjectStatusFilter = StrapiProject["attributes"]["status"];
+
+export const useProjectsQuery = (status?: ProjectStatusFilter) => {
 	const locale = useLocale();
 
 	return useQuery({
-		queryKey: ["projects", locale],
+		queryKey: ["projects", locale, status ?? "all"],
 		queryFn: async (): Promise<StrapiProject[]> => {
 			try {
 				const response = await api.get<StrapiResponse<StrapiProject>>("/projects", {
@@ -17,6 +19,15 @@ export const useProjectsQuery = () => {
 							mainImage: true,
 							images: true,
 						},
+						...(status
+							? {
+									filters: {
+										status: {
+											$eq: status,
+										},
+									},
+								}
+							: {}),
 						sort: ["featured:desc", "createdAt:desc"],
 					},
 				});

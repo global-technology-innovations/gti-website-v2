@@ -1,33 +1,24 @@
 "use client";
 
-import { BlogCategories, BlogGrid, BlogPagination, CallToActionSection, Reveal } from "@/components";
+import { BlogGrid, BlogPagination, CallToActionSection, FilterChips, Reveal } from "@/components";
 import { useBlogArticlesQuery, useBlogCategoriesQuery } from "@/queries";
 import { AlertCircle, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const ARTICLES_PER_PAGE = 9;
 
 export default function BlogPage() {
 	const t = useTranslations("BlogPage");
-	const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null);
+	const [activeCategoryId, setActiveCategoryId] = useState("all");
 	const [currentPage, setCurrentPage] = useState(1);
 	const { data: categories = [], isLoading: isCategoriesLoading, error: categoriesError } = useBlogCategoriesQuery();
-	const { data: articles = [], isLoading: isArticlesLoading, error: articlesError } = useBlogArticlesQuery();
+	const selectedCategoryId = activeCategoryId === "all" ? undefined : activeCategoryId;
+	const { data: articles = [], isLoading: isArticlesLoading, error: articlesError } = useBlogArticlesQuery(selectedCategoryId);
 
-	const filteredArticles = useMemo(() => {
-		if (!activeCategoryId) {
-			return articles;
-		}
-
-		return articles.filter((article) => article.category?.id === activeCategoryId);
-	}, [activeCategoryId, articles]);
-
-	const totalPages = Math.max(1, Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE));
-	const paginatedArticles = useMemo(() => {
-		const start = (currentPage - 1) * ARTICLES_PER_PAGE;
-		return filteredArticles.slice(start, start + ARTICLES_PER_PAGE);
-	}, [currentPage, filteredArticles]);
+	const totalPages = Math.max(1, Math.ceil(articles.length / ARTICLES_PER_PAGE));
+	const start = (currentPage - 1) * ARTICLES_PER_PAGE;
+	const paginatedArticles = articles.slice(start, start + ARTICLES_PER_PAGE);
 
 	useEffect(() => {
 		if (currentPage > totalPages) {
@@ -69,19 +60,20 @@ export default function BlogPage() {
 					<p className="mt-4 text-center text-primary-foreground">{t("description")}</p>
 				</div>
 
-				<BlogCategories
-					categories={[
+				<FilterChips
+					options={[
 						{
 							id: "all",
-							name: t("allCategories"),
-							isActive: activeCategoryId === null,
+							label: t("allCategories"),
+							isActive: activeCategoryId === "all",
 							onClick: () => {
-								setActiveCategoryId(null);
+								setActiveCategoryId("all");
 								setCurrentPage(1);
 							},
 						},
 						...categories.map((category) => ({
-							...category,
+							id: category.id,
+							label: category.name,
 							isActive: category.id === activeCategoryId,
 							onClick: () => {
 								setActiveCategoryId(category.id);
@@ -91,7 +83,7 @@ export default function BlogPage() {
 					]}
 				/>
 
-				{filteredArticles.length > 0 ? (
+				{articles.length > 0 ? (
 					<>
 						<BlogGrid articles={paginatedArticles} />
 						{totalPages > 1 ? (
