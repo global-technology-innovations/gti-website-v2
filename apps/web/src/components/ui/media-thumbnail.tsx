@@ -11,15 +11,8 @@ interface MediaThumbnailProps {
 	onClick?: () => void;
 }
 
-export function MediaThumbnail({
-	src,
-	alt,
-	mimeType,
-	className = "",
-	onClick,
-}: MediaThumbnailProps) {
-	const isVideo =
-		mimeType?.startsWith("video/") || /\.(mp4|webm|ogg|avi|mov|wmv|flv|mkv)$/i.test(src);
+export function MediaThumbnail({ src, alt, mimeType, className = "", onClick }: MediaThumbnailProps) {
+	const isVideo = mimeType?.startsWith("video/") || /\.(mp4|webm|ogg|avi|mov|wmv|flv|mkv)$/i.test(src);
 
 	return (
 		<div className={`relative group cursor-pointer ${className}`} onClick={onClick}>
@@ -42,11 +35,7 @@ export function MediaThumbnail({
 			)}
 
 			{/* Media type indicator */}
-			{isVideo && (
-				<div className="absolute top-1 right-1 bg-black/70 text-white text-xs px-1 py-0.5 rounded">
-					Відео
-				</div>
-			)}
+			{isVideo && <div className="absolute top-1 right-1 bg-black/70 text-white text-xs px-1 py-0.5 rounded">Відео</div>}
 		</div>
 	);
 }

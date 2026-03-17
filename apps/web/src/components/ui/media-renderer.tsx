@@ -41,8 +41,7 @@ export function MediaRenderer({
 	const videoRef = useRef<HTMLVideoElement>(null);
 
 	// Determine if the media is a video based on MIME type or file extension
-	const isVideo =
-		mimeType?.startsWith("video/") || /\.(mp4|webm|ogg|avi|mov|wmv|flv|mkv)$/i.test(src);
+	const isVideo = mimeType?.startsWith("video/") || /\.(mp4|webm|ogg|avi|mov|wmv|flv|mkv)$/i.test(src);
 
 	const handlePlayPause = () => {
 		if (videoRef.current) {
@@ -132,40 +131,24 @@ export function MediaRenderer({
 				{/* Custom video controls overlay - visible on hover */}
 				<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
 					<div className="flex items-center space-x-2">
-						<Button
-							className="bg-black/70 hover:bg-black/90 text-white p-2"
-							onClick={handlePlayPause}
-						>
+						<Button className="bg-black/70 hover:bg-black/90 text-white p-2" onClick={handlePlayPause}>
 							{isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
 						</Button>
 
-						<Button
-							className="bg-black/70 hover:bg-black/90 text-white p-2"
-							onClick={handleMuteToggle}
-						>
+						<Button className="bg-black/70 hover:bg-black/90 text-white p-2" onClick={handleMuteToggle}>
 							{isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
 						</Button>
 					</div>
 				</div>
 
 				{/* Video indicator */}
-				<div className="absolute top-2 left-2 bg-black/50 text-white px-2 py-1 rounded text-xs">
-					{t("videoIndicator")}
-				</div>
+				<div className="absolute top-2 left-2 bg-black/50 text-white px-2 py-1 rounded text-xs">{t("videoIndicator")}</div>
 			</div>
 		);
 	}
 
 	// Default to image for non-video media
 	return (
-		<Image
-			src={src}
-			alt={alt}
-			width={width}
-			height={height}
-			fill={fill}
-			className={`object-contain ${className}`}
-			onClick={onClick}
-		/>
+		<Image src={src} alt={alt} width={width} height={height} fill={fill} className={`object-contain ${className}`} onClick={onClick} />
 	);
 }
