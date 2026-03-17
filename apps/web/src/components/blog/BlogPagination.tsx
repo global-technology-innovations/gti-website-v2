@@ -46,7 +46,7 @@ export function BlogPagination({ currentPage, totalPages, onChange }: Props) {
 								<PaginationLink
 									href="#"
 									className={cn(
-										"flex size-11 items-center justify-center rounded-full border-0 bg-transparent px-0 py-0 text-[18px] text-primary hover:bg-transparent hover:text-primary",
+										"flex size-9 items-center justify-center rounded-full border-0 bg-transparent px-0 py-0 text-[16px] text-primary hover:bg-transparent hover:text-primary",
 										item === currentPage && "bg-secondary text-white hover:bg-secondary hover:text-white"
 									)}
 									isActive={item === currentPage}
@@ -86,7 +86,7 @@ function getVisiblePages(currentPage: number, totalPages: number): Array<number 
 		return Array.from({ length: totalPages }, (_, index) => index + 1);
 	}
 
-	const pages = new Set<number>([1, 2, currentPage, totalPages - 1, totalPages]);
+	const pages = new Set<number>([1, 2, currentPage - 1, currentPage, currentPage + 1, totalPages - 1, totalPages]);
 	const sortedPages = Array.from(pages)
 		.filter((page) => page >= 1 && page <= totalPages)
 		.sort((a, b) => a - b);
