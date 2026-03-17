@@ -249,6 +249,12 @@
 					"description": "Entrée sur de nouveaux marchés et segments"
 				}
 			}
+		},
+		"CallToAction": {
+			"title": "Il est temps de concrétiser votre idée",
+			"descriptionLine1": "Prêt à démarrer votre projet avec une équipe de construction fiable ?",
+			"descriptionLine2": "Nous vous aiderons à réaliser votre idée avec clarté et professionnalisme.",
+			"button": "Nous contacter"
 		}
 	},
 	"CareersPage": {

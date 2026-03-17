@@ -13,11 +13,7 @@ import {
 	generatePageMetadata,
 } from "@/components";
 
-export async function generateMetadata({
-	params,
-}: {
-	params: Promise<{ locale: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
 
 	const titleMap = {
@@ -49,22 +45,15 @@ export async function generateMetadata({
 
 	return generatePageMetadata({
 		title: titleMap[locale as keyof typeof titleMap] || titleMap.uk,
-		description:
-			descriptionMap[locale as keyof typeof descriptionMap] ||
-			descriptionMap.uk,
-		keywords:
-			keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
+		description: descriptionMap[locale as keyof typeof descriptionMap] || descriptionMap.uk,
+		keywords: keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
 		canonicalUrl: generateCanonicalUrl(locale, "/about"),
 		hreflang: generateHreflangUrls("/about"),
 		locale,
 	});
 }
 
-export default async function AboutPage({
-	params,
-}: {
-	params: Promise<{ locale: string }>;
-}) {
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
 
 	return (

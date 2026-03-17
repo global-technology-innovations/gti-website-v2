@@ -249,6 +249,12 @@
 					"description": "Erschließung neuer Märkte und Segmente"
 				}
 			}
+		},
+		"CallToAction": {
+			"title": "Zeit, Ihre Idee umzusetzen",
+			"descriptionLine1": "Bereit, Ihr Projekt mit einem verlässlichen Bauteam zu starten?",
+			"descriptionLine2": "Wir helfen Ihnen, Ihre Idee klar und professionell umzusetzen.",
+			"button": "Kontaktieren Sie uns"
 		}
 	},
 	"CareersPage": {

@@ -254,6 +254,12 @@
 					"description": "Entering new markets and segments"
 				}
 			}
+		},
+		"CallToAction": {
+			"title": "Time to bring your idea to life",
+			"descriptionLine1": "Ready to start your project with a reliable construction team?",
+			"descriptionLine2": "We will help you implement your idea clearly and professionally.",
+			"button": "Contact us"
 		}
 	},
 	"CareersPage": {

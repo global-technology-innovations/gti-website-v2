@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogCategories, BlogGrid, BlogPagination, Reveal } from "@/components";
+import { BlogCategories, BlogGrid, BlogPagination, CallToActionSection, Reveal } from "@/components";
 import { useBlogArticlesQuery, useBlogCategoriesQuery } from "@/queries";
 import { AlertCircle, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -104,6 +104,7 @@ export default function BlogPage() {
 					</div>
 				)}
 			</div>
+			<CallToActionSection />
 		</Reveal>
 	);
 }

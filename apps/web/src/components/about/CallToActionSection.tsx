@@ -1,9 +1,12 @@
 import { Reveal } from "@/components/animations";
 import { Button } from "@/components/ui";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export function CallToActionSection() {
+	const t = useTranslations("AboutPage.CallToAction");
+
 	return (
 		<Reveal>
 			<section className="relative mx-4 bg-secondary rounded-3xl pt-16 pb-18 overflow-hidden">
@@ -26,14 +29,14 @@ export function CallToActionSection() {
 					/>
 				</div>
 				<div className="container flex flex-col items-center justify-center relative z-10 mx-auto">
-					<h2 className="text-white uppercase">Час реалізувати вашу ідею</h2>
+					<h2 className="h3 text-white uppercase">{t("title")}</h2>
 					<p className="text-white/70 mt-4">
-						Готові розпочати свій проєкт разом з надійною будівельною командою? <br />
-						Ми допоможемо реалізувати вашу ідею чітко та професійно.
+						{t("descriptionLine1")} <br />
+						{t("descriptionLine2")}
 					</p>
-					<Button asChild variant="secondary" className="mt-8">
+					<Button asChild variant="white" className="mt-8 text-secondary">
 						<Link href="/contact">
-							Зв&apos;язатись з нами <ArrowRight className="w-4 h-4" />
+							{t("button")} <ArrowRight className="w-4 h-4" />
 						</Link>
 					</Button>
 				</div>

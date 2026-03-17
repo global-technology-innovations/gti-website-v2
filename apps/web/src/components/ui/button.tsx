@@ -12,6 +12,7 @@ const buttonVariants = cva(
 				default: "",
 				secondary: "bg-secondary",
 				outline: "bg-transparent border border-foreground text-primary text-sm shadow-none",
+				white: "bg-white text-primary border-none",
 			},
 			size: {
 				default: "px-7 py-3.5",
@@ -38,11 +39,7 @@ function Button({
 	const Comp = asChild ? Slot : "button";
 
 	return (
-		<Comp
-			data-slot="button"
-			className={cn(buttonVariants({ variant, size, className }), "gap-2")}
-			{...props}
-		>
+		<Comp data-slot="button" className={cn(buttonVariants({ variant, size, className }), "gap-2")} {...props}>
 			{asChild ? children : <>{children}</>}
 		</Comp>
 	);

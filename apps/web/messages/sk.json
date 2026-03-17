@@ -247,6 +247,12 @@
 					"description": "Vstup na nové trhy a segmenty"
 				}
 			}
+		},
+		"CallToAction": {
+			"title": "Čas zrealizovať váš nápad",
+			"descriptionLine1": "Ste pripravení začať svoj projekt so spoľahlivým stavebným tímom?",
+			"descriptionLine2": "Pomôžeme vám zrealizovať váš nápad jasne a profesionálne.",
+			"button": "Kontaktujte nás"
 		}
 	},
 	"CareersPage": {

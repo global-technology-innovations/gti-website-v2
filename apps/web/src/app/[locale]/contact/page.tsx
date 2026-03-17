@@ -65,11 +65,7 @@ function ContactPageContent() {
 
 	return (
 		<>
-			<MultiHeroSection
-				badgeText={t("Hero.badge")}
-				title={t("Hero.title")}
-				description={t("Hero.description")}
-			/>
+			<MultiHeroSection badgeText={t("Hero.badge")} title={t("Hero.title")} description={t("Hero.description")} />
 			<ContactInfo />
 			<ContactFormSection />
 			{/* <MapSection /> */}
