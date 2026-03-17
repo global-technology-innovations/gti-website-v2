@@ -25,15 +25,11 @@ export function FAQSection() {
 				<div className="w-1/2"></div>
 				<div className="min-w-0 w-1/2 shrink-0 z-[1]">
 					<Reveal direction="up">
-						<h2 className="text-primary uppercase">
+						<h2 className="h3 !font-bold text-primary uppercase">
 							Відповіді на ваші <br /> <span className="text-secondary">- запитання</span>
 						</h2>
 					</Reveal>
-					<Accordion
-						type="multiple"
-						defaultValue={["item-0"]}
-						className=" max-w-full flex flex-col gap-4 mt-10"
-					>
+					<Accordion type="multiple" defaultValue={["item-0"]} className=" max-w-full flex flex-col gap-4 mt-10">
 						{items.map((item, index) => (
 							<Reveal key={index} direction="up">
 								<AccordionItem value={`item-${index}`}>

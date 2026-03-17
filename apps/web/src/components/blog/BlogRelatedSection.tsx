@@ -37,7 +37,7 @@ export function BlogRelatedSection({ currentArticleSlug, currentCategoryId }: Pr
 		<section className="px-4 py-16 md:py-20">
 			<div className="container mx-auto overflow-hidden">
 				<div className="mb-10 flex items-center justify-between gap-4">
-					<h2 className="uppercase text-primary">
+					<h2 className="h3 !font-bold text-primary uppercase">
 						{t("relatedTitle")} <span className="text-secondary">{t("relatedHighlight")}</span>
 					</h2>
 
@@ -58,11 +58,10 @@ export function BlogRelatedSection({ currentArticleSlug, currentCategoryId }: Pr
 						prevEl: ".blog-related-swiper-button-prev",
 					}}
 					spaceBetween={24}
-					slidesPerView={1.08}
+					slidesPerView={1}
 					breakpoints={{
-						640: { slidesPerView: 1 },
-						768: { slidesPerView: 2 },
-						1200: { slidesPerView: 3 },
+						640: { slidesPerView: 2 },
+						1024: { slidesPerView: 3 },
 					}}
 					className="!overflow-visible"
 				>

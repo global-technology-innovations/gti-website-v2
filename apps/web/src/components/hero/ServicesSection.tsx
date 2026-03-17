@@ -54,10 +54,9 @@ export function ServicesSection() {
 			<section className="relative mx-4 bg-background rounded-3xl py-22">
 				<div className="container flex justify-between items-center relative mx-auto">
 					<div>
-						<h2 className="text-primary uppercase">Повний цикл робіт - під ключ</h2>
+						<h2 className="h3 !font-bold text-primary uppercase">Повний цикл робіт - під ключ</h2>
 						<p className="text-primary-foreground mt-3">
-							Від ідеї та проєктування до реалізації та сервісного супроводу — беремо
-							відповідальність за результат.
+							Від ідеї та проєктування до реалізації та сервісного супроводу — беремо відповідальність за результат.
 						</p>
 					</div>
 
@@ -72,19 +71,10 @@ export function ServicesSection() {
 					{HERO_SERVICES.map((service, index) => (
 						<Card key={index} variant="outline">
 							<div className="w-12 h-12 rounded-full bg-background flex items-center justify-center mb-4">
-								<Image
-									src={service.icon}
-									alt=""
-									width={24}
-									height={24}
-									className="text-primary"
-									aria-hidden
-								/>
+								<Image src={service.icon} alt="" width={24} height={24} className="text-primary" aria-hidden />
 							</div>
-							<h3 className="text-primary font-semibold uppercase">{service.title}</h3>
-							<p className="text-primary-foreground mt-2 text-sm max-w-[280px]">
-								{service.description}
-							</p>
+							<h3 className="!text-lg !leading-normal !font-bold text-primary uppercase">{service.title}</h3>
+							<p className="text-primary-foreground mt-2 text-sm max-w-[280px]">{service.description}</p>
 						</Card>
 					))}
 				</div>
