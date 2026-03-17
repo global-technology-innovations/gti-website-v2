@@ -301,7 +301,8 @@
 		"allProjects": "Alle Projekte",
 		"Hero": {
 			"badge": "Projektportfolio",
-			"title": "Unsere realisierten Bauprojekte",
+			"title": "Unsere Bau",
+			"highlight": "projekte",
 			"description": "Von Wohnkomplexen bis zu Gewerbeobjekten - wir schaffen qualitativ hochwertige Gebäude für unsere Kunden"
 		},
 		"ProjectCard": {
@@ -327,6 +328,9 @@
 			}
 		},
 		"CTA": {
+			"heading": "Bereit, Ihr",
+			"headingHighlight": "Projekt zu starten?",
+			"headingDescription": "Kontaktieren Sie uns für eine kostenlose Beratung und erhalten Sie ein persönliches Angebot für Ihr Bauprojekt",
 			"title": "Bereit, Ihr Projekt zu starten?",
 			"description": "Kontaktieren Sie uns für eine kostenlose Beratung und erhalten Sie ein persönliches Angebot für Ihr Bauprojekt",
 			"benefits": {

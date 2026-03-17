@@ -301,7 +301,8 @@
 		"allProjects": "Všechny projekty",
 		"Hero": {
 			"badge": "Portfólio projektů",
-			"title": "Naše realizované stavební projekty",
+			"title": "Naše stavební",
+			"highlight": "projekty",
 			"description": "Od rezidenčních komplexů po komerční objekty - vytváříme kvalitní budovy pro naše klienty"
 		},
 		"ProjectCard": {
@@ -327,6 +328,9 @@
 			}
 		},
 		"CTA": {
+			"heading": "Jste připraveni začít",
+			"headingHighlight": "svůj projekt?",
+			"headingDescription": "Spojte se s námi pro bezplatnou konzultaci a získejte osobní nabídku pro váš stavební projekt",
 			"title": "Jste připraveni začít svůj projekt?",
 			"description": "Spojte se s námi pro bezplatnou konzultaci a získejte osobní nabídku pro váš stavební projekt",
 			"benefits": {

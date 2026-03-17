@@ -1,5 +1,12 @@
-import { PortfolioListSection, generateCanonicalUrl, generateHreflangUrls, generatePageMetadata } from "@/components";
-import { useTranslations } from "next-intl";
+import {
+	ContactSection,
+	PortfolioCTASection,
+	PortfolioListSection,
+	generateCanonicalUrl,
+	generateHreflangUrls,
+	generatePageMetadata,
+} from "@/components";
+import { useLocale, useTranslations } from "next-intl";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
@@ -43,29 +50,18 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default function PortfolioPage() {
 	const t = useTranslations("PortfolioPage");
-	const { beforeHighlight, highlight } = splitTitle(t("Hero.title"));
+	const locale = useLocale();
 	return (
 		<>
 			<div className="container mx-auto pt-20 px-4">
 				<h2 className="text-center uppercase text-primary">
-					{beforeHighlight} <span className="text-secondary">{highlight}</span>
+					{t("Hero.title")} <span className="text-secondary">{t("Hero.highlight")}</span>
 				</h2>
 				<p className="mt-5 text-center text-primary-foreground">{t("Hero.description")}</p>
 			</div>
 			<PortfolioListSection />
+			<PortfolioCTASection locale={locale} />
+			<ContactSection />
 		</>
 	);
-}
-
-function splitTitle(title: string) {
-	const words = title.trim().split(/\s+/);
-
-	if (words.length < 2) {
-		return { beforeHighlight: title, highlight: "" };
-	}
-
-	return {
-		beforeHighlight: words.slice(0, -1).join(" "),
-		highlight: words.at(-1) ?? "",
-	};
 }

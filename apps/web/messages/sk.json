@@ -299,7 +299,8 @@
 		"allProjects": "Všetky projekty",
 		"Hero": {
 			"badge": "Portfólio projektov",
-			"title": "Naše realizované stavebné projekty",
+			"title": "Naše stavebné",
+			"highlight": "projekty",
 			"description": "Od rezidenčných komplexov po komerčné objekty - vytvárame kvalitné budovy pre našich klientov"
 		},
 		"ProjectCard": {
@@ -325,6 +326,9 @@
 			}
 		},
 		"CTA": {
+			"heading": "Ste pripravení začať",
+			"headingHighlight": "svoj projekt?",
+			"headingDescription": "Spojte sa s nami pre bezplatnú konzultáciu a získajte osobnú ponuku pre váš stavebný projekt",
 			"title": "Ste pripravení začať svoj projekt?",
 			"description": "Spojte sa s nami pre bezplatnú konzultáciu a získajte osobnú ponuku pre váš stavebný projekt",
 			"benefits": {

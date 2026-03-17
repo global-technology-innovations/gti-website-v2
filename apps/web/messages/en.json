@@ -654,7 +654,8 @@
 		"allProjects": "All projects",
 		"Hero": {
 			"badge": "Project Portfolio",
-			"title": "Our Completed Construction Projects",
+			"title": "Our Construction",
+			"highlight": "Projects",
 			"description": "From residential complexes to commercial facilities - we create quality buildings for our clients"
 		},
 		"ProjectCard": {
@@ -680,6 +681,9 @@
 			}
 		},
 		"CTA": {
+			"heading": "Ready to start",
+			"headingHighlight": "your project?",
+			"headingDescription": "Contact us for a free consultation and get a personalized proposal for your construction project",
 			"title": "Ready to start your project?",
 			"description": "Contact us for a free consultation and get a personalized proposal for your construction project",
 			"benefits": {

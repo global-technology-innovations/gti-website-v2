@@ -67,7 +67,7 @@ export function PortfolioListSection() {
 
 	return (
 		<Reveal>
-			<div className="container mx-auto px-4 pb-16 pt-16">
+			<div className="container mx-auto px-4 pt-16">
 				<FilterChips options={statusFilters} />
 
 				{isFetching ? (

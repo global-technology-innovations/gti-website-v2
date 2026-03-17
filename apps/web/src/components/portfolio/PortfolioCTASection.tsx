@@ -1,8 +1,10 @@
 "use client";
 
-import { Button, Card, CardContent, ContactModal, Reveal } from "@/components";
-import { ArrowRight, Calendar, CheckCircle, Mail, Phone } from "lucide-react";
+import { Button, Card, CardContent } from "@/components";
+import { siteContact } from "@/config/site-contact";
+import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 
 interface PortfolioCTASectionProps {
@@ -14,21 +16,21 @@ export function PortfolioCTASection({ locale }: PortfolioCTASectionProps) {
 
 	const contactMethods = [
 		{
-			icon: Phone,
+			icon: "/icons/phone-calling.svg",
 			title: t("contactMethods.phone.title"),
 			description: t("contactMethods.phone.description"),
 			action: t("contactMethods.phone.action"),
-			href: "tel:+380973737240",
+			href: `tel:${siteContact.phones.ua.replace(/\s+/g, "")}`,
 		},
 		{
-			icon: Mail,
+			icon: "/icons/inbox.svg",
 			title: t("contactMethods.email.title"),
 			description: t("contactMethods.email.description"),
 			action: t("contactMethods.email.action"),
-			href: "mailto:info@global-technology-innovations.com",
+			href: `mailto:${siteContact.email}`,
 		},
 		{
-			icon: Calendar,
+			icon: "/icons/map-point.svg",
 			title: t("contactMethods.meeting.title"),
 			description: t("contactMethods.meeting.description"),
 			action: t("contactMethods.meeting.action"),
@@ -36,89 +38,34 @@ export function PortfolioCTASection({ locale }: PortfolioCTASectionProps) {
 		},
 	];
 
-	const benefits = [
-		t("benefits.quality"),
-		t("benefits.experience"),
-		t("benefits.timeline"),
-		t("benefits.support"),
-		t("benefits.warranty"),
-		t("benefits.transparency"),
-	];
-
 	return (
-		<section className="py-20">
-			<Reveal>
-				<div className="text-center mb-16">
-					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t("title")}</h2>
-					<p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">{t("description")}</p>
-					<div className="flex flex-wrap justify-center gap-4">
-						{benefits.map((benefit, index) => (
-							<div key={index} className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
-								<CheckCircle className="w-5 h-5 text-green-600" />
-								<span className="text-gray-700 font-medium">{benefit}</span>
-							</div>
-						))}
-					</div>
-				</div>
-			</Reveal>
+		<section className="container mx-auto py-30 px-4">
+			<div className="">
+				<h2 className="h3 text-center uppercase text-primary">
+					{t("heading")} <span className="text-secondary">{t("headingHighlight")}</span>
+				</h2>
+				<p className="mt-5 text-center text-primary-foreground">{t("headingDescription")}</p>
+			</div>
 
-			<Reveal>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-					{contactMethods.map((method, index) => (
-						<Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-							<CardContent>
-								<div className="flex justify-center mb-4">
-									<div className="p-3 bg-blue-100 rounded-full">
-										<method.icon className="w-6 h-6 text-blue-600" />
-									</div>
-								</div>
-								<h3 className="text-lg font-semibold text-gray-900 mb-2">{method.title}</h3>
-								<p className="text-gray-600 mb-4 text-sm">{method.description}</p>
-								<Button asChild className="w-full">
-									<Link href={method.href}>
-										{method.action}
-										<ArrowRight className="w-4 h-4 ml-2" />
-									</Link>
-								</Button>
-							</CardContent>
-						</Card>
-					))}
-				</div>
-			</Reveal>
-
-			<Reveal>
-				<Card className="p-8 md:p-12">
-					<CardContent className="p-0">
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-							<div>
-								<h3 className="text-3xl font-bold text-gray-900 mb-4">{t("consultation.title")}</h3>
-								<p className="text-lg text-gray-600 mb-6">{t("consultation.description")}</p>
-								<ul className="space-y-3 mb-8">
-									{t.raw("consultation.features").map((feature: string, index: number) => (
-										<li key={index} className="flex items-center space-x-3">
-											<CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-											<span className="text-gray-700">{feature}</span>
-										</li>
-									))}
-								</ul>
-								<div className="flex flex-col sm:flex-row gap-4">
-									<ContactModal className="mt-0 mx-0" triggerText={t("consultation.primaryButton")} />
-									<Button>
-										<Link href={`/${locale}/our-services`}>{t("consultation.secondaryButton")}</Link>
-									</Button>
-								</div>
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+				{contactMethods.map((method, index) => (
+					<Card key={index} variant="default" className="items-center text-center">
+						<CardContent>
+							<div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
+								<Image src={method.icon} alt="icon" width={26} height={26} aria-hidden />
 							</div>
-							<Card className="bg-gradient-to-br from-blue-100 to-indigo-100 border-0">
-								<CardContent className="text-right">
-									<div className="text-6xl font-bold text-blue-600 mb-2">100%</div>
-									<div className="text-xl font-semibold text-gray-900 mb-2">{t("consultation.guarantee.title")}</div>
-									<p className="text-gray-600">{t("consultation.guarantee.description")}</p>
-								</CardContent>
-							</Card>
-						</div>
-					</CardContent>
-				</Card>
-			</Reveal>
+							<h3 className="!text-lg mt-6 !leading-normal !font-semibold text-primary uppercase">{method.title}</h3>
+							<p className="text-primary-foreground mt-2">{method.description}</p>
+							<Button variant="secondary" asChild className="w-full mt-6">
+								<Link href={method.href}>
+									{method.action}
+									<ArrowRight className="w-4 h-4 ml-2" />
+								</Link>
+							</Button>
+						</CardContent>
+					</Card>
+				))}
+			</div>
 		</section>
 	);
 }

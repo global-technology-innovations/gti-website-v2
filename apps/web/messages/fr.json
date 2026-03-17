@@ -301,7 +301,8 @@
 		"allProjects": "Tous les projets",
 		"Hero": {
 			"badge": "Portfolio de projets",
-			"title": "Nos projets de construction réalisés",
+			"title": "Nos projets",
+			"highlight": "de construction",
 			"description": "Des complexes résidentiels aux installations commerciales - nous créons des bâtiments de qualité pour nos clients"
 		},
 		"ProjectCard": {
@@ -327,6 +328,9 @@
 			}
 		},
 		"CTA": {
+			"heading": "Prêt à lancer",
+			"headingHighlight": "votre projet ?",
+			"headingDescription": "Contactez-nous pour une consultation gratuite et obtenez une offre personnalisée pour votre projet de construction",
 			"title": "Prêt à commencer votre projet ?",
 			"description": "Contactez-nous pour une consultation gratuite et obtenez une offre personnalisée pour votre projet de construction",
 			"benefits": {

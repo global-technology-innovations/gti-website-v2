@@ -31,7 +31,7 @@ export function ContactSection() {
 				<div className="container flex justify-between items-start relative mx-auto gap-12">
 					<Reveal direction="up">
 						<div className="max-w-[675px]">
-							<h2 className="text-primary uppercase">
+							<h2 className="h3 !font-bold text-primary uppercase">
 								МАЄТЕ{" "}
 								<span className="text-secondary">
 									запИТАННЯ <br /> або
@@ -39,20 +39,13 @@ export function ContactSection() {
 								ПРОПОЗИЦІЮ?
 							</h2>
 							<p className="text-primary-foreground mt-4">
-								Щоб задати питання або отримати консультацію або просто познайомитись,
-								зв&#39;яжіться з нами за вказаними контактами, aбо заповніть форму, щоб ми
-								зв&#39;язалися з Вами.
+								Щоб задати питання або отримати консультацію або просто познайомитись, зв&#39;яжіться з нами за вказаними
+								контактами, aбо заповніть форму, щоб ми зв&#39;язалися з Вами.
 							</p>
 
 							<div className="flex items-center gap-4 mt-12">
 								<div className="size-10 bg-secondary/10 rounded-full flex items-center justify-center">
-									<Image
-										src="/icons/phone-calling.svg"
-										alt="phone"
-										width={24}
-										height={24}
-										className="size-6"
-									/>
+									<Image src="/icons/phone-calling.svg" alt="phone" width={24} height={24} className="size-6" />
 								</div>
 								<div className="flex flex-col gap-0.5">
 									<p className="text-primary !font-semibold text-[17px]">Мобільний телефон</p>
@@ -63,33 +56,18 @@ export function ContactSection() {
 							</div>
 							<div className="flex items-center gap-4 mt-4">
 								<div className="size-10 bg-secondary/10 rounded-full flex items-center justify-center">
-									<Image
-										src="/icons/inbox.svg"
-										alt="inbox"
-										width={24}
-										height={24}
-										className="size-6"
-									/>
+									<Image src="/icons/inbox.svg" alt="inbox" width={24} height={24} className="size-6" />
 								</div>
 								<div className="flex flex-col gap-0.5">
 									<p className="text-primary !font-semibold text-[17px]">Електронна пошта</p>
-									<a
-										href="mailto:info@global-technology-innovations.com"
-										className="text-primary-foreground text-[17px]"
-									>
+									<a href="mailto:info@global-technology-innovations.com" className="text-primary-foreground text-[17px]">
 										info@global-technology-innovations.com
 									</a>
 								</div>
 							</div>
 							<div className="flex items-center gap-4 mt-4">
 								<div className="size-10 bg-secondary/10 rounded-full flex items-center justify-center">
-									<Image
-										src="/icons/phone-calling.svg"
-										alt="phone"
-										width={24}
-										height={24}
-										className="size-6"
-									/>
+									<Image src="/icons/map-point.svg" alt="phone" width={24} height={24} className="size-6" />
 								</div>
 								<div className="flex flex-col gap-0.5">
 									<p className="text-primary !font-semibold text-[17px]">Адреса</p>
