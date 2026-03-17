@@ -1,12 +1,41 @@
 "use client";
 
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button } from "@/components";
+import {
+	Badge,
+	BlogRelatedSection,
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+	Button,
+} from "@/components";
+import { siteContact } from "@/config/site-contact";
 import { Link } from "@/i18n/navigation";
 import renderRichText from "@/lib/renderRichText";
 import { useSingleBlogArticleQuery } from "@/queries";
-import { AlertCircle, ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
+import { format } from "date-fns";
+import { cs, de, enUS, fr, sk, uk } from "date-fns/locale";
+import { AlertCircle, ArrowLeft, Loader2 } from "lucide-react";
+import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
+import { FaFacebook, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
+const socialIcons = {
+	whatsapp: FaWhatsapp,
+	facebook: FaFacebook,
+	tiktok: FaTiktok,
+};
+
+const localeMap = {
+	uk: uk,
+	sk: sk,
+	cs: cs,
+	en: enUS,
+	fr: fr,
+	de: de,
+};
 const CONTENT_CLASSNAMES: Parameters<typeof renderRichText>[1] = {
 	heading: "text-[28px] leading-[36px] font-bold uppercase text-primary sm:text-[32px] sm:leading-[40px]",
 	heading2: "!text-[32px] text-primary",
@@ -22,9 +51,14 @@ const CONTENT_CLASSNAMES: Parameters<typeof renderRichText>[1] = {
 
 export default function BlogArticlePage() {
 	const params = useParams();
+	const locale = useLocale();
 	const slug = params.slug as string;
 	const { data: article, isLoading, error } = useSingleBlogArticleQuery(slug);
-
+	const publishedAt = article?.publishedAt
+		? format(new Date(article.publishedAt), "d MMMM yyyy", {
+				locale: localeMap[locale as keyof typeof localeMap] || uk,
+			})
+		: "";
 	if (isLoading) {
 		return (
 			<div className="mt-[75px] flex min-h-screen items-center justify-center">
@@ -72,11 +106,29 @@ export default function BlogArticlePage() {
 					<div className="mt-8 flex flex-col items-start">
 						<h1 className="h3 text-center text-primary uppercase md:text-left">{article.title}</h1>
 						<p className="mt-6 max-w-2xl text-left text-primary">{article.excerpt}</p>
-						<Button asChild variant="secondary" className="mt-8">
-							<Link href="/contact">
-								Замовити послугу <ArrowRight className="w-4 h-4" />
-							</Link>
-						</Button>
+					</div>
+					<div className="mt-6 flex justify-between items-center">
+						<div className="flex items-center gap-2">
+							<Badge variant="secondaryDark">{article.category?.name}</Badge>
+							<Badge variant="white">{publishedAt}</Badge>
+						</div>
+						<div className="flex items-center gap-3">
+							{siteContact.socials.map((social) => {
+								const Icon = socialIcons[social.key];
+								return (
+									<a
+										key={social.key}
+										href={social.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label={social.label}
+										className="flex size-8 items-center justify-center rounded-full bg-secondary/50 text-white hover:scale-105 transition-all duration-300"
+									>
+										<Icon className="size-6" />
+									</a>
+								);
+							})}
+						</div>
 					</div>
 				</div>
 			</section>
@@ -88,6 +140,8 @@ export default function BlogArticlePage() {
 					</div>
 				</section>
 			) : null}
+
+			<BlogRelatedSection currentArticleSlug={article.slug} currentCategoryId={article.category?.id} />
 		</>
 	);
 }

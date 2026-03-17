@@ -6,7 +6,7 @@ import { AlertCircle, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 
-const ARTICLES_PER_PAGE = 1;
+const ARTICLES_PER_PAGE = 9;
 
 export default function BlogPage() {
 	const t = useTranslations("BlogPage");

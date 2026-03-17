@@ -275,6 +275,10 @@
 		"errorDescription": "Zkuste stránku obnovit o něco později.",
 		"noResults": "Zatím zde nejsou žádné články."
 	},
+	"BlogArticlePage": {
+		"relatedTitle": "Mohlo by se vám",
+		"relatedHighlight": "líbit"
+	},
 	"OurServicesPage": {
 		"title": "Naše služby",
 		"button": "Zjistit více",

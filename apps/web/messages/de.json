@@ -275,6 +275,10 @@
 		"errorDescription": "Bitte versuchen Sie es etwas später erneut.",
 		"noResults": "Derzeit sind noch keine Artikel vorhanden."
 	},
+	"BlogArticlePage": {
+		"relatedTitle": "Das könnte Ihnen",
+		"relatedHighlight": "gefallen"
+	},
 	"OurServicesPage": {
 		"title": "Unsere Leistungen",
 		"button": "Mehr erfahren",

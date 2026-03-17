@@ -90,28 +90,16 @@ export function CookieBanner({
 				{/* Малий банер — тільки при першому показі (і точно не при forceOpen) */}
 				{!forceOpen && !openSettings && (
 					<div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-						<div className="text-sm leading-relaxed">{t("description")}</div>
+						<div className="text-sm text-primary leading-relaxed">{t("description")}</div>
 
 						<div className="flex shrink-0 gap-2">
-							<Button
-								type="button"
-								className="rounded-md border px-3 py-2 text-sm"
-								onClick={() => setOpenSettings(true)}
-							>
+							<Button type="button" className="rounded-md border px-3 py-2 text-sm" onClick={() => setOpenSettings(true)}>
 								{t("buttons.configure")}
 							</Button>
-							<Button
-								type="button"
-								className="rounded-md border px-3 py-2 text-sm"
-								onClick={handleRejectAll}
-							>
+							<Button type="button" className="rounded-md border px-3 py-2 text-sm" onClick={handleRejectAll}>
 								{t("buttons.reject")}
 							</Button>
-							<Button
-								type="button"
-								className="rounded-md px-3 py-2 text-sm text-white"
-								onClick={handleAcceptAll}
-							>
+							<Button type="button" className="rounded-md px-3 py-2 text-sm text-white" onClick={handleAcceptAll}>
 								{t("buttons.acceptAll")}
 							</Button>
 						</div>
@@ -122,16 +110,18 @@ export function CookieBanner({
 				{openSettings && (
 					<>
 						<div className="flex items-center justify-between">
-							<div className="text-sm font-medium">{t("settings.title")}</div>
+							<div className="text-sm text-primary font-medium">{t("settings.title")}</div>
 							{/* Кнопку "назад" прибрано за вимогою. Нема дубля хрестика. */}
 						</div>
 
 						<div className="mt-3 grid grid-cols-1 gap-2 text-sm md:grid-cols-3">
 							<label className="flex items-start gap-2 rounded-md border p-3">
 								<input type="checkbox" checked readOnly className="mt-1" />
-								<div>
-									<div className="font-medium">{t("settings.categories.necessary.title")}</div>
-									<div className="opacity-70">{t("settings.categories.necessary.description")}</div>
+								<div className="space-y-1">
+									<div className="text-primary font-medium">{t("settings.categories.necessary.title")}</div>
+									<div className="text-primary-foreground opacity-70">
+										{t("settings.categories.necessary.description")}
+									</div>
 								</div>
 							</label>
 
@@ -140,13 +130,11 @@ export function CookieBanner({
 									type="checkbox"
 									className="mt-1"
 									checked={toggles.preferences}
-									onChange={(e) =>
-										setToggles((prev) => ({ ...prev, preferences: e.target.checked }))
-									}
+									onChange={(e) => setToggles((prev) => ({ ...prev, preferences: e.target.checked }))}
 								/>
-								<div>
-									<div className="font-medium">{t("settings.categories.functional.title")}</div>
-									<div className="opacity-70">
+								<div className="space-y-1">
+									<div className="text-primary font-medium">{t("settings.categories.functional.title")}</div>
+									<div className="text-primary-foreground opacity-70">
 										{t("settings.categories.functional.description")}
 									</div>
 								</div>
@@ -159,9 +147,11 @@ export function CookieBanner({
 									checked={toggles.analytics}
 									onChange={(e) => setToggles((prev) => ({ ...prev, analytics: e.target.checked }))}
 								/>
-								<div>
-									<div className="font-medium">{t("settings.categories.analytics.title")}</div>
-									<div className="opacity-70">{t("settings.categories.analytics.description")}</div>
+								<div className="space-y-1">
+									<div className="text-primary font-medium">{t("settings.categories.analytics.title")}</div>
+									<div className="text-primary-foreground opacity-70">
+										{t("settings.categories.analytics.description")}
+									</div>
 								</div>
 							</label>
 
@@ -172,25 +162,19 @@ export function CookieBanner({
 									checked={toggles.marketing}
 									onChange={(e) => setToggles((prev) => ({ ...prev, marketing: e.target.checked }))}
 								/>
-								<div>
-									<div className="font-medium">{t("settings.categories.marketing.title")}</div>
-									<div className="opacity-70">{t("settings.categories.marketing.description")}</div>
+								<div className="space-y-1">
+									<div className="text-primary font-medium">{t("settings.categories.marketing.title")}</div>
+									<div className="text-primary-foreground opacity-70">
+										{t("settings.categories.marketing.description")}
+									</div>
 								</div>
 							</label>
 
 							<div className="md:col-span-3 flex justify-end gap-2">
-								<Button
-									type="button"
-									className="rounded-md border px-3 py-2 text-sm"
-									onClick={handleRejectAll}
-								>
+								<Button type="button" className="rounded-md border px-3 py-2 text-sm" onClick={handleRejectAll}>
 									{t("buttons.rejectAll")}
 								</Button>
-								<Button
-									type="button"
-									className="rounded-md px-3 py-2 text-sm text-white"
-									onClick={handleSave}
-								>
+								<Button type="button" className="rounded-md px-3 py-2 text-sm text-white" onClick={handleSave}>
 									{t("buttons.saveSettings")}
 								</Button>
 							</div>

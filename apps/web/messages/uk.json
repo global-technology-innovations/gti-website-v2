@@ -280,6 +280,10 @@
 		"errorDescription": "Спробуйте оновити сторінку трохи пізніше.",
 		"noResults": "Статей поки немає."
 	},
+	"BlogArticlePage": {
+		"relatedTitle": "Вам може",
+		"relatedHighlight": "сподобатись"
+	},
 	"OurServicesPage": {
 		"title": "Наші послуги",
 		"button": "Детальніше",

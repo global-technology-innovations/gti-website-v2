@@ -1,8 +1,15 @@
 "use client";
 
+import { siteContact } from "@/config/site-contact";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { FaFacebook, FaTiktok, FaWhatsapp } from "react-icons/fa";
+
+const socialIcons = {
+	whatsapp: FaWhatsapp,
+	facebook: FaFacebook,
+	tiktok: FaTiktok,
+};
 
 export const Footer = () => {
 	const t = useTranslations("Footer");
@@ -32,33 +39,22 @@ export const Footer = () => {
 					</div>
 
 					<div className="flex flex-col justify-around">
-						<Link
-							href="https://wa.me/421917089618"
-							className="!text-white"
-							aria-label="WhatsApp"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaWhatsapp className="size-7 md:size-5" />
-						</Link>
-						<Link
-							href="https://www.facebook.com/share/19oenjwYPz/"
-							className="!text-white"
-							aria-label="Facebook"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaFacebook className="size-7 md:size-5" />
-						</Link>
-						<Link
-							href="https://www.tiktok.com/@global.technology67?_t=ZM-90eIRc2gy5L&_r=1"
-							className="!text-white"
-							aria-label="TikTok"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaTiktok className="size-7 md:size-5" />
-						</Link>
+						{siteContact.socials.map((social) => {
+							const Icon = socialIcons[social.key];
+
+							return (
+								<Link
+									key={social.key}
+									href={social.href}
+									className="!text-white"
+									aria-label={social.label}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<Icon className="size-7 md:size-5" />
+								</Link>
+							);
+						})}
 					</div>
 				</div>
 
@@ -67,16 +63,10 @@ export const Footer = () => {
 					<Link href="/about" className="text-white font-semibold text-[16px] underline-animate">
 						{tHeader("nav.about")}
 					</Link>
-					<Link
-						href="/our-services"
-						className="text-white font-semibold text-[16px] underline-animate"
-					>
+					<Link href="/our-services" className="text-white font-semibold text-[16px] underline-animate">
 						{tHeader("nav.services")}
 					</Link>
-					<Link
-						href="/portfolio"
-						className="text-white font-semibold text-[16px] underline-animate"
-					>
+					<Link href="/portfolio" className="text-white font-semibold text-[16px] underline-animate">
 						{tHeader("nav.portfolio")}
 					</Link>
 					<Link href="/careers" className="text-white font-semibold text-[16px] underline-animate">
@@ -88,39 +78,24 @@ export const Footer = () => {
 				</div>
 
 				<div className="hidden md:flex gap-4 justify-around">
-					<Link
-						href="https://wa.me/421917089618"
-						className="!text-white transition-transform duration-200 hover:scale-110"
-						aria-label="WhatsApp"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<div className="size-8 rounded-full border border-white flex items-center justify-center">
-							<FaWhatsapp className="size-6" />
-						</div>
-					</Link>
-					<Link
-						href="https://www.facebook.com/share/19oenjwYPz/"
-						className="!text-white transition-transform duration-200 hover:scale-110"
-						aria-label="Facebook"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<div className="size-8 rounded-full border border-white flex items-center justify-center">
-							<FaFacebook className="size-6" />
-						</div>
-					</Link>
-					<Link
-						href="https://www.tiktok.com/@global.technology67?_t=ZM-90eIRc2gy5L&_r=1"
-						className="!text-white transition-transform duration-200 hover:scale-110"
-						aria-label="TikTok"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<div className="size-8 rounded-full border border-white flex items-center justify-center">
-							<FaTiktok className="size-6" />
-						</div>
-					</Link>
+					{siteContact.socials.map((social) => {
+						const Icon = socialIcons[social.key];
+
+						return (
+							<Link
+								key={social.key}
+								href={social.href}
+								className="!text-white transition-transform duration-200 hover:scale-110"
+								aria-label={social.label}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<div className="size-8 rounded-full border border-white flex items-center justify-center">
+									<Icon className="size-6" />
+								</div>
+							</Link>
+						);
+					})}
 				</div>
 			</div>
 

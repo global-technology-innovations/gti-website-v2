@@ -280,6 +280,10 @@
 		"errorDescription": "Please try refreshing the page a bit later.",
 		"noResults": "No articles yet."
 	},
+	"BlogArticlePage": {
+		"relatedTitle": "You may",
+		"relatedHighlight": "also like"
+	},
 	"OurServicesPage": {
 		"title": "Our Services",
 		"button": "Learn More",

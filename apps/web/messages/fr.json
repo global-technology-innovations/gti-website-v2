@@ -275,6 +275,10 @@
 		"errorDescription": "Veuillez réessayer dans quelques instants.",
 		"noResults": "Aucun article pour le moment."
 	},
+	"BlogArticlePage": {
+		"relatedTitle": "Vous pourriez",
+		"relatedHighlight": "aussi aimer"
+	},
 	"OurServicesPage": {
 		"title": "Nos services",
 		"button": "En savoir plus",

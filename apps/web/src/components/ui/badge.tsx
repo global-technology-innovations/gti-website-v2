@@ -10,6 +10,8 @@ const badgeVariants = cva(
 			variant: {
 				default: "bg-blue-100 text-blue-700 border-transparent",
 				secondary: "bg-secondary/10 !text-secondary border-none",
+				secondaryDark: "bg-secondary text-white border-none",
+				white: "bg-white text-primary border-none",
 				outline: "text-gray-800",
 				blur: "bg-primary/35 backdrop-blur-sm text-white border-none",
 			},

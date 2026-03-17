@@ -273,6 +273,10 @@
 		"errorDescription": "Skúste stránku obnoviť o chvíľu neskôr.",
 		"noResults": "Zatiaľ tu nie sú žiadne články."
 	},
+	"BlogArticlePage": {
+		"relatedTitle": "Mohlo by sa vám",
+		"relatedHighlight": "páčiť"
+	},
 	"OurServicesPage": {
 		"title": "Naše služby",
 		"button": "Zistiť viac",
