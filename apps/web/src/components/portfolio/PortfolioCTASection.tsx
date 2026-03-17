@@ -53,10 +53,7 @@ export function PortfolioCTASection({ locale }: PortfolioCTASectionProps) {
 					<p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">{t("description")}</p>
 					<div className="flex flex-wrap justify-center gap-4">
 						{benefits.map((benefit, index) => (
-							<div
-								key={index}
-								className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm"
-							>
+							<div key={index} className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
 								<CheckCircle className="w-5 h-5 text-green-600" />
 								<span className="text-gray-700 font-medium">{benefit}</span>
 							</div>
@@ -68,10 +65,7 @@ export function PortfolioCTASection({ locale }: PortfolioCTASectionProps) {
 			<Reveal>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
 					{contactMethods.map((method, index) => (
-						<Card
-							key={index}
-							className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-						>
+						<Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
 							<CardContent>
 								<div className="flex justify-center mb-4">
 									<div className="p-3 bg-blue-100 rounded-full">
@@ -108,23 +102,16 @@ export function PortfolioCTASection({ locale }: PortfolioCTASectionProps) {
 									))}
 								</ul>
 								<div className="flex flex-col sm:flex-row gap-4">
-									<ContactModal
-										className="mt-0 mx-0"
-										triggerText={t("consultation.primaryButton")}
-									/>
+									<ContactModal className="mt-0 mx-0" triggerText={t("consultation.primaryButton")} />
 									<Button>
-										<Link href={`/${locale}/our-services`}>
-											{t("consultation.secondaryButton")}
-										</Link>
+										<Link href={`/${locale}/our-services`}>{t("consultation.secondaryButton")}</Link>
 									</Button>
 								</div>
 							</div>
 							<Card className="bg-gradient-to-br from-blue-100 to-indigo-100 border-0">
 								<CardContent className="text-right">
 									<div className="text-6xl font-bold text-blue-600 mb-2">100%</div>
-									<div className="text-xl font-semibold text-gray-900 mb-2">
-										{t("consultation.guarantee.title")}
-									</div>
+									<div className="text-xl font-semibold text-gray-900 mb-2">{t("consultation.guarantee.title")}</div>
 									<p className="text-gray-600">{t("consultation.guarantee.description")}</p>
 								</CardContent>
 							</Card>

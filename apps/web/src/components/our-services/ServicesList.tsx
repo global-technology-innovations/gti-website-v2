@@ -34,26 +34,18 @@ export function ServicesList() {
 			<div className="flex flex-col gap-6 pt-12">
 				<Reveal>
 					{Array.from({ length: 5 }).map((_, index) => (
-						<ServiceCardSkeleton
-							key={index}
-							reversed={index % 2 !== 0}
-						/>
+						<ServiceCardSkeleton key={index} reversed={index % 2 !== 0} />
 					))}
 				</Reveal>
 			</div>
 		);
 	}
 
-	const displayedServices = expanded
-		? (services ?? [])
-		: (services ?? []).slice(0, INITIAL_COUNT);
+	const displayedServices = expanded ? (services ?? []) : (services ?? []).slice(0, INITIAL_COUNT);
 	const hasMore = (services?.length ?? 0) > INITIAL_COUNT;
 
 	return (
-		<div
-			ref={sectionRef}
-			className="flex flex-col items-center py-12 max-w-6xl mx-auto"
-		>
+		<div ref={sectionRef} className="flex flex-col items-center py-12 max-w-6xl mx-auto">
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-8 w-full items-stretch">
 				{displayedServices.map((service) => (
 					<Reveal key={service.slug}>
@@ -69,16 +61,9 @@ export function ServicesList() {
 				))}
 			</div>
 			{hasMore && (
-				<Button
-					type="button"
-					aria-expanded={expanded}
-					onClick={handleToggle}
-					className="mt-12"
-				>
+				<Button type="button" aria-expanded={expanded} onClick={handleToggle} className="mt-12">
 					{expanded ? t("showLess") : t("showMore")}
-					<ArrowRight
-						className={`size-4 shrink-0 transition-transform ${expanded ? "-rotate-90" : ""}`}
-					/>
+					<ArrowRight className={`size-4 shrink-0 transition-transform ${expanded ? "-rotate-90" : ""}`} />
 				</Button>
 			)}
 		</div>

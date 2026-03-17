@@ -7,11 +7,7 @@ import {
 	ServicesList,
 } from "@/components";
 
-export async function generateMetadata({
-	params,
-}: {
-	params: Promise<{ locale: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
 
 	const titleMap = {
@@ -43,22 +39,15 @@ export async function generateMetadata({
 
 	return generatePageMetadata({
 		title: titleMap[locale as keyof typeof titleMap] || titleMap.uk,
-		description:
-			descriptionMap[locale as keyof typeof descriptionMap] ||
-			descriptionMap.uk,
-		keywords:
-			keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
+		description: descriptionMap[locale as keyof typeof descriptionMap] || descriptionMap.uk,
+		keywords: keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
 		canonicalUrl: generateCanonicalUrl(locale, "/our-services"),
 		hreflang: generateHreflangUrls("/our-services"),
 		locale,
 	});
 }
 
-export default async function ServicesPage({
-	params,
-}: {
-	params: Promise<{ locale: string }>;
-}) {
+export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
 
 	return (
@@ -66,12 +55,10 @@ export default async function ServicesPage({
 			<OrganizationSchema locale={locale} type="ConstructionCompany" />
 			<div className="container mx-auto pt-20 px-4">
 				<h2 className="text-primary uppercase text-center">
-					Повний цикл робіт{" "}
-					<span className="text-secondary">під ключ</span>
+					Повний цикл робіт <span className="text-secondary">під ключ</span>
 				</h2>
 				<p className="text-primary-foreground mt-4 text-center">
-					Від ідеї та проєктування до реалізації та сервісного
-					супроводу — беремо відповідальність за результат.
+					Від ідеї та проєктування до реалізації та сервісного супроводу — беремо відповідальність за результат.
 				</p>
 			</div>
 			<ServicesList />

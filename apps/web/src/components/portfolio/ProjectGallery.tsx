@@ -124,11 +124,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
 							</div>
 
 							{/* Video indicator */}
-							{isVideo && (
-								<div className="absolute top-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs">
-									Відео
-								</div>
-							)}
+							{isVideo && <div className="absolute top-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs">Відео</div>}
 						</div>
 					);
 				})}

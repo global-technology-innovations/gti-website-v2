@@ -298,6 +298,7 @@
 		}
 	},
 	"PortfolioPage": {
+		"allProjects": "Tous les projets",
 		"Hero": {
 			"badge": "Portfolio de projets",
 			"title": "Nos projets de construction réalisés",

@@ -9,11 +9,7 @@ export function PortfolioHeroSection() {
 	return (
 		<section className="pt-12">
 			<div className="container mx-auto">
-				<MultiHeroSection
-					title={t("title")}
-					description={t("description")}
-					badgeText={t("badge")}
-				/>
+				<MultiHeroSection title={t("title")} description={t("description")} badgeText={t("badge")} />
 			</div>
 		</section>
 	);

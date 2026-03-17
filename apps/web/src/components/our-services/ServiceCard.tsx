@@ -5,15 +5,8 @@ import { Link } from "@/i18n";
 import { STRAPI_API_URL } from "@/lib/api";
 import Image from "next/image";
 
-export function ServiceCard({
-	slug,
-	title,
-	description,
-	image,
-}: ServiceCardProps) {
-	const imageSrc = image.startsWith("http")
-		? image
-		: `${STRAPI_API_URL.replace("/api", "")}${image}`;
+export function ServiceCard({ slug, title, description, image }: ServiceCardProps) {
+	const imageSrc = image.startsWith("http") ? image : `${STRAPI_API_URL.replace("/api", "")}${image}`;
 	return (
 		<Link
 			href={`/our-services/${slug}`}
@@ -30,8 +23,8 @@ export function ServiceCard({
 				/>
 			</div>
 			<Card className="flex flex-1 flex-col px-8 py-6 transition-all duration-300 group-hover:bg-background group-hover:border-background">
-				<CardTitle className="text-primary">{title}</CardTitle>
-				<CardDescription>{description}</CardDescription>
+				<CardTitle>{title}</CardTitle>
+				<CardDescription className="mt-2">{description}</CardDescription>
 			</Card>
 		</Link>
 	);

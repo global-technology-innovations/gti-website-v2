@@ -298,6 +298,7 @@
 		}
 	},
 	"PortfolioPage": {
+		"allProjects": "Všechny projekty",
 		"Hero": {
 			"badge": "Portfólio projektů",
 			"title": "Naše realizované stavební projekty",
