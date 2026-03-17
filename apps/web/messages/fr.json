@@ -44,9 +44,7 @@
 	"Footer": {
 		"privacy": "Politique de confidentialité",
 		"cookies": "Politique des cookies",
-
 		"email": "E-mail",
-
 		"address": "Adresse",
 		"rights": "© 2025 Global Technology Innovations. Tous droits réservés."
 	},
@@ -57,25 +55,33 @@
 			"button": "Nous contacter"
 		},
 		"AboutUsSection": {
-			"title": "À propos",
-			"description": "Notre objectif est de fournir des services de construction exceptionnels, en mettant l'accent sur la qualité, la sécurité et la satisfaction du client.",
-			"features": [
-				{
-					"title": "Notre mission",
-					"desc": "Dépasser les attentes des clients grâce à l'innovation et à l'efficacité.",
-					"icon": "🏁"
+			"stats": {
+				"experience": {
+					"value": "15+",
+					"label": "Ans d'expérience pratique"
 				},
-				{
-					"title": "Notre équipe",
-					"desc": "Des professionnels expérimentés et qualifiés, engagés vers l’excellence.",
-					"icon": "👥"
+				"projects": {
+					"value": "500+",
+					"label": "Projets réalisés avec succès"
 				},
-				{
-					"title": "Nos valeurs",
-					"desc": "Intégrité, fiabilité et collaboration dans tous les aspects de notre travail.",
-					"icon": "🤝"
+				"team": {
+					"value": "50+",
+					"label": "Spécialistes qualifiés dans l'équipe"
+				},
+				"satisfaction": {
+					"value": "98%",
+					"label": "Clients fidèles satisfaits"
 				}
-			]
+			},
+			"heading": "Partenaire",
+			"highlight": "de construction fiable",
+			"headingSuffix": "avec une expérience éprouvée",
+			"paragraphs": {
+				"first": "Global Technology Innovations travaille dans le secteur de la construction depuis 2009 et fournit des solutions complètes pour les sites résidentiels, commerciaux et industriels.",
+				"second": "L'entreprise a commencé comme une entreprise familiale de construction et s'est transformée au fil des années en une structure professionnelle stable.",
+				"third": "Nous combinons l'expérience pratique de la génération précédente, les technologies modernes et une approche responsable de chaque projet, garantissant qualité, sécurité et résultats stables."
+			},
+			"button": "En savoir plus"
 		},
 		"FAQSection": {
 			"title": "Questions fréquentes",
@@ -101,6 +107,11 @@
 					"answer": "La durée dépend de l'ampleur du projet. Une petite rénovation peut prendre quelques semaines, tandis qu'une construction complète peut durer plusieurs mois. Nous convenons toujours des délais avant le début et respectons le calendrier."
 				}
 			]
+		},
+		"FeaturedProjects": {
+			"title": "Nos meilleurs projets",
+			"description": "Découvrez une sélection de réalisations qui démontrent notre expertise et notre qualité dans la construction",
+			"viewAllButton": "Voir tous les projets"
 		}
 	},
 	"AboutPage": {
@@ -295,91 +306,6 @@
 			"badge": "Services",
 			"title": "Des solutions clés en main, de A à Z",
 			"description": "Du concept et du design à l’exécution et au service — nous prenons la responsabilité du résultat."
-		}
-	},
-	"PortfolioPage": {
-		"allProjects": "Tous les projets",
-		"Hero": {
-			"badge": "Portfolio de projets",
-			"title": "Nos projets",
-			"highlight": "de construction",
-			"description": "Des complexes résidentiels aux installations commerciales - nous créons des bâtiments de qualité pour nos clients"
-		},
-		"ProjectCard": {
-			"viewDetails": "Voir les détails",
-			"status": {
-				"completed": "Terminé",
-				"inProgress": "En cours",
-				"planned": "Planifié"
-			},
-			"dateNotAvailable": "Date non spécifiée"
-		},
-		"ProjectsList": {
-			"results": {
-				"noResults": {
-					"title": "Aucun projet trouvé",
-					"description": "Veuillez réessayer plus tard ou nous contacter pour plus d'informations",
-					"resetFilters": "Effacer les filtres"
-				}
-			},
-			"error": {
-				"title": "Erreur lors du chargement des projets",
-				"description": "Essayez de rafraîchir la page"
-			}
-		},
-		"CTA": {
-			"heading": "Prêt à lancer",
-			"headingHighlight": "votre projet ?",
-			"headingDescription": "Contactez-nous pour une consultation gratuite et obtenez une offre personnalisée pour votre projet de construction",
-			"title": "Prêt à commencer votre projet ?",
-			"description": "Contactez-nous pour une consultation gratuite et obtenez une offre personnalisée pour votre projet de construction",
-			"benefits": {
-				"quality": "Garantie de qualité",
-				"experience": "Expérience de l'équipe",
-				"timeline": "Respect des délais",
-				"support": "Support 24/7",
-				"warranty": "Garantie sur les travaux",
-				"transparency": "Transparence du processus"
-			},
-			"contactMethods": {
-				"phone": {
-					"title": "Téléphone",
-					"description": "Consultation rapide par téléphone",
-					"action": "Appeler"
-				},
-				"email": {
-					"title": "Email",
-					"description": "Proposition détaillée par email",
-					"action": "Écrire"
-				},
-				"form": {
-					"title": "Formulaire",
-					"description": "Remplir une demande en ligne",
-					"action": "Remplir"
-				},
-				"meeting": {
-					"title": "Réunion",
-					"description": "Rencontre personnelle et discussion",
-					"action": "Planifier"
-				}
-			},
-			"consultation": {
-				"title": "Consultation gratuite",
-				"description": "Nos experts sont prêts à vous aider avec la planification et la réalisation de votre projet de construction",
-				"features": [
-					"Analyse de vos besoins et exigences",
-					"Justification technique du projet",
-					"Calcul des coûts et délais",
-					"Sélection des solutions optimales",
-					"Consultation sur les matériaux et technologies"
-				],
-				"primaryButton": "Obtenir une consultation",
-				"secondaryButton": "Nos services",
-				"guarantee": {
-					"title": "Garantie de résultat",
-					"description": "Nous garantissons la qualité des travaux et le respect de tous les accords"
-				}
-			}
 		}
 	},
 	"ContactPage": {
@@ -727,6 +653,55 @@
 			"form": {
 				"title": "Commander des spécialistes",
 				"subtitle": "Remplissez le formulaire et obtenez une offre personnalisée"
+			}
+		}
+	},
+	"PortfolioPage": {
+		"allProjects": "Tous les projets",
+		"Hero": {
+			"title": "Nos projets",
+			"highlight": "de construction",
+			"description": "Des complexes résidentiels aux installations commerciales - nous créons des bâtiments de qualité pour nos clients"
+		},
+		"ProjectCard": {
+			"status": {
+				"completed": "Terminé",
+				"inProgress": "En cours",
+				"planned": "Planifié"
+			},
+			"dateNotAvailable": "Date non spécifiée"
+		},
+		"ProjectsList": {
+			"results": {
+				"noResults": {
+					"title": "Aucun projet trouvé"
+				}
+			},
+			"error": {
+				"title": "Erreur lors du chargement des projets",
+				"description": "Essayez de rafraîchir la page"
+			}
+		},
+		"CTA": {
+			"heading": "Prêt à lancer",
+			"headingHighlight": "votre projet ?",
+			"headingDescription": "Contactez-nous pour une consultation gratuite et obtenez une offre personnalisée pour votre projet de construction",
+			"contactMethods": {
+				"phone": {
+					"title": "Téléphone",
+					"description": "Consultation rapide par téléphone",
+					"action": "Appeler"
+				},
+				"email": {
+					"title": "Email",
+					"description": "Proposition détaillée par email",
+					"action": "Écrire"
+				},
+				"meeting": {
+					"title": "Réunion",
+					"description": "Rencontre personnelle et discussion",
+					"action": "Planifier"
+				}
 			}
 		}
 	}

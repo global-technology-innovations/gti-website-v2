@@ -18,13 +18,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
 			<div className="flex items-start gap-4 mb-4">
 				<div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 overflow-hidden">
 					{review.avatar ? (
-						<Image
-							src={review.avatar}
-							alt={review.name}
-							width={48}
-							height={48}
-							className="w-full h-full object-cover"
-						/>
+						<Image src={review.avatar} alt={review.name} width={48} height={48} className="w-full h-full object-cover" />
 					) : (
 						<span className="text-primary font-semibold text-sm">
 							{review.name
@@ -37,7 +31,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
 					)}
 				</div>
 				<div>
-					<h3 className="text-primary font-bold uppercase">{review.name}</h3>
+					<h3 className="!text-lg !leading-normal !font-bold text-primary uppercase">{review.name}</h3>
 					<p className="text-primary/45 text-sm">{review.role}</p>
 				</div>
 			</div>

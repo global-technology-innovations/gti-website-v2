@@ -55,25 +55,33 @@
 			"button": "Kontaktujte nás"
 		},
 		"AboutUsSection": {
-			"title": "O nás",
-			"description": "Naším cieľom je poskytovať výnimočné stavebné služby so zameraním na kvalitu, bezpečnosť a spokojnosť zákazníkov.",
-			"features": [
-				{
-					"title": "Naše poslanie",
-					"desc": "Prekonávať očakávania klientov prostredníctvom inovácií a efektívnosti.",
-					"icon": "🏁"
+			"stats": {
+				"experience": {
+					"value": "15+",
+					"label": "Rokov praktických skúseností"
 				},
-				{
-					"title": "Náš tím",
-					"desc": "Skúsení a kvalifikovaní profesionáli oddaní dokonalosti.",
-					"icon": "👥"
+				"projects": {
+					"value": "500+",
+					"label": "Úspešne dokončených projektov"
 				},
-				{
-					"title": "Naše hodnoty",
-					"desc": "Integrita, spoľahlivosť a spolupráca vo všetkých aspektoch našej práce.",
-					"icon": "🤝"
+				"team": {
+					"value": "50+",
+					"label": "Kvalifikovaných špecialistov v tíme"
+				},
+				"satisfaction": {
+					"value": "98%",
+					"label": "Spokojných stálych klientov"
 				}
-			]
+			},
+			"heading": "Spoľahlivý",
+			"highlight": "stavebný partner",
+			"headingSuffix": "s overenými skúsenosťami",
+			"paragraphs": {
+				"first": "Global Technology Innovations pôsobí v stavebníctve od roku 2009 a poskytuje komplexné riešenia pre rezidenčné, komerčné a priemyselné objekty.",
+				"second": "Spoločnosť začala ako rodinný stavebný podnik a počas rokov vyrástla na stabilnú profesionálnu štruktúru.",
+				"third": "Spájame praktické skúsenosti predchádzajúcej generácie, moderné technológie a zodpovedný prístup ku každému projektu, čím zabezpečujeme kvalitu, bezpečnosť a stabilný výsledok."
+			},
+			"button": "Zistiť viac"
 		},
 		"FAQSection": {
 			"title": "Často kladené otázky",
@@ -99,6 +107,11 @@
 					"answer": "Trvanie závisí od rozsahu projektu. Menšia rekonštrukcia môže trvať niekoľko týždňov, komplexná výstavba niekoľko mesiacov. Termíny vždy dohadujeme pred začiatkom a dodržiavame harmonogram."
 				}
 			]
+		},
+		"FeaturedProjects": {
+			"title": "Naše najlepšie projekty",
+			"description": "Pozrite si vybrané realizácie, ktoré ukazujú naše odborné znalosti a kvalitu v stavebníctve",
+			"viewAllButton": "Zobraziť všetky projekty"
 		}
 	},
 	"AboutPage": {
@@ -293,91 +306,6 @@
 			"badge": "Služby",
 			"title": "Kompletné riešenia na kľúč",
 			"description": "Od konceptu a návrhu až po realizáciu a servis — preberáme zodpovednosť za výsledok."
-		}
-	},
-	"PortfolioPage": {
-		"allProjects": "Všetky projekty",
-		"Hero": {
-			"badge": "Portfólio projektov",
-			"title": "Naše stavebné",
-			"highlight": "projekty",
-			"description": "Od rezidenčných komplexov po komerčné objekty - vytvárame kvalitné budovy pre našich klientov"
-		},
-		"ProjectCard": {
-			"viewDetails": "Zobraziť detaily",
-			"status": {
-				"completed": "Dokončené",
-				"inProgress": "V procese",
-				"planned": "Plánované"
-			},
-			"dateNotAvailable": "Dátum nie je uvedený"
-		},
-		"ProjectsList": {
-			"results": {
-				"noResults": {
-					"title": "Projekty nenájdené",
-					"description": "Skúste neskôr alebo nás kontaktujte pre ďalšie informácie",
-					"resetFilters": "Vymazať filtre"
-				}
-			},
-			"error": {
-				"title": "Chyba pri načítavaní projektov",
-				"description": "Skúste obnoviť stránku"
-			}
-		},
-		"CTA": {
-			"heading": "Ste pripravení začať",
-			"headingHighlight": "svoj projekt?",
-			"headingDescription": "Spojte sa s nami pre bezplatnú konzultáciu a získajte osobnú ponuku pre váš stavebný projekt",
-			"title": "Ste pripravení začať svoj projekt?",
-			"description": "Spojte sa s nami pre bezplatnú konzultáciu a získajte osobnú ponuku pre váš stavebný projekt",
-			"benefits": {
-				"quality": "Záruka kvality",
-				"experience": "Skúsenosti tímu",
-				"timeline": "Dodržiavanie termínov",
-				"support": "Podpora 24/7",
-				"warranty": "Záruka na práce",
-				"transparency": "Transparentnosť procesu"
-			},
-			"contactMethods": {
-				"phone": {
-					"title": "Telefón",
-					"description": "Rýchla konzultácia po telefóne",
-					"action": "Zavolať"
-				},
-				"email": {
-					"title": "Email",
-					"description": "Detailná ponuka na poštu",
-					"action": "Napísať"
-				},
-				"form": {
-					"title": "Formulár",
-					"description": "Vyplniť žiadosť online",
-					"action": "Vyplniť"
-				},
-				"meeting": {
-					"title": "Stretnutie",
-					"description": "Osobné stretnutie a diskusia",
-					"action": "Naplánovať"
-				}
-			},
-			"consultation": {
-				"title": "Bezplatná konzultácia",
-				"description": "Naši experti sú pripravení pomôcť vám s plánovaním a realizáciou stavebného projektu",
-				"features": [
-					"Analýza vašich potrieb a požiadaviek",
-					"Technické zdôvodnenie projektu",
-					"Výpočet nákladov a termínov",
-					"Výber optimálnych riešení",
-					"Konzultácia o materiáloch a technológiách"
-				],
-				"primaryButton": "Získať konzultáciu",
-				"secondaryButton": "Naše služby",
-				"guarantee": {
-					"title": "Záruka výsledku",
-					"description": "Garantujeme kvalitu prác a dodržiavanie všetkých dohôd"
-				}
-			}
 		}
 	},
 	"ContactPage": {
@@ -725,6 +653,55 @@
 			"form": {
 				"title": "Objednať špecialistov",
 				"subtitle": "Vyplňte formulár a získajte personalizovanú ponuku"
+			}
+		}
+	},
+	"PortfolioPage": {
+		"allProjects": "Všetky projekty",
+		"Hero": {
+			"title": "Naše stavebné",
+			"highlight": "projekty",
+			"description": "Od rezidenčných komplexov po komerčné objekty - vytvárame kvalitné budovy pre našich klientov"
+		},
+		"ProjectCard": {
+			"status": {
+				"completed": "Dokončené",
+				"inProgress": "V procese",
+				"planned": "Plánované"
+			},
+			"dateNotAvailable": "Dátum nie je uvedený"
+		},
+		"ProjectsList": {
+			"results": {
+				"noResults": {
+					"title": "Projekty nenájdené"
+				}
+			},
+			"error": {
+				"title": "Chyba pri načítavaní projektov",
+				"description": "Skúste obnoviť stránku"
+			}
+		},
+		"CTA": {
+			"heading": "Ste pripravení začať",
+			"headingHighlight": "svoj projekt?",
+			"headingDescription": "Spojte sa s nami pre bezplatnú konzultáciu a získajte osobnú ponuku pre váš stavebný projekt",
+			"contactMethods": {
+				"phone": {
+					"title": "Telefón",
+					"description": "Rýchla konzultácia po telefóne",
+					"action": "Zavolať"
+				},
+				"email": {
+					"title": "Email",
+					"description": "Detailná ponuka na poštu",
+					"action": "Napísať"
+				},
+				"meeting": {
+					"title": "Stretnutie",
+					"description": "Osobné stretnutie a diskusia",
+					"action": "Naplánovať"
+				}
 			}
 		}
 	}

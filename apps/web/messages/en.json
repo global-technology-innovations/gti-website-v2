@@ -44,9 +44,7 @@
 	"Footer": {
 		"privacy": "Privacy Policy",
 		"cookies": "Cookie Policy",
-
 		"email": "Email",
-
 		"address": "Address",
 		"rights": "© 2025 Global Technology Innovations. All rights reserved."
 	},
@@ -57,25 +55,33 @@
 			"button": "Contact Us"
 		},
 		"AboutUsSection": {
-			"title": "About Us",
-			"description": "Our goal is to deliver exceptional construction services, focusing on quality, safety, and customer satisfaction.",
-			"features": [
-				{
-					"title": "Our Mission",
-					"desc": "To exceed client expectations through innovation and efficiency.",
-					"icon": "🏁"
+			"stats": {
+				"experience": {
+					"value": "15+",
+					"label": "Years of practical experience"
 				},
-				{
-					"title": "Our Team",
-					"desc": "Experienced and qualified professionals committed to excellence.",
-					"icon": "👥"
+				"projects": {
+					"value": "500+",
+					"label": "Successfully completed projects"
 				},
-				{
-					"title": "Our Values",
-					"desc": "Integrity, reliability, and collaboration in all aspects of our work.",
-					"icon": "🤝"
+				"team": {
+					"value": "50+",
+					"label": "Qualified specialists on the team"
+				},
+				"satisfaction": {
+					"value": "98%",
+					"label": "Satisfied returning clients"
 				}
-			]
+			},
+			"heading": "Reliable",
+			"highlight": "construction partner",
+			"headingSuffix": "with proven experience",
+			"paragraphs": {
+				"first": "Global Technology Innovations has been operating in construction since 2009 and provides comprehensive solutions for residential, commercial, and industrial facilities.",
+				"second": "The company began as a family construction business and over the years grew into a stable professional structure.",
+				"third": "We combine the practical experience of the previous generation, modern technologies, and a responsible approach to every project, ensuring quality, safety, and stable results."
+			},
+			"button": "Learn more"
 		},
 		"FAQSection": {
 			"title": "Frequently Asked Questions",
@@ -653,13 +659,11 @@
 	"PortfolioPage": {
 		"allProjects": "All projects",
 		"Hero": {
-			"badge": "Project Portfolio",
 			"title": "Our Construction",
 			"highlight": "Projects",
 			"description": "From residential complexes to commercial facilities - we create quality buildings for our clients"
 		},
 		"ProjectCard": {
-			"viewDetails": "View Details",
 			"status": {
 				"completed": "Completed",
 				"inProgress": "In Progress",
@@ -670,9 +674,7 @@
 		"ProjectsList": {
 			"results": {
 				"noResults": {
-					"title": "No projects found",
-					"description": "Please try again later or contact us for more information",
-					"resetFilters": "Clear filters"
+					"title": "No projects found"
 				}
 			},
 			"error": {
@@ -684,16 +686,6 @@
 			"heading": "Ready to start",
 			"headingHighlight": "your project?",
 			"headingDescription": "Contact us for a free consultation and get a personalized proposal for your construction project",
-			"title": "Ready to start your project?",
-			"description": "Contact us for a free consultation and get a personalized proposal for your construction project",
-			"benefits": {
-				"quality": "Quality guarantee",
-				"experience": "Team experience",
-				"timeline": "Timeline compliance",
-				"support": "24/7 support",
-				"warranty": "Work warranty",
-				"transparency": "Process transparency"
-			},
 			"contactMethods": {
 				"phone": {
 					"title": "Phone",
@@ -705,32 +697,10 @@
 					"description": "Detailed proposal by email",
 					"action": "Write to us"
 				},
-				"form": {
-					"title": "Form",
-					"description": "Fill out online application",
-					"action": "Fill out"
-				},
 				"meeting": {
 					"title": "Meeting",
 					"description": "Personal meeting and discussion",
 					"action": "Schedule"
-				}
-			},
-			"consultation": {
-				"title": "Free consultation",
-				"description": "Our experts are ready to help you with planning and implementing your construction project",
-				"features": [
-					"Analysis of your needs and requirements",
-					"Technical justification of the project",
-					"Calculation of cost and timelines",
-					"Selection of optimal solutions",
-					"Consultation on materials and technologies"
-				],
-				"primaryButton": "Get consultation",
-				"secondaryButton": "Our services",
-				"guarantee": {
-					"title": "Result guarantee",
-					"description": "We guarantee the quality of work and compliance with all agreements"
 				}
 			}
 		}

@@ -44,9 +44,7 @@
 	"Footer": {
 		"privacy": "Datenschutzrichtlinie",
 		"cookies": "Cookie-Richtlinie",
-
 		"email": "E-Mail",
-
 		"address": "Adresse",
 		"rights": "© 2025 Global Technology Innovations. Alle Rechte vorbehalten."
 	},
@@ -57,25 +55,33 @@
 			"button": "Kontaktieren Sie uns"
 		},
 		"AboutUsSection": {
-			"title": "Über uns",
-			"description": "Unser Ziel ist es, außergewöhnliche Bauleistungen zu erbringen, wobei wir uns auf Qualität, Sicherheit und Kundenzufriedenheit konzentrieren.",
-			"features": [
-				{
-					"title": "Unsere Mission",
-					"desc": "Die Erwartungen der Kunden durch Innovation und Effizienz übertreffen.",
-					"icon": "🏁"
+			"stats": {
+				"experience": {
+					"value": "15+",
+					"label": "Jahre praktische Erfahrung"
 				},
-				{
-					"title": "Unser Team",
-					"desc": "Erfahrene und qualifizierte Fachleute, die sich der Exzellenz verschrieben haben.",
-					"icon": "👥"
+				"projects": {
+					"value": "500+",
+					"label": "Erfolgreich abgeschlossene Projekte"
 				},
-				{
-					"title": "Unsere Werte",
-					"desc": "Integrität, Zuverlässigkeit und Zusammenarbeit in allen Bereichen unserer Arbeit.",
-					"icon": "🤝"
+				"team": {
+					"value": "50+",
+					"label": "Qualifizierte Fachkräfte im Team"
+				},
+				"satisfaction": {
+					"value": "98%",
+					"label": "Zufriedene Stammkunden"
 				}
-			]
+			},
+			"heading": "Zuverlässiger",
+			"highlight": "Baupartner",
+			"headingSuffix": "mit bewährter Erfahrung",
+			"paragraphs": {
+				"first": "Global Technology Innovations ist seit 2009 im Bauwesen tätig und bietet umfassende Lösungen für Wohn-, Gewerbe- und Industrieobjekte.",
+				"second": "Das Unternehmen begann als Familienbaubetrieb und entwickelte sich im Laufe der Jahre zu einer stabilen professionellen Struktur.",
+				"third": "Wir verbinden die praktische Erfahrung der vorherigen Generation, moderne Technologien und einen verantwortungsvollen Ansatz für jedes Projekt und sichern so Qualität, Sicherheit und stabile Ergebnisse."
+			},
+			"button": "Mehr erfahren"
 		},
 		"FAQSection": {
 			"title": "Häufig gestellte Fragen",
@@ -101,6 +107,11 @@
 					"answer": "Die Dauer hängt vom Umfang des Projekts ab. Eine kleine Renovierung kann einige Wochen dauern, ein umfassender Neubau mehrere Monate. Wir vereinbaren die Fristen immer vor Beginn und halten den Zeitplan ein."
 				}
 			]
+		},
+		"FeaturedProjects": {
+			"title": "Unsere besten Projekte",
+			"description": "Sehen Sie sich ausgewählte Arbeiten an, die unsere Kompetenz und Qualität im Bauwesen zeigen",
+			"viewAllButton": "Alle Projekte ansehen"
 		}
 	},
 	"AboutPage": {
@@ -295,91 +306,6 @@
 			"badge": "Leistungen",
 			"title": "Komplettlösungen aus einer Hand",
 			"description": "Von Konzept und Planung bis Umsetzung und Service – wir übernehmen Verantwortung für das Ergebnis."
-		}
-	},
-	"PortfolioPage": {
-		"allProjects": "Alle Projekte",
-		"Hero": {
-			"badge": "Projektportfolio",
-			"title": "Unsere Bau",
-			"highlight": "projekte",
-			"description": "Von Wohnkomplexen bis zu Gewerbeobjekten - wir schaffen qualitativ hochwertige Gebäude für unsere Kunden"
-		},
-		"ProjectCard": {
-			"viewDetails": "Details anzeigen",
-			"status": {
-				"completed": "Abgeschlossen",
-				"inProgress": "In Bearbeitung",
-				"planned": "Geplant"
-			},
-			"dateNotAvailable": "Datum nicht angegeben"
-		},
-		"ProjectsList": {
-			"results": {
-				"noResults": {
-					"title": "Keine Projekte gefunden",
-					"description": "Bitte versuchen Sie es später erneut oder kontaktieren Sie uns für weitere Informationen",
-					"resetFilters": "Filter löschen"
-				}
-			},
-			"error": {
-				"title": "Fehler beim Laden der Projekte",
-				"description": "Versuchen Sie, die Seite zu aktualisieren"
-			}
-		},
-		"CTA": {
-			"heading": "Bereit, Ihr",
-			"headingHighlight": "Projekt zu starten?",
-			"headingDescription": "Kontaktieren Sie uns für eine kostenlose Beratung und erhalten Sie ein persönliches Angebot für Ihr Bauprojekt",
-			"title": "Bereit, Ihr Projekt zu starten?",
-			"description": "Kontaktieren Sie uns für eine kostenlose Beratung und erhalten Sie ein persönliches Angebot für Ihr Bauprojekt",
-			"benefits": {
-				"quality": "Qualitätsgarantie",
-				"experience": "Teamerfahrung",
-				"timeline": "Einhaltung der Termine",
-				"support": "Support 24/7",
-				"warranty": "Gewährleistung der Arbeiten",
-				"transparency": "Transparenz des Prozesses"
-			},
-			"contactMethods": {
-				"phone": {
-					"title": "Telefon",
-					"description": "Schnelle Beratung am Telefon",
-					"action": "Anrufen"
-				},
-				"email": {
-					"title": "E-Mail",
-					"description": "Detailliertes Angebot per E-Mail",
-					"action": "Schreiben"
-				},
-				"form": {
-					"title": "Formular",
-					"description": "Online-Anfrage ausfüllen",
-					"action": "Ausfüllen"
-				},
-				"meeting": {
-					"title": "Treffen",
-					"description": "Persönliches Treffen und Diskussion",
-					"action": "Planen"
-				}
-			},
-			"consultation": {
-				"title": "Kostenlose Beratung",
-				"description": "Unsere Experten sind bereit, Ihnen bei der Planung und Umsetzung Ihres Bauprojekts zu helfen",
-				"features": [
-					"Analyse Ihrer Bedürfnisse und Anforderungen",
-					"Technische Begründung des Projekts",
-					"Berechnung der Kosten und Termine",
-					"Auswahl optimaler Lösungen",
-					"Beratung zu Materialien und Technologien"
-				],
-				"primaryButton": "Beratung erhalten",
-				"secondaryButton": "Unsere Dienstleistungen",
-				"guarantee": {
-					"title": "Ergebnisgarantie",
-					"description": "Wir garantieren die Qualität der Arbeiten und die Einhaltung aller Vereinbarungen"
-				}
-			}
 		}
 	},
 	"ContactPage": {
@@ -727,6 +653,55 @@
 			"form": {
 				"title": "Spezialisten bestellen",
 				"subtitle": "Füllen Sie das Formular aus und erhalten Sie ein personalisiertes Angebot"
+			}
+		}
+	},
+	"PortfolioPage": {
+		"allProjects": "Alle Projekte",
+		"Hero": {
+			"title": "Unsere Bau",
+			"highlight": "projekte",
+			"description": "Von Wohnkomplexen bis zu Gewerbeobjekten - wir schaffen qualitativ hochwertige Gebäude für unsere Kunden"
+		},
+		"ProjectCard": {
+			"status": {
+				"completed": "Abgeschlossen",
+				"inProgress": "In Bearbeitung",
+				"planned": "Geplant"
+			},
+			"dateNotAvailable": "Datum nicht angegeben"
+		},
+		"ProjectsList": {
+			"results": {
+				"noResults": {
+					"title": "Keine Projekte gefunden"
+				}
+			},
+			"error": {
+				"title": "Fehler beim Laden der Projekte",
+				"description": "Versuchen Sie, die Seite zu aktualisieren"
+			}
+		},
+		"CTA": {
+			"heading": "Bereit, Ihr",
+			"headingHighlight": "Projekt zu starten?",
+			"headingDescription": "Kontaktieren Sie uns für eine kostenlose Beratung und erhalten Sie ein persönliches Angebot für Ihr Bauprojekt",
+			"contactMethods": {
+				"phone": {
+					"title": "Telefon",
+					"description": "Schnelle Beratung am Telefon",
+					"action": "Anrufen"
+				},
+				"email": {
+					"title": "E-Mail",
+					"description": "Detailliertes Angebot per E-Mail",
+					"action": "Schreiben"
+				},
+				"meeting": {
+					"title": "Treffen",
+					"description": "Persönliches Treffen und Diskussion",
+					"action": "Planen"
+				}
 			}
 		}
 	}
