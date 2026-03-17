@@ -9,15 +9,12 @@ export interface BlogCategory {
 }
 
 async function fetchBlogCategories(locale: string): Promise<BlogCategory[]> {
-	const response = await api.get<StrapiResponse<StrapiBlogCategory>>(
-		"/blog-categories",
-		{
-			params: {
-				locale,
-				sort: ["name:asc"],
-			},
-		}
-	);
+	const response = await api.get<StrapiResponse<StrapiBlogCategory>>("/blog-categories", {
+		params: {
+			locale,
+			sort: ["name:asc"],
+		},
+	});
 
 	return response.data.data.map((item) => ({
 		id: String(item.id),
@@ -31,6 +28,8 @@ export function useBlogCategoriesQuery() {
 	return useQuery<BlogCategory[]>({
 		queryKey: ["blog-categories", locale],
 		queryFn: () => fetchBlogCategories(locale),
-		staleTime: 1000 * 60 * 5,
+		staleTime: 1000 * 60 * 30,
+		gcTime: 1000 * 60 * 60,
+		refetchOnWindowFocus: false,
 	});
 }

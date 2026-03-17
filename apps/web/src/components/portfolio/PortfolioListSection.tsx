@@ -1,8 +1,8 @@
 "use client";
 
-import { FilterChips, ProjectCard, Reveal } from "@/components";
+import { CardGridSkeleton, FilterChips, FilterChipsSkeleton, ProjectCard, Reveal } from "@/components";
 import { ProjectStatusFilter, useProjectsQuery } from "@/queries";
-import { AlertCircle, Loader2 } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
@@ -11,7 +11,7 @@ export function PortfolioListSection() {
 	const locale = useLocale();
 	const [activeStatus, setActiveStatus] = useState<"all" | ProjectStatusFilter>("all");
 	const selectedStatus = activeStatus === "all" ? undefined : activeStatus;
-	const { data: projects = [], isLoading, error } = useProjectsQuery(selectedStatus);
+	const { data: projects = [], isLoading, isFetching, error } = useProjectsQuery(selectedStatus);
 
 	const statusFilters = [
 		{
@@ -43,8 +43,9 @@ export function PortfolioListSection() {
 	if (isLoading) {
 		return (
 			<Reveal>
-				<section className="container mx-auto flex min-h-[400px] items-center justify-center px-4 py-16">
-					<Loader2 className="h-12 w-12 animate-spin text-primary" />
+				<section className="container mx-auto px-4 py-16">
+					<FilterChipsSkeleton />
+					<CardGridSkeleton />
 				</section>
 			</Reveal>
 		);
@@ -69,7 +70,9 @@ export function PortfolioListSection() {
 			<div className="container mx-auto px-4 pb-16 pt-16">
 				<FilterChips options={statusFilters} />
 
-				{projects.length > 0 ? (
+				{isFetching ? (
+					<CardGridSkeleton />
+				) : projects.length > 0 ? (
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
 						{projects.map((project) => (
 							<ProjectCard key={project.id} project={project} locale={locale} />

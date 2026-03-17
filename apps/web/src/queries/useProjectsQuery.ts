@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { StrapiProject, StrapiResponse } from "@/types/strapi";
 import { api } from "@/lib/api";
 import { useLocale } from "next-intl";
@@ -40,6 +40,8 @@ export const useProjectsQuery = (status?: ProjectStatusFilter) => {
 		},
 		staleTime: 5 * 60 * 1000,
 		gcTime: 10 * 60 * 1000,
+		refetchOnWindowFocus: false,
+		placeholderData: keepPreviousData,
 	});
 };
 

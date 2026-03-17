@@ -1,8 +1,8 @@
 "use client";
 
-import { BlogGrid, BlogPagination, CallToActionSection, FilterChips, Reveal } from "@/components";
+import { BlogGrid, BlogPagination, CallToActionSection, CardGridSkeleton, FilterChips, FilterChipsSkeleton, Reveal } from "@/components";
 import { useBlogArticlesQuery, useBlogCategoriesQuery } from "@/queries";
-import { AlertCircle, Loader2 } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
@@ -14,7 +14,12 @@ export default function BlogPage() {
 	const [currentPage, setCurrentPage] = useState(1);
 	const { data: categories = [], isLoading: isCategoriesLoading, error: categoriesError } = useBlogCategoriesQuery();
 	const selectedCategoryId = activeCategoryId === "all" ? undefined : activeCategoryId;
-	const { data: articles = [], isLoading: isArticlesLoading, error: articlesError } = useBlogArticlesQuery(selectedCategoryId);
+	const {
+		data: articles = [],
+		isLoading: isArticlesLoading,
+		isFetching: isArticlesFetching,
+		error: articlesError,
+	} = useBlogArticlesQuery(selectedCategoryId);
 
 	const totalPages = Math.max(1, Math.ceil(articles.length / ARTICLES_PER_PAGE));
 	const start = (currentPage - 1) * ARTICLES_PER_PAGE;
@@ -25,16 +30,6 @@ export default function BlogPage() {
 			setCurrentPage(totalPages);
 		}
 	}, [currentPage, totalPages]);
-
-	if (isCategoriesLoading || isArticlesLoading) {
-		return (
-			<Reveal>
-				<section className="container mx-auto flex min-h-[400px] items-center justify-center px-4 py-20">
-					<Loader2 className="h-12 w-12 animate-spin text-primary" />
-				</section>
-			</Reveal>
-		);
-	}
 
 	if (categoriesError || articlesError) {
 		return (
@@ -60,30 +55,36 @@ export default function BlogPage() {
 					<p className="mt-4 text-center text-primary-foreground">{t("description")}</p>
 				</div>
 
-				<FilterChips
-					options={[
-						{
-							id: "all",
-							label: t("allCategories"),
-							isActive: activeCategoryId === "all",
-							onClick: () => {
-								setActiveCategoryId("all");
-								setCurrentPage(1);
+				{isCategoriesLoading ? (
+					<FilterChipsSkeleton count={5} />
+				) : (
+					<FilterChips
+						options={[
+							{
+								id: "all",
+								label: t("allCategories"),
+								isActive: activeCategoryId === "all",
+								onClick: () => {
+									setActiveCategoryId("all");
+									setCurrentPage(1);
+								},
 							},
-						},
-						...categories.map((category) => ({
-							id: category.id,
-							label: category.name,
-							isActive: category.id === activeCategoryId,
-							onClick: () => {
-								setActiveCategoryId(category.id);
-								setCurrentPage(1);
-							},
-						})),
-					]}
-				/>
+							...categories.map((category) => ({
+								id: category.id,
+								label: category.name,
+								isActive: category.id === activeCategoryId,
+								onClick: () => {
+									setActiveCategoryId(category.id);
+									setCurrentPage(1);
+								},
+							})),
+						]}
+					/>
+				)}
 
-				{articles.length > 0 ? (
+				{isArticlesLoading || isArticlesFetching ? (
+					<CardGridSkeleton count={6} />
+				) : articles.length > 0 ? (
 					<>
 						<BlogGrid articles={paginatedArticles} />
 						{totalPages > 1 ? (
