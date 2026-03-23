@@ -2,14 +2,19 @@
 
 import { STRAPI_API_URL } from "@/lib/api";
 import { cn } from "@/lib/utils";
-import { ZoomIn } from "lucide-react";
+import { Play, ZoomIn } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-interface MediaItem {
+export interface ProjectGalleryMediaItem {
 	id: number;
 	attributes: {
 		url: string;
@@ -27,15 +32,18 @@ interface MediaItem {
 }
 
 interface ProjectGalleryProps {
-	images: MediaItem[];
+	images: ProjectGalleryMediaItem[];
 	title: string;
+	navigationPrevEl: string;
+	navigationNextEl: string;
 }
 
-export function ProjectGallery({ images, title }: ProjectGalleryProps) {
+export function ProjectGallery({ images, title, navigationPrevEl, navigationNextEl }: ProjectGalleryProps) {
 	const [open, setOpen] = useState(false);
 	const [index, setIndex] = useState(0);
+	const tMedia = useTranslations("Media");
 
-	const getImageUrl = (image: MediaItem, size: "full" | "large" | "medium" = "medium") => {
+	const getImageUrl = (image: ProjectGalleryMediaItem, size: "full" | "large" | "medium" = "medium") => {
 		let url = image.attributes.url;
 
 		if (size === "large" && image.attributes.formats?.large) {
@@ -80,57 +88,69 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
 
 	return (
 		<>
-			{/* Gallery Grid - Masonry-like layout */}
-			<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+			<Swiper
+				modules={[Navigation]}
+				navigation={{
+					prevEl: navigationPrevEl,
+					nextEl: navigationNextEl,
+				}}
+				spaceBetween={24}
+				slidesPerView="auto"
+				className="!overflow-visible"
+			>
 				{images.map((image, i) => {
 					const imageUrl = getImageUrl(image, "medium");
 					const isVideo = image.attributes.mime.startsWith("video/");
 
 					return (
-						<div
-							key={image.id}
-							className={cn(
-								"relative group cursor-pointer overflow-hidden rounded-lg bg-gray-100",
-								// First image is larger (2x2)
-								i === 0 ? "md:col-span-2 md:row-span-2" : ""
-							)}
-							onClick={() => {
-								setIndex(i);
-								setOpen(true);
-							}}
-						>
-							<div className="relative w-full h-full min-h-[200px]">
-								{isVideo ? (
-									<video
-										src={imageUrl}
-										className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-										muted
-										playsInline
-									/>
-								) : (
-									<Image
-										src={imageUrl}
-										alt={image.attributes.alternativeText || `${title} - фото ${i + 1}`}
-										fill
-										className="object-cover transition-transform duration-300 group-hover:scale-110"
-										sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-									/>
+						<SwiperSlide key={image.id} className="!h-auto !w-[86vw] sm:!w-[62vw] lg:!w-[492px]">
+							<button
+								type="button"
+								className={cn(
+									"group relative block h-full w-full cursor-pointer overflow-hidden rounded-3xl bg-muted text-left transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
 								)}
-							</div>
+								onClick={() => {
+									setIndex(i);
+									setOpen(true);
+								}}
+								aria-label={image.attributes.alternativeText || tMedia("mediaThumbnail", { index: i + 1 })}
+							>
+								<div className="relative aspect-[492/320] w-full">
+									{isVideo ? (
+										<video
+											src={imageUrl}
+											className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+											muted
+											playsInline
+										/>
+									) : (
+										<Image
+											src={imageUrl}
+											alt={image.attributes.alternativeText || `${title} - ${tMedia("thumbnail", { index: i + 1 })}`}
+											fill
+											className="object-cover transition-transform duration-500 group-hover:scale-105"
+											sizes="(max-width: 640px) 86vw, (max-width: 1024px) 62vw, 492px"
+										/>
+									)}
+								</div>
 
-							{/* Overlay */}
-							<div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-								<ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-							</div>
-
-							{/* Video indicator */}
-							{isVideo && <div className="absolute top-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs">Відео</div>}
-						</div>
+								<div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-primary/0 transition-colors duration-300 group-hover:bg-primary/10">
+									{isVideo ? (
+										<div className="flex size-16 items-center justify-center rounded-full bg-card/85 text-secondary shadow-sm">
+											<Play className="ml-1 size-7 fill-current" />
+										</div>
+									) : (
+										<div className="flex size-14 items-center justify-center rounded-full bg-card/0 text-secondary-foreground opacity-0 transition-all duration-300 group-hover:bg-card/85 group-hover:text-primary group-hover:opacity-100">
+											<ZoomIn className="size-6" />
+										</div>
+									)}
+								</div>
+							</button>
+						</SwiperSlide>
 					);
 				})}
-			</div>
+			</Swiper>
 
-			{/* Lightbox for images and videos */}
 			<Lightbox
 				open={open}
 				close={() => setOpen(false)}

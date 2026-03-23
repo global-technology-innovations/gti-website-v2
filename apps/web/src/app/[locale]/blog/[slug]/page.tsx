@@ -13,6 +13,7 @@ import {
 } from "@/components";
 import { siteContact } from "@/config/site-contact";
 import { Link } from "@/i18n/navigation";
+import { DETAIL_CONTENT_CLASSNAMES } from "@/lib/detailContentClassNames";
 import renderRichText from "@/lib/renderRichText";
 import { useSingleBlogArticleQuery } from "@/queries";
 import { format } from "date-fns";
@@ -36,19 +37,6 @@ const localeMap = {
 	fr: fr,
 	de: de,
 };
-const CONTENT_CLASSNAMES: Parameters<typeof renderRichText>[1] = {
-	heading: "text-[28px] leading-[36px] font-bold uppercase text-primary sm:text-[32px] sm:leading-[40px]",
-	heading2: "!text-[32px] text-primary",
-	heading3: "text-[24px] leading-[32px] font-bold uppercase text-primary sm:text-[28px] sm:leading-[36px]",
-	paragraph: "!text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
-	ul: "!list-outside list-disc pl-5 space-y-3 marker:text-secondary",
-	ol: "!list-outside list-decimal pl-5 space-y-3 marker:text-secondary",
-	li: "!pl-1 !text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
-	link: "!text-secondary underline underline-offset-4",
-	blockquote: "!my-0 border-l-2 !border-secondary/30 !pl-5 !text-[16px] !leading-[24px] !font-medium !text-primary-foreground",
-	image: "rounded-3xl",
-};
-
 export default function BlogArticlePage() {
 	const params = useParams();
 	const locale = useLocale();
@@ -136,7 +124,7 @@ export default function BlogArticlePage() {
 			{article.content.length > 0 ? (
 				<section className="px-4 py-16 md:py-20">
 					<div className="container mx-auto">
-						<div className="mx-auto max-w-[1100px] space-y-6">{renderRichText(article.content, CONTENT_CLASSNAMES)}</div>
+						<div className="mx-auto max-w-[1100px] space-y-6">{renderRichText(article.content, DETAIL_CONTENT_CLASSNAMES)}</div>
 					</div>
 				</section>
 			) : null}

@@ -26,6 +26,8 @@
 		"projectDescription": "Description du projet",
 		"projectInfo": "Informations sur le projet",
 		"projectGallery": "Galerie du projet",
+		"projectGalleryTitle": "Galerie du",
+		"projectGalleryHighlight": "projet",
 		"client": "Client",
 		"location": "Localisation",
 		"executionPeriod": "Période d'exécution",
