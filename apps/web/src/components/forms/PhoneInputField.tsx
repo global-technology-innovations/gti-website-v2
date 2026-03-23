@@ -12,7 +12,7 @@ const PhoneInput = dynamic(() => import("react-phone-number-input"), {
 		<input
 			type="tel"
 			placeholder="+380973737240"
-			className="w-full rounded-md border px-4 py-3 text-sm focus:outline-none mt-3 border-input focus:ring-2 focus:ring-blue-500"
+			className="mt-3 w-full rounded-md border border-input px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring/20"
 			disabled
 		/>
 	),
@@ -23,6 +23,7 @@ interface PhoneInputFieldProps extends ControllerRenderProps<FormData, "phone"> 
 	id?: string;
 	"aria-invalid"?: boolean;
 	"aria-describedby"?: string;
+	className?: string;
 }
 
 export default function PhoneInputField({
@@ -32,6 +33,7 @@ export default function PhoneInputField({
 	id,
 	"aria-invalid": ariaInvalid,
 	"aria-describedby": ariaDescribedBy,
+	className,
 }: PhoneInputFieldProps) {
 	const [isMounted, setIsMounted] = useState(false);
 
@@ -48,10 +50,8 @@ export default function PhoneInputField({
 				aria-invalid={ariaInvalid}
 				aria-describedby={ariaDescribedBy}
 				className={`w-full rounded-2xl border px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground focus:outline-none ${
-					hasError
-						? "border-red-500 focus:ring-2 focus:ring-red-500"
-						: "border-input focus:ring-2 focus:ring-blue-500"
-				}`}
+					hasError ? "border-destructive focus:ring-2 focus:ring-destructive/30" : "border-input focus:ring-2 focus:ring-ring/20"
+				} ${className || ""}`}
 				readOnly
 			/>
 		);
@@ -67,11 +67,9 @@ export default function PhoneInputField({
 			id={id}
 			aria-invalid={ariaInvalid}
 			aria-describedby={ariaDescribedBy}
-			className={`w-full rounded-2xl border text-sm pl-4 focus:outline-none mb-0 mt-3 ${
-				hasError
-					? "border-red-500 focus:ring-2 focus:ring-red-500"
-					: "!border-input !focus:ring-2 !focus:ring-blue-500"
-			}`}
+			className={`w-full rounded-2xl border text-sm pl-4 focus:outline-none mb-0 ${
+				hasError ? "border-destructive focus:ring-2 focus:ring-destructive/30" : "!border-input !focus:ring-2 !focus:ring-ring/20"
+			} ${className || ""}`}
 		/>
 	);
 }

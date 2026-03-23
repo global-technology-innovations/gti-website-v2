@@ -32,10 +32,7 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "" }: Co
 	return (
 		<form
 			onSubmit={handleSubmit((data) => onSubmitAction(data, reset))}
-			className={cn(
-				"flex flex-col bg-white rounded-2xl p-6 shadow-md w-full max-w-[650px] mx-auto",
-				className
-			)}
+			className={cn("flex flex-col bg-white rounded-2xl p-6 shadow-md w-full max-w-[650px] mx-auto gap-4", className)}
 		>
 			{/* honeypot */}
 			<input type="text" {...register("_hp")} className="hidden" tabIndex={-1} autoComplete="off" />
@@ -47,9 +44,7 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "" }: Co
 				aria-invalid={!!errors.name}
 				{...register("name", { required: t("nameError") })}
 				className={cn(
-					errors.name
-						? "border-red-500 focus:ring-2 focus:ring-red-500"
-						: "border-input focus:ring-1 focus:ring-blue-500"
+					errors.name ? "border-red-500 focus:ring-2 focus:ring-red-500" : "border-input focus:ring-1 focus:ring-blue-500"
 				)}
 			/>
 			{errors.name && (
@@ -67,21 +62,11 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "" }: Co
 					validate: (value) => (value && value.length >= 10) || t("phoneErrorPattern"),
 				}}
 				render={({ field }) => (
-					<PhoneInputField
-						{...field}
-						hasError={!!errors.phone}
-						aria-invalid={!!errors.phone}
-						id="contact-phone"
-					/>
+					<PhoneInputField {...field} hasError={!!errors.phone} aria-invalid={!!errors.phone} id="contact-phone" />
 				)}
 			/>
 			{errors.phone && (
-				<p
-					id="phone-error"
-					role="status"
-					aria-live="polite"
-					className="!text-xs !text-red-500 mt-1"
-				>
+				<p id="phone-error" role="status" aria-live="polite" className="!text-xs !text-red-500 mt-1">
 					{errors.phone.message}
 				</p>
 			)}
@@ -100,20 +85,13 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "" }: Co
 					},
 				})}
 				className={cn(
-					"mt-3",
-					errors.email
-						? "border-red-500 focus:ring-2 focus:ring-red-500"
-						: "border-input focus:ring-1 focus:ring-blue-500"
+					"",
+					errors.email ? "border-red-500 focus:ring-2 focus:ring-red-500" : "border-input focus:ring-1 focus:ring-blue-500"
 				)}
 			/>
 
 			{errors.email && (
-				<p
-					id="email-error"
-					role="status"
-					aria-live="polite"
-					className="!text-xs !text-red-500 mt-1"
-				>
+				<p id="email-error" role="status" aria-live="polite" className="!text-xs !text-red-500 mt-1">
 					{errors.email.message}
 				</p>
 			)}
@@ -125,25 +103,18 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "" }: Co
 				aria-invalid={!!errors.message}
 				{...register("message", { required: t("messageError") })}
 				className={cn(
-					"mt-3 text-primary-foreground placeholder:text-primary-foreground",
-					errors.message
-						? "border-red-500 focus:ring-2 focus:ring-red-500"
-						: "border-input focus:ring-1 focus:ring-blue-500"
+					"text-primary-foreground placeholder:text-primary-foreground",
+					errors.message ? "border-red-500 focus:ring-2 focus:ring-red-500" : "border-input focus:ring-1 focus:ring-blue-500"
 				)}
 			/>
 			{errors.message && (
-				<p
-					id="message-error"
-					role="status"
-					aria-live="polite"
-					className="!text-xs !text-red-500 mt-1"
-				>
+				<p id="message-error" role="status" aria-live="polite" className="!text-xs !text-red-500 mt-1">
 					{t("messageError")}
 				</p>
 			)}
 
 			{/* Privacy Consent */}
-			<div className="flex items-start space-x-2 mt-3">
+			<div className="flex items-start space-x-2">
 				<Controller
 					name="privacyConsent"
 					control={control}
@@ -179,12 +150,7 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "" }: Co
 			)}
 
 			{/* Submit */}
-			<Button
-				variant="secondary"
-				type="submit"
-				disabled={isSubmitting}
-				className="w-fit mx-auto mt-6"
-			>
+			<Button variant="secondary" type="submit" disabled={isSubmitting} className="w-fit mx-auto mt-6">
 				{isSubmitting ? "Надсилання..." : t("submitButton")}
 			</Button>
 		</form>

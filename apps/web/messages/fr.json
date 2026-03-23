@@ -271,8 +271,8 @@
 	"CareersPage": {
 		"title": "Carrière",
 		"Hero": {
-			"badge": "Carrière",
-			"title": "Rejoignez une équipe de professionnels",
+			"title": "Rejoignez",
+			"highlight": "l'équipe",
 			"description": "Évoluez avec nous : projets stimulants, mentorat et conditions transparentes."
 		},
 		"apply": "Postuler",

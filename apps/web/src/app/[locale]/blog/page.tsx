@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogGrid, BlogPagination, CallToActionSection, CardGridSkeleton, FilterChips, FilterChipsSkeleton, Reveal } from "@/components";
+import { BlogGrid, CallToActionSection, CardGridSkeleton, FilterChips, FilterChipsSkeleton, Reveal, SharedPagination } from "@/components";
 import { useBlogArticlesQuery, useBlogCategoriesQuery } from "@/queries";
 import { AlertCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -88,7 +88,7 @@ export default function BlogPage() {
 					<>
 						<BlogGrid articles={paginatedArticles} />
 						{totalPages > 1 ? (
-							<BlogPagination currentPage={currentPage} totalPages={totalPages} onChange={setCurrentPage} />
+							<SharedPagination currentPage={currentPage} totalPages={totalPages} onChange={setCurrentPage} />
 						) : null}
 					</>
 				) : (

@@ -271,9 +271,9 @@
 	"CareersPage": {
 		"title": "Karriere",
 		"Hero": {
-			"badge": "Karriere",
-			"title": "Werden Sie Teil eines Profi‑Teams",
-			"description": "Wachsen Sie mit uns: spannende Projekte, Mentoren‑Support und transparente Bedingungen."
+			"title": "Werden Sie Teil des",
+			"highlight": "Teams",
+			"description": "Wachsen Sie mit uns: spannende Projekte, Mentoren-Support und transparente Bedingungen."
 		},
 		"apply": "Bewerben",
 		"jobType": "Art der Stelle",

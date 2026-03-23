@@ -271,8 +271,8 @@
 	"CareersPage": {
 		"title": "Kariéra",
 		"Hero": {
-			"badge": "Kariéra",
-			"title": "Pridajte sa k tímu profesionálov",
+			"title": "Pridajte sa k",
+			"highlight": "tímu",
 			"description": "Rastite s nami: zaujímavé projekty, mentoring a transparentné podmienky."
 		},
 		"apply": "Odoslať žiadosť",

@@ -271,8 +271,8 @@
 	"CareersPage": {
 		"title": "Careers",
 		"Hero": {
-			"badge": "Careers",
-			"title": "Join a team of professionals",
+			"title": "Join the",
+			"highlight": "team",
 			"description": "Grow with us: exciting projects, mentor support, and transparent conditions."
 		},
 		"apply": "Apply",

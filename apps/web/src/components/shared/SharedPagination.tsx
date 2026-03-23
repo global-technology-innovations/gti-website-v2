@@ -1,29 +1,40 @@
 "use client";
 
-import { Pagination, PaginationItem, PaginationLink } from "@/components";
+import { Pagination, PaginationItem, PaginationLink } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-interface Props {
+interface SharedPaginationProps {
 	currentPage: number;
 	totalPages: number;
 	onChange: (page: number) => void;
+	previousLabel?: string;
+	nextLabel?: string;
+	className?: string;
 }
 
-export function BlogPagination({ currentPage, totalPages, onChange }: Props) {
+export function SharedPagination({
+	currentPage,
+	totalPages,
+	onChange,
+	previousLabel = "Previous",
+	nextLabel = "Next",
+	className,
+}: SharedPaginationProps) {
 	const goTo = (page: number) => {
 		if (page < 1 || page > totalPages) return;
 		onChange(page);
 	};
+
 	const visiblePages = getVisiblePages(currentPage, totalPages);
 
 	return (
-		<Pagination className="mt-10">
+		<Pagination className={cn("mt-10", className)}>
 			<div className="flex w-full items-center justify-between gap-4">
 				<a
 					href="#"
-					onClick={(e) => {
-						e.preventDefault();
+					onClick={(event) => {
+						event.preventDefault();
 						goTo(currentPage - 1);
 					}}
 					className={cn(
@@ -32,7 +43,7 @@ export function BlogPagination({ currentPage, totalPages, onChange }: Props) {
 					)}
 				>
 					<ArrowLeft className="size-5" />
-					<span>Previous</span>
+					<span>{previousLabel}</span>
 				</a>
 
 				<ul className="flex items-center gap-2 md:gap-4">
@@ -50,8 +61,8 @@ export function BlogPagination({ currentPage, totalPages, onChange }: Props) {
 										item === currentPage && "bg-secondary text-white hover:bg-secondary hover:text-white"
 									)}
 									isActive={item === currentPage}
-									onClick={(e) => {
-										e.preventDefault();
+									onClick={(event) => {
+										event.preventDefault();
 										goTo(item);
 									}}
 								>
@@ -64,8 +75,8 @@ export function BlogPagination({ currentPage, totalPages, onChange }: Props) {
 
 				<a
 					href="#"
-					onClick={(e) => {
-						e.preventDefault();
+					onClick={(event) => {
+						event.preventDefault();
 						goTo(currentPage + 1);
 					}}
 					className={cn(
@@ -73,7 +84,7 @@ export function BlogPagination({ currentPage, totalPages, onChange }: Props) {
 						currentPage === totalPages && "pointer-events-none opacity-50"
 					)}
 				>
-					<span>Next</span>
+					<span>{nextLabel}</span>
 					<ArrowRight className="size-5" />
 				</a>
 			</div>

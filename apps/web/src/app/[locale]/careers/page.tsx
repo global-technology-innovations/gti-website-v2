@@ -1,10 +1,4 @@
-import {
-	JobsList,
-	MultiHeroSection,
-	generateCanonicalUrl,
-	generateHreflangUrls,
-	generatePageMetadata,
-} from "@/components";
+import { JobsList, generateCanonicalUrl, generateHreflangUrls, generatePageMetadata } from "@/components";
 import { useTranslations } from "next-intl";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -52,11 +46,12 @@ export default function CareersPage() {
 
 	return (
 		<>
-			<MultiHeroSection
-				badgeText={t("Hero.badge")}
-				title={t("Hero.title")}
-				description={t("Hero.description")}
-			/>
+			<div className="container mx-auto pt-20 px-4">
+				<h2 className="text-center uppercase text-primary">
+					{t("Hero.title")} <span className="text-secondary">{t("Hero.highlight")}</span>
+				</h2>
+				<p className="mt-5 text-center text-primary-foreground">{t("Hero.description")}</p>
+			</div>
 			<JobsList />
 		</>
 	);

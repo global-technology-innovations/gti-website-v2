@@ -271,8 +271,8 @@
 	"CareersPage": {
 		"title": "Kariéra",
 		"Hero": {
-			"badge": "Kariéra",
-			"title": "Přidejte se k týmu profesionálů",
+			"title": "Přidejte se k",
+			"highlight": "týmu",
 			"description": "Rostěte s námi: zajímavé projekty, mentorské vedení a transparentní podmínky."
 		},
 		"apply": "Odeslat žádost",

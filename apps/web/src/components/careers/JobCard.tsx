@@ -1,48 +1,43 @@
 "use client";
 
-import {
-	ApplicationFormModal,
-	Card,
-	CardContent,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from "@/components";
 import { Job } from "@/queries";
-import { Briefcase, FileText, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { ApplicationFormModal } from "../forms/ApplicationFormModal";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
 
 export function JobCard({ job }: { job: Job }) {
 	const t = useTranslations("CareersPage");
 
 	return (
-		<Card className="h-full flex flex-col justify-between">
-			<div>
-				<CardHeader>
-					<CardTitle className="!text-[20px]">
-						<Briefcase className="size-[18px] text-primary shrink-0" />
-						{job.title}
-					</CardTitle>
+		<ApplicationFormModal jobId={job.id} title={t("apply", { title: job.title })}>
+			<Card
+				variant="outline"
+				className="group flex h-full cursor-pointer flex-col justify-between rounded-[28px] bg-white p-6 text-left transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+			>
+				<CardHeader className="block">
+					<CardTitle className="text-[22px] leading-[1.1]">{job.title}</CardTitle>
 				</CardHeader>
-				<CardContent>
-					<div className="flex items-center gap-2 mt-3">
-						<MapPin className="size-[20px] text-primary shrink-0" />
-						<p>{job.location}</p>
-					</div>
-					<div className="flex items-start mt-2 gap-2">
-						<FileText className="size-[20px] text-primary shrink-0" />
-						<p className="card_descr">{job.shortDescription}</p>
-					</div>
+				<CardContent className="mt-4">
+					<p className="text-primary-foreground">{job.shortDescription}</p>
 				</CardContent>
-			</div>
-			<CardFooter className="flex justify-center">
-				{/* <Button className="mt-2">{t("apply")}</Button> */}
-				<ApplicationFormModal
-					jobId={job.id}
-					triggerLabel={t("apply")}
-					title={t("apply", { title: job.title })}
-				/>
-			</CardFooter>
-		</Card>
+				<CardFooter className="mt-3 flex items-center justify-between gap-4 pt-2 text-sm text-primary">
+					<div className="flex items-center gap-2 text-[18px] font-medium text-secondary">
+						<MapPin className="h-5 w-5 shrink-0" />
+						<span className="text-[16px] font-medium">{job.location}</span>
+					</div>
+
+					<Image
+						src="/icons/arrow-right.svg"
+						alt=""
+						width={16}
+						height={12}
+						className="shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+						aria-hidden="true"
+					/>
+				</CardFooter>
+			</Card>
+		</ApplicationFormModal>
 	);
 }

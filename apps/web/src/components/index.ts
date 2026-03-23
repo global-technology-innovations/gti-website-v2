@@ -13,5 +13,6 @@ export * from "./our-services";
 export * from "./outstaffing";
 export * from "./portfolio";
 export * from "./providers";
+export * from "./shared";
 export * from "./seo";
 export * from "./ui";

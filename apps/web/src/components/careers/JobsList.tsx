@@ -1,9 +1,9 @@
 "use client";
 
-import { CareersPagination, JobCard, Reveal, Skeleton } from "@/components";
+import { JobCard, Reveal, SharedPagination, Skeleton } from "@/components";
 import { useJobsQuery } from "@/queries";
 import { useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const JOBS_PER_PAGE = 6;
 
@@ -18,55 +18,69 @@ export function JobsList() {
 		return data.slice(start, start + JOBS_PER_PAGE);
 	}, [page, data]);
 
+	useEffect(() => {
+		if (page > totalPages) {
+			setPage(Math.max(totalPages, 1));
+		}
+	}, [page, totalPages]);
+
 	if (isLoading) {
 		return (
 			<Reveal>
-				<div className="pt-12">
-					<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+				<section className="container mx-auto px-4 pt-16 pb-6">
+					<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 						{Array.from({ length: JOBS_PER_PAGE }).map((_, i) => (
-							<Skeleton key={i} className="h-[200px] rounded-xl" />
+							<Skeleton key={i} className="h-[260px] rounded-3xl" />
 						))}
 					</div>
-					<div className="flex justify-center mt-6 gap-2">
+					<div className="mt-10 flex justify-center gap-2">
 						<Skeleton className="h-10 w-10 rounded-md" />
 						<Skeleton className="h-10 w-10 rounded-md" />
 						<Skeleton className="h-10 w-10 rounded-md" />
 					</div>
-				</div>
+				</section>
 			</Reveal>
 		);
 	}
 
 	if (error) {
 		return (
-			<div className="text-center text-red-600">
-				<h2 className="text-xl font-semibold">{t("errorTitle")}</h2>
-				<p>{t("errorLoadingJobs")}</p>
-			</div>
+			<section className="container mx-auto px-4 py-16">
+				<div className="rounded-3xl border border-dashed border-destructive/30 bg-destructive/5 px-6 py-12 text-center text-red-600">
+					<h2 className="text-xl font-semibold">{t("errorTitle")}</h2>
+					<p className="mt-2">{t("errorLoadingJobs")}</p>
+				</div>
+			</section>
 		);
 	}
 
 	if (data.length === 0) {
 		return (
 			<Reveal>
-				<div className="text-center pt-12">
-					<h2 className="text-xl font-semibold">{t("noJobs")}</h2>
-					<p>{t("checkBackLater")}</p>
-				</div>
+				<section className="container mx-auto px-4 pt-16">
+					<div className="flex min-h-[240px] items-center justify-center rounded-3xl border border-dashed border-border text-center text-primary-foreground">
+						<div>
+							<h2 className="text-xl font-semibold text-primary">{t("noJobs")}</h2>
+							<p className="mt-2">{t("checkBackLater")}</p>
+						</div>
+					</div>
+				</section>
 			</Reveal>
 		);
 	}
 
 	return (
 		<Reveal>
-			<div className="pt-12">
-				<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+			<section className="container mx-auto px-4 pt-16">
+				<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 					{currentJobs.map((job) => (
 						<JobCard key={job.id} job={job} />
 					))}
 				</div>
-				<CareersPagination page={page} totalPages={totalPages} onChange={setPage} />
-			</div>
+				{totalPages > 1 ? (
+					<SharedPagination currentPage={page} totalPages={totalPages} onChange={setPage} className="mt-6" />
+				) : null}
+			</section>
 		</Reveal>
 	);
 }

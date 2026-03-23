@@ -1,16 +1,19 @@
 "use client";
 
-import { Button } from "@/components";
 import { cn } from "@/lib/utils";
 import { Upload, X } from "lucide-react";
 import { useCallback, useState } from "react";
 import { FileRejection, useDropzone } from "react-dropzone";
+import { Button } from "../ui/button";
 
 export default function FileInput({
 	onFileSelect,
 	selectedFile,
 	maxSize = 10 * 1024 * 1024, // 10MB
 	className,
+	dropzoneClassName,
+	selectedFileClassName,
+	textClassName,
 	dragDropText,
 	fileSelectedText,
 	fileTooLargeText,
@@ -19,9 +22,7 @@ export default function FileInput({
 }: FileInputProps) {
 	const [error, setError] = useState<string | null>(null);
 	const croppedFileName =
-		(selectedFile?.name || "").length > 30
-			? (selectedFile?.name || "").substring(0, 30) + "..."
-			: selectedFile?.name || "";
+		(selectedFile?.name || "").length > 30 ? (selectedFile?.name || "").substring(0, 30) + "..." : selectedFile?.name || "";
 
 	const onDrop = useCallback(
 		(acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
@@ -68,28 +69,31 @@ export default function FileInput({
 					className={cn(
 						"w-full rounded-md border-2 border-dashed p-6 text-center cursor-pointer transition-colors",
 						isDragActive
-							? "border-blue-500 bg-blue-50"
+							? "border-secondary bg-accent"
 							: hasError
-								? "border-red-500 bg-red-50"
-								: "border-gray-300 hover:border-blue-400 hover:bg-gray-50"
+								? "border-destructive bg-destructive/5"
+								: "border-border hover:border-secondary hover:bg-background",
+						dropzoneClassName
 					)}
 				>
 					<input {...getInputProps()} />
-					<Upload className="mx-auto h-8 w-8 text-gray-400 mb-2" />
-					<p className="text-sm text-gray-600">{dragDropText}</p>
+					<Upload className="mx-auto mb-2 h-8 w-8 text-primary-foreground" />
+					<p className={cn("text-sm text-primary-foreground", textClassName)}>{dragDropText}</p>
 				</div>
 			) : (
-				<div className="w-full rounded-md border px-4 py-3">
+				<div className={cn("w-full rounded-md border px-4 py-3", selectedFileClassName)}>
 					<div className="flex items-center justify-between">
 						<div className="flex items-center gap-2 min-w-0 flex-1">
-							<Upload className="h-4 w-4 text-gray-500 flex-shrink-0" />
-							<span className="text-sm text-gray-700">{fileSelectedText(croppedFileName)}</span>
+							<Upload className="h-4 w-4 flex-shrink-0 text-primary-foreground" />
+							<span className={cn("text-sm text-primary-foreground", textClassName)}>
+								{fileSelectedText(croppedFileName)}
+							</span>
 						</div>
 						<Button
 							type="button"
-							variant="ghost"
+							variant="outline"
 							onClick={handleRemoveFile}
-							className="text-red-500 hover:text-red-700 hover:bg-red-50"
+							className="text-destructive hover:bg-destructive/5 hover:text-destructive"
 						>
 							<X className="h-4 w-4" />
 						</Button>
@@ -97,7 +101,7 @@ export default function FileInput({
 				</div>
 			)}
 
-			{error && <p className="text-xs text-red-500 mt-1 mb-0">{error}</p>}
+			{error && <p className="text-xs text-destructive mt-1 mb-0">{error}</p>}
 		</div>
 	);
 }
@@ -107,6 +111,9 @@ interface FileInputProps {
 	selectedFile: File | null;
 	maxSize?: number;
 	className?: string;
+	dropzoneClassName?: string;
+	selectedFileClassName?: string;
+	textClassName?: string;
 	dragDropText: string;
 	fileSelectedText: (fileName: string) => string;
 	fileTooLargeText: string;
