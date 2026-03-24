@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, Reveal } from "@/components";
+import { Card } from "@/components";
 import { Award, Clock, DollarSign, RotateCcw } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -47,13 +47,11 @@ export function BenefitsSection() {
 	return (
 		<section className="pt-12">
 			<div className="container mx-auto">
-				<Reveal>
-					<div className="text-center mb-12">
-						{/* <Badge className="mb-4">{t("badge")}</Badge> */}
-						<h2>{t("title")}</h2>
-						<p className="mt-4 text-gray-600 max-w-2xl mx-auto">{t("subtitle")}</p>
-					</div>
-				</Reveal>
+				<div className="text-center mb-12">
+					{/* <Badge className="mb-4">{t("badge")}</Badge> */}
+					<h2>{t("title")}</h2>
+					<p className="mt-4 text-gray-600 max-w-2xl mx-auto">{t("subtitle")}</p>
+				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 					{benefits.map((benefit, index) => {
@@ -61,23 +59,16 @@ export function BenefitsSection() {
 						const styles = benefitStyles[benefit.icon as keyof typeof benefitStyles];
 
 						return (
-							<Reveal key={benefit.key}>
-								<Card
-									className={`p-6 text-center h-full ${styles.bg} hover:shadow-lg transition-shadow duration-300 border-none`}
-								>
-									<div
-										className={`w-16 h-16 ${styles.iconBg} rounded-full flex items-center justify-center mx-auto mb-4`}
-									>
-										<IconComponent className={`w-8 h-8 ${styles.iconColor}`} />
-									</div>
-									<h3 className="text-lg font-semibold text-gray-800 mb-3">
-										{t(`list.${benefit.key}.title`)}
-									</h3>
-									<p className="text-gray-600 text-sm leading-relaxed">
-										{t(`list.${benefit.key}.description`)}
-									</p>
-								</Card>
-							</Reveal>
+							<Card
+								key={benefit.key}
+								className={`p-6 text-center h-full ${styles.bg} hover:shadow-lg transition-shadow duration-300 border-none`}
+							>
+								<div className={`w-16 h-16 ${styles.iconBg} rounded-full flex items-center justify-center mx-auto mb-4`}>
+									<IconComponent className={`w-8 h-8 ${styles.iconColor}`} />
+								</div>
+								<h3 className="text-lg font-semibold text-gray-800 mb-3">{t(`list.${benefit.key}.title`)}</h3>
+								<p className="text-gray-600 text-sm leading-relaxed">{t(`list.${benefit.key}.description`)}</p>
+							</Card>
 						);
 					})}
 				</div>

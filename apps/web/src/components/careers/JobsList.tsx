@@ -1,6 +1,6 @@
 "use client";
 
-import { JobCard, Reveal, SharedPagination, Skeleton } from "@/components";
+import { JobCard, SharedPagination, Skeleton } from "@/components";
 import { useJobsQuery } from "@/queries";
 import { useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
@@ -26,20 +26,18 @@ export function JobsList() {
 
 	if (isLoading) {
 		return (
-			<Reveal>
-				<section className="container mx-auto px-4 pt-16 pb-6">
-					<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-						{Array.from({ length: JOBS_PER_PAGE }).map((_, i) => (
-							<Skeleton key={i} className="h-[260px] rounded-3xl" />
-						))}
-					</div>
-					<div className="mt-10 flex justify-center gap-2">
-						<Skeleton className="h-10 w-10 rounded-md" />
-						<Skeleton className="h-10 w-10 rounded-md" />
-						<Skeleton className="h-10 w-10 rounded-md" />
-					</div>
-				</section>
-			</Reveal>
+			<section className="container mx-auto px-4 pt-16 pb-6">
+				<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+					{Array.from({ length: JOBS_PER_PAGE }).map((_, i) => (
+						<Skeleton key={i} className="h-[260px] rounded-3xl" />
+					))}
+				</div>
+				<div className="mt-10 flex justify-center gap-2">
+					<Skeleton className="h-10 w-10 rounded-md" />
+					<Skeleton className="h-10 w-10 rounded-md" />
+					<Skeleton className="h-10 w-10 rounded-md" />
+				</div>
+			</section>
 		);
 	}
 
@@ -56,31 +54,25 @@ export function JobsList() {
 
 	if (data.length === 0) {
 		return (
-			<Reveal>
-				<section className="container mx-auto px-4 pt-16">
-					<div className="flex min-h-[240px] items-center justify-center rounded-3xl border border-dashed border-border text-center text-primary-foreground">
-						<div>
-							<h2 className="text-xl font-semibold text-primary">{t("noJobs")}</h2>
-							<p className="mt-2">{t("checkBackLater")}</p>
-						</div>
+			<section className="container mx-auto px-4 pt-16">
+				<div className="flex min-h-[240px] items-center justify-center rounded-3xl border border-dashed border-border text-center text-primary-foreground">
+					<div>
+						<h2 className="text-xl font-semibold text-primary">{t("noJobs")}</h2>
+						<p className="mt-2">{t("checkBackLater")}</p>
 					</div>
-				</section>
-			</Reveal>
+				</div>
+			</section>
 		);
 	}
 
 	return (
-		<Reveal>
-			<section className="container mx-auto px-4 pt-16">
-				<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-					{currentJobs.map((job) => (
-						<JobCard key={job.id} job={job} />
-					))}
-				</div>
-				{totalPages > 1 ? (
-					<SharedPagination currentPage={page} totalPages={totalPages} onChange={setPage} className="mt-6" />
-				) : null}
-			</section>
-		</Reveal>
+		<section className="container mx-auto px-4 pt-16">
+			<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+				{currentJobs.map((job) => (
+					<JobCard key={job.id} job={job} />
+				))}
+			</div>
+			{totalPages > 1 ? <SharedPagination currentPage={page} totalPages={totalPages} onChange={setPage} className="mt-6" /> : null}
+		</section>
 	);
 }

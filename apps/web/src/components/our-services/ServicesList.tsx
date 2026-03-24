@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Reveal, ServiceCard, ServiceCardSkeleton } from "@/components";
+import { Button, ServiceCard, ServiceCardSkeleton } from "@/components";
 import { useServicesQuery } from "@/queries";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -32,11 +32,9 @@ export function ServicesList() {
 	if (isLoading) {
 		return (
 			<div className="flex flex-col gap-6 pt-12">
-				<Reveal>
-					{Array.from({ length: 5 }).map((_, index) => (
-						<ServiceCardSkeleton key={index} reversed={index % 2 !== 0} />
-					))}
-				</Reveal>
+				{Array.from({ length: 5 }).map((_, index) => (
+					<ServiceCardSkeleton key={index} reversed={index % 2 !== 0} />
+				))}
 			</div>
 		);
 	}
@@ -48,16 +46,14 @@ export function ServicesList() {
 		<div ref={sectionRef} className="flex flex-col items-center py-12 max-w-6xl mx-auto">
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-8 w-full items-stretch">
 				{displayedServices.map((service) => (
-					<Reveal key={service.slug}>
-						<div className="h-full">
-							<ServiceCard
-								slug={service.slug}
-								title={service.title}
-								description={service.shortDescription}
-								image={service.image}
-							/>
-						</div>
-					</Reveal>
+					<div key={service.slug} className="h-full">
+						<ServiceCard
+							slug={service.slug}
+							title={service.title}
+							description={service.shortDescription}
+							image={service.image}
+						/>
+					</div>
 				))}
 			</div>
 			{hasMore && (

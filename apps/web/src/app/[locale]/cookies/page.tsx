@@ -1,4 +1,4 @@
-import { Badge, Card, CardContent, ChangeConsentButton, MultiHeroSection, Reveal } from "@/components";
+import { Badge, Card, CardContent, ChangeConsentButton, MultiHeroSection } from "@/components";
 import { BarChart3, Megaphone, Settings, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
@@ -62,91 +62,83 @@ export default function CookiesPage() {
 			<section className="py-16">
 				<div className="container mx-auto max-w-4xl">
 					{/* Що таке cookie */}
-					<Reveal>
-						<Card className="mb-8">
-							<CardContent className="p-6">
-								<h2 className="text-xl font-semibold text-gray-900 mb-4">{t("whatAreCookies.title")}</h2>
-								<p className="text-gray-700 leading-relaxed">{t("whatAreCookies.description")}</p>
-							</CardContent>
-						</Card>
-					</Reveal>
+					<Card className="mb-8">
+						<CardContent className="p-6">
+							<h2 className="text-xl font-semibold text-gray-900 mb-4">{t("whatAreCookies.title")}</h2>
+							<p className="text-gray-700 leading-relaxed">{t("whatAreCookies.description")}</p>
+						</CardContent>
+					</Card>
 
 					{/* Категорії cookie */}
-					<Reveal>
-						<div className="mb-8">
-							<h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">{t("categories.title")}</h2>
+					<div className="mb-8">
+						<h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">{t("categories.title")}</h2>
 
-							<div className="grid gap-6 md:grid-cols-2">
-								{cookieCategories.map((category, index) => {
-									const IconComponent = category.icon;
-									return (
-										<Card key={index} className="overflow-hidden border-l-4 border-l-primary">
-											<CardContent className="p-6">
-												<div className="flex items-start gap-4">
-													<div className="p-2 bg-primary/10 rounded-lg">
-														<IconComponent className="w-6 h-6 text-primary" />
-													</div>
-													<div className="flex-1">
-														<div className="flex items-center gap-2 mb-2">
-															<h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
-															{category.required && (
-																<Badge variant="outline" className="text-xs">
-																	{category.badge}
-																</Badge>
-															)}
-														</div>
-														<p className="text-gray-700 leading-relaxed">{category.description}</p>
-													</div>
+						<div className="grid gap-6 md:grid-cols-2">
+							{cookieCategories.map((category, index) => {
+								const IconComponent = category.icon;
+								return (
+									<Card key={index} className="overflow-hidden border-l-4 border-l-primary">
+										<CardContent className="p-6">
+											<div className="flex items-start gap-4">
+												<div className="p-2 bg-primary/10 rounded-lg">
+													<IconComponent className="w-6 h-6 text-primary" />
 												</div>
-											</CardContent>
-										</Card>
-									);
-								})}
-							</div>
+												<div className="flex-1">
+													<div className="flex items-center gap-2 mb-2">
+														<h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
+														{category.required && (
+															<Badge variant="outline" className="text-xs">
+																{category.badge}
+															</Badge>
+														)}
+													</div>
+													<p className="text-gray-700 leading-relaxed">{category.description}</p>
+												</div>
+											</div>
+										</CardContent>
+									</Card>
+								);
+							})}
 						</div>
-					</Reveal>
+					</div>
 
 					{/* Керування вибором */}
-					<Reveal>
-						<Card className="mb-8 bg-primary/5 border-primary/20">
-							<CardContent className="p-6">
-								<h2 className="text-xl font-semibold text-gray-900 mb-4">{t("management.title")}</h2>
-								<p className="text-gray-700 leading-relaxed mb-6">{t("management.description")}</p>
+					<Card className="mb-8 bg-primary/5 border-primary/20">
+						<CardContent className="p-6">
+							<h2 className="text-xl font-semibold text-gray-900 mb-4">{t("management.title")}</h2>
+							<p className="text-gray-700 leading-relaxed mb-6">{t("management.description")}</p>
 
-								<div className="flex justify-center">
-									<ChangeConsentButton />
-								</div>
-							</CardContent>
-						</Card>
-					</Reveal>
+							<div className="flex justify-center">
+								<ChangeConsentButton />
+							</div>
+						</CardContent>
+					</Card>
 
 					{/* Додаткова інформація */}
-					<Reveal>
-						<Card className="mb-8">
-							<CardContent className="p-6">
-								<h2 className="text-xl font-semibold text-gray-900 mb-4">{t("additionalInfo.title")}</h2>
-								<div className="space-y-4 text-gray-700 leading-relaxed">
-									<p>
-										{t("additionalInfo.privacyPolicyText")}{" "}
-										<Link href="/privacy-policy" className="text-primary hover:underline font-medium">
-											{t("additionalInfo.privacyPolicyLink")}
-										</Link>
-										.
-									</p>
-									<p>
-										{t("additionalInfo.contactText")}{" "}
-										<a
-											href={`mailto:${t("additionalInfo.contactEmail")}`}
-											className="text-primary hover:underline font-medium"
-										>
-											{t("additionalInfo.contactEmail")}
-										</a>
-										.
-									</p>
-								</div>
-							</CardContent>
-						</Card>
-					</Reveal>
+					<Card className="mb-8">
+						<CardContent className="p-6">
+							<h2 className="text-xl font-semibold text-gray-900 mb-4">{t("additionalInfo.title")}</h2>
+							<div className="space-y-4 text-gray-700 leading-relaxed">
+								<p>
+									{t("additionalInfo.privacyPolicyText")}{" "}
+									<Link href="/privacy-policy" className="text-primary hover:underline font-medium">
+										{t("additionalInfo.privacyPolicyLink")}
+									</Link>
+									.
+								</p>
+								<p>
+									{t("additionalInfo.contactText")}{" "}
+									<a
+										href={`mailto:${t("additionalInfo.contactEmail")}`}
+										className="text-primary hover:underline font-medium"
+									>
+										{t("additionalInfo.contactEmail")}
+									</a>
+									.
+								</p>
+							</div>
+						</CardContent>
+					</Card>
 				</div>
 			</section>
 		</>

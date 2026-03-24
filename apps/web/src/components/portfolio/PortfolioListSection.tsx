@@ -1,6 +1,6 @@
 "use client";
 
-import { CardGridSkeleton, FilterChips, FilterChipsSkeleton, ProjectCard, Reveal, SharedPagination } from "@/components";
+import { CardGridSkeleton, FilterChips, FilterChipsSkeleton, ProjectCard, SharedPagination } from "@/components";
 import { ProjectStatusFilter, useProjectsQuery } from "@/queries";
 import { AlertCircle } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -69,53 +69,47 @@ export function PortfolioListSection() {
 
 	if (isLoading) {
 		return (
-			<Reveal>
-				<section className="container mx-auto px-4 py-16">
-					<FilterChipsSkeleton />
-					<CardGridSkeleton />
-				</section>
-			</Reveal>
+			<section className="container mx-auto px-4 py-16">
+				<FilterChipsSkeleton />
+				<CardGridSkeleton />
+			</section>
 		);
 	}
 
 	if (error) {
 		return (
-			<Reveal>
-				<section className="container mx-auto px-4 py-16">
-					<div className="flex min-h-[320px] flex-col items-center justify-center text-center">
-						<AlertCircle className="mb-4 h-16 w-16 text-destructive" />
-						<h2 className="mb-2 text-2xl font-bold text-primary">{t("ProjectsList.error.title")}</h2>
-						<p className="text-primary-foreground">{t("ProjectsList.error.description")}</p>
-					</div>
-				</section>
-			</Reveal>
+			<section className="container mx-auto px-4 py-16">
+				<div className="flex min-h-[320px] flex-col items-center justify-center text-center">
+					<AlertCircle className="mb-4 h-16 w-16 text-destructive" />
+					<h2 className="mb-2 text-2xl font-bold text-primary">{t("ProjectsList.error.title")}</h2>
+					<p className="text-primary-foreground">{t("ProjectsList.error.description")}</p>
+				</div>
+			</section>
 		);
 	}
 
 	return (
-		<Reveal>
-			<div className="container mx-auto px-4 pt-16">
-				<FilterChips options={statusFilters} />
+		<div className="container mx-auto px-4 pt-16">
+			<FilterChips options={statusFilters} />
 
-				{isFetching ? (
-					<CardGridSkeleton />
-				) : projects.length > 0 ? (
-					<>
-						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-							{paginatedProjects.map((project) => (
-								<ProjectCard key={project.id} project={project} locale={locale} />
-							))}
-						</div>
-						{totalPages > 1 ? (
-							<SharedPagination currentPage={currentPage} totalPages={totalPages} onChange={setCurrentPage} />
-						) : null}
-					</>
-				) : (
-					<div className="flex min-h-[240px] items-center justify-center rounded-3xl border border-dashed border-border text-center text-primary-foreground">
-						{t("ProjectsList.results.noResults.title")}
+			{isFetching ? (
+				<CardGridSkeleton />
+			) : projects.length > 0 ? (
+				<>
+					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+						{paginatedProjects.map((project) => (
+							<ProjectCard key={project.id} project={project} locale={locale} />
+						))}
 					</div>
-				)}
-			</div>
-		</Reveal>
+					{totalPages > 1 ? (
+						<SharedPagination currentPage={currentPage} totalPages={totalPages} onChange={setCurrentPage} />
+					) : null}
+				</>
+			) : (
+				<div className="flex min-h-[240px] items-center justify-center rounded-3xl border border-dashed border-border text-center text-primary-foreground">
+					{t("ProjectsList.results.noResults.title")}
+				</div>
+			)}
+		</div>
 	);
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogGrid, CallToActionSection, CardGridSkeleton, FilterChips, FilterChipsSkeleton, Reveal, SharedPagination } from "@/components";
+import { BlogGrid, CallToActionSection, CardGridSkeleton, FilterChips, FilterChipsSkeleton, SharedPagination } from "@/components";
 import { useBlogArticlesQuery, useBlogCategoriesQuery } from "@/queries";
 import { AlertCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -33,20 +33,18 @@ export default function BlogPage() {
 
 	if (categoriesError || articlesError) {
 		return (
-			<Reveal>
-				<section className="container mx-auto px-4 py-20">
-					<div className="flex min-h-[320px] flex-col items-center justify-center text-center">
-						<AlertCircle className="mb-4 h-16 w-16 text-destructive" />
-						<h2 className="mb-2 text-2xl font-bold text-primary">{t("errorTitle")}</h2>
-						<p className="text-primary-foreground">{t("errorDescription")}</p>
-					</div>
-				</section>
-			</Reveal>
+			<section className="container mx-auto px-4 py-20">
+				<div className="flex min-h-[320px] flex-col items-center justify-center text-center">
+					<AlertCircle className="mb-4 h-16 w-16 text-destructive" />
+					<h2 className="mb-2 text-2xl font-bold text-primary">{t("errorTitle")}</h2>
+					<p className="text-primary-foreground">{t("errorDescription")}</p>
+				</div>
+			</section>
 		);
 	}
 
 	return (
-		<Reveal>
+		<>
 			<div className="container mx-auto px-4 pb-16 pt-20">
 				<div className="mb-10">
 					<h2 className="text-center uppercase text-primary">
@@ -98,6 +96,6 @@ export default function BlogPage() {
 				)}
 			</div>
 			<CallToActionSection />
-		</Reveal>
+		</>
 	);
 }

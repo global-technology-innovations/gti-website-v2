@@ -8,7 +8,6 @@ import {
 	Button,
 	generateCanonicalUrl,
 	generatePageMetadata,
-	Reveal,
 } from "@/components";
 import { Link } from "@/i18n/navigation";
 import { DETAIL_CONTENT_CLASSNAMES } from "@/lib/detailContentClassNames";
@@ -44,22 +43,20 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
 	return (
 		<>
-			<Reveal>
-				<section className="relative mx-4 bg-background bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] rounded-b-3xl">
-					<div className="container py-22 flex flex-col relative mx-auto">
-						<ServiceBreadcrumb title={service.title} homeLabel={tNav("home")} servicesLabel={tNav("services")} />
-						<div className="mt-8 flex flex-col items-start">
-							<h1 className="h3 text-center text-primary uppercase md:text-left">{service.title}</h1>
-							<p className="mt-6 max-w-2xl text-left text-primary">{service.shortDescription}</p>
-							<Button asChild variant="secondary" className="mt-8">
-								<Link href="/contact">
-									Замовити послугу <ArrowRight className="w-4 h-4" />
-								</Link>
-							</Button>
-						</div>
+			<section className="relative mx-4 bg-background bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] rounded-b-3xl">
+				<div className="container py-22 flex flex-col relative mx-auto">
+					<ServiceBreadcrumb title={service.title} homeLabel={tNav("home")} servicesLabel={tNav("services")} />
+					<div className="mt-8 flex flex-col items-start">
+						<h1 className="h3 text-center text-primary uppercase md:text-left">{service.title}</h1>
+						<p className="mt-6 max-w-2xl text-left text-primary">{service.shortDescription}</p>
+						<Button asChild variant="secondary" className="mt-8">
+							<Link href="/contact">
+								Замовити послугу <ArrowRight className="w-4 h-4" />
+							</Link>
+						</Button>
 					</div>
-				</section>
-			</Reveal>
+				</div>
+			</section>
 
 			{service.description.length > 0 ? (
 				<section className="px-4 py-16 md:py-20">

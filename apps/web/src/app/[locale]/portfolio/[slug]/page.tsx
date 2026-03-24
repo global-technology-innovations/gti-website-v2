@@ -1,7 +1,7 @@
 "use client";
 
 import {
-	ProjectDetailCTASection,
+	ContactSection,
 	ProjectDetailContentSection,
 	ProjectDetailErrorState,
 	ProjectDetailGallerySection,
@@ -72,12 +72,7 @@ export default function ProjectDetailPage() {
 				/>
 			) : null}
 
-			<ProjectDetailCTASection
-				title={t("interestedInProject")}
-				description={t("interestedDesc")}
-				contactLabel={t("contactUs")}
-				servicesLabel={t("ourServices")}
-			/>
+			<ContactSection />
 		</>
 	);
 }

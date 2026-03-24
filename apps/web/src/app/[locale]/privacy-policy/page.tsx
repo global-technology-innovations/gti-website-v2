@@ -1,13 +1,4 @@
-import {
-	Badge,
-	Card,
-	CardContent,
-	generateCanonicalUrl,
-	generateHreflangUrls,
-	generatePageMetadata,
-	MultiHeroSection,
-	Reveal,
-} from "@/components";
+import { Badge, Card, CardContent, generateCanonicalUrl, generateHreflangUrls, generatePageMetadata, MultiHeroSection } from "@/components";
 import { useTranslations } from "next-intl";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -61,22 +52,18 @@ export default function PrivacyPolicyPage() {
 			<section className="py-16">
 				<div className="container mx-auto max-w-4xl">
 					{/* Updated Date */}
-					<Reveal>
-						<div className="mb-8 text-center">
-							<Badge variant="outline" className="text-sm">
-								{t("updated")}
-							</Badge>
-						</div>
-					</Reveal>
+					<div className="mb-8 text-center">
+						<Badge variant="outline" className="text-sm">
+							{t("updated")}
+						</Badge>
+					</div>
 
 					{/* Introduction */}
-					<Reveal>
-						<Card className="mb-8">
-							<CardContent className="p-6">
-								<p className="text-gray-700 leading-relaxed">{t("intro")}</p>
-							</CardContent>
-						</Card>
-					</Reveal>
+					<Card className="mb-8">
+						<CardContent className="p-6">
+							<p className="text-gray-700 leading-relaxed">{t("intro")}</p>
+						</CardContent>
+					</Card>
 
 					{/* Sections */}
 					<div className="space-y-6">
@@ -88,58 +75,54 @@ export default function PrivacyPolicyPage() {
 							const hasList = t.has(`${sectionKey}.list`);
 
 							return (
-								<Reveal key={sectionNum}>
-									<Card className="overflow-hidden border-l-4 border-l-primary">
-										<CardContent className="p-6">
-											<h2 className="text-xl font-semibold text-gray-900 mb-4">{title}</h2>
+								<Card key={sectionNum} className="overflow-hidden border-l-4 border-l-primary">
+									<CardContent className="p-6">
+										<h2 className="text-xl font-semibold text-gray-900 mb-4">{title}</h2>
 
-											{hasText && text && (
-												<div className="mb-4">
-													<p className="text-gray-700 leading-relaxed whitespace-pre-line">{text}</p>
-												</div>
-											)}
+										{hasText && text && (
+											<div className="mb-4">
+												<p className="text-gray-700 leading-relaxed whitespace-pre-line">{text}</p>
+											</div>
+										)}
 
-											{hasList && (
-												<ul className="space-y-3">
-													{(() => {
-														const listItems = [];
-														let i = 0;
-														while (t.has(`${sectionKey}.list.${i}`)) {
-															listItems.push(
-																<li key={i} className="flex items-start">
-																	<div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-																	<span className="text-gray-700 leading-relaxed">
-																		{t(`${sectionKey}.list.${i}`)}
-																	</span>
-																</li>
-															);
-															i++;
-														}
-														return listItems;
-													})()}
-												</ul>
-											)}
-										</CardContent>
-									</Card>
-								</Reveal>
+										{hasList && (
+											<ul className="space-y-3">
+												{(() => {
+													const listItems = [];
+													let i = 0;
+													while (t.has(`${sectionKey}.list.${i}`)) {
+														listItems.push(
+															<li key={i} className="flex items-start">
+																<div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+																<span className="text-gray-700 leading-relaxed">
+																	{t(`${sectionKey}.list.${i}`)}
+																</span>
+															</li>
+														);
+														i++;
+													}
+													return listItems;
+												})()}
+											</ul>
+										)}
+									</CardContent>
+								</Card>
 							);
 						})}
 					</div>
 
 					{/* Contact Information */}
-					<Reveal>
-						<Card className="mt-8 bg-primary/5 border-primary/20">
-							<CardContent className="p-6 text-center">
-								<h3 className="text-lg font-semibold text-gray-900 mb-2">{t("contactInfo.title")}</h3>
-								<p className="text-gray-700 mb-4">{t("contactInfo.description")}</p>
-								<div className="space-y-2 text-sm text-gray-600">
-									<p>{t("contactInfo.email")}: info@global-technology-innovations.com</p>
-									<p>{t("contactInfo.address")}: Jenisejská 45A, 040 12 Košice-Nad Jazerom</p>
-									<p>{t("contactInfo.phone")}: +421 917 089 618</p>
-								</div>
-							</CardContent>
-						</Card>
-					</Reveal>
+					<Card className="mt-8 bg-primary/5 border-primary/20">
+						<CardContent className="p-6 text-center">
+							<h3 className="text-lg font-semibold text-gray-900 mb-2">{t("contactInfo.title")}</h3>
+							<p className="text-gray-700 mb-4">{t("contactInfo.description")}</p>
+							<div className="space-y-2 text-sm text-gray-600">
+								<p>{t("contactInfo.email")}: info@global-technology-innovations.com</p>
+								<p>{t("contactInfo.address")}: Jenisejská 45A, 040 12 Košice-Nad Jazerom</p>
+								<p>{t("contactInfo.phone")}: +421 917 089 618</p>
+							</div>
+						</CardContent>
+					</Card>
 				</div>
 			</section>
 		</>

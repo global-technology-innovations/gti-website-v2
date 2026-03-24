@@ -12,18 +12,13 @@ import {
 } from "@/components";
 import { getTranslations } from "next-intl/server";
 
-export async function generateMetadata({
-	params,
-}: {
-	params: Promise<{ locale: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
 	const t = await getTranslations({
 		locale,
 		namespace: "HomePage.HeroSection",
 	});
 
-	// Ключові слова залежно від мови
 	const keywordsMap = {
 		sk: "stavebné služby, construction services, building renovation, slovakia, košice",
 		en: "construction services, building renovation, turnkey solutions, slovakia",
@@ -36,19 +31,14 @@ export async function generateMetadata({
 	return generatePageMetadata({
 		title: t("title"),
 		description: t("description"),
-		keywords:
-			keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
+		keywords: keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
 		canonicalUrl: generateCanonicalUrl(locale, ""),
 		hreflang: generateHreflangUrls(""),
 		locale,
 	});
 }
 
-export default async function HomePage({
-	params,
-}: {
-	params: Promise<{ locale: string }>;
-}) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
 	const tFAQ = await getTranslations({
 		locale,

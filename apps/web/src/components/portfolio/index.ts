@@ -1,7 +1,6 @@
 export * from "./PortfolioCTASection";
 export * from "./PortfolioListSection";
 export * from "./ProjectCard";
-export * from "./ProjectDetailCTASection";
 export * from "./ProjectDetailContentSection";
 export * from "./ProjectDetailErrorState";
 export * from "./ProjectDetailGallerySection";
