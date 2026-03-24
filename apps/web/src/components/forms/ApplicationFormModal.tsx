@@ -1,10 +1,10 @@
 "use client";
 
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import useCreateApplication from "@/queries/useApplicationQuery";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { ReactNode, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Button } from "../ui/button";

@@ -13,6 +13,12 @@ const languages = [
 	{ code: "en", label: "English", flag: "gb" },
 ];
 
+const FlagIcon = ({ flag }: { flag: string }) => (
+	<span className="flex size-6 shrink-0 items-center justify-center overflow-hidden rounded-full">
+		<span className={`fi fis fi-${flag} !m-0 !block !h-full !w-full !rounded-full !bg-cover !bg-center`} />
+	</span>
+);
+
 export const LanguageSwitcher = () => {
 	const locale = useLocale();
 	const pathname = usePathname();
@@ -35,7 +41,7 @@ export const LanguageSwitcher = () => {
 			<SelectTrigger className="cursor-pointer !text-sm text-primary bg-foreground px-4 py-2 rounded-full border-0 shadow-none min-w-0 w-auto">
 				<SelectValue>
 					<span className="flex items-center gap-2">
-						<span className={`fi fi-${currentLang?.flag} rounded-sm`} />
+						{currentLang ? <FlagIcon flag={currentLang.flag} /> : null}
 						<span className="inlone md:hidden lg:inline ">{currentLang?.label}</span>
 					</span>
 				</SelectValue>
@@ -44,7 +50,7 @@ export const LanguageSwitcher = () => {
 				{languages.map((lang) => (
 					<SelectItem value={lang.code} key={lang.code} className="cursor-pointer">
 						<span className="flex items-center gap-2">
-							<span className={`fi fi-${lang.flag} rounded-sm`} />
+							<FlagIcon flag={lang.flag} />
 							<span className="!font-normal !text-sm">{lang.label}</span>
 						</span>
 					</SelectItem>

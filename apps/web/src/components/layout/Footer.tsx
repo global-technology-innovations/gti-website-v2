@@ -1,6 +1,7 @@
 "use client";
 
 import { siteContact } from "@/config/site-contact";
+import { Link as LocaleLink } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { FaFacebook, FaTiktok, FaWhatsapp } from "react-icons/fa";
@@ -21,21 +22,21 @@ export const Footer = () => {
 				{/* mobile */}
 				<div className="flex justify-around md:hidden">
 					<div className="flex flex-col items-center md:justify-around md:items-start gap-2">
-						<Link href="/about" className="!font-normal text-base md:text-sm !text-white">
+						<LocaleLink href="/about" className="!font-normal text-base md:text-sm !text-white">
 							{tHeader("nav.about")}
-						</Link>
-						<Link href="/our-services" className="!font-normal text-base md:text-sm !text-white">
+						</LocaleLink>
+						<LocaleLink href="/our-services" className="!font-normal text-base md:text-sm !text-white">
 							{tHeader("nav.services")}
-						</Link>
-						<Link href="/portfolio" className="!font-normal text-base md:text-sm !text-white">
+						</LocaleLink>
+						<LocaleLink href="/portfolio" className="!font-normal text-base md:text-sm !text-white">
 							{tHeader("nav.portfolio")}
-						</Link>
-						<Link href="/careers" className="!font-normal text-base md:text-sm !text-white">
+						</LocaleLink>
+						<LocaleLink href="/careers" className="!font-normal text-base md:text-sm !text-white">
 							{tHeader("nav.careers")}
-						</Link>
-						<Link href="/contact" className="!font-normal text-base md:text-sm !text-white">
+						</LocaleLink>
+						<LocaleLink href="/contact" className="!font-normal text-base md:text-sm !text-white">
 							{tHeader("nav.contact")}
-						</Link>
+						</LocaleLink>
 					</div>
 
 					<div className="flex flex-col justify-around">
@@ -60,21 +61,21 @@ export const Footer = () => {
 
 				{/* desktop */}
 				<div className="hidden md:flex items-center md:justify-around md:items-start gap-8">
-					<Link href="/about" className="text-white font-semibold text-[16px] underline-animate">
+					<LocaleLink href="/about" className="text-white font-semibold text-[16px] underline-animate">
 						{tHeader("nav.about")}
-					</Link>
-					<Link href="/our-services" className="text-white font-semibold text-[16px] underline-animate">
+					</LocaleLink>
+					<LocaleLink href="/our-services" className="text-white font-semibold text-[16px] underline-animate">
 						{tHeader("nav.services")}
-					</Link>
-					<Link href="/portfolio" className="text-white font-semibold text-[16px] underline-animate">
+					</LocaleLink>
+					<LocaleLink href="/portfolio" className="text-white font-semibold text-[16px] underline-animate">
 						{tHeader("nav.portfolio")}
-					</Link>
-					<Link href="/careers" className="text-white font-semibold text-[16px] underline-animate">
+					</LocaleLink>
+					<LocaleLink href="/careers" className="text-white font-semibold text-[16px] underline-animate">
 						{tHeader("nav.careers")}
-					</Link>
-					<Link href="/contact" className="text-white font-semibold text-[16px] underline-animate">
+					</LocaleLink>
+					<LocaleLink href="/contact" className="text-white font-semibold text-[16px] underline-animate">
 						{tHeader("nav.contact")}
-					</Link>
+					</LocaleLink>
 				</div>
 
 				<div className="hidden md:flex gap-4 justify-around">
@@ -105,12 +106,12 @@ export const Footer = () => {
 				<div className="text-[15px] font-semibold text-white/60">{t("rights")}</div>
 
 				<div className="flex items-center gap-6 text-center text-white w-full md:w-auto font-light">
-					<Link href="/privacy-policy" className="underline-animate text-[15px] font-semibold">
-						Політика конфіденційності
-					</Link>
-					<Link href="/cookie-policy" className="underline-animate text-[15px] font-semibold">
-						Політика cookie
-					</Link>
+					<LocaleLink href="/privacy-policy" className="underline-animate text-[15px] font-semibold">
+						{t("privacy")}
+					</LocaleLink>
+					<LocaleLink href="/cookie-policy" className="underline-animate text-[15px] font-semibold">
+						{t("cookies")}
+					</LocaleLink>
 				</div>
 			</div>
 		</footer>

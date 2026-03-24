@@ -23,7 +23,8 @@ export function ChangeConsentButton() {
 
 	return (
 		<button
-			className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm hover:bg-gray-50 transition-colors"
+			type="button"
+			className="rounded-full border border-border bg-background px-5 py-3 text-sm font-medium text-primary transition-colors hover:bg-secondary/10"
 			onClick={() => setShowBanner(true)}
 		>
 			{t("buttonText")} ({t("currentStatus")}: {getConsentStatus()})

@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		"/careers",
 		"/our-services",
 		"/privacy-policy",
-		"/cookies",
+		"/cookie-policy",
 	];
 
 	// Generate URLs for all locales
