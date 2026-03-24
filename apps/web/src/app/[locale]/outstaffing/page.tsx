@@ -11,6 +11,7 @@ import {
 	ServiceSchema,
 	SpecialistsSection,
 } from "@/components";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
@@ -54,6 +55,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function OutstaffingPage({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "OutstaffingPage" });
 
 	return (
 		<>
@@ -65,14 +67,16 @@ export default async function OutstaffingPage({ params }: { params: Promise<{ lo
 			<SpecialistsSection />
 			<CallToActionSection
 				sectionId="outstaffing-cta"
-				title="Потрібна команда вже зараз?"
-				description="Не витрачайте час на пошук і оформлення персоналу. Ми швидко підберемо кваліфікованих спеціалістів відповідно до вашого об’єкта, термінів і бюджету."
-				buttonText="Отримати консультацію"
+				title={t("CallToAction.title")}
+				description={t("CallToAction.description")}
+				buttonText={t("CallToAction.buttonText")}
 			/>
 			<OutstaffingWorkflowSection />
 			<ContactSection
-				customTitle="вам Потрібні майстри вже завтра?"
-				customDescription="Залиште заявку, і ми зв'яжемося з вами протягом години,щоб обговорити деталі та підібрати команду досвідчених спеціалістівзі стажем від 5 років, пропонуючи гнучкі умови співпраці та оплати."
+				customTitle={t.rich("Contact.title", {
+					highlight: (chunks) => <span className="text-secondary">{chunks}</span>,
+				})}
+				customDescription={t("Contact.description")}
 			/>
 		</>
 	);

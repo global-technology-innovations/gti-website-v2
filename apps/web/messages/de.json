@@ -313,8 +313,54 @@
 	"ContactPage": {
 		"Hero": {
 			"badge": "Kontaktinformationen",
-			"title": "Kontaktieren Sie uns in Sekunden",
+			"title": "Kontaktieren Sie uns — <highlight>in Sekunden</highlight>",
 			"description": "Wir sind immer bereit, Ihre Fragen zu beantworten und eine professionelle Beratung zu bieten"
+		},
+		"QuickContacts": {
+			"items": {
+				"phone": {
+					"title": "Telefon",
+					"action": "Anrufen"
+				},
+				"whatsapp": {
+					"title": "WhatsApp",
+					"action": "Öffnen"
+				},
+				"facebook": {
+					"title": "Facebook",
+					"action": "Öffnen"
+				},
+				"email": {
+					"title": "E-Mail",
+					"action": "Öffnen"
+				}
+			}
+		},
+		"FormSection": {
+			"title": "Kontaktformular ausfüllen",
+			"description": "Füllen Sie das Formular aus und unser Manager wird Sie innerhalb des Arbeitstages für eine detaillierte Beratung kontaktieren. Sie erhalten eine schnelle Rückmeldung, professionelle Beratung und eine kostenlose Projekteinschätzung.",
+			"details": {
+				"phoneUa": {
+					"label": "Mobiltelefon",
+					"value": "+380 97 373 72 40"
+				},
+				"phoneSk": {
+					"label": "Mobiltelefon",
+					"value": "+421 917 089 618"
+				},
+				"email": {
+					"label": "E-Mail",
+					"value": "info@global-technology-innovations.com"
+				},
+				"address": {
+					"label": "Adresse",
+					"value": "Jenisejská 45A, Košice"
+				},
+				"hours": {
+					"label": "Arbeitszeiten",
+					"value": "Wir arbeiten Mo–Fr: 09:00–18:00. Wochenende: Sa–So."
+				}
+			}
 		},
 		"form": {
 			"title": "Kontaktieren Sie uns",
@@ -651,6 +697,15 @@
 					"description": "Die Spezialisten beginnen die Arbeit innerhalb des vereinbarten Zeitrahmens. Wir sorgen für Unterstützung sowie bei Bedarf für Ersatz oder Verstärkung des Teams."
 				}
 			}
+		},
+		"CallToAction": {
+			"title": "Brauchen Sie jetzt sofort ein Team?",
+			"description": "Verlieren Sie keine Zeit mit der Suche und administrativen Abwicklung von Personal. Wir stellen schnell qualifizierte Spezialisten passend zu Ihrem Objekt, Zeitplan und Budget zusammen.",
+			"buttonText": "Beratung erhalten"
+		},
+		"Contact": {
+			"title": "Brauchen Sie Fachkräfte schon <highlight>morgen?</highlight>",
+			"description": "Hinterlassen Sie eine Anfrage und wir melden uns innerhalb einer Stunde, um die Details zu besprechen und ein Team erfahrener Spezialisten mit mehr als 5 Jahren Praxis sowie flexiblen Kooperations- und Zahlungsbedingungen zusammenzustellen."
 		},
 		"CTA": {
 			"title": "Brauchen Sie Handwerker schon morgen?",

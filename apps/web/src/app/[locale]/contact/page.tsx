@@ -1,13 +1,12 @@
 import {
-	ContactFormSection,
-	ContactInfo,
+	ContactHeroSection,
 	ContactPageSchema,
-	MultiHeroSection,
+	ContactSection,
 	generateCanonicalUrl,
 	generateHreflangUrls,
 	generatePageMetadata,
 } from "@/components";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
@@ -51,24 +50,59 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "ContactPage" });
+
+	const contactDetails = [
+		{
+			iconSrc: "/icons/phone-calling.svg",
+			iconAlt: "phone",
+			label: t("FormSection.details.phoneUa.label"),
+			value: t("FormSection.details.phoneUa.value"),
+			href: "tel:+380973737240",
+		},
+		{
+			iconSrc: "/icons/phone-calling.svg",
+			iconAlt: "phone",
+			label: t("FormSection.details.phoneSk.label"),
+			value: t("FormSection.details.phoneSk.value"),
+			href: "tel:+421917089618",
+		},
+		{
+			iconSrc: "/icons/inbox.svg",
+			iconAlt: "email",
+			label: t("FormSection.details.email.label"),
+			value: t("FormSection.details.email.value"),
+			href: "mailto:info@global-technology-innovations.com",
+			fullWidth: true,
+		},
+		{
+			iconSrc: "/icons/map-point.svg",
+			iconAlt: "address",
+			label: t("FormSection.details.address.label"),
+			value: t("FormSection.details.address.value"),
+			href: "https://maps.google.com/?q=Jenisejská+45A,+040+12+Košice-Nad+Jazerom",
+			external: true,
+			fullWidth: true,
+		},
+		{
+			iconSrc: "/icons/clipboard.svg",
+			iconAlt: "working hours",
+			label: t("FormSection.details.hours.label"),
+			value: t("FormSection.details.hours.value"),
+			fullWidth: true,
+		},
+	];
 
 	return (
 		<>
 			<ContactPageSchema locale={locale} />
-			<ContactPageContent />
-		</>
-	);
-}
-
-function ContactPageContent() {
-	const t = useTranslations("ContactPage");
-
-	return (
-		<>
-			<MultiHeroSection badgeText={t("Hero.badge")} title={t("Hero.title")} description={t("Hero.description")} />
-			<ContactInfo />
-			<ContactFormSection />
-			{/* <MapSection /> */}
+			<ContactHeroSection />
+			<ContactSection
+				customTitle={t("FormSection.title")}
+				customDescription={t("FormSection.description")}
+				contactDetails={contactDetails}
+				contactDetailsVariant="grid"
+			/>
 		</>
 	);
 }

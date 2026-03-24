@@ -313,8 +313,54 @@
 	"ContactPage": {
 		"Hero": {
 			"badge": "Kontaktné informácie",
-			"title": "Spojte sa s nami za pár sekúnd",
+			"title": "Spojte sa s nami — <highlight>za pár sekúnd</highlight>",
 			"description": "Vždy sme pripravení odpovedať na vaše otázky a poskytnúť odbornú konzultáciu"
+		},
+		"QuickContacts": {
+			"items": {
+				"phone": {
+					"title": "Telefón",
+					"action": "Zavolať"
+				},
+				"whatsapp": {
+					"title": "WhatsApp",
+					"action": "Otvoriť"
+				},
+				"facebook": {
+					"title": "Facebook",
+					"action": "Otvoriť"
+				},
+				"email": {
+					"title": "Email",
+					"action": "Otvoriť"
+				}
+			}
+		},
+		"FormSection": {
+			"title": "Vyplňte kontaktný formulár",
+			"description": "Vyplňte formulár a náš manažér vás bude kontaktovať počas pracovného dňa pre detailnú konzultáciu. Dostanete rýchlu odpoveď, odborné poradenstvo a bezplatné zhodnotenie projektu.",
+			"details": {
+				"phoneUa": {
+					"label": "Mobilný telefón",
+					"value": "+380 97 373 72 40"
+				},
+				"phoneSk": {
+					"label": "Mobilný telefón",
+					"value": "+421 917 089 618"
+				},
+				"email": {
+					"label": "Email",
+					"value": "info@global-technology-innovations.com"
+				},
+				"address": {
+					"label": "Adresa",
+					"value": "Jenisejská 45A, Košice"
+				},
+				"hours": {
+					"label": "Pracovný čas",
+					"value": "Pracujeme Po–Pi: 09:00–18:00. Víkendy: So–Ne."
+				}
+			}
 		},
 		"form": {
 			"title": "Spojte sa s nami",
@@ -651,6 +697,15 @@
 					"description": "Špecialisti nastupujú do práce v dohodnutom termíne. Zabezpečujeme podporu aj prípadnú výmenu alebo posilnenie tímu."
 				}
 			}
+		},
+		"CallToAction": {
+			"title": "Potrebujete tím už teraz?",
+			"description": "Nestrácajte čas hľadaním a administratívou okolo personálu. Rýchlo vyberieme kvalifikovaných špecialistov podľa vášho objektu, termínov a rozpočtu.",
+			"buttonText": "Získať konzultáciu"
+		},
+		"Contact": {
+			"title": "Potrebujete majstrov už <highlight>zajtra?</highlight>",
+			"description": "Zanechajte žiadosť a do hodiny sa vám ozveme, aby sme prediskutovali detaily a zostavili tím skúsených špecialistov s praxou viac ako 5 rokov a flexibilnými podmienkami spolupráce a platby."
 		},
 		"CTA": {
 			"title": "Potrebujete majstrov už zajtra?",

@@ -313,8 +313,54 @@
 	"ContactPage": {
 		"Hero": {
 			"badge": "Kontaktní informace",
-			"title": "Spojte se s námi za pár sekund",
+			"title": "Spojte se s námi — <highlight>za pár sekund</highlight>",
 			"description": "Vždy jsme připraveni odpovědět na vaše otázky a poskytnout odbornou konzultaci"
+		},
+		"QuickContacts": {
+			"items": {
+				"phone": {
+					"title": "Telefon",
+					"action": "Zavolat"
+				},
+				"whatsapp": {
+					"title": "WhatsApp",
+					"action": "Otevřít"
+				},
+				"facebook": {
+					"title": "Facebook",
+					"action": "Otevřít"
+				},
+				"email": {
+					"title": "Email",
+					"action": "Otevřít"
+				}
+			}
+		},
+		"FormSection": {
+			"title": "Vyplňte kontaktní formulář",
+			"description": "Vyplňte formulář a náš manažer vás bude kontaktovat během pracovního dne pro detailní konzultaci. Získáte rychlou odpověď, profesionální poradenství a bezplatné zhodnocení projektu.",
+			"details": {
+				"phoneUa": {
+					"label": "Mobilní telefon",
+					"value": "+380 97 373 72 40"
+				},
+				"phoneSk": {
+					"label": "Mobilní telefon",
+					"value": "+421 917 089 618"
+				},
+				"email": {
+					"label": "Email",
+					"value": "info@global-technology-innovations.com"
+				},
+				"address": {
+					"label": "Adresa",
+					"value": "Jenisejská 45A, Košice"
+				},
+				"hours": {
+					"label": "Pracovní doba",
+					"value": "Pracujeme Po–Pá: 09:00–18:00. Víkendy: So–Ne."
+				}
+			}
 		},
 		"form": {
 			"title": "Spojte se s námi",
@@ -651,6 +697,15 @@
 					"description": "Specialisté nastupují do práce v dohodnutém termínu. Zajišťujeme podporu i případnou výměnu nebo posílení týmu."
 				}
 			}
+		},
+		"CallToAction": {
+			"title": "Potřebujete tým už teď?",
+			"description": "Neztrácejte čas hledáním a administrativou kolem personálu. Rychle vybereme kvalifikované specialisty podle vašeho objektu, termínů a rozpočtu.",
+			"buttonText": "Získat konzultaci"
+		},
+		"Contact": {
+			"title": "Potřebujete řemeslníky už <highlight>zítra?</highlight>",
+			"description": "Zanechte poptávku a do hodiny se vám ozveme, abychom probrali detaily a sestavili tým zkušených specialistů s praxí více než 5 let a flexibilními podmínkami spolupráce i plateb."
 		},
 		"CTA": {
 			"title": "Potřebujete řemeslníky už zítra?",

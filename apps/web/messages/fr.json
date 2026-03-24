@@ -313,8 +313,54 @@
 	"ContactPage": {
 		"Hero": {
 			"badge": "Informations de contact",
-			"title": "Contactez-nous en quelques secondes",
+			"title": "Contactez-nous — <highlight>en quelques secondes</highlight>",
 			"description": "Nous sommes toujours prêts à répondre à vos questions et à fournir une consultation professionnelle"
+		},
+		"QuickContacts": {
+			"items": {
+				"phone": {
+					"title": "Téléphone",
+					"action": "Appeler"
+				},
+				"whatsapp": {
+					"title": "WhatsApp",
+					"action": "Ouvrir"
+				},
+				"facebook": {
+					"title": "Facebook",
+					"action": "Ouvrir"
+				},
+				"email": {
+					"title": "Email",
+					"action": "Ouvrir"
+				}
+			}
+		},
+		"FormSection": {
+			"title": "Remplissez le formulaire de contact",
+			"description": "Remplissez le formulaire et notre responsable vous contactera pendant la journée ouvrable pour une consultation détaillée. Vous recevrez une réponse rapide, un conseil professionnel et une évaluation gratuite du projet.",
+			"details": {
+				"phoneUa": {
+					"label": "Téléphone mobile",
+					"value": "+380 97 373 72 40"
+				},
+				"phoneSk": {
+					"label": "Téléphone mobile",
+					"value": "+421 917 089 618"
+				},
+				"email": {
+					"label": "Email",
+					"value": "info@global-technology-innovations.com"
+				},
+				"address": {
+					"label": "Adresse",
+					"value": "Jenisejská 45A, Košice"
+				},
+				"hours": {
+					"label": "Heures de travail",
+					"value": "Nous travaillons lun–ven : 09:00–18:00. Week-end : sam–dim."
+				}
+			}
 		},
 		"form": {
 			"title": "Contactez-nous",
@@ -651,6 +697,15 @@
 					"description": "Les spécialistes commencent à travailler dans les délais convenus. Nous assurons le suivi ainsi que le remplacement ou le renfort de l'équipe si nécessaire."
 				}
 			}
+		},
+		"CallToAction": {
+			"title": "Besoin d'une équipe dès maintenant ?",
+			"description": "Ne perdez pas de temps à chercher et gérer le personnel. Nous sélectionnerons rapidement des spécialistes qualifiés selon votre chantier, vos délais et votre budget.",
+			"buttonText": "Obtenir une consultation"
+		},
+		"Contact": {
+			"title": "Avez-vous besoin d'artisans dès <highlight>demain ?</highlight>",
+			"description": "Laissez une demande et nous vous contacterons dans l'heure afin de discuter des détails et de constituer une équipe de spécialistes expérimentés avec plus de 5 ans de pratique, en proposant des conditions de coopération et de paiement flexibles."
 		},
 		"CTA": {
 			"title": "Besoin d'artisans dès demain ?",

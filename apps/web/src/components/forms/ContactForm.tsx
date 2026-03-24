@@ -32,7 +32,7 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "" }: Co
 	return (
 		<form
 			onSubmit={handleSubmit((data) => onSubmitAction(data, reset))}
-			className={cn("flex flex-col bg-white rounded-2xl p-6 shadow-md w-full max-w-[650px] mx-auto gap-4", className)}
+			className={cn("flex flex-col bg-white rounded-[24px] p-6 w-full max-w-[650px] mx-auto gap-4 border border-input", className)}
 		>
 			{/* honeypot */}
 			<input type="text" {...register("_hp")} className="hidden" tabIndex={-1} autoComplete="off" />

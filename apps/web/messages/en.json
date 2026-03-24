@@ -313,8 +313,54 @@
 	"ContactPage": {
 		"Hero": {
 			"badge": "Contact Information",
-			"title": "Get in touch with us in seconds",
+			"title": "Get in touch with us — <highlight>in seconds</highlight>",
 			"description": "We are always ready to answer your questions and provide professional consultation"
+		},
+		"QuickContacts": {
+			"items": {
+				"phone": {
+					"title": "Phone",
+					"action": "Call now"
+				},
+				"whatsapp": {
+					"title": "WhatsApp",
+					"action": "Open"
+				},
+				"facebook": {
+					"title": "Facebook",
+					"action": "Open"
+				},
+				"email": {
+					"title": "Email",
+					"action": "Open"
+				}
+			}
+		},
+		"FormSection": {
+			"title": "Fill out the contact form",
+			"description": "Fill out the form and our manager will contact you during the working day for a detailed consultation. You will receive a quick response, professional advice and a free project evaluation.",
+			"details": {
+				"phoneUa": {
+					"label": "Mobile phone",
+					"value": "+380 97 373 72 40"
+				},
+				"phoneSk": {
+					"label": "Mobile phone",
+					"value": "+421 917 089 618"
+				},
+				"email": {
+					"label": "Email",
+					"value": "info@global-technology-innovations.com"
+				},
+				"address": {
+					"label": "Address",
+					"value": "Jenisejská 45A, Košice"
+				},
+				"hours": {
+					"label": "Working hours",
+					"value": "We work Mon–Fri: 09:00–18:00. Weekends: Sat–Sun."
+				}
+			}
 		},
 		"form": {
 			"title": "Get in touch with us",
@@ -651,6 +697,15 @@
 					"description": "Specialists start work within the agreed timeline. We provide support and replacement or reinforcement of the team when needed."
 				}
 			}
+		},
+		"CallToAction": {
+			"title": "Need a team right now?",
+			"description": "Do not waste time on searching for and onboarding personnel. We will quickly select qualified specialists according to your site, deadlines and budget.",
+			"buttonText": "Get a consultation"
+		},
+		"Contact": {
+			"title": "Do you need craftsmen as early as <highlight>tomorrow?</highlight>",
+			"description": "Leave a request and we will contact you within an hour to discuss the details and assemble a team of experienced specialists with 5+ years of experience, offering flexible cooperation and payment terms."
 		},
 		"CTA": {
 			"title": "Need craftsmen tomorrow?",

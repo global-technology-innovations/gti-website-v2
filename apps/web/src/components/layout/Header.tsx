@@ -21,7 +21,8 @@ export const Header = () => {
 		PAGES_WITH_BACKGROUND.includes(pathWithoutLocale) ||
 		pathWithoutLocale.startsWith("/our-services/") ||
 		pathWithoutLocale.startsWith("/blog/") ||
-		pathWithoutLocale.startsWith("/portfolio/");
+		pathWithoutLocale.startsWith("/portfolio/") ||
+		pathWithoutLocale.startsWith("/outstaffing");
 
 	return (
 		<header className={cn("z-50 mx-4 mt-4 rounded-t-3xl pt-6", useHeaderBackground ? "bg-background" : "bg-white")}>
