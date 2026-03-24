@@ -13,6 +13,7 @@ const buttonVariants = cva(
 				secondary: "bg-secondary",
 				outline: "bg-transparent border border-foreground text-primary text-sm shadow-none",
 				white: "bg-white text-primary border-none",
+				ghost: "bg-transparent border border-transparent text-primary text-sm shadow-none",
 			},
 			size: {
 				default: "px-7 py-3.5",

@@ -27,7 +27,7 @@ export const Header = () => {
 		pathWithoutLocale.startsWith("/privacy-policy");
 
 	return (
-		<header className={cn("z-50 mx-4 mt-4 rounded-t-3xl pt-6", useHeaderBackground ? "bg-background" : "bg-white")}>
+		<header className={cn("z-50 mx-4 mt-4 rounded-t-3xl pt-6 px-4 lg:px-0", useHeaderBackground ? "bg-background" : "bg-white")}>
 			<div className="mx-auto flex justify-between items-center container mx-auto h-16">
 				<div className="flex items-center gap-1">
 					<Link href="/">
@@ -130,8 +130,8 @@ export const Header = () => {
 				<div className="md:hidden">
 					<Sheet open={open} onOpenChange={setOpen}>
 						<SheetTrigger asChild>
-							<Button variant="secondary">
-								<Menu className="h-5 w-5" />
+							<Button variant="ghost">
+								<Menu className="size-7" />
 							</Button>
 						</SheetTrigger>
 						<SheetContent side="bottom">
