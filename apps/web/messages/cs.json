@@ -351,10 +351,12 @@
 		}
 	},
 	"ContactFormSection": {
-		"title": "MÁTE DOTAZ NEBO NABÍDKU?",
+		"title": "MÁTE <highlight>DOTAZ <br /> NEBO</highlight> NABÍDKU?",
 		"description": "Chcete-li položit otázku, požádat o konzultaci nebo se jednoduše seznámit, kontaktujte nás prostřednictvím uvedených kontaktů nebo vyplňte formulář, abychom vás mohli kontaktovat.",
-		"phoneLabel": "Náš telefon:",
-		"emailLabel": "Náš e-mail:"
+		"phoneLabel": "Mobilní telefon",
+		"emailLabel": "E-mail",
+		"addressLabel": "Adresa",
+		"address": "Jenisejská 45A, Košice"
 	},
 	"ContactForm": {
 		"title": "Uveďte své údaje pro zpětnou vazbu",
@@ -571,7 +573,7 @@
 	"OutstaffingPage": {
 		"Hero": {
 			"badge": "Outstaffing personálu",
-			"title": "Outstaffing personálu pro stavební projekty",
+			"title": "Outstaffing <highlight>personálu</highlight> pro stavební projekty",
 			"description": "Poskytujeme zkušené specialisty pro vaši výstavbu bez zbytečných nákladů na hledání a udržování zaměstnanců.",
 			"ctaButton": "Objednat specialisty"
 		},
@@ -579,10 +581,19 @@
 			"title": "Co je outstaffing?",
 			"description": "Outstaffing je když získáte zaměstnance naší společnosti k vykonávání konkrétních úkolů na vašem objektu. Pracují pod vaším vedením, ale zůstávají v našem oficiálním kádru."
 		},
+		"Experience": {
+			"title": "Zkušenost, která garantuje výsledek <highlight>na stavbě</highlight>",
+			"paragraphs": {
+				"first": "Pro nás není outstaffing jen poskytnutí personálu, ale také odpovědnost za kvalitu práce na vašem objektu. Rozumíme specifikům stavebních procesů, důležitosti termínů i hodnotě profesionálního týmu, který se dokáže okamžitě zapojit bez dalšího zaškolování.",
+				"second": "Od roku 2009 působíme ve stavebnictví a realizovali jsme stovky projektů různého rozsahu. Právě tato praktická zkušenost nám umožňuje sestavovat týmy specialistů, které odpovídají reálným požadavkům moderních staveb."
+			},
+			"button": "Kontaktujte nás",
+			"imageAlt": "Stavební pracovník pro sekci outstaffingu"
+		},
 		"Specialists": {
 			"badge": "Naši specialisté",
-			"title": "Koho můžeme poskytnout",
-			"subtitle": "Náš tým zahrnuje širokou škálu kvalifikovaných specialistů pro různé druhy stavebních prací",
+			"title": "Naši specialisté",
+			"subtitle": "Náš tým zahrnuje širokou škálu kvalifikovaných specialistů pro různé druhy stavebních prací.",
 			"list": {
 				"bricklayers": "Zedníci",
 				"drywallers": "Sádrokartonáři",
@@ -597,46 +608,47 @@
 		"Benefits": {
 			"badge": "Proč si vybrat nás",
 			"title": "Výhody pro klienta",
-			"subtitle": "Proč si vybrat náš outstaffing pro váš stavební projekt",
+			"subtitle": "Proč si vybrat náš outstaffing pro váš stavební projekt.",
 			"list": {
 				"speed": {
-					"title": "Rychlé získání personálu",
-					"description": "Bez dlouhého hledání — máme připravený tým specialistů"
+					"title": "Rychlý start",
+					"description": "Operativní výběr a nástup specialistů na stavbu bez zdržení."
 				},
 				"savings": {
-					"title": "Úspora na daních a HR",
-					"description": "Všechny oficiální záležitosti s personálem bereme na sebe"
+					"title": "Méně administrativy",
+					"description": "Přebíráme personální i organizační otázky spolupráce."
 				},
 				"experience": {
-					"title": "Zkušení specialisté",
-					"description": "Praxí ověření řemeslníci s víceletými zkušenostmi"
+					"title": "Profesionální mistři",
+					"description": "Poskytujeme zkušené odborníky podle požadavků projektu."
 				},
 				"flexibility": {
-					"title": "Flexibilita termínů",
-					"description": "Potřebujete na týden nebo na rok — vybereme optimální tým"
+					"title": "Flexibilní podmínky",
+					"description": "Tým sestavíme podle rozsahu a termínů vašich prací."
 				}
 			}
 		},
 		"HowItWorks": {
 			"badge": "Proces",
-			"title": "Jak to funguje",
+			"title": "Jak probíhá <highlight>naše spolupráce?</highlight>",
 			"subtitle": "Jednoduchý proces získání potřebných specialistů ve 4 krocích",
+			"imageAlt": "Pracovník s plánem pro sekci spolupráce",
 			"steps": {
 				"request": {
-					"title": "Zanecháte žádost",
-					"description": "Řekněte nám o vašich potřebách a termínech projektu"
+					"title": "Zanecháte poptávku",
+					"description": "Sdělíte typ objektu, počet specialistů, termíny a specifika prací. To nám umožní rychle připravit nabídku."
 				},
 				"selection": {
-					"title": "Vybereme specialisty",
-					"description": "Najdeme nejlepší řemeslníky pro vaše úkoly"
+					"title": "Výběr a schválení kandidátů",
+					"description": "Specialisty vybíráme podle kvalifikace a zkušeností. Před zahájením prací schvalujete složení týmu."
 				},
 				"contract": {
-					"title": "Podepíšeme smlouvu",
-					"description": "Vyřídíme všechny dokumenty rychle a transparentně"
+					"title": "Nastavení spolupráce",
+					"description": "Přebíráme všechny personální a právní záležitosti: smlouvy, daně i zaměstnání. Spolupráce je transparentní a bez zbytečné zátěže."
 				},
 				"work": {
-					"title": "Řemeslníci jdou na objekt",
-					"description": "Specialisté začnou práci v dohodnutém čase"
+					"title": "Nástup na stavbu a podpora",
+					"description": "Specialisté nastupují do práce v dohodnutém termínu. Zajišťujeme podporu i případnou výměnu nebo posílení týmu."
 				}
 			}
 		},

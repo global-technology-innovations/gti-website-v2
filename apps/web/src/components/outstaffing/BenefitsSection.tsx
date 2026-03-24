@@ -1,76 +1,39 @@
 "use client";
 
-import { Card } from "@/components";
-import { Award, Clock, DollarSign, RotateCcw } from "lucide-react";
+import { Card } from "@/components/ui";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
-const benefitIcons = {
-	speed: Clock,
-	savings: DollarSign,
-	experience: Award,
-	flexibility: RotateCcw,
-};
-
-const benefitStyles = {
-	speed: {
-		bg: "bg-gradient-to-br from-blue-50 to-blue-100",
-		iconBg: "bg-blue-600",
-		iconColor: "text-white",
-	},
-	savings: {
-		bg: "bg-gradient-to-br from-green-50 to-green-100",
-		iconBg: "bg-green-600",
-		iconColor: "text-white",
-	},
-	experience: {
-		bg: "bg-gradient-to-br from-purple-50 to-purple-100",
-		iconBg: "bg-purple-600",
-		iconColor: "text-white",
-	},
-	flexibility: {
-		bg: "bg-gradient-to-br from-orange-50 to-orange-100",
-		iconBg: "bg-orange-600",
-		iconColor: "text-white",
-	},
-};
+const benefits = [
+	{ key: "speed", icon: "/icons/bolt-circle.svg" },
+	{ key: "savings", icon: "/icons/clipboard.svg" },
+	{ key: "experience", icon: "/icons/crown-minimalistic.svg" },
+	{ key: "flexibility", icon: "/icons/layers.svg" },
+] as const;
 
 export function BenefitsSection() {
 	const t = useTranslations("OutstaffingPage.Benefits");
 
-	const benefits = [
-		{ key: "speed", icon: "speed" },
-		{ key: "savings", icon: "savings" },
-		{ key: "experience", icon: "experience" },
-		{ key: "flexibility", icon: "flexibility" },
-	];
-
 	return (
-		<section className="pt-12">
-			<div className="container mx-auto">
-				<div className="text-center mb-12">
-					{/* <Badge className="mb-4">{t("badge")}</Badge> */}
-					<h2>{t("title")}</h2>
-					<p className="mt-4 text-gray-600 max-w-2xl mx-auto">{t("subtitle")}</p>
-				</div>
+		<section className="py-16 md:py-24">
+			<div className="mx-4 rounded-[32px] bg-background py-16 md:py-20">
+				<div className="container mx-auto px-4">
+					<div className="mx-auto max-w-[760px] text-center">
+						<h2 className="text-primary uppercase h3 !font-bold">{t("title")}</h2>
+						<p className="mt-4 text-primary-foreground">{t("subtitle")}</p>
+					</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-					{benefits.map((benefit, index) => {
-						const IconComponent = benefitIcons[benefit.icon as keyof typeof benefitIcons];
-						const styles = benefitStyles[benefit.icon as keyof typeof benefitStyles];
-
-						return (
-							<Card
-								key={benefit.key}
-								className={`p-6 text-center h-full ${styles.bg} hover:shadow-lg transition-shadow duration-300 border-none`}
-							>
-								<div className={`w-16 h-16 ${styles.iconBg} rounded-full flex items-center justify-center mx-auto mb-4`}>
-									<IconComponent className={`w-8 h-8 ${styles.iconColor}`} />
+					<div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+						{benefits.map((benefit) => (
+							<Card key={benefit.key} variant="outline">
+								<div className="flex size-14 items-center justify-center rounded-full bg-secondary/10">
+									<Image src={benefit.icon} alt="" width={28} height={28} className="size-7" aria-hidden="true" />
 								</div>
-								<h3 className="text-lg font-semibold text-gray-800 mb-3">{t(`list.${benefit.key}.title`)}</h3>
-								<p className="text-gray-600 text-sm leading-relaxed">{t(`list.${benefit.key}.description`)}</p>
+								<h3 className="mt-6 card-title text-primary">{t(`list.${benefit.key}.title`)}</h3>
+								<p className="mt-2 text-primary-foreground">{t(`list.${benefit.key}.description`)}</p>
 							</Card>
-						);
-					})}
+						))}
+					</div>
 				</div>
 			</div>
 		</section>

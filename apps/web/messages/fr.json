@@ -351,10 +351,12 @@
 		}
 	},
 	"ContactFormSection": {
-		"title": "VOUS AVEZ UNE QUESTION OU UNE PROPOSITION ?",
+		"title": "VOUS AVEZ UNE <highlight>QUESTION <br /> OU UNE</highlight> PROPOSITION ?",
 		"description": "Pour poser une question, demander une consultation ou simplement faire connaissance, contactez-nous via les coordonnées fournies ou remplissez le formulaire pour que nous puissions vous recontacter.",
-		"phoneLabel": "Notre téléphone :",
-		"emailLabel": "Notre e-mail :"
+		"phoneLabel": "Téléphone portable",
+		"emailLabel": "E-mail",
+		"addressLabel": "Adresse",
+		"address": "Jenisejská 45A, Košice"
 	},
 	"ContactForm": {
 		"title": "Indiquez vos coordonnées pour un retour",
@@ -571,7 +573,7 @@
 	"OutstaffingPage": {
 		"Hero": {
 			"badge": "Externalisation du personnel",
-			"title": "Externalisation du personnel pour projets de construction",
+			"title": "Externalisation du <highlight>personnel</highlight> pour les projets de construction",
 			"description": "Nous fournissons des spécialistes expérimentés pour votre construction sans coûts inutiles de recherche et de maintien du personnel.",
 			"ctaButton": "Commander des spécialistes"
 		},
@@ -579,10 +581,19 @@
 			"title": "Qu'est-ce que l'externalisation ?",
 			"description": "L'externalisation, c'est quand vous obtenez les employés de notre société pour effectuer des tâches spécifiques sur votre site. Ils travaillent sous votre direction mais restent dans notre personnel officiel."
 		},
+		"Experience": {
+			"title": "Une expérience qui garantit des résultats <highlight>sur chantier</highlight>",
+			"paragraphs": {
+				"first": "Pour nous, l'outstaffing ne se limite pas à fournir du personnel, c'est aussi une responsabilité pour la qualité du travail sur votre chantier. Nous comprenons les spécificités des processus de construction, l'importance des délais et la valeur d'une équipe professionnelle capable de s'intégrer immédiatement sans formation supplémentaire.",
+				"second": "Depuis 2009, nous travaillons dans le secteur du bâtiment et avons réalisé des centaines de projets de différentes tailles. Cette expérience pratique nous permet de constituer des équipes de spécialistes adaptées aux exigences réelles des chantiers modernes."
+			},
+			"button": "Contactez-nous",
+			"imageAlt": "Ouvrier du bâtiment pour la section outstaffing"
+		},
 		"Specialists": {
 			"badge": "Nos spécialistes",
-			"title": "Qui pouvons-nous fournir",
-			"subtitle": "Notre équipe comprend une large gamme de spécialistes qualifiés pour différents types de travaux de construction",
+			"title": "Nos spécialistes",
+			"subtitle": "Notre équipe comprend une large gamme de spécialistes qualifiés pour différents types de travaux de construction.",
 			"list": {
 				"bricklayers": "Maçons",
 				"drywallers": "Plaquistes",
@@ -597,46 +608,47 @@
 		"Benefits": {
 			"badge": "Pourquoi nous choisir",
 			"title": "Avantages pour le client",
-			"subtitle": "Pourquoi choisir notre externalisation pour votre projet de construction",
+			"subtitle": "Pourquoi choisir notre externalisation pour votre projet de construction.",
 			"list": {
 				"speed": {
-					"title": "Recrutement rapide du personnel",
-					"description": "Pas de longues recherches — nous avons une équipe de spécialistes prête"
+					"title": "Démarrage rapide",
+					"description": "Sélection rapide et mise en place des spécialistes sur le chantier sans retard."
 				},
 				"savings": {
-					"title": "Économies sur les taxes et RH",
-					"description": "Nous prenons en charge toutes les questions officielles du personnel"
+					"title": "Moins d'administration",
+					"description": "Nous prenons en charge les questions RH et organisationnelles de la coopération."
 				},
 				"experience": {
-					"title": "Spécialistes expérimentés",
-					"description": "Artisans testés par la pratique avec des années d'expérience"
+					"title": "Professionnels qualifiés",
+					"description": "Nous fournissons des spécialistes expérimentés selon les exigences du projet."
 				},
 				"flexibility": {
-					"title": "Flexibilité des délais",
-					"description": "Besoin pour une semaine ou un an — nous sélectionnerons l'équipe optimale"
+					"title": "Conditions flexibles",
+					"description": "Nous constituons l'équipe selon le volume et les délais de vos travaux."
 				}
 			}
 		},
 		"HowItWorks": {
 			"badge": "Processus",
-			"title": "Comment ça marche",
+			"title": "Comment se déroule <highlight>notre collaboration ?</highlight>",
 			"subtitle": "Processus simple pour obtenir les spécialistes dont vous avez besoin en 4 étapes",
+			"imageAlt": "Ouvrier avec plan pour la section de collaboration",
 			"steps": {
 				"request": {
-					"title": "Vous soumettez une demande",
-					"description": "Parlez-nous de vos besoins et des délais du projet"
+					"title": "Vous laissez une demande",
+					"description": "Vous indiquez le type de chantier, le nombre de spécialistes, les délais et les spécificités des travaux. Cela nous permet de préparer rapidement une proposition."
 				},
 				"selection": {
-					"title": "Nous sélectionnons les spécialistes",
-					"description": "Trouvons les meilleurs artisans pour vos tâches"
+					"title": "Sélection et validation des candidats",
+					"description": "Nous sélectionnons les spécialistes selon leur qualification et leur expérience. Vous validez la composition de l'équipe avant le début des travaux."
 				},
 				"contract": {
-					"title": "Nous signons un contrat",
-					"description": "Traitons tous les documents rapidement et de manière transparente"
+					"title": "Mise en place de la collaboration",
+					"description": "Nous prenons en charge toutes les questions RH et juridiques : contrats, taxes et emploi. La collaboration reste transparente et sans charge inutile."
 				},
 				"work": {
-					"title": "Les artisans vont sur le site",
-					"description": "Les spécialistes commencent le travail au moment convenu"
+					"title": "Intervention sur site et accompagnement",
+					"description": "Les spécialistes commencent à travailler dans les délais convenus. Nous assurons le suivi ainsi que le remplacement ou le renfort de l'équipe si nécessaire."
 				}
 			}
 		},

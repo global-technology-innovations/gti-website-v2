@@ -195,7 +195,7 @@ h2 {
 	@apply text-[32px] lg:text-[56px] leading-[48px] lg:leading-[54px] font-bold;
 }
 .h2 {
-	@apply text-[32px] lg:text-[56px] leading-[48px] lg:leading-[54px] font-bold;
+	@apply text-[32px] lg:text-[56px] leading-[48px] lg:leading-[66px] font-bold;
 }
 h3 {
 	@apply text-[28px] lg:text-[44px] leading-[36px] lg:leading-[48px] font-semibold;
@@ -211,6 +211,10 @@ h4 {
 }
 p {
 	@apply text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] font-normal;
+}
+
+.card-title {
+	@apply !text-lg font-bold uppercase !leading-[24px] text-[22px] leading-[1.1];
 }
 
 .text-button {

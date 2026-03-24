@@ -1,5 +1,5 @@
 export * from "./BenefitsSection";
-export * from "./HowItWorksSection";
-export * from "./OutstaffingCTASection";
+export * from "./OutstaffingExperienceSection";
 export * from "./OutstaffingHeroSection";
+export * from "./OutstaffingWorkflowSection";
 export * from "./SpecialistsSection";

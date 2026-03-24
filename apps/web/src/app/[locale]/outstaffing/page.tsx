@@ -1,11 +1,13 @@
 import {
 	BenefitsSection,
+	CallToActionSection,
+	ContactSection,
 	generateCanonicalUrl,
 	generateHreflangUrls,
 	generatePageMetadata,
-	HowItWorksSection,
-	OutstaffingCTASection,
+	OutstaffingExperienceSection,
 	OutstaffingHeroSection,
+	OutstaffingWorkflowSection,
 	ServiceSchema,
 	SpecialistsSection,
 } from "@/components";
@@ -58,10 +60,20 @@ export default async function OutstaffingPage({ params }: { params: Promise<{ lo
 			<ServiceSchema locale={locale} serviceType="outstaffing" />
 
 			<OutstaffingHeroSection />
+			<OutstaffingExperienceSection />
 			<BenefitsSection />
 			<SpecialistsSection />
-			<HowItWorksSection />
-			<OutstaffingCTASection />
+			<CallToActionSection
+				sectionId="outstaffing-cta"
+				title="Потрібна команда вже зараз?"
+				description="Не витрачайте час на пошук і оформлення персоналу. Ми швидко підберемо кваліфікованих спеціалістів відповідно до вашого об’єкта, термінів і бюджету."
+				buttonText="Отримати консультацію"
+			/>
+			<OutstaffingWorkflowSection />
+			<ContactSection
+				customTitle="вам Потрібні майстри вже завтра?"
+				customDescription="Залиште заявку, і ми зв'яжемося з вами протягом години,щоб обговорити деталі та підібрати команду досвідчених спеціалістівзі стажем від 5 років, пропонуючи гнучкі умови співпраці та оплати."
+			/>
 		</>
 	);
 }

@@ -32,13 +32,13 @@ export function HistorySection() {
 						</Link>
 					</Button>
 				</div>
-				<div className="max-w-[590px]">
+				<div>
 					<Image
 						src="/history-img.png"
 						alt="Співробітники Global Technology Innovations з кресленнями"
 						width={590}
 						height={400}
-						className="w-full h-auto rounded-lg object-cover"
+						className="h-full rounded-lg object-cover"
 					/>
 				</div>
 			</div>

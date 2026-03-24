@@ -351,10 +351,12 @@
 		}
 	},
 	"ContactFormSection": {
-		"title": "HABEN SIE EINE FRAGE ODER EIN ANGEBOT?",
+		"title": "HABEN SIE EINE <highlight>FRAGE <br /> ODER EIN</highlight> ANGEBOT?",
 		"description": "Um eine Frage zu stellen, eine Beratung anzufordern oder uns einfach kennenzulernen, kontaktieren Sie uns über die angegebenen Kontaktdaten oder füllen Sie das Formular aus, damit wir uns bei Ihnen melden können.",
-		"phoneLabel": "Unsere Telefonnummer:",
-		"emailLabel": "Unsere E-Mail:"
+		"phoneLabel": "Mobiltelefon",
+		"emailLabel": "E-Mail",
+		"addressLabel": "Adresse",
+		"address": "Jenisejská 45A, Košice"
 	},
 	"ContactForm": {
 		"title": "Geben Sie Ihre Kontaktdaten für eine Rückmeldung an",
@@ -571,7 +573,7 @@
 	"OutstaffingPage": {
 		"Hero": {
 			"badge": "Personal-Outstaffing",
-			"title": "Personal-Outstaffing für Bauprojekte",
+			"title": "Outstaffing von <highlight>Personal</highlight> für Bauprojekte",
 			"description": "Wir stellen erfahrene Spezialisten für Ihren Bau zur Verfügung ohne unnötige Kosten für Suche und Personalerhaltung.",
 			"ctaButton": "Spezialisten bestellen"
 		},
@@ -579,10 +581,19 @@
 			"title": "Was ist Outstaffing?",
 			"description": "Outstaffing bedeutet, dass Sie Mitarbeiter unseres Unternehmens für spezifische Aufgaben an Ihrem Objekt erhalten. Sie arbeiten unter Ihrer Leitung, bleiben aber in unserem offiziellen Personal."
 		},
+		"Experience": {
+			"title": "Erfahrung, die Ergebnisse <highlight>auf der Baustelle</highlight> garantiert",
+			"paragraphs": {
+				"first": "Für uns bedeutet Outstaffing nicht nur Personalbereitstellung, sondern auch Verantwortung für die Qualität der Arbeit auf Ihrer Baustelle. Wir kennen die Besonderheiten von Bauprozessen, die Bedeutung von Terminen und den Wert eines professionellen Teams, das ohne zusätzliche Einarbeitung sofort einsatzbereit ist.",
+				"second": "Seit 2009 arbeiten wir im Bauwesen und haben Hunderte Projekte unterschiedlicher Größenordnung umgesetzt. Diese praktische Erfahrung ermöglicht es uns, Teams von Spezialisten zusammenzustellen, die den realen Anforderungen moderner Baustellen entsprechen."
+			},
+			"button": "Kontaktieren Sie uns",
+			"imageAlt": "Bauarbeiter für den Outstaffing-Bereich"
+		},
 		"Specialists": {
 			"badge": "Unsere Spezialisten",
-			"title": "Wen können wir bereitstellen",
-			"subtitle": "Unser Team umfasst eine breite Palette qualifizierter Spezialisten für verschiedene Arten von Bauarbeiten",
+			"title": "Unsere Spezialisten",
+			"subtitle": "Unser Team umfasst eine breite Palette qualifizierter Spezialisten für verschiedene Arten von Bauarbeiten.",
 			"list": {
 				"bricklayers": "Maurer",
 				"drywallers": "Trockenbauer",
@@ -597,46 +608,47 @@
 		"Benefits": {
 			"badge": "Warum uns wählen",
 			"title": "Vorteile für den Kunden",
-			"subtitle": "Warum unser Outstaffing für Ihr Bauprojekt wählen",
+			"subtitle": "Warum unser Outstaffing für Ihr Bauprojekt wählen.",
 			"list": {
 				"speed": {
-					"title": "Schnelle Personalgewinnung",
-					"description": "Keine lange Suche — wir haben ein fertiges Team von Spezialisten"
+					"title": "Schneller Start",
+					"description": "Schnelle Auswahl und Einsatzbereitschaft von Spezialisten auf der Baustelle ohne Verzögerungen."
 				},
 				"savings": {
-					"title": "Steuer- und HR-Einsparungen",
-					"description": "Alle offiziellen Personalangelegenheiten übernehmen wir"
+					"title": "Weniger Administration",
+					"description": "Wir übernehmen personelle und organisatorische Fragen der Zusammenarbeit."
 				},
 				"experience": {
-					"title": "Erfahrene Spezialisten",
-					"description": "Praxiserprobte Handwerker mit jahrelanger Erfahrung"
+					"title": "Professionelle Fachkräfte",
+					"description": "Wir stellen erfahrene Fachleute entsprechend den Projektanforderungen bereit."
 				},
 				"flexibility": {
-					"title": "Zeitflexibilität",
-					"description": "Benötigt für eine Woche oder ein Jahr — wir wählen das optimale Team"
+					"title": "Flexible Bedingungen",
+					"description": "Wir stellen das Team passend zu Umfang und Fristen Ihrer Arbeiten zusammen."
 				}
 			}
 		},
 		"HowItWorks": {
 			"badge": "Prozess",
-			"title": "Wie es funktioniert",
+			"title": "Wie läuft <highlight>unsere Zusammenarbeit?</highlight>",
 			"subtitle": "Einfacher Prozess, um die benötigten Spezialisten in 4 Schritten zu erhalten",
+			"imageAlt": "Arbeiter mit Plan für den Kooperationsbereich",
 			"steps": {
 				"request": {
-					"title": "Sie stellen eine Anfrage",
-					"description": "Erzählen Sie uns von Ihren Bedürfnissen und Projektterminen"
+					"title": "Sie senden eine Anfrage",
+					"description": "Sie teilen uns den Objekttyp, die Anzahl der Spezialisten, die Fristen und die Besonderheiten der Arbeiten mit. So können wir schnell ein Angebot vorbereiten."
 				},
 				"selection": {
-					"title": "Wir wählen Spezialisten aus",
-					"description": "Finden die besten Handwerker für Ihre Aufgaben"
+					"title": "Auswahl und Freigabe der Kandidaten",
+					"description": "Wir wählen Spezialisten nach Qualifikation und Erfahrung aus. Sie bestätigen die Teamzusammensetzung vor dem Arbeitsbeginn."
 				},
 				"contract": {
-					"title": "Wir unterzeichnen einen Vertrag",
-					"description": "Bearbeiten alle Dokumente schnell und transparent"
+					"title": "Organisation der Zusammenarbeit",
+					"description": "Wir übernehmen alle personalbezogenen und rechtlichen Fragen: Verträge, Steuern und Beschäftigung. Die Zusammenarbeit bleibt transparent und ohne unnötige Belastung."
 				},
 				"work": {
-					"title": "Handwerker gehen zum Objekt",
-					"description": "Spezialisten beginnen die Arbeit zur vereinbarten Zeit"
+					"title": "Start auf der Baustelle und Begleitung",
+					"description": "Die Spezialisten beginnen die Arbeit innerhalb des vereinbarten Zeitrahmens. Wir sorgen für Unterstützung sowie bei Bedarf für Ersatz oder Verstärkung des Teams."
 				}
 			}
 		},

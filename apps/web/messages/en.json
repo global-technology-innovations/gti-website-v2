@@ -351,10 +351,12 @@
 		}
 	},
 	"ContactFormSection": {
-		"title": "HAVE A QUESTION OR PROPOSAL?",
+		"title": "HAVE A <highlight>QUESTION <br /> OR</highlight> PROPOSAL?",
 		"description": "To ask a question, request a consultation, or simply get acquainted, contact us using the provided details or fill out the form so we can get back to you.",
-		"phoneLabel": "Our phone:",
-		"emailLabel": "Our e-mail:"
+		"phoneLabel": "Mobile phone",
+		"emailLabel": "Email",
+		"addressLabel": "Address",
+		"address": "Jenisejská 45A, Košice"
 	},
 	"ContactForm": {
 		"title": "Enter your details for feedback",
@@ -571,7 +573,7 @@
 	"OutstaffingPage": {
 		"Hero": {
 			"badge": "Personnel Outstaffing",
-			"title": "Personnel Outstaffing for Construction Projects",
+			"title": "Outstaffing <highlight>personnel</highlight> for construction projects",
 			"description": "We provide experienced specialists for your construction without unnecessary costs for searching and maintaining staff.",
 			"ctaButton": "Order Specialists"
 		},
@@ -579,10 +581,19 @@
 			"title": "What is outstaffing?",
 			"description": "Outstaffing is when you get our company's employees to perform specific tasks at your facility. They work under your management but remain in our official staff."
 		},
+		"Experience": {
+			"title": "Experience that guarantees results <highlight>on site</highlight>",
+			"paragraphs": {
+				"first": "For us, outstaffing is not just staff supply, but responsibility for the quality of work on your site. We understand construction specifics, discipline requirements and the value of a professional team that can join the project immediately without extra onboarding.",
+				"second": "Since 2009 we have been working in construction and have delivered hundreds of projects of different scale. This practical experience allows us to build teams of specialists that meet the real demands of modern construction sites."
+			},
+			"button": "Contact us",
+			"imageAlt": "Construction worker for the outstaffing section"
+		},
 		"Specialists": {
 			"badge": "Our Specialists",
-			"title": "Who we can provide",
-			"subtitle": "Our team includes a wide range of qualified specialists for various types of construction work",
+			"title": "Our Specialists",
+			"subtitle": "Our team includes a wide range of qualified specialists for various types of construction work.",
 			"list": {
 				"bricklayers": "Bricklayers",
 				"drywallers": "Drywall Specialists",
@@ -597,46 +608,47 @@
 		"Benefits": {
 			"badge": "Why Choose Us",
 			"title": "Benefits for the client",
-			"subtitle": "Why choose our outstaffing for your construction project",
+			"subtitle": "Why choose our outstaffing for your construction project.",
 			"list": {
 				"speed": {
-					"title": "Quick personnel recruitment",
-					"description": "No long searches — we have a ready team of specialists"
+					"title": "Quick start",
+					"description": "Fast selection and deployment of specialists to the site without delays."
 				},
 				"savings": {
-					"title": "Tax and HR savings",
-					"description": "We take care of all official personnel matters"
+					"title": "Less administration",
+					"description": "We take care of HR and organisational matters for the cooperation."
 				},
 				"experience": {
-					"title": "Experienced specialists",
-					"description": "Practice-tested craftsmen with years of experience"
+					"title": "Professional craftsmen",
+					"description": "We provide experienced specialists according to the project requirements."
 				},
 				"flexibility": {
-					"title": "Time flexibility",
-					"description": "Need for a week or a year — we'll select the optimal team"
+					"title": "Flexible terms",
+					"description": "We shape the team for you based on the scope and deadlines of the work."
 				}
 			}
 		},
 		"HowItWorks": {
 			"badge": "Process",
-			"title": "How it works",
+			"title": "How does <highlight>our cooperation work?</highlight>",
 			"subtitle": "Simple process to get the specialists you need in 4 steps",
+			"imageAlt": "Worker with blueprint for the cooperation section",
 			"steps": {
 				"request": {
 					"title": "You submit a request",
-					"description": "Tell us about your needs and project timelines"
+					"description": "You tell us the type of site, number of specialists, timing and scope of work. This allows us to prepare a proposal quickly."
 				},
 				"selection": {
-					"title": "We select specialists",
-					"description": "Find the best craftsmen for your tasks"
+					"title": "Selection and approval of candidates",
+					"description": "We select specialists by qualification and experience. You approve the team composition before the start of work."
 				},
 				"contract": {
-					"title": "We sign an agreement",
-					"description": "Process all documents quickly and transparently"
+					"title": "Cooperation setup",
+					"description": "We take care of all HR and legal matters: contracts, taxes and employment. The cooperation stays transparent and without extra overhead."
 				},
 				"work": {
-					"title": "Craftsmen go to the site",
-					"description": "Specialists start work at the specified time"
+					"title": "Start on site and support",
+					"description": "Specialists start work within the agreed timeline. We provide support and replacement or reinforcement of the team when needed."
 				}
 			}
 		},

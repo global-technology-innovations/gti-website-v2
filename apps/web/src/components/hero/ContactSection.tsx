@@ -6,7 +6,12 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 
-export function ContactSection() {
+interface ContactSectionProps {
+	customTitle?: React.ReactNode;
+	customDescription?: string;
+}
+
+export function ContactSection({ customTitle, customDescription }: ContactSectionProps = {}) {
 	const t = useTranslations("ContactFormSection");
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -30,23 +35,19 @@ export function ContactSection() {
 			<div className="container flex justify-between items-start relative mx-auto gap-12">
 				<div className="max-w-[675px]">
 					<h2 className="h3 !font-bold text-primary uppercase">
-						МАЄТЕ{" "}
-						<span className="text-secondary">
-							запИТАННЯ <br /> або
-						</span>{" "}
-						ПРОПОЗИЦІЮ?
+						{customTitle ||
+							t.rich("title", {
+								highlight: (chunks) => <span className="text-secondary">{chunks}</span>,
+							})}
 					</h2>
-					<p className="text-primary-foreground mt-4">
-						Щоб задати питання або отримати консультацію або просто познайомитись, зв&#39;яжіться з нами за вказаними
-						контактами, aбо заповніть форму, щоб ми зв&#39;язалися з Вами.
-					</p>
+					<p className="text-primary-foreground mt-4">{customDescription || t("description")}</p>
 
 					<div className="flex items-center gap-4 mt-12">
 						<div className="size-10 bg-secondary/10 rounded-full flex items-center justify-center">
 							<Image src="/icons/phone-calling.svg" alt="phone" width={24} height={24} className="size-6" />
 						</div>
 						<div className="flex flex-col gap-0.5">
-							<p className="text-primary !font-semibold text-[17px]">Мобільний телефон</p>
+							<p className="text-primary !font-semibold text-[17px]">{t("phoneLabel")}</p>
 							<a href="tel:+380973737240" className="text-primary-foreground text-[17px]">
 								+380 97 373 72 40
 							</a>
@@ -57,7 +58,7 @@ export function ContactSection() {
 							<Image src="/icons/inbox.svg" alt="inbox" width={24} height={24} className="size-6" />
 						</div>
 						<div className="flex flex-col gap-0.5">
-							<p className="text-primary !font-semibold text-[17px]">Електронна пошта</p>
+							<p className="text-primary !font-semibold text-[17px]">{t("emailLabel")}</p>
 							<a href="mailto:info@global-technology-innovations.com" className="text-primary-foreground text-[17px]">
 								info@global-technology-innovations.com
 							</a>
@@ -68,14 +69,14 @@ export function ContactSection() {
 							<Image src="/icons/map-point.svg" alt="phone" width={24} height={24} className="size-6" />
 						</div>
 						<div className="flex flex-col gap-0.5">
-							<p className="text-primary !font-semibold text-[17px]">Адреса</p>
+							<p className="text-primary !font-semibold text-[17px]">{t("addressLabel")}</p>
 							<a
 								href="https://maps.google.com/?q=Jenisejská+45A,+040+12+Košice-Nad+Jazerom"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-primary-foreground text-[17px]"
 							>
-								Jenisejská 45A, Košice
+								{t("address")}
 							</a>
 						</div>
 					</div>
