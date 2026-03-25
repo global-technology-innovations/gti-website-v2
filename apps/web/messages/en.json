@@ -397,7 +397,7 @@
 		}
 	},
 	"ContactFormSection": {
-		"title": "HAVE A <highlight>QUESTION <br /> OR</highlight> PROPOSAL?",
+		"title": "HAVE A <highlight>QUESTION OR</highlight> PROPOSAL?",
 		"description": "To ask a question, request a consultation, or simply get acquainted, contact us using the provided details or fill out the form so we can get back to you.",
 		"phoneLabel": "Mobile phone",
 		"emailLabel": "Email",

@@ -15,10 +15,7 @@ import { useSendContactForm } from "@/queries";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-export default function ContactModal({
-	triggerText,
-	className,
-}: ContactModalProps) {
+export default function ContactModal({ triggerText, className }: ContactModalProps) {
 	const t = useTranslations("HomePage.HeroSection");
 	const tContactForm = useTranslations("ContactForm");
 
@@ -48,20 +45,22 @@ export default function ContactModal({
 					{triggerText || t("button")}
 				</Button>
 			</DialogTrigger>
-			<DialogContent className="max-w-md w-full">
+			<DialogContent className="w-full rounded-[24px] border-border bg-white shadow-none">
 				{!isSubmitted && (
-					<DialogHeader>
-						<h2 className="text-center">{tContactForm("title")}</h2>
+					<DialogHeader className="mb-4">
+						<DialogTitle className="h4 text-center font-bold uppercase leading-none text-primary">
+							{tContactForm("title")}
+						</DialogTitle>
 					</DialogHeader>
 				)}
-				<DialogTitle className="sr-only">Contact Form</DialogTitle>
 				{isSubmitted ? (
-					<SuccessMessage />
+					<SuccessMessage className="py-10" />
 				) : (
 					<ContactForm
 						onSubmitAction={handleSubmit}
 						isSubmitting={mutation.isPending}
-						className="bg-background rounded-none shadow-none p-0"
+						variant="application"
+						className="max-w-none rounded-none border-0 bg-white p-0 shadow-none"
 					/>
 				)}
 			</DialogContent>

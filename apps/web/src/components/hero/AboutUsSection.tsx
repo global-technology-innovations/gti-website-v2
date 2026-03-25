@@ -14,44 +14,50 @@ export function AboutUsSection() {
 	] as const;
 
 	return (
-		<section className="relative py-32 w-full overflow-hidden">
+		<section className="relative py-10 lg:py-32 w-full overflow-hidden px-4">
 			<Image
 				src="/about-bg.svg"
 				alt=""
 				width={408}
 				height={362}
-				className="pointer-events-none absolute bottom-0 left-0 z-0 object-contain object-left-bottom"
+				className="pointer-events-none absolute bottom-0 left-0 z-0 object-contain object-left-bottom blur-xs lg:blur-none"
 				aria-hidden
 			/>
-			<div className="container relative z-10 mx-auto flex justify-between items-start">
-				<div className="grid grid-cols-2 gap-4 max-w-[530px]">
-					<div className="p-7 bg-background rounded-3xl">
-						<h2 className="text-primary font-bold">{stats[0].value}</h2>
-						<p className="text-primary-foreground">{stats[0].label}</p>
+			<div className="container relative z-10 gap-6 mx-auto flex flex-col-reverse md:flex-row justify-between items-start">
+				<div className="grid grid-cols-2 gap-4 mt-4 md:mt-0 w-full md:w-fit">
+					<div className="p-7 bg-background rounded-3xl md:max-w-[250px]">
+						<h2 className="lg:!text-[48px] text-primary font-bold text-center md:text-left">{stats[0].value}</h2>
+						<p className="text-primary-foreground text-center md:text-left">{stats[0].label}</p>
 					</div>
-					<div className="p-7 bg-primary rounded-3xl">
-						<h2 className="text-white font-bold">{stats[1].value}</h2>
-						<p className="text-white/70">{stats[1].label}</p>
+					<div className="p-7 bg-primary rounded-3xl md:max-w-[250px]">
+						<h2 className="lg:!text-[48px] text-white font-bold text-center md:text-left">{stats[1].value}</h2>
+						<p className="text-white/70 text-center md:text-left">{stats[1].label}</p>
 					</div>
-					<div className="p-7 bg-secondary rounded-3xl">
-						<h2 className="text-white font-bold">{stats[2].value}</h2>
-						<p className="text-white/70">{stats[2].label}</p>
+					<div className="p-7 bg-secondary rounded-3xl md:max-w-[250px]">
+						<h2 className="lg:!text-[48px] text-white font-bold text-center md:text-left">{stats[2].value}</h2>
+						<p className="text-white/70 text-center md:text-left">{stats[2].label}</p>
 					</div>
-					<div></div>
-					<div></div>
-					<div className="p-7 bg-background rounded-3xl">
-						<h2 className="text-primary font-bold">{stats[3].value}</h2>
-						<p className="text-primary-foreground">{stats[3].label}</p>
+					<div className="hidden md:block"></div>
+					<div className="hidden md:block"></div>
+					<div className="p-7 bg-background rounded-3xl md:max-w-[250px]">
+						<h2 className="lg:!text-[48px] text-primary font-bold text-center md:text-left">{stats[3].value}</h2>
+						<p className="text-primary-foreground text-center md:text-left">{stats[3].label}</p>
 					</div>
+					<Button asChild className="mt-6 mx-auto col-span-2 md:hidden">
+						<Link href="/about">
+							{t("button")}
+							<ArrowRight className="size-4 shrink-0" />
+						</Link>
+					</Button>
 				</div>
-				<div className="max-w-[590px]">
-					<h2 className="h3 !font-bold text-primary uppercase">
+				<div className="w-full md:w-1/2">
+					<h2 className="h3 !font-bold text-primary uppercase text-center md:text-left">
 						{t("heading")} <span className="text-secondary">{t("highlight")}</span> {t("headingSuffix")}
 					</h2>
-					<p className="text-primary-foreground mt-4">{t("paragraphs.first")}</p>
-					<p className="text-primary-foreground mt-4">{t("paragraphs.second")}</p>
-					<p className="text-primary-foreground mt-4">{t("paragraphs.third")}</p>
-					<Button asChild className="mt-12">
+					<p className="text-primary-foreground mt-4 text-center md:text-left">{t("paragraphs.first")}</p>
+					<p className="text-primary-foreground mt-4 text-center md:text-left">{t("paragraphs.second")}</p>
+					<p className="text-primary-foreground mt-4 text-center md:text-left">{t("paragraphs.third")}</p>
+					<Button asChild className="mt-12 hidden md:inline-flex">
 						<Link href="/about">
 							{t("button")}
 							<ArrowRight className="size-4 shrink-0" />

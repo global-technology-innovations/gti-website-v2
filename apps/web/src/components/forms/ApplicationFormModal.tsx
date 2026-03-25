@@ -203,7 +203,10 @@ export function ApplicationFormModal({
 									/>
 								)}
 							/>
-							<label htmlFor="privacy-consent" className="cursor-pointer text-[15px] leading-[1.45] text-primary-foreground">
+							<label
+								htmlFor="privacy-consent"
+								className="cursor-pointer text-[14px] md:text-[15px] leading-[1.45] text-primary-foreground"
+							>
 								{t("privacyConsentStart")}{" "}
 								<Link
 									href="/privacy-policy"

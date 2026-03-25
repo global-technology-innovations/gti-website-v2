@@ -397,7 +397,7 @@
 		}
 	},
 	"ContactFormSection": {
-		"title": "MÁTE <highlight>DOTAZ <br /> NEBO</highlight> NABÍDKU?",
+		"title": "MÁTE <highlight>DOTAZ NEBO</highlight> NABÍDKU?",
 		"description": "Chcete-li položit otázku, požádat o konzultaci nebo se jednoduše seznámit, kontaktujte nás prostřednictvím uvedených kontaktů nebo vyplňte formulář, abychom vás mohli kontaktovat.",
 		"phoneLabel": "Mobilní telefon",
 		"emailLabel": "E-mail",

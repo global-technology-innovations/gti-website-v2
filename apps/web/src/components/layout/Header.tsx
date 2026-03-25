@@ -138,26 +138,54 @@ export const Header = () => {
 							<SheetTitle>
 								<VisuallyHidden>Mobile navigation menu</VisuallyHidden>
 							</SheetTitle>
-							<nav className="flex flex-col justify-center items-center h-full py-12 gap-4 font-normal">
-								<Link href="/" onClick={() => setOpen(false)} className="!text-ml">
+							<nav className="flex flex-col justify-center items-center h-full pb-10 pt-4 gap-3 font-normal">
+								<Link
+									href="/"
+									onClick={() => setOpen(false)}
+									className="text-primary font-medium leading-[35px] w-full text-center"
+								>
 									{t("nav.home")}
 								</Link>
-								<Link href="/about" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/about"
+									onClick={() => setOpen(false)}
+									className="text-primary font-medium leading-[35px] w-full text-center"
+								>
 									{t("nav.about")}
 								</Link>
-								<Link href="/our-services" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/our-services"
+									onClick={() => setOpen(false)}
+									className="text-primary font-medium leading-[35px] w-full text-center"
+								>
 									{t("nav.services")}
 								</Link>
-								<Link href="/portfolio" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/portfolio"
+									onClick={() => setOpen(false)}
+									className="text-primary font-medium leading-[35px] w-full text-center"
+								>
 									{t("nav.portfolio")}
 								</Link>
-								<Link href="/careers" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/careers"
+									onClick={() => setOpen(false)}
+									className="text-primary font-medium leading-[35px] w-full text-center"
+								>
 									{t("nav.careers")}
 								</Link>
-								<Link href="/outstaffing" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/outstaffing"
+									onClick={() => setOpen(false)}
+									className="text-primary font-medium leading-[35px] w-full text-center"
+								>
 									{t("nav.outstaffing")}
 								</Link>
-								<Link href="/contact" onClick={() => setOpen(false)} className="!text-ml">
+								<Link
+									href="/contact"
+									onClick={() => setOpen(false)}
+									className="text-primary font-medium leading-[35px] w-full text-center"
+								>
 									{t("nav.contact")}
 								</Link>
 								<LanguageSwitcher />

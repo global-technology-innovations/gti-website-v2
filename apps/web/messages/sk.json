@@ -397,7 +397,7 @@
 		}
 	},
 	"ContactFormSection": {
-		"title": "MÁTE <highlight>OTÁZKU <br /> ALEBO</highlight> PONUKU?",
+		"title": "MÁTE <highlight>OTÁZKU ALEBO</highlight> PONUKU?",
 		"description": "Ak chcete položiť otázku, požiadať o konzultáciu alebo sa jednoducho zoznámiť, kontaktujte nás na uvedených kontaktoch alebo vyplňte formulár, aby sme vás mohli kontaktovať.",
 		"phoneLabel": "Mobilný telefón",
 		"emailLabel": "E-mail",

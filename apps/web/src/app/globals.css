@@ -186,7 +186,7 @@ a {
 }
 
 h1 {
-	@apply text-[24px] sm:text-[32px] md:text-[40px] lg:text-[64px] leading-[74px] font-bold;
+	@apply text-[32px] md:text-[40px] lg:text-[64px] leading-[36px] md:leading-[48px] lg:leading-[74px] font-bold;
 }
 .h1 {
 	@apply text-[24px] sm:text-[32px] md:text-[40px] lg:text-[64px] leading-[74px] font-bold;

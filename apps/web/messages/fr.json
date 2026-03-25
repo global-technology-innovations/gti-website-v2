@@ -397,7 +397,7 @@
 		}
 	},
 	"ContactFormSection": {
-		"title": "VOUS AVEZ UNE <highlight>QUESTION <br /> OU UNE</highlight> PROPOSITION ?",
+		"title": "VOUS AVEZ UNE <highlight>QUESTION OU UNE</highlight> PROPOSITION ?",
 		"description": "Pour poser une question, demander une consultation ou simplement faire connaissance, contactez-nous via les coordonnées fournies ou remplissez le formulaire pour que nous puissions vous recontacter.",
 		"phoneLabel": "Téléphone portable",
 		"emailLabel": "E-mail",

@@ -88,16 +88,21 @@ export function ContactSection({
 	};
 
 	return (
-		<section className={cn("relative mx-4 rounded-3xl bg-background py-22", sectionClassName)}>
-			<div className={cn("container relative mx-auto flex items-start justify-between gap-12", containerClassName)}>
+		<section className={cn("relative mx-4 rounded-3xl bg-background py-10 lg:py-22 px-4", sectionClassName)}>
+			<div
+				className={cn(
+					"container relative mx-auto flex flex-col lg:flex-row items-start justify-between gap-12",
+					containerClassName
+				)}
+			>
 				<div className={cn("max-w-[675px]", infoColumnClassName)}>
-					<h2 className="h3 !font-bold text-primary uppercase">
+					<h2 className="h3 !font-bold text-primary text-center lg:text-left uppercase">
 						{customTitle ||
 							t.rich("title", {
 								highlight: (chunks) => <span className="text-secondary">{chunks}</span>,
 							})}
 					</h2>
-					<p className="text-primary-foreground mt-4">{customDescription || t("description")}</p>
+					<p className="text-primary-foreground mt-4 text-center lg:text-left">{customDescription || t("description")}</p>
 
 					<div
 						className={cn(
@@ -135,7 +140,7 @@ export function ContactSection({
 						))}
 					</div>
 				</div>
-				<div className={cn("w-full max-w-[650px]", formWrapperClassName)}>
+				<div className={cn("w-full lg:max-w-[650px]", formWrapperClassName)}>
 					{isSubmitted ? (
 						<SuccessMessage className="rounded-lg bg-white p-6" />
 					) : (

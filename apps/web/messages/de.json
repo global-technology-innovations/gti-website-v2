@@ -397,7 +397,7 @@
 		}
 	},
 	"ContactFormSection": {
-		"title": "HABEN SIE EINE <highlight>FRAGE <br /> ODER EIN</highlight> ANGEBOT?",
+		"title": "HABEN SIE EINE <highlight>FRAGE ODER EIN</highlight> ANGEBOT?",
 		"description": "Um eine Frage zu stellen, eine Beratung anzufordern oder uns einfach kennenzulernen, kontaktieren Sie uns über die angegebenen Kontaktdaten oder füllen Sie das Formular aus, damit wir uns bei Ihnen melden können.",
 		"phoneLabel": "Mobiltelefon",
 		"emailLabel": "E-Mail",
