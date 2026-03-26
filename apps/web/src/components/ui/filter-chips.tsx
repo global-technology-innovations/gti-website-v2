@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { Button } from "./button";
 
 export interface FilterChipOption {
@@ -16,7 +17,7 @@ interface Props {
 
 export function FilterChips({ options, className }: Props) {
 	return (
-		<div className={["mb-8 flex flex-wrap items-center justify-center gap-3", className].filter(Boolean).join(" ")}>
+		<div className={cn("lg:mb-8 mb-6 flex flex-wrap items-center justify-center lg:gap-3 gap-2", className)}>
 			{options.map((option) => (
 				<Button
 					key={option.id}

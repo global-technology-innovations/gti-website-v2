@@ -62,13 +62,12 @@ export function ProjectCard({ project, locale }: ProjectCardProps) {
 				className="group flex flex-col justify-between h-full overflow-hidden p-4 transition-transform duration-300 hover:-translate-y-1"
 			>
 				<div>
-					<div className="relative aspect-[9/5] overflow-hidden rounded-3xl min-h-[200px]">
+					<div className="relative aspect-[9/5] overflow-hidden rounded-3xl">
 						<Image
 							src={imageSrc}
 							alt={project.attributes.title}
 							fill
 							className="object-cover transition-transform duration-500 group-hover:scale-105"
-							sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
 						/>
 						<Badge variant="blur" className="absolute right-3 top-3 py-1.5 px-3.5 text-[13px]">
 							{t(`status.${statusKey}`)}

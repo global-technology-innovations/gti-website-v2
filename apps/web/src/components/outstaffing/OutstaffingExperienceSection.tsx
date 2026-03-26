@@ -11,7 +11,7 @@ export function OutstaffingExperienceSection() {
 	return (
 		<section className="py-16 md:py-24">
 			<div className="container mx-auto flex justify-between items-center gap-10 px-4">
-				<div className="overflow-hidden rounded-[32px] bg-accent">
+				<div className="overflow-hidden rounded-[32px]">
 					<Image src="/outstaffing-worker.png" alt={t("imageAlt")} width={528} height={468} className="h-full object-cover" />
 				</div>
 

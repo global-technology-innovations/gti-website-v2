@@ -95,7 +95,7 @@ export function ContactSection({
 					containerClassName
 				)}
 			>
-				<div className={cn("max-w-[675px]", infoColumnClassName)}>
+				<div className={cn("", infoColumnClassName)}>
 					<h2 className="h3 !font-bold text-primary text-center lg:text-left uppercase">
 						{customTitle ||
 							t.rich("title", {

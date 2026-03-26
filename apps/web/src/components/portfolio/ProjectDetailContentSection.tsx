@@ -10,7 +10,7 @@ interface ProjectDetailContentSectionProps {
 
 export function ProjectDetailContentSection({ content, fallbackDescription }: ProjectDetailContentSectionProps) {
 	return (
-		<section className="px-4 py-16 md:py-20">
+		<section className="px-4 py-10 lg:py-16">
 			<div className="container mx-auto">
 				<div className="mx-auto max-w-[1100px] space-y-6">
 					{content ? (

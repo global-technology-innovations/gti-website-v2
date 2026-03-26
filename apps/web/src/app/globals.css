@@ -192,10 +192,10 @@ h1 {
 	@apply text-[24px] sm:text-[32px] md:text-[40px] lg:text-[64px] leading-[74px] font-bold;
 }
 h2 {
-	@apply text-[32px] lg:text-[56px] leading-[48px] lg:leading-[54px] font-bold;
+	@apply text-[32px] lg:text-[56px] leading-[36px] md:leading-[48px] lg:leading-[54px] font-bold;
 }
 .h2 {
-	@apply text-[32px] lg:text-[56px] leading-[48px] lg:leading-[66px] font-bold;
+	@apply text-[32px] lg:text-[56px] leading-[36px] md:leading-[48px] lg:leading-[54px] font-bold;
 }
 h3 {
 	@apply text-[28px] lg:text-[44px] leading-[36px] lg:leading-[48px] font-semibold;
@@ -231,6 +231,11 @@ p {
 
 html body[data-scroll-locked] {
 	margin-right: 0px !important;
+}
+
+html:has(body[data-scroll-locked]) {
+	overflow: hidden;
+	overscroll-behavior: contain;
 }
 
 /* Style Swiper navigation arrows */

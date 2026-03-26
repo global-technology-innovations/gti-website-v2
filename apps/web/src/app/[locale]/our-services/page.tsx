@@ -53,7 +53,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 	return (
 		<>
 			<OrganizationSchema locale={locale} type="ConstructionCompany" />
-			<div className="container mx-auto pt-20 px-4">
+			<div className="container mx-auto pt-10 lg:pt-20 px-4">
 				<h2 className="text-primary uppercase text-center">
 					Повний цикл робіт <span className="text-secondary">під ключ</span>
 				</h2>

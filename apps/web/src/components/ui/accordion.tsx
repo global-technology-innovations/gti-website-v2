@@ -15,7 +15,7 @@ function AccordionItem({ className, ...props }: React.ComponentProps<typeof Acco
 		<AccordionPrimitive.Item
 			data-slot="accordion-item"
 			className={cn(
-				"border-b last:border-b-0 rounded-3xl p-6 flex flex-col gap-4 bg-background transition-colors has-[[data-state=open]]:bg-primary data-[state=open]:bg-primary",
+				"rounded-3xl p-6 flex flex-col gap-4 bg-background transition-colors has-[[data-state=open]]:bg-primary data-[state=open]:bg-primary",
 				className
 			)}
 			{...props}
@@ -29,7 +29,7 @@ function AccordionTrigger({ className, children, ...props }: React.ComponentProp
 			<AccordionPrimitive.Trigger
 				data-slot="accordion-trigger"
 				className={cn(
-					"focus-visible:border-ring cursor-pointer focus-visible:ring-ring/50 flex flex-1 items-start justify-between text-left text-[18px] font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 text-primary group-data-[state=open]:text-white",
+					"cursor-pointer flex flex-1 items-start justify-between text-left text-[18px] font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 text-primary group-data-[state=open]:text-white leading-6",
 					className
 				)}
 				{...props}

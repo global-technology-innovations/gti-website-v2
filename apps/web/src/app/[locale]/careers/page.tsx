@@ -46,7 +46,7 @@ export default function CareersPage() {
 
 	return (
 		<>
-			<div className="container mx-auto pt-20 px-4">
+			<div className="container mx-auto pt-10 lg:pt-20 px-4">
 				<h2 className="text-center uppercase text-primary">
 					{t("Hero.title")} <span className="text-secondary">{t("Hero.highlight")}</span>
 				</h2>

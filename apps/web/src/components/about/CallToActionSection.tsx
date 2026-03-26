@@ -17,7 +17,7 @@ export function CallToActionSection({
 	const t = useTranslations("AboutPage.CallToAction");
 
 	return (
-		<section id={sectionId} className="relative mx-4 overflow-hidden rounded-3xl bg-secondary pt-16 pb-18">
+		<section id={sectionId} className="relative mx-4 overflow-hidden rounded-3xl bg-secondary py-10 lg:py-16 px-4">
 			<div className="absolute top-0 left-0 w-[45%] max-w-[480px] h-full z-0 pointer-events-none">
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img

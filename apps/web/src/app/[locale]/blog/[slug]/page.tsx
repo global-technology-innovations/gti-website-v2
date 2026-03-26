@@ -76,7 +76,7 @@ export default function BlogArticlePage() {
 	return (
 		<>
 			<section className="relative mx-4 bg-background bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] rounded-b-3xl">
-				<div className="container py-22 flex flex-col relative mx-auto">
+				<div className="container py-10 lg:py-22 flex flex-col relative mx-auto">
 					<Breadcrumb>
 						<BreadcrumbList>
 							<BreadcrumbItem>
@@ -122,7 +122,7 @@ export default function BlogArticlePage() {
 			</section>
 
 			{article.content.length > 0 ? (
-				<section className="px-4 py-16 md:py-20">
+				<section className="px-4 py-10 lg:py-16">
 					<div className="container mx-auto">
 						<div className="mx-auto max-w-[1100px] space-y-6">{renderRichText(article.content, DETAIL_CONTENT_CLASSNAMES)}</div>
 					</div>

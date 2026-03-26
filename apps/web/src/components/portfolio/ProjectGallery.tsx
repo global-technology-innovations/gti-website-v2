@@ -6,13 +6,14 @@ import { Play, ZoomIn } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Lightbox from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 export interface ProjectGalleryMediaItem {
 	id: number;
@@ -89,14 +90,15 @@ export function ProjectGallery({ images, title, navigationPrevEl, navigationNext
 	return (
 		<>
 			<Swiper
-				modules={[Navigation]}
+				modules={[Navigation, Pagination]}
 				navigation={{
 					prevEl: navigationPrevEl,
 					nextEl: navigationNextEl,
 				}}
+				pagination={{ clickable: true }}
 				spaceBetween={24}
 				slidesPerView="auto"
-				className="!overflow-visible"
+				className="!overflow-visible !pb-10 [&_.swiper-pagination]:!bottom-0 md:[&_.swiper-pagination]:hidden [&_.swiper-pagination-bullet]:!mx-1 [&_.swiper-pagination-bullet]:!h-1.5 [&_.swiper-pagination-bullet]:!w-1.5 [&_.swiper-pagination-bullet]:!bg-primary [&_.swiper-pagination-bullet]:!opacity-30 [&_.swiper-pagination-bullet-active]:!opacity-100"
 			>
 				{images.map((image, i) => {
 					const imageUrl = getImageUrl(image, "medium");

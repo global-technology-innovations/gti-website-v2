@@ -43,7 +43,7 @@ export function ServicesList() {
 	const hasMore = (services?.length ?? 0) > INITIAL_COUNT;
 
 	return (
-		<div ref={sectionRef} className="flex flex-col items-center py-12 max-w-6xl mx-auto">
+		<div ref={sectionRef} className="flex flex-col items-center lg:py-12 py-6 px-4 max-w-6xl mx-auto">
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-8 w-full items-stretch">
 				{displayedServices.map((service) => (
 					<div key={service.slug} className="h-full">
@@ -57,7 +57,7 @@ export function ServicesList() {
 				))}
 			</div>
 			{hasMore && (
-				<Button type="button" aria-expanded={expanded} onClick={handleToggle} className="mt-12">
+				<Button type="button" aria-expanded={expanded} onClick={handleToggle} className="lg:mt-12 mt-6">
 					{expanded ? t("showLess") : t("showMore")}
 					<ArrowRight className={`size-4 shrink-0 transition-transform ${expanded ? "-rotate-90" : ""}`} />
 				</Button>

@@ -38,17 +38,17 @@ const PRINCIPLES = [
 
 export function PrinciplesSection() {
 	return (
-		<section className="relative container mx-auto rounded-3xl pb-22">
-			<div className="flex flex-col items-center justify-center mx-4">
-				<h2 className="h3 !font-bold text-primary uppercase">
+		<section className="relative container mx-auto rounded-3xl pb-10 lg:pb-22 px-4">
+			<div className="flex flex-col items-center justify-center">
+				<h2 className="h3 !font-bold text-primary text-center lg:text-left uppercase">
 					Принципи, якими ми <span className="text-secondary">керуємося</span>
 				</h2>
-				<p className="text-primary-foreground mt-4">
+				<p className="text-primary-foreground mt-4 text-center lg:text-left">
 					Ми дотримуємося принципів, які визначають наш підхід до роботи, взаємодію з клієнтами та результат кожного проєкту.
 				</p>
 			</div>
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 pt-12 mx-4 ">
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 lg:pt-12 pt-6">
 				{PRINCIPLES.map((principle, index) => (
 					<Card key={index} variant="default" className="items-center text-center">
 						<div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 mx-auto">
