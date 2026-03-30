@@ -1,6 +1,6 @@
 "use client";
 
-import { JobCard, SharedPagination, Skeleton } from "@/components";
+import { JobCard, JobCardSkeleton, PaginationSkeleton, SharedPagination } from "@/components";
 import { useJobsQuery } from "@/queries";
 import { useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
@@ -29,14 +29,10 @@ export function JobsList() {
 			<section className="container mx-auto px-4 pt-10 lg:pt-16 pb-6">
 				<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 					{Array.from({ length: JOBS_PER_PAGE }).map((_, i) => (
-						<Skeleton key={i} className="h-[260px] rounded-3xl" />
+						<JobCardSkeleton key={i} />
 					))}
 				</div>
-				<div className="mt-10 flex justify-center gap-2">
-					<Skeleton className="h-10 w-10 rounded-md" />
-					<Skeleton className="h-10 w-10 rounded-md" />
-					<Skeleton className="h-10 w-10 rounded-md" />
-				</div>
+				<PaginationSkeleton className="mt-6" />
 			</section>
 		);
 	}

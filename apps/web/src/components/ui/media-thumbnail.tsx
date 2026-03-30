@@ -2,6 +2,7 @@
 
 import { MediaRenderer } from "@/components";
 import { Play } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface MediaThumbnailProps {
 	src: string;
@@ -12,6 +13,7 @@ interface MediaThumbnailProps {
 }
 
 export function MediaThumbnail({ src, alt, mimeType, className = "", onClick }: MediaThumbnailProps) {
+	const t = useTranslations("Media");
 	const isVideo = mimeType?.startsWith("video/") || /\.(mp4|webm|ogg|avi|mov|wmv|flv|mkv)$/i.test(src);
 
 	return (
@@ -35,7 +37,9 @@ export function MediaThumbnail({ src, alt, mimeType, className = "", onClick }: 
 			)}
 
 			{/* Media type indicator */}
-			{isVideo && <div className="absolute top-1 right-1 bg-black/70 text-white text-xs px-1 py-0.5 rounded">Відео</div>}
+			{isVideo && (
+				<div className="absolute top-1 right-1 bg-black/70 text-white text-xs px-1 py-0.5 rounded">{t("videoIndicator")}</div>
+			)}
 		</div>
 	);
 }

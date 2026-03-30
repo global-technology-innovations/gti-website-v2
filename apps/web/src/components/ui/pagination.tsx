@@ -1,10 +1,15 @@
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import * as React from "react";
 
-const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
-	<nav role="navigation" aria-label="pagination" className={cn("mx-auto flex w-full justify-center", className)} {...props} />
-);
+const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => {
+	const t = useTranslations("Common.accessibility");
+
+	return (
+		<nav role="navigation" aria-label={t("pagination")} className={cn("mx-auto flex w-full justify-center", className)} {...props} />
+	);
+};
 Pagination.displayName = "Pagination";
 
 const PaginationContent = React.forwardRef<HTMLUListElement, React.HTMLAttributes<HTMLUListElement>>(({ className, ...props }, ref) => (

@@ -14,24 +14,21 @@ import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
-	const t = await getTranslations({
-		locale,
-		namespace: "HomePage.HeroSection",
-	});
-
-	const keywordsMap = {
-		sk: "stavebné služby, construction services, building renovation, slovakia, košice",
-		en: "construction services, building renovation, turnkey solutions, slovakia",
-		uk: "будівельні послуги, реновація будівель, комплексні рішення, словаччина",
-		cs: "stavební služby, renovace budov, komplexní řešení, slovensko",
-		fr: "services de construction, rénovation de bâtiments, solutions clés en main",
-		de: "baudienstleistungen, gebäudesanierung, schlüsselfertige lösungen",
-	};
+	const [tHero, tMeta] = await Promise.all([
+		getTranslations({
+			locale,
+			namespace: "HomePage.HeroSection",
+		}),
+		getTranslations({
+			locale,
+			namespace: "HomePage.meta",
+		}),
+	]);
 
 	return generatePageMetadata({
-		title: t("title"),
-		description: t("description"),
-		keywords: keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
+		title: tHero("title"),
+		description: tHero("description"),
+		keywords: tMeta("keywords"),
 		canonicalUrl: generateCanonicalUrl(locale, ""),
 		hreflang: generateHreflangUrls(""),
 		locale,

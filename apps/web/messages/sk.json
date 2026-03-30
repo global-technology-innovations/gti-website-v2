@@ -10,12 +10,13 @@
 			"outstaffing": "Outstaffing",
 			"blog": "Blog",
 			"contact": "Kontakt"
-		}
+		},
+		"companyNameMultiline": "Global\nTechnology\nInnovations",
+		"mobileNavigationMenuLabel": "Mobilné navigačné menu"
 	},
 	"Media": {
 		"videoNotSupported": "Váš prehliadač nepodporuje video značku.",
 		"videoIndicator": "Video",
-		"noImages": "Žiadne obrázky",
 		"mediaThumbnail": "médiá {index}",
 		"thumbnail": "náhľad {index}"
 	},
@@ -23,38 +24,32 @@
 		"backToPortfolio": "Späť k portfóliu",
 		"projectNotFound": "Projekt nenájdený",
 		"projectNotFoundDesc": "Požadovaný projekt neexistuje alebo bol vymazaný.",
-		"projectDescription": "Popis projektu",
-		"projectInfo": "Informácie o projekte",
-		"projectGallery": "Galéria projektu",
 		"projectGalleryTitle": "Galéria",
 		"projectGalleryHighlight": "projektu",
-		"client": "Klient",
-		"location": "Umiestnenie",
-		"executionPeriod": "Obdobie realizácie",
-		"technologies": "Technológie",
-		"category": "Kategória",
 		"status": {
 			"completed": "Dokončené",
 			"inProgress": "V procese",
 			"planned": "Plánované"
-		},
-		"interestedInProject": "Zaujíma vás náš projekt?",
-		"interestedDesc": "Sme pripravení prediskutovať vaše nápady a vytvoriť niečo podobné pre vás. Kontaktujte nás pre bezplatnú konzultáciu.",
-		"contactUs": "Kontaktujte nás",
-		"ourServices": "Naše služby"
+		}
 	},
 	"Footer": {
 		"privacy": "Zásady ochrany osobných údajov",
 		"cookies": "Zásady cookies",
-		"email": "E-mail",
-		"address": "Adresa",
 		"rights": "© 2025 Global Technology Innovations. Všetky práva vyhradené."
 	},
 	"HomePage": {
 		"HeroSection": {
 			"title": "Komplexné stavebné riešenia na kľúč",
 			"description": "Poskytujeme kompletný rozsah stavebných služieb pre obytné, komerčné a špecializované objekty.",
-			"button": "Kontaktujte nás"
+			"button": "Kontaktujte nás",
+			"headingStart": "Komplexné",
+			"headingHighlight": "stavebné",
+			"headingEnd": "riešenia na kľúč",
+			"testimonial": {
+				"name": "Oleksandr Kovalenko",
+				"role": "CEO, Horizon Group",
+				"quote": "Spoločnosť preukázala vysokú úroveň profesionality a spoľahlivosti. Projekt bol dokončený načas, vo výbornej kvalite a s jasnou komunikáciou v každej fáze."
+			}
 		},
 		"AboutUsSection": {
 			"stats": {
@@ -83,10 +78,10 @@
 				"second": "Spoločnosť začala ako rodinný stavebný podnik a počas rokov vyrástla na stabilnú profesionálnu štruktúru.",
 				"third": "Spájame praktické skúsenosti predchádzajúcej generácie, moderné technológie a zodpovedný prístup ku každému projektu, čím zabezpečujeme kvalitu, bezpečnosť a stabilný výsledok."
 			},
-			"button": "Zistiť viac"
+			"button": "Zistiť viac",
+			"imageAlt": "Zamestnanci Global Technology Innovations s výkresmi"
 		},
 		"FAQSection": {
-			"title": "Často kladené otázky",
 			"items": [
 				{
 					"question": "Ako prebieha spolupráca s klientom?",
@@ -108,55 +103,67 @@
 					"question": "Aké sú termíny realizácie prác?",
 					"answer": "Trvanie závisí od rozsahu projektu. Menšia rekonštrukcia môže trvať niekoľko týždňov, komplexná výstavba niekoľko mesiacov. Termíny vždy dohadujeme pred začiatkom a dodržiavame harmonogram."
 				}
-			]
+			],
+			"headingStart": "Odpovede na vaše",
+			"headingHighlight": "otázky"
 		},
-		"FeaturedProjects": {
-			"title": "Naše najlepšie projekty",
-			"description": "Pozrite si vybrané realizácie, ktoré ukazujú naše odborné znalosti a kvalitu v stavebníctve",
-			"viewAllButton": "Zobraziť všetky projekty"
+		"meta": {
+			"keywords": "stavebné služby, construction services, building renovation, slovakia, košice"
+		},
+		"ServicesSection": {
+			"headingStart": "Kompletný cyklus prác",
+			"headingHighlight": "na kľúč",
+			"description": "Od nápadu a projektovania až po realizáciu a servisnú podporu preberáme zodpovednosť za výsledok.",
+			"button": "Všetky služby",
+			"items": {
+				"plastering": {
+					"title": "Omietky",
+					"description": "Realizujeme vnútorné aj vonkajšie omietkárske práce s rovnými a kvalitnými povrchmi."
+				},
+				"putty": {
+					"title": "Tmelenie",
+					"description": "Profesionálne vyrovnávanie stien a stropov pred maľovaním alebo tapetovaním."
+				},
+				"monolithic": {
+					"title": "Monolitické práce",
+					"description": "Monolitické práce od základov až po stropy v súlade s technologickými normami."
+				},
+				"drywall": {
+					"title": "Sadrokartónové práce",
+					"description": "Montáž stropov, priečok a dekoratívnych sadrokartónových konštrukcií."
+				},
+				"paving": {
+					"title": "Pokládka dlažby",
+					"description": "Kvalitná pokládka dlažby pre dvory, chodníky a parkovacie plochy."
+				},
+				"flooring": {
+					"title": "Pokládka podláh",
+					"description": "Montáž všetkých typov podlahových krytín s dôrazom na precízne spracovanie."
+				},
+				"painting": {
+					"title": "Maliarske práce",
+					"description": "Maľovanie stien, stropov a fasád s rovnomerným a estetickým výsledkom."
+				},
+				"facade": {
+					"title": "Fasádne práce",
+					"description": "Komplexné fasádne práce vrátane zateplenia a finálnych úprav budov."
+				}
+			}
 		}
 	},
 	"AboutPage": {
-		"title": "O spoločnosti",
-		"description": "Individuálne riešenia pre každého klienta. Dôsledné dodržiavanie termínov. Výhodná cena, overená kvalita a spoľahlivá záruka.\n\n",
 		"Hero": {
-			"badge": "O nás",
-			"title": "Budujeme dôveru, ktorá pretrvá",
-			"description": "Spájame expertízu, inovácie a transparentné procesy, aby sme odovzdali kvalitné projekty načas."
-		},
-		"CompanyHistory": {
-			"badge": "Naša História",
-			"title": "15 rokov skúseností v stavebníctve",
-			"description": "Od malej spoločnosti k lídrovi trhu stavebných služieb — prešli sme dlhú cestu vďaka dôvere našich klientov.",
-			"founding": {
-				"title": "Založenie a rozvoj",
-				"description": "Stavebné podnikanie našej rodiny začalo už v roku 2009. Odvtedy sme realizovali stovky projektov rôznych mierok. Dnes je Global Technology Innovations tím skúsených inžinierov a stavbárov, ktorý spája skúsenosti predchádzajúcej generácie s modernými inováciami."
-			},
-			"milestones": {
-				"projects": {
-					"title": "Viac ako 500 projektov",
-					"description": "Úspešne dokončené od súkromných domov po veľké komerčné objekty"
-				},
-				"team": {
-					"title": "Tím 50+ špecialistov",
-					"description": "Skúsení inžinieri, architekti a stavbári"
-				},
-				"expansion": {
-					"title": "Rozšírenie služieb",
-					"description": "Od klasického stavebníctva k inovatívnym technológiám"
-				}
-			},
-			"stats": {
-				"years": "rokov skúseností",
-				"projects": "dokončených projektov",
-				"employees": "zamestnancov",
-				"satisfaction": "spokojných klientov",
-				"support": "zákaznícka podpora"
-			}
+			"headingStart": "Staviame",
+			"headingHighlight": "priestory,",
+			"headingEnd": "ktorým ľudia dôverujú",
+			"descriptionFull": "Global Technology Innovations je stavebná spoločnosť s kompletným cyklom služieb. Od roku 2009 realizujeme rezidenčné, komerčné aj priemyselné projekty a zabezpečujeme stabilnú kvalitu, bezpečnosť a dodržiavanie termínov.",
+			"badges": [
+				"Komplexné riešenia na kľúč",
+				"Kontrola kvality v každej fáze",
+				"Efektivita v každom projekte"
+			]
 		},
 		"OurValues": {
-			"badge": "Naše Hodnoty",
-			"title": "Princípy, ktorými sa riadime",
 			"description": "Naše základné hodnoty formujú firemnú kultúru a určujú kvalitu našich služieb.",
 			"trust": {
 				"title": "Dôvera a spoľahlivosť",
@@ -181,109 +188,59 @@
 			"teamwork": {
 				"title": "Tímová práca",
 				"description": "Ceníme si každého člena tímu, podporujeme profesijný rozvoj a vytvárame komfortné pracovné prostredie."
-			}
-		},
-		"Team": {
-			"badge": "Náš Tím",
-			"title": "Profesionáli vo svojom odbore",
-			"description": "Skúsení špecialisti, ktorí vďaka odbornosti a oddanosti realizujú vaše sny.",
-			"ceo": {
-				"name": "Alexander Petrenko",
-				"position": "Generálny riaditeľ",
-				"description": "15 rokov v stavebnom priemysle. Riadi strategický rozvoj spoločnosti a zabezpečuje vysoké štandardy kvality."
 			},
-			"cto": {
-				"name": "Marina Ivanenko",
-				"position": "Technická riaditeľka",
-				"description": "Stavebná inžinierka s 12-ročnou praxou. Zodpovedá za technické aspekty všetkých projektov a kontrolu kvality."
-			},
-			"projectManager": {
-				"name": "Andrew Kovalenko",
-				"position": "Projektový manažér",
-				"description": "Koordinuje vykonávanie prác, zabezpečuje dodržiavanie termínov a efektívnu komunikáciu s klientmi."
-			},
-			"architect": {
-				"name": "Catherine Melnyk",
-				"position": "Hlavná architektka",
-				"description": "Vytvára jedinečné architektonické riešenia, spájajúce funkcionalitu, estetiku a moderné trendy."
-			},
-			"culture": {
-				"title": "Kultúra našej spoločnosti",
-				"description": "Vytvárame prostredie, kde každý môže naplno rozvinúť svoj potenciál a prispieť k spoločnému úspechu.",
-				"learning": {
-					"title": "Kontinuálne učenie",
-					"description": "Podporujeme profesijný rozvoj tímu"
-				},
-				"collaboration": {
-					"title": "Otvorená spolupráca",
-					"description": "Ceníme si nápady každého člena tímu"
-				},
-				"innovation": {
-					"title": "Inovatívny prístup",
-					"description": "Experimentujeme s novými metódami a technológiami"
-				}
-			}
-		},
-		"MissionVision": {
-			"badge": "Misia a Vízia",
-			"title": "Náš cieľ a smer rozvoja",
-			"description": "Jasne chápeme svoju úlohu v stavebnom priemysle a snažíme sa vytvárať hodnotu pre všetky zainteresované strany.",
-			"mission": {
-				"title": "Naša Misia",
-				"description": "Vytvárať pohodlné a funkčné priestory, ktoré zlepšujú kvalitu života ľudí, s využitím najlepších stavebných praktík a individuálneho prístupu ku každému klientovi.",
-				"points": {
-					"quality": "Zabezpečenie najvyššej kvality práce",
-					"innovation": "Implementácia inovatívnych riešení",
-					"satisfaction": "Maximálne uspokojenie potrieb klientov"
-				}
-			},
-			"vision": {
-				"title": "Naša Vízia",
-				"description": "Byť vedúcou stavebnou spoločnosťou, ktorá stanovuje štandardy kvality a inovácií v odbore, vytvárajúcou udržateľné a ekologické riešenia pre budúce generácie.",
-				"points": {
-					"sustainability": "Rozvoj ekologických technológií",
-					"technology": "Využívanie pokročilých technológií",
-					"community": "Príspevok k rozvoju komunity"
-				}
-			},
-			"strategy": {
-				"title": "Strategické Priority",
-				"description": "Naša stratégia sa zameriava na udržateľný rozvoj, rozširovanie možností a zabezpečovanie vedúcich pozícií na trhu.",
-				"growth": {
-					"title": "Rast",
-					"description": "Rozširovanie geografie a spektra služieb"
-				},
-				"efficiency": {
-					"title": "Efektívnosť",
-					"description": "Optimalizácia procesov a zvyšovanie produktivity"
-				},
-				"expansion": {
-					"title": "Expanzia",
-					"description": "Vstup na nové trhy a segmenty"
-				}
-			}
+			"headingStart": "Princípy, ktorými sa",
+			"headingHighlight": "riadime"
 		},
 		"CallToAction": {
 			"title": "Čas zrealizovať váš nápad",
 			"descriptionLine1": "Ste pripravení začať svoj projekt so spoľahlivým stavebným tímom?",
 			"descriptionLine2": "Pomôžeme vám zrealizovať váš nápad jasne a profesionálne.",
 			"button": "Kontaktujte nás"
+		},
+		"meta": {
+			"title": "O nás - Naša história a hodnoty",
+			"description": "Spoznajte Global Technology Innovations - našu históriu, misiu, víziu a hodnoty. Už viac ako 15 rokov poskytujeme kvalitné stavebné služby.",
+			"keywords": "o nás, about us, história spoločnosti, naše hodnoty, tím, stavebná firma"
+		},
+		"ReviewsSection": {
+			"headingStart": "Recenzie od našich",
+			"headingHighlight": "klientov",
+			"items": {
+				"muller": {
+					"name": "Hans Müller",
+					"role": "Rekonštrukcia bytu",
+					"text": "Práce boli vykonané kvalitne a v dohodnutom termíne. Tím pristupoval zodpovedne k detailom a počas celého projektu bol v kontakte."
+				},
+				"schneider": {
+					"name": "Peter Schneider",
+					"role": "Komerčná výstavba",
+					"text": "Profesionálny prístup, jasná organizácia procesu a zrozumiteľná komunikácia v každej fáze."
+				},
+				"becker": {
+					"name": "Anna Becker",
+					"role": "Rekonštrukcia rodinného domu",
+					"text": "Výsledok úplne splnil očakávania. Spoľahlivý tím, ktorému sa dá dôverovať."
+				}
+			}
 		}
 	},
 	"CareersPage": {
-		"title": "Kariéra",
 		"Hero": {
 			"title": "Pridajte sa k",
 			"highlight": "tímu",
 			"description": "Rastite s nami: zaujímavé projekty, mentoring a transparentné podmienky."
 		},
 		"apply": "Odoslať žiadosť",
-		"jobType": "Typ práce",
-		"location": "Lokalita",
 		"errorTitle": "Došlo k chybe",
 		"errorLoadingJobs": "Nepodarilo sa načítať pracovné ponuky. Skúste to znova neskôr.",
 		"noJobs": "Žiadne voľné pracovné miesta",
-		"checkBackLater": "Skontrolujte prosím neskôr."
+		"checkBackLater": "Skontrolujte prosím neskôr.",
+		"meta": {
+			"title": "Kariéra - Pracujte s nami",
+			"description": "Hľadáte prácu v stavebníctve? Pozrite si aktuálne voľné pozície v Global Technology Innovations a staňte sa súčasťou nášho tímu.",
+			"keywords": "kariéra, práca, voľné pozície, stavebníctvo, zamestnanie, job"
+		}
 	},
 	"BlogPage": {
 		"title": "Stavebné články",
@@ -296,23 +253,29 @@
 	},
 	"BlogArticlePage": {
 		"relatedTitle": "Mohlo by sa vám",
-		"relatedHighlight": "páčiť"
+		"relatedHighlight": "páčiť",
+		"errorTitle": "Článok sa nenašiel",
+		"errorDescription": "Nepodarilo sa načítať stránku článku.",
+		"backToBlog": "Späť na blog"
 	},
 	"OurServicesPage": {
-		"title": "Naše služby",
-		"button": "Zistiť viac",
 		"order": "Objednať službu",
 		"showMore": "Viac služieb",
 		"showLess": "Menej služieb",
 		"Hero": {
-			"badge": "Služby",
-			"title": "Kompletné riešenia na kľúč",
-			"description": "Od konceptu a návrhu až po realizáciu a servis — preberáme zodpovednosť za výsledok."
-		}
+			"description": "Od konceptu a návrhu až po realizáciu a servis — preberáme zodpovednosť za výsledok.",
+			"headingStart": "Kompletný cyklus prác",
+			"headingHighlight": "na kľúč"
+		},
+		"meta": {
+			"title": "Naše služby - Komplexné stavebné riešenia",
+			"description": "Ponúkame široký rozsah stavebných služieb od dizajnu po realizáciu. Rezidenčné, komerčné a špecializované projekty na kľúč.",
+			"keywords": "stavebné služby, rekonštrukcie, novostavby, projektový manažment, stavebné práce"
+		},
+		"loadError": "Nepodarilo sa načítať služby"
 	},
 	"ContactPage": {
 		"Hero": {
-			"badge": "Kontaktné informácie",
 			"title": "Spojte sa s nami — <highlight>za pár sekúnd</highlight>",
 			"description": "Vždy sme pripravení odpovedať na vaše otázky a poskytnúť odbornú konzultáciu"
 		},
@@ -362,38 +325,15 @@
 				}
 			}
 		},
-		"form": {
-			"title": "Spojte sa s nami",
-			"description": "Vyplňte formulár a náš manažér vás bude kontaktovať počas pracovného dňa pre podrobnú konzultáciu.",
-			"formTitle": "Kontaktný formulár",
-			"formSubtitle": "Vyplňte všetky povinné polia",
-			"benefits": {
-				"quick": "Rýchla odpoveď do jedného dňa",
-				"professional": "Odborná konzultácia",
-				"free": "Bezplatné vyhodnotenie projektu"
-			},
-			"responseTime": {
-				"title": "Doba odozvy",
-				"description": "Na všetky dotazy odpovedáme počas pracovných hodín. Mimo pracovnej doby bude vaša správa spracovaná nasledujúci pracovný deň."
-			}
-		},
-		"map": {
-			"title": "Nájdite nás na mape",
-			"description": "Naša kancelária sa nachádza v Košiciach",
-			"iframeTitle": "Mapa umiestnenia kancelárie",
-			"addressTitle": "Adresa",
-			"address": "Jenisejská 45A, 040 12 Košice-Nad Jazerom",
-			"viewOnGoogleMaps": "Zobraziť v Google Maps",
-			"getDirections": "Získať pokyny"
-		},
 		"contacts": {
-			"phones": "Telefóny",
 			"whatsapp": "WhatsApp",
 			"facebook": "Facebook",
-			"email": "E-mail",
-			"call": "Zavolať",
-			"open": "Otvoriť",
-			"workingHours": "Pracovné hodiny: Po–Pia: 09:00–18:00. Víkendy: So–Ne."
+			"tiktok": "TikTok"
+		},
+		"meta": {
+			"title": "Kontakt - Skontaktujte sa s nami",
+			"description": "Máte otázky alebo záujem o naše služby? Kontaktujte nás prostredníctvom formulára, e-mailu alebo telefónu. Radi vám pomôžeme.",
+			"keywords": "kontakt, kontaktný formulár, email, telefón, adresa, konzultácia"
 		}
 	},
 	"ContactFormSection": {
@@ -423,7 +363,9 @@
 		"success": {
 			"title": "Ďakujeme za kontakt!",
 			"message": "Vaša správa bola úspešne odoslaná. Náš manažér vás bude čoskoro kontaktovať."
-		}
+		},
+		"sendingButton": "Odosiela sa...",
+		"phonePlaceholder": "+___ __ ___ __ __"
 	},
 	"ApplicationFormModal": {
 		"title": "Přihlásiť sa na pozíciu",
@@ -452,13 +394,11 @@
 		"success": {
 			"title": "Prihláška odoslaná!",
 			"message": "Ďakujeme za vašu prihlášku. Čoskoro vás budeme kontaktovať."
-		}
+		},
+		"phonePlaceholder": "+___ __ ___ __ __"
 	},
 	"CookiesPage": {
-		"title": "Zásady cookies",
-		"description": "Informácie o používaní cookies na našej webovej stránke a možnosti správy cookies.",
 		"Hero": {
-			"badge": "Zásady cookies",
 			"title": "Zásady používania cookies",
 			"description": "Informácie o tom, ako používame cookies na našej webovej stránke a ako môžete spravovať svoje preferencie cookies."
 		},
@@ -496,6 +436,11 @@
 			"privacyPolicyLink": "Zásadách ochrany osobných údajov",
 			"contactText": "Ak máte otázky ohľadôm používania cookies, kontaktujte nás na adrese",
 			"contactEmail": "info@global-technology-innovations.com"
+		},
+		"meta": {
+			"title": "Zásady používania cookies",
+			"description": "Informácie o používaní cookies na našej webovej stránke a možnostiach správy vášho súhlasu.",
+			"keywords": "cookies, súbory cookie, správa cookies, súhlas cookies, GDPR cookies"
 		}
 	},
 	"CookieBanner": {
@@ -614,18 +559,17 @@
 			"email": "E-mail",
 			"address": "Adresa",
 			"phone": "Telefón"
+		},
+		"meta": {
+			"title": "Ochrana osobných údajov - GDPR",
+			"description": "Prečítajte si našu politiku ochrany osobných údajov a zistite, ako spracúvame a chránime vaše osobné informácie v súlade s GDPR.",
+			"keywords": "ochrana osobných údajov, GDPR, súkromie, osobné údaje, zabezpečenie dát"
 		}
 	},
 	"OutstaffingPage": {
 		"Hero": {
-			"badge": "Outstaffing personálu",
 			"title": "Outstaffing <highlight>personálu</highlight> pre stavebné projekty",
-			"description": "Poskytujeme skúsených špecialistov pre vašu výstavbu bez zbytočných nákladov na hľadanie a udržiavanie zamestnancov.",
-			"ctaButton": "Objednať špecialistov"
-		},
-		"WhatIs": {
-			"title": "Čo je outstaffing?",
-			"description": "Outstaffing je keď získate zamestnancov našej spoločnosti na vykonávanie konkrétnych úloh na vašom objekte. Pracujú pod vaším vedením, ale zostávajú v našom oficiálnom kádri."
+			"description": "Poskytujeme skúsených špecialistov pre vašu výstavbu bez zbytočných nákladov na hľadanie a udržiavanie zamestnancov."
 		},
 		"Experience": {
 			"title": "Skúsenosti, ktoré garantujú výsledok <highlight>na stavbe</highlight>",
@@ -637,7 +581,6 @@
 			"imageAlt": "Stavebný pracovník pre sekciu outstaffingu"
 		},
 		"Specialists": {
-			"badge": "Naši špecialisti",
 			"title": "Naši špecialisti",
 			"subtitle": "Náš tím zahŕňa širokú škálu kvalifikovaných špecialistov pre rôzne druhy stavebných prác.",
 			"list": {
@@ -652,7 +595,6 @@
 			}
 		},
 		"Benefits": {
-			"badge": "Prečo si vybrať nás",
 			"title": "Výhody pre klienta",
 			"subtitle": "Prečo si vybrať náš outstaffing pre váš stavebný projekt.",
 			"list": {
@@ -675,9 +617,7 @@
 			}
 		},
 		"HowItWorks": {
-			"badge": "Proces",
 			"title": "Ako prebieha <highlight>naša spolupráca?</highlight>",
-			"subtitle": "Jednoduchý proces získania potrebných špecialistov v 4 krokoch",
 			"imageAlt": "Pracovník s plánom pre sekciu spolupráce",
 			"steps": {
 				"request": {
@@ -707,22 +647,10 @@
 			"title": "Potrebujete majstrov už <highlight>zajtra?</highlight>",
 			"description": "Zanechajte žiadosť a do hodiny sa vám ozveme, aby sme prediskutovali detaily a zostavili tím skúsených špecialistov s praxou viac ako 5 rokov a flexibilnými podmienkami spolupráce a platby."
 		},
-		"CTA": {
-			"title": "Potrebujete majstrov už zajtra?",
-			"description": "Zanechajte žiadosť a spojíme sa s vami do hodiny na prediskutovanie detailov a výber tímu špecialistov.",
-			"benefits": {
-				"immediate": "Okamžitá odpoveď do hodiny",
-				"experienced": "Skúsení špecialistí s 5+ rokmi skúseností",
-				"flexible": "Flexibilné podmienky spolupráce a platby"
-			},
-			"guarantee": {
-				"title": "Záruka kvality",
-				"description": "Všetci naši špecialistí majú potvrdenú kvalifikáciu a pracovné skúsenosti"
-			},
-			"form": {
-				"title": "Objednať špecialistov",
-				"subtitle": "Vyplňte formulár a získajte personalizovanú ponuku"
-			}
+		"meta": {
+			"title": "Outstaffing personálu - Prenájom stavebných špecialistov",
+			"description": "Získajte skúsených stavebných špecialistov bez zbytočných nákladov na hľadanie a udržiavanie zamestnancov. Rýchle riešenie pre vaše stavebné projekty.",
+			"keywords": "outstaffing, prenájom pracovníkov, stavební špecialist, murári, elektrikári, santechnici"
 		}
 	},
 	"PortfolioPage": {
@@ -772,6 +700,70 @@
 					"action": "Naplánovať"
 				}
 			}
+		},
+		"meta": {
+			"title": "Portfólio projektov - Naše realizované stavebné projekty",
+			"description": "Pozrite si naše najlepšie stavebné projekty. Od rezidenčných budov po komerčné objekty - kvalita a spoľahlivosť v každom detaile.",
+			"keywords": "portfólio, stavebné projekty, realizované projekty, bytové domy, komerčné objekty"
+		}
+	},
+	"Layout": {
+		"meta": {
+			"description": "Stavebná spoločnosť s kompletným cyklom služieb"
+		}
+	},
+	"Common": {
+		"accessibility": {
+			"close": "Zavrieť",
+			"more": "Viac",
+			"pagination": "Stránkovanie",
+			"breadcrumb": "Drobková navigácia"
+		},
+		"pagination": {
+			"previous": "Predchádzajúca",
+			"next": "Ďalšia"
+		}
+	},
+	"LanguageSwitcher": {
+		"languages": {
+			"uk": "Українська",
+			"sk": "Slovenčina",
+			"cs": "Čeština",
+			"de": "Deutsch",
+			"fr": "Français",
+			"en": "English"
+		}
+	},
+	"Seo": {
+		"organization": {
+			"description": "Profesionálne stavebné služby a komplexné riešenia pre obytné, komerčné a špecializované objekty.",
+			"founder": "Zakladateľ"
+		},
+		"services": {
+			"outstaffing": {
+				"name": "Outstaffing stavebných špecialistov",
+				"description": "Profesionálny outstaffing stavebných špecialistov pre vaše projekty. Poskytujeme skúsených murárov, elektrikárov, inštalatérov a iných odborníkov.",
+				"serviceType": "Outstaffing stavebného personálu"
+			},
+			"portfolio": {
+				"name": "Portfólio projektov",
+				"description": "Pozrite si naše realizované stavebné projekty a získajte inšpiráciu pre váš vlastný projekt. Široké spektrum úspešne dokončených stavieb.",
+				"serviceType": "Portfólio stavebných projektov"
+			}
+		},
+		"geo": {
+			"slovakia": "Slovensko",
+			"czechRepublic": "Česko",
+			"ukraine": "Ukrajina"
+		},
+		"expertise": {
+			"constructionServices": "Stavebné služby",
+			"buildingRenovation": "Renovácia budov",
+			"projectManagement": "Riadenie projektov",
+			"architecturalServices": "Architektonické služby"
+		},
+		"contactPage": {
+			"contactType": "zákaznícka podpora"
 		}
 	}
 }

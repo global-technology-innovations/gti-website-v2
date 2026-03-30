@@ -19,7 +19,7 @@ import { useSingleBlogArticleQuery } from "@/queries";
 import { format } from "date-fns";
 import { cs, de, enUS, fr, sk, uk } from "date-fns/locale";
 import { AlertCircle, ArrowLeft, Loader2 } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { FaFacebook, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
@@ -40,6 +40,9 @@ const localeMap = {
 export default function BlogArticlePage() {
 	const params = useParams();
 	const locale = useLocale();
+	const t = useTranslations("BlogArticlePage");
+	const tNav = useTranslations("Header.nav");
+	const tContact = useTranslations("ContactPage.contacts");
 	const slug = params.slug as string;
 	const { data: article, isLoading, error } = useSingleBlogArticleQuery(slug);
 	const publishedAt = article?.publishedAt
@@ -60,12 +63,12 @@ export default function BlogArticlePage() {
 			<div className="mt-[75px] flex min-h-screen items-center justify-center px-6">
 				<div className="max-w-md text-center">
 					<AlertCircle className="mx-auto mb-4 h-16 w-16 text-destructive" />
-					<h1 className="mb-2 text-3xl font-bold">Статтю не знайдено</h1>
-					<p className="mb-6 text-muted-foreground">Не вдалося завантажити сторінку статті.</p>
+					<h1 className="mb-2 text-3xl font-bold">{t("errorTitle")}</h1>
+					<p className="mb-6 text-muted-foreground">{t("errorDescription")}</p>
 					<Button asChild>
 						<Link href="/blog">
 							<ArrowLeft className="mr-2 h-4 w-4" />
-							Повернутися до блогу
+							{t("backToBlog")}
 						</Link>
 					</Button>
 				</div>
@@ -81,7 +84,7 @@ export default function BlogArticlePage() {
 						<BreadcrumbList>
 							<BreadcrumbItem>
 								<BreadcrumbLink asChild>
-									<Link href="/blog">Блог</Link>
+									<Link href="/blog">{tNav("blog")}</Link>
 								</BreadcrumbLink>
 							</BreadcrumbItem>
 							<BreadcrumbSeparator />
@@ -109,7 +112,7 @@ export default function BlogArticlePage() {
 										href={social.href}
 										target="_blank"
 										rel="noopener noreferrer"
-										aria-label={social.label}
+										aria-label={tContact(social.key)}
 										className="flex size-8 items-center justify-center rounded-full bg-secondary/50 text-white hover:scale-105 transition-all duration-300"
 									>
 										<Icon className="size-6" />

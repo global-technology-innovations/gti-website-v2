@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Script from "next/script";
 
 interface OrganizationSchemaProps {
@@ -7,24 +8,16 @@ interface OrganizationSchemaProps {
 	locale?: string;
 }
 
-export function OrganizationSchema({
-	type = "ConstructionCompany",
-	locale = "sk",
-}: OrganizationSchemaProps) {
-	const descriptionMap = {
-		sk: "Profesionálne stavebné služby a komplexné riešenia pre obytné, komerčné a špecializované objekty.",
-		en: "Professional construction services and comprehensive solutions for residential, commercial and specialized facilities.",
-		uk: "Професійні будівельні послуги та комплексні рішення для житлових, комерційних та спеціалізованих об'єктів.",
-		cs: "Profesionální stavební služby a komplexní řešení pro obytné, komerční a specializované objekty.",
-		fr: "Services de construction professionnels et solutions complètes pour les installations résidentielles, commerciales et spécialisées.",
-		de: "Professionelle Baudienstleistungen und umfassende Lösungen für Wohn-, Gewerbe- und Spezialgebäude.",
-	};
+export function OrganizationSchema({ type = "ConstructionCompany" }: OrganizationSchemaProps) {
+	const t = useTranslations("Seo.organization");
+	const tGeo = useTranslations("Seo.geo");
+	const tExpertise = useTranslations("Seo.expertise");
 	const organizationSchema = {
 		"@context": "https://schema.org",
 		"@type": type,
 		name: "Global Technology Innovations s. r. o.",
 		alternateName: "GTI",
-		description: descriptionMap[locale as keyof typeof descriptionMap] || descriptionMap.uk,
+		description: t("description"),
 		url: "https://global-technology-innovations.vercel.app",
 		logo: "https://global-technology-innovations.vercel.app/logo.png",
 		image: "https://global-technology-innovations.vercel.app/og-image.png",
@@ -32,7 +25,7 @@ export function OrganizationSchema({
 		founders: [
 			{
 				"@type": "Person",
-				name: "Founder",
+				name: t("founder"),
 			},
 		],
 		telephone: "+421021234567",
@@ -54,22 +47,22 @@ export function OrganizationSchema({
 		areaServed: [
 			{
 				"@type": "Country",
-				name: "Slovakia",
+				name: tGeo("slovakia"),
 			},
 			{
 				"@type": "Country",
-				name: "Czech Republic",
+				name: tGeo("czechRepublic"),
 			},
 			{
 				"@type": "Country",
-				name: "Ukraine",
+				name: tGeo("ukraine"),
 			},
 		],
 		serviceType: [
-			"Construction Services",
-			"Building Renovation",
-			"Project Management",
-			"Architectural Services",
+			tExpertise("constructionServices"),
+			tExpertise("buildingRenovation"),
+			tExpertise("projectManagement"),
+			tExpertise("architecturalServices"),
 		],
 		sameAs: [
 			"https://www.linkedin.com/company/global-technology-innovations",
@@ -108,13 +101,7 @@ export function FAQSchema({ faqs }: FAQSchemaProps) {
 		})),
 	};
 
-	return (
-		<Script
-			id="faq-schema"
-			type="application/ld+json"
-			dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-		/>
-	);
+	return <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />;
 }
 
 interface BreadcrumbSchemaProps {
@@ -137,11 +124,7 @@ export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
 	};
 
 	return (
-		<Script
-			id="breadcrumb-schema"
-			type="application/ld+json"
-			dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-		/>
+		<Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 	);
 }
 
@@ -150,54 +133,15 @@ interface ServiceSchemaProps {
 	serviceType: "outstaffing" | "portfolio";
 }
 
-export function ServiceSchema({ locale = "sk", serviceType }: ServiceSchemaProps) {
-	const serviceDescriptions = {
-		outstaffing: {
-			sk: "Profesionálny outstaffing stavebných špecialistov pre vaše projekty. Poskytujeme skúsených murári, elektrikári, inštalatéri a iných odborníkov.",
-			en: "Professional outstaffing of construction specialists for your projects. We provide experienced bricklayers, electricians, plumbers and other professionals.",
-			uk: "Професійний аутстафінг будівельних спеціалістів для ваших проєктів. Надаємо досвідчених мулярів, електриків, сантехніків та інших фахівців.",
-			cs: "Profesionální outstaffing stavebních specialistů pro vaše projekty. Poskytujeme zkušené zedníky, elektrikáře, instalatéře a další odborníky.",
-			fr: "Externalisation professionnelle de spécialistes en construction pour vos projets. Nous fournissons des maçons, électriciens, plombiers expérimentés et d'autres professionnels.",
-			de: "Professionelles Outstaffing von Bauspezialisten für Ihre Projekte. Wir stellen erfahrene Maurer, Elektriker, Klempner und andere Fachkräfte zur Verfügung.",
-		},
-		portfolio: {
-			sk: "Pozrite si naše realizované stavebné projekty a získajte inšpiráciu pre váš vlastný projekt. Široké spektrum úspešne dokončených stavieb.",
-			en: "View our completed construction projects and get inspiration for your own project. Wide range of successfully completed buildings.",
-			uk: "Перегляньте наші реалізовані будівельні проєкти та отримайте натхнення для вашого власного проєкту. Широкий спектр успішно завершених будівель.",
-			cs: "Podívejte se na naše realizované stavební projekty a získejte inspiraci pro váš vlastní projekt. Široké spektrum úspěšně dokončených staveb.",
-			fr: "Découvrez nos projets de construction réalisés et inspirez-vous pour votre propre projet. Large éventail de bâtiments achevés avec succès.",
-			de: "Sehen Sie sich unsere realisierten Bauprojekte an und lassen Sie sich für Ihr eigenes Projekt inspirieren. Breites Spektrum erfolgreich abgeschlossener Gebäude.",
-		},
-	};
-
-	const serviceNames = {
-		outstaffing: {
-			sk: "Outstaffing stavebných špecialistov",
-			en: "Construction Specialists Outstaffing",
-			uk: "Аутстафінг будівельних спеціалістів",
-			cs: "Outstaffing stavebních specialistů",
-			fr: "Externalisation de spécialistes en construction",
-			de: "Outstaffing von Bauspezialisten",
-		},
-		portfolio: {
-			sk: "Portfólio projektov",
-			en: "Project Portfolio",
-			uk: "Портфоліо проєктів",
-			cs: "Portfolio projektů",
-			fr: "Portfolio de projets",
-			de: "Projektportfolio",
-		},
-	};
+export function ServiceSchema({ serviceType }: ServiceSchemaProps) {
+	const t = useTranslations(`Seo.services.${serviceType}`);
+	const tGeo = useTranslations("Seo.geo");
 
 	const serviceSchema = {
 		"@context": "https://schema.org",
 		"@type": "Service",
-		name:
-			serviceNames[serviceType][locale as keyof typeof serviceNames.outstaffing] ||
-			serviceNames[serviceType].uk,
-		description:
-			serviceDescriptions[serviceType][locale as keyof typeof serviceDescriptions.outstaffing] ||
-			serviceDescriptions[serviceType].uk,
+		name: t("name"),
+		description: t("description"),
 		provider: {
 			"@type": "Organization",
 			name: "Global Technology Innovations s. r. o.",
@@ -205,19 +149,19 @@ export function ServiceSchema({ locale = "sk", serviceType }: ServiceSchemaProps
 			telephone: "+421021234567",
 			email: "info@global-technology-innovations.com",
 		},
-		serviceType: serviceType === "outstaffing" ? "Personnel Outstaffing" : "Construction Portfolio",
+		serviceType: t("serviceType"),
 		areaServed: [
 			{
 				"@type": "Country",
-				name: "Slovakia",
+				name: tGeo("slovakia"),
 			},
 			{
 				"@type": "Country",
-				name: "Czech Republic",
+				name: tGeo("czechRepublic"),
 			},
 			{
 				"@type": "Country",
-				name: "Ukraine",
+				name: tGeo("ukraine"),
 			},
 		],
 		offers: {
@@ -242,6 +186,8 @@ interface ContactPageSchemaProps {
 }
 
 export function ContactPageSchema({}: ContactPageSchemaProps = {}) {
+	const t = useTranslations("Seo.contactPage");
+	const tLanguages = useTranslations("LanguageSwitcher.languages");
 	const contactPageSchema = {
 		"@context": "https://schema.org",
 		"@type": "ContactPage",
@@ -253,9 +199,16 @@ export function ContactPageSchema({}: ContactPageSchemaProps = {}) {
 			contactPoint: {
 				"@type": "ContactPoint",
 				telephone: "+421021234567",
-				contactType: "customer service",
+				contactType: t("contactType"),
 				email: "info@global-technology-innovations.com",
-				availableLanguage: ["Slovak", "Czech", "English", "Ukrainian", "German", "French"],
+				availableLanguage: [
+					tLanguages("sk"),
+					tLanguages("cs"),
+					tLanguages("en"),
+					tLanguages("uk"),
+					tLanguages("de"),
+					tLanguages("fr"),
+				],
 				areaServed: ["SK", "CZ", "UA"],
 			},
 			address: {
@@ -281,15 +234,10 @@ interface AboutPageSchemaProps {
 	locale?: string;
 }
 
-export function AboutPageSchema({ locale = "uk" }: AboutPageSchemaProps) {
-	const descriptionMap = {
-		sk: "Spoznajte Global Technology Innovations - našu históriu, misiu, víziu a hodnoty. Už viac ako 15 rokov poskytujeme kvalitné stavebné služby.",
-		en: "Learn about Global Technology Innovations - our history, mission, vision and values. We have been providing quality construction services for over 15 years.",
-		uk: "Дізнайтеся про Global Technology Innovations - нашу історію, місію, бачення та цінності. Ми надаємо якісні будівельні послуги понад 15 років.",
-		cs: "Poznejte Global Technology Innovations - naši historii, misi, vizi a hodnoty. Více než 15 let poskytujeme kvalitní stavební služby.",
-		fr: "Découvrez Global Technology Innovations - notre histoire, mission, vision et valeurs. Nous fournissons des services de construction de qualité depuis plus de 15 ans.",
-		de: "Lernen Sie Global Technology Innovations kennen - unsere Geschichte, Mission, Vision und Werte. Seit über 15 Jahren bieten wir qualitativ hochwertige Baudienstleistungen.",
-	};
+export function AboutPageSchema({}: AboutPageSchemaProps = {}) {
+	const t = useTranslations("AboutPage.meta");
+	const tSeoOrganization = useTranslations("Seo.organization");
+	const tExpertise = useTranslations("Seo.expertise");
 
 	const aboutPageSchema = {
 		"@context": "https://schema.org",
@@ -299,12 +247,12 @@ export function AboutPageSchema({ locale = "uk" }: AboutPageSchemaProps) {
 			"@id": "https://global-technology-innovations.vercel.app/#organization",
 			name: "Global Technology Innovations s. r. o.",
 			alternateName: "GTI",
-			description: descriptionMap[locale as keyof typeof descriptionMap] || descriptionMap.uk,
+			description: t("description"),
 			foundingDate: "2009",
 			founders: [
 				{
 					"@type": "Person",
-					name: "Founder",
+					name: tSeoOrganization("founder"),
 				},
 			],
 			numberOfEmployees: {
@@ -312,20 +260,16 @@ export function AboutPageSchema({ locale = "uk" }: AboutPageSchemaProps) {
 				value: "50+",
 			},
 			knowsAbout: [
-				"Construction Services",
-				"Building Renovation",
-				"Project Management",
-				"Architectural Services",
+				tExpertise("constructionServices"),
+				tExpertise("buildingRenovation"),
+				tExpertise("projectManagement"),
+				tExpertise("architecturalServices"),
 			],
 		},
 	};
 
 	return (
-		<Script
-			id="about-page-schema"
-			type="application/ld+json"
-			dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
-		/>
+		<Script id="about-page-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
 	);
 }
 
@@ -380,11 +324,7 @@ export function JobPostingSchema({ job }: JobPostingSchemaProps) {
 	};
 
 	return (
-		<Script
-			id="job-posting-schema"
-			type="application/ld+json"
-			dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
-		/>
+		<Script id="job-posting-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }} />
 	);
 }
 
@@ -429,13 +369,7 @@ export function ProjectSchema({ project }: ProjectSchemaProps) {
 		}),
 	};
 
-	return (
-		<Script
-			id="project-schema"
-			type="application/ld+json"
-			dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
-		/>
-	);
+	return <Script id="project-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }} />;
 }
 
 interface WebPageSchemaProps {
@@ -466,13 +400,7 @@ export function WebPageSchema({ name, description, url, locale = "uk" }: WebPage
 		},
 	};
 
-	return (
-		<Script
-			id="webpage-schema"
-			type="application/ld+json"
-			dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-		/>
-	);
+	return <Script id="webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />;
 }
 
 const JsonLdSchema = {

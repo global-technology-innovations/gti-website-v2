@@ -11,41 +11,16 @@ import {
 import { Link } from "@/i18n/navigation";
 import { BarChart3, Megaphone, Settings, Shield } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
-
-	const titleMap = {
-		sk: "Zásady používania cookies",
-		en: "Cookie Policy",
-		uk: "Політика cookie",
-		cs: "Zásady používání cookies",
-		fr: "Politique relative aux cookies",
-		de: "Cookie-Richtlinie",
-	};
-
-	const descriptionMap = {
-		sk: "Informácie o používaní cookies na našej webovej stránke a možnostiach správy vášho súhlasu.",
-		en: "Information about how we use cookies on our website and how you can manage your consent.",
-		uk: "Інформація про використання cookie на нашому сайті та керування вашою згодою.",
-		cs: "Informace o používání cookies na našem webu a možnostech správy vašeho souhlasu.",
-		fr: "Informations sur l'utilisation des cookies sur notre site et la gestion de votre consentement.",
-		de: "Informationen über die Verwendung von Cookies auf unserer Website und die Verwaltung Ihrer Einwilligung.",
-	};
-
-	const keywordsMap = {
-		sk: "cookies, súbory cookie, správa cookies, súhlas cookies, GDPR cookies",
-		en: "cookies, cookie files, cookie management, cookie consent, GDPR cookies",
-		uk: "cookies, файли cookie, управління cookies, згода cookies, GDPR cookies",
-		cs: "cookies, soubory cookie, správa cookies, souhlas cookies, GDPR cookies",
-		fr: "cookies, fichiers cookie, gestion des cookies, consentement cookies, RGPD cookies",
-		de: "cookies, cookie-dateien, cookie-verwaltung, cookie-zustimmung, DSGVO-cookies",
-	};
+	const t = await getTranslations({ locale, namespace: "CookiesPage.meta" });
 
 	return generatePageMetadata({
-		title: titleMap[locale as keyof typeof titleMap] || titleMap.uk,
-		description: descriptionMap[locale as keyof typeof descriptionMap] || descriptionMap.uk,
-		keywords: keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
+		title: t("title"),
+		description: t("description"),
+		keywords: t("keywords"),
 		canonicalUrl: generateCanonicalUrl(locale, "/cookie-policy"),
 		hreflang: generateHreflangUrls("/cookie-policy"),
 		locale,

@@ -27,14 +27,18 @@ export function ServicesList() {
 		setExpanded(true);
 	};
 
-	if (error) return <p>Помилка завантаження</p>;
+	if (error) return <p>{t("loadError")}</p>;
 
 	if (isLoading) {
 		return (
-			<div className="flex flex-col gap-6 pt-12">
-				{Array.from({ length: 5 }).map((_, index) => (
-					<ServiceCardSkeleton key={index} reversed={index % 2 !== 0} />
-				))}
+			<div className="container mx-auto flex flex-col items-center px-4 py-6 lg:py-12">
+				<div className="grid w-full grid-cols-1 items-stretch gap-x-4 gap-y-8 lg:grid-cols-3">
+					{Array.from({ length: INITIAL_COUNT }).map((_, index) => (
+						<div key={index} className="h-full">
+							<ServiceCardSkeleton />
+						</div>
+					))}
+				</div>
 			</div>
 		);
 	}
@@ -43,7 +47,7 @@ export function ServicesList() {
 	const hasMore = (services?.length ?? 0) > INITIAL_COUNT;
 
 	return (
-		<div ref={sectionRef} className="flex flex-col items-center lg:py-12 py-6 px-4 max-w-6xl mx-auto">
+		<div ref={sectionRef} className="flex flex-col items-center lg:py-12 py-6 px-4 container mx-auto">
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-8 w-full items-stretch">
 				{displayedServices.map((service) => (
 					<div key={service.slug} className="h-full">

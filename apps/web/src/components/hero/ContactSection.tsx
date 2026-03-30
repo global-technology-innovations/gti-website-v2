@@ -22,7 +22,6 @@ interface ContactSectionProps {
 
 export interface ContactDetailItem {
 	iconSrc: string;
-	iconAlt: string;
 	label: string;
 	value: string;
 	href?: string;
@@ -50,21 +49,18 @@ export function ContactSection({
 	const defaultContactDetails: ContactDetailItem[] = [
 		{
 			iconSrc: "/icons/phone-calling.svg",
-			iconAlt: "phone",
 			label: t("phoneLabel"),
 			value: "+380 97 373 72 40",
 			href: "tel:+380973737240",
 		},
 		{
 			iconSrc: "/icons/inbox.svg",
-			iconAlt: "inbox",
 			label: t("emailLabel"),
 			value: "info@global-technology-innovations.com",
 			href: "mailto:info@global-technology-innovations.com",
 		},
 		{
 			iconSrc: "/icons/map-point.svg",
-			iconAlt: "map point",
 			label: t("addressLabel"),
 			value: t("address"),
 			href: "https://maps.google.com/?q=Jenisejská+45A,+040+12+Košice-Nad+Jazerom",
@@ -119,7 +115,7 @@ export function ContactSection({
 								)}
 							>
 								<div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary/10">
-									<Image src={item.iconSrc} alt={item.iconAlt} width={24} height={24} className="size-6" />
+									<Image src={item.iconSrc} alt="" width={24} height={24} className="size-6" aria-hidden />
 								</div>
 								<div className="flex flex-col gap-0.5">
 									<p className="text-[17px] !font-semibold text-primary">{item.label}</p>

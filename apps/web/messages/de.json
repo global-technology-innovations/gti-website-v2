@@ -10,12 +10,13 @@
 			"outstaffing": "Outstaffing",
 			"blog": "Blog",
 			"contact": "Kontakt"
-		}
+		},
+		"companyNameMultiline": "Global\nTechnology\nInnovations",
+		"mobileNavigationMenuLabel": "Mobiles Navigationsmenü"
 	},
 	"Media": {
 		"videoNotSupported": "Ihr Browser unterstützt das Video-Tag nicht.",
 		"videoIndicator": "Video",
-		"noImages": "Keine Bilder",
 		"mediaThumbnail": "Medien {index}",
 		"thumbnail": "Miniaturansicht {index}"
 	},
@@ -23,38 +24,32 @@
 		"backToPortfolio": "Zurück zum Portfolio",
 		"projectNotFound": "Projekt nicht gefunden",
 		"projectNotFoundDesc": "Das angeforderte Projekt existiert nicht oder wurde gelöscht.",
-		"projectDescription": "Projektbeschreibung",
-		"projectInfo": "Projektinformationen",
-		"projectGallery": "Projektgalerie",
 		"projectGalleryTitle": "Projekt",
 		"projectGalleryHighlight": "galerie",
-		"client": "Kunde",
-		"location": "Standort",
-		"executionPeriod": "Ausführungszeitraum",
-		"technologies": "Technologien",
-		"category": "Kategorie",
 		"status": {
 			"completed": "Abgeschlossen",
 			"inProgress": "In Bearbeitung",
 			"planned": "Geplant"
-		},
-		"interestedInProject": "Interessiert an unserem Projekt?",
-		"interestedDesc": "Wir sind bereit, Ihre Ideen zu besprechen und etwas Ähnliches für Sie zu schaffen. Kontaktieren Sie uns für eine kostenlose Beratung.",
-		"contactUs": "Kontaktieren Sie uns",
-		"ourServices": "Unsere Dienstleistungen"
+		}
 	},
 	"Footer": {
 		"privacy": "Datenschutzrichtlinie",
 		"cookies": "Cookie-Richtlinie",
-		"email": "E-Mail",
-		"address": "Adresse",
 		"rights": "© 2025 Global Technology Innovations. Alle Rechte vorbehalten."
 	},
 	"HomePage": {
 		"HeroSection": {
 			"title": "Umfassende schlüsselfertige Bau­lösungen",
 			"description": "Wir bieten ein vollständiges Spektrum an Bauleistungen für Wohn-, Geschäfts- und Spezialobjekte.",
-			"button": "Kontaktieren Sie uns"
+			"button": "Kontaktieren Sie uns",
+			"headingStart": "Umfassende",
+			"headingHighlight": "Bau-",
+			"headingEnd": "Lösungen schlüsselfertig",
+			"testimonial": {
+				"name": "Oleksandr Kovalenko",
+				"role": "CEO, Horizon Group",
+				"quote": "Das Unternehmen zeigte ein hohes Maß an Professionalität und Zuverlässigkeit. Das Projekt wurde termingerecht, in ausgezeichneter Qualität und mit klarer Kommunikation in jeder Phase umgesetzt."
+			}
 		},
 		"AboutUsSection": {
 			"stats": {
@@ -83,10 +78,10 @@
 				"second": "Das Unternehmen begann als Familienbaubetrieb und entwickelte sich im Laufe der Jahre zu einer stabilen professionellen Struktur.",
 				"third": "Wir verbinden die praktische Erfahrung der vorherigen Generation, moderne Technologien und einen verantwortungsvollen Ansatz für jedes Projekt und sichern so Qualität, Sicherheit und stabile Ergebnisse."
 			},
-			"button": "Mehr erfahren"
+			"button": "Mehr erfahren",
+			"imageAlt": "Mitarbeitende von Global Technology Innovations mit Bauplänen"
 		},
 		"FAQSection": {
-			"title": "Häufig gestellte Fragen",
 			"items": [
 				{
 					"question": "Wie läuft die Zusammenarbeit mit einem Kunden ab?",
@@ -108,55 +103,67 @@
 					"question": "Wie sind die Ausführungsfristen für die Arbeiten?",
 					"answer": "Die Dauer hängt vom Umfang des Projekts ab. Eine kleine Renovierung kann einige Wochen dauern, ein umfassender Neubau mehrere Monate. Wir vereinbaren die Fristen immer vor Beginn und halten den Zeitplan ein."
 				}
-			]
+			],
+			"headingStart": "Antworten auf Ihre",
+			"headingHighlight": "Fragen"
 		},
-		"FeaturedProjects": {
-			"title": "Unsere besten Projekte",
-			"description": "Sehen Sie sich ausgewählte Arbeiten an, die unsere Kompetenz und Qualität im Bauwesen zeigen",
-			"viewAllButton": "Alle Projekte ansehen"
+		"meta": {
+			"keywords": "baudienstleistungen, gebäudesanierung, schlüsselfertige lösungen"
+		},
+		"ServicesSection": {
+			"headingStart": "Kompletter Arbeitszyklus",
+			"headingHighlight": "schlüsselfertig",
+			"description": "Von der Idee und Planung bis zur Umsetzung und weiteren Betreuung übernehmen wir Verantwortung für das Ergebnis.",
+			"button": "Alle Leistungen",
+			"items": {
+				"plastering": {
+					"title": "Putzarbeiten",
+					"description": "Wir führen Innen- und Außenputzarbeiten mit glatten und hochwertigen Oberflächen aus."
+				},
+				"putty": {
+					"title": "Spachtelarbeiten",
+					"description": "Professionelles Glätten von Wänden und Decken vor dem Streichen oder Tapezieren."
+				},
+				"monolithic": {
+					"title": "Monolithische Arbeiten",
+					"description": "Monolithische Arbeiten vom Fundament bis zur Decke unter Einhaltung aller technischen Vorgaben."
+				},
+				"drywall": {
+					"title": "Trockenbauarbeiten",
+					"description": "Montage von Decken, Trennwänden und dekorativen Trockenbaukonstruktionen."
+				},
+				"paving": {
+					"title": "Pflasterarbeiten",
+					"description": "Hochwertige Verlegung von Pflaster für Höfe, Wege und Parkflächen."
+				},
+				"flooring": {
+					"title": "Bodenverlegung",
+					"description": "Montage aller Arten von Bodenbelägen mit präziser Ausführung."
+				},
+				"painting": {
+					"title": "Malerarbeiten",
+					"description": "Anstrich von Wänden, Decken und Fassaden mit gleichmäßigem Ergebnis."
+				},
+				"facade": {
+					"title": "Fassadenarbeiten",
+					"description": "Umfassende Fassadenarbeiten einschließlich Dämmung und Außenveredelung."
+				}
+			}
 		}
 	},
 	"AboutPage": {
-		"title": "Über das Unternehmen",
-		"description": "Individuelle Lösungen für jeden Kunden. Strikte Einhaltung von Terminen. Attraktive Preise, bewährte Qualität und zuverlässige Garantie.\n\n",
 		"Hero": {
-			"badge": "Über uns",
-			"title": "Wir schaffen Vertrauen, das bleibt",
-			"description": "Wir verbinden Expertise, Innovation und transparente Prozesse, um qualitativ hochwertige Projekte termingerecht zu liefern."
-		},
-		"CompanyHistory": {
-			"badge": "Unsere Geschichte",
-			"title": "15 Jahre Bauerfahrung",
-			"description": "Von einem kleinen Unternehmen zum Marktführer im Bauwesen — wir haben einen langen Weg dank des Vertrauens unserer Kunden zurückgelegt.",
-			"founding": {
-				"title": "Gründung und Entwicklung",
-				"description": "Unser Familienbauunternehmen begann bereits im Jahr 2009. Seitdem haben wir Hunderte von Projekten verschiedener Größenordnungen realisiert. Heute ist Global Technology Innovations ein Team erfahrener Ingenieure und Bauarbeiter, das die Erfahrung der vorherigen Generation mit modernen Innovationen verbindet."
-			},
-			"milestones": {
-				"projects": {
-					"title": "Über 500 Projekte",
-					"description": "Erfolgreich abgeschlossen von Privathäusern bis hin zu großen Gewerbeimmobilien"
-				},
-				"team": {
-					"title": "Team von 50+ Spezialisten",
-					"description": "Erfahrene Ingenieure, Architekten und Bauarbeiter"
-				},
-				"expansion": {
-					"title": "Serviceerweiterung",
-					"description": "Vom klassischen Bauwesen zu innovativen Technologien"
-				}
-			},
-			"stats": {
-				"years": "Jahre Erfahrung",
-				"projects": "abgeschlossene Projekte",
-				"employees": "Mitarbeiter",
-				"satisfaction": "zufriedene Kunden",
-				"support": "Kundensupport"
-			}
+			"headingStart": "Wir schaffen",
+			"headingHighlight": "Räume,",
+			"headingEnd": "denen man vertraut",
+			"descriptionFull": "Global Technology Innovations ist ein Bauunternehmen mit vollständigem Leistungsspektrum. Seit 2009 realisieren wir Wohn-, Gewerbe- und Industrieprojekte und sichern dabei konstante Qualität, Sicherheit und Termintreue.",
+			"badges": [
+				"Schlüsselfertige Komplettlösungen",
+				"Qualitätskontrolle in jeder Phase",
+				"Effizienz in jedem Projekt"
+			]
 		},
 		"OurValues": {
-			"badge": "Unsere Werte",
-			"title": "Prinzipien, die uns leiten",
 			"description": "Unsere Grundwerte prägen die Unternehmenskultur und bestimmen die Qualität unserer Dienstleistungen.",
 			"trust": {
 				"title": "Vertrauen und Zuverlässigkeit",
@@ -181,109 +188,59 @@
 			"teamwork": {
 				"title": "Teamarbeit",
 				"description": "Wir schätzen jedes Teammitglied, unterstützen die berufliche Entwicklung und schaffen ein komfortables Arbeitsumfeld."
-			}
-		},
-		"Team": {
-			"badge": "Unser Team",
-			"title": "Profis in ihrem Fach",
-			"description": "Erfahrene Spezialisten, die Ihre Träume durch Expertise und Hingabe Wirklichkeit werden lassen.",
-			"ceo": {
-				"name": "Alexander Petrenko",
-				"position": "Geschäftsführer",
-				"description": "15 Jahre in der Baubranche. Leitet die strategische Unternehmensentwicklung und gewährleistet hohe Qualitätsstandards."
 			},
-			"cto": {
-				"name": "Marina Ivanenko",
-				"position": "Technische Direktorin",
-				"description": "Bauingenieurin mit 12 Jahren Erfahrung. Verantwortlich für technische Aspekte aller Projekte und Qualitätskontrolle."
-			},
-			"projectManager": {
-				"name": "Andrew Kovalenko",
-				"position": "Projektmanager",
-				"description": "Koordiniert Arbeitsausführung, gewährleistet Termineinhaltung und effektive Kommunikation mit Kunden."
-			},
-			"architect": {
-				"name": "Catherine Melnyk",
-				"position": "Chefarchitektin",
-				"description": "Entwickelt einzigartige architektonische Lösungen und verbindet Funktionalität, Ästhetik und moderne Trends."
-			},
-			"culture": {
-				"title": "Unsere Unternehmenskultur",
-				"description": "Wir schaffen ein Umfeld, in dem jeder sein Potenzial entfalten und zum gemeinsamen Erfolg beitragen kann.",
-				"learning": {
-					"title": "Kontinuierliches Lernen",
-					"description": "Wir unterstützen die berufliche Entwicklung des Teams"
-				},
-				"collaboration": {
-					"title": "Offene Zusammenarbeit",
-					"description": "Wir schätzen Ideen von jedem Teammitglied"
-				},
-				"innovation": {
-					"title": "Innovativer Ansatz",
-					"description": "Wir experimentieren mit neuen Methoden und Technologien"
-				}
-			}
-		},
-		"MissionVision": {
-			"badge": "Mission und Vision",
-			"title": "Unser Ziel und unsere Entwicklungsrichtung",
-			"description": "Wir verstehen unsere Rolle in der Baubranche klar und streben danach, Wert für alle Stakeholder zu schaffen.",
-			"mission": {
-				"title": "Unsere Mission",
-				"description": "Komfortable und funktionale Räume zu schaffen, die die Lebensqualität der Menschen verbessern, unter Verwendung bester Baupraktiken und einem individuellen Ansatz für jeden Kunden.",
-				"points": {
-					"quality": "Gewährleistung höchster Arbeitsqualität",
-					"innovation": "Umsetzung innovativer Lösungen",
-					"satisfaction": "Maximale Zufriedenstellung der Kundenbedürfnisse"
-				}
-			},
-			"vision": {
-				"title": "Unsere Vision",
-				"description": "Ein führendes Bauunternehmen zu sein, das Standards für Qualität und Innovation in der Branche setzt und nachhaltige sowie umweltfreundliche Lösungen für zukünftige Generationen schafft.",
-				"points": {
-					"sustainability": "Entwicklung umweltfreundlicher Technologien",
-					"technology": "Nutzung fortschrittlicher Technologien",
-					"community": "Beitrag zur Gemeinschaftsentwicklung"
-				}
-			},
-			"strategy": {
-				"title": "Strategische Prioritäten",
-				"description": "Unsere Strategie konzentriert sich auf nachhaltige Entwicklung, Erweiterung der Möglichkeiten und Sicherstellung von Marktführungspositionen.",
-				"growth": {
-					"title": "Wachstum",
-					"description": "Erweiterung der Geografie und des Servicespektrums"
-				},
-				"efficiency": {
-					"title": "Effizienz",
-					"description": "Prozessoptimierung und Produktivitätssteigerung"
-				},
-				"expansion": {
-					"title": "Expansion",
-					"description": "Erschließung neuer Märkte und Segmente"
-				}
-			}
+			"headingStart": "Prinzipien, nach denen wir",
+			"headingHighlight": "handeln"
 		},
 		"CallToAction": {
 			"title": "Zeit, Ihre Idee umzusetzen",
 			"descriptionLine1": "Bereit, Ihr Projekt mit einem verlässlichen Bauteam zu starten?",
 			"descriptionLine2": "Wir helfen Ihnen, Ihre Idee klar und professionell umzusetzen.",
 			"button": "Kontaktieren Sie uns"
+		},
+		"meta": {
+			"title": "Über uns - Unsere Geschichte und Werte",
+			"description": "Lernen Sie Global Technology Innovations kennen - unsere Geschichte, Mission, Vision und Werte. Seit über 15 Jahren bieten wir qualitativ hochwertige Baudienstleistungen.",
+			"keywords": "über uns, unternehmensgeschichte, unsere werte, team, bauunternehmen"
+		},
+		"ReviewsSection": {
+			"headingStart": "Bewertungen unserer",
+			"headingHighlight": "Kunden",
+			"items": {
+				"muller": {
+					"name": "Hans Müller",
+					"role": "Wohnungssanierung",
+					"text": "Die Arbeiten wurden qualitativ hochwertig und innerhalb des vereinbarten Zeitrahmens ausgeführt. Das Team achtete auf Details und war während des gesamten Projekts erreichbar."
+				},
+				"schneider": {
+					"name": "Peter Schneider",
+					"role": "Gewerbebau",
+					"text": "Professioneller Ansatz, klare Organisation des Prozesses und verständliche Kommunikation in jeder Phase."
+				},
+				"becker": {
+					"name": "Anna Becker",
+					"role": "Sanierung eines Privathauses",
+					"text": "Das Ergebnis entsprach vollständig den Erwartungen. Ein zuverlässiges Team, dem man vertrauen kann."
+				}
+			}
 		}
 	},
 	"CareersPage": {
-		"title": "Karriere",
 		"Hero": {
 			"title": "Werden Sie Teil des",
 			"highlight": "Teams",
 			"description": "Wachsen Sie mit uns: spannende Projekte, Mentoren-Support und transparente Bedingungen."
 		},
 		"apply": "Bewerben",
-		"jobType": "Art der Stelle",
-		"location": "Standort",
 		"errorTitle": "Ein Fehler ist aufgetreten",
 		"errorLoadingJobs": "Die Stellenangebote konnten nicht geladen werden. Bitte versuchen Sie es später erneut.",
 		"noJobs": "Keine offenen Stellen",
-		"checkBackLater": "Bitte versuchen Sie es später erneut."
+		"checkBackLater": "Bitte versuchen Sie es später erneut.",
+		"meta": {
+			"title": "Karriere - Arbeiten Sie mit uns",
+			"description": "Suchen Sie eine Arbeit im Bauwesen? Sehen Sie sich die aktuellen offenen Stellen bei Global Technology Innovations an und werden Sie Teil unseres Teams.",
+			"keywords": "karriere, jobs, stellenangebote, bauwesen, beschäftigung"
+		}
 	},
 	"BlogPage": {
 		"title": "Bauartikel",
@@ -296,23 +253,29 @@
 	},
 	"BlogArticlePage": {
 		"relatedTitle": "Das könnte Ihnen",
-		"relatedHighlight": "gefallen"
+		"relatedHighlight": "gefallen",
+		"errorTitle": "Artikel nicht gefunden",
+		"errorDescription": "Die Artikelseite konnte nicht geladen werden.",
+		"backToBlog": "Zurück zum Blog"
 	},
 	"OurServicesPage": {
-		"title": "Unsere Leistungen",
-		"button": "Mehr erfahren",
 		"order": "Service bestellen",
 		"showMore": "Mehr Leistungen",
 		"showLess": "Weniger Leistungen",
 		"Hero": {
-			"badge": "Leistungen",
-			"title": "Komplettlösungen aus einer Hand",
-			"description": "Von Konzept und Planung bis Umsetzung und Service – wir übernehmen Verantwortung für das Ergebnis."
-		}
+			"description": "Von Konzept und Planung bis Umsetzung und Service – wir übernehmen Verantwortung für das Ergebnis.",
+			"headingStart": "Kompletter Arbeitszyklus",
+			"headingHighlight": "schlüsselfertig"
+		},
+		"meta": {
+			"title": "Unsere Dienstleistungen - Umfassende Baulösungen",
+			"description": "Wir bieten ein breites Spektrum an Bauleistungen vom Design bis zur Umsetzung. Wohn-, Gewerbe- und Spezialprojekte schlüsselfertig.",
+			"keywords": "baudienstleistungen, renovierungen, neubauten, projektmanagement, bauarbeiten"
+		},
+		"loadError": "Leistungen konnten nicht geladen werden"
 	},
 	"ContactPage": {
 		"Hero": {
-			"badge": "Kontaktinformationen",
 			"title": "Kontaktieren Sie uns — <highlight>in Sekunden</highlight>",
 			"description": "Wir sind immer bereit, Ihre Fragen zu beantworten und eine professionelle Beratung zu bieten"
 		},
@@ -362,38 +325,15 @@
 				}
 			}
 		},
-		"form": {
-			"title": "Kontaktieren Sie uns",
-			"description": "Füllen Sie das Formular aus und unser Manager wird Sie während der Geschäftszeiten für eine detaillierte Beratung kontaktieren.",
-			"formTitle": "Kontaktformular",
-			"formSubtitle": "Füllen Sie alle Pflichtfelder aus",
-			"benefits": {
-				"quick": "Schnelle Antwort innerhalb eines Tages",
-				"professional": "Professionelle Beratung",
-				"free": "Kostenlose Projektbewertung"
-			},
-			"responseTime": {
-				"title": "Antwortzeit",
-				"description": "Wir antworten auf alle Anfragen während der Geschäftszeiten. Außerhalb der Geschäftszeiten wird Ihre Nachricht am nächsten Geschäftstag bearbeitet."
-			}
-		},
-		"map": {
-			"title": "Finden Sie uns auf der Karte",
-			"description": "Unser Büro befindet sich in Košice",
-			"iframeTitle": "Karte der Bürolage",
-			"addressTitle": "Adresse",
-			"address": "Jenisejská 45A, 040 12 Košice-Nad Jazerom",
-			"viewOnGoogleMaps": "In Google Maps anzeigen",
-			"getDirections": "Wegbeschreibung abrufen"
-		},
 		"contacts": {
-			"phones": "Telefone",
 			"whatsapp": "WhatsApp",
 			"facebook": "Facebook",
-			"email": "E-Mail",
-			"call": "Anrufen",
-			"open": "Öffnen",
-			"workingHours": "Arbeitszeiten: Mo–Fr: 09:00–18:00. Wochenenden: Sa–So."
+			"tiktok": "TikTok"
+		},
+		"meta": {
+			"title": "Kontakt - Nehmen Sie Kontakt mit uns auf",
+			"description": "Haben Sie Fragen oder Interesse an unseren Dienstleistungen? Kontaktieren Sie uns über das Formular, E-Mail oder Telefon. Wir helfen Ihnen gerne.",
+			"keywords": "kontakt, kontaktformular, email, telefon, adresse, beratung"
 		}
 	},
 	"ContactFormSection": {
@@ -423,7 +363,9 @@
 		"success": {
 			"title": "Vielen Dank für Ihre Kontaktaufnahme!",
 			"message": "Ihre Nachricht wurde erfolgreich gesendet. Unser Manager wird sich bald bei Ihnen melden."
-		}
+		},
+		"sendingButton": "Wird gesendet...",
+		"phonePlaceholder": "+___ __ ___ __ __"
 	},
 	"ApplicationFormModal": {
 		"title": "Sich für Stelle bewerben",
@@ -452,13 +394,11 @@
 		"success": {
 			"title": "Bewerbung gesendet!",
 			"message": "Vielen Dank für Ihre Bewerbung. Wir werden uns bald bei Ihnen melden."
-		}
+		},
+		"phonePlaceholder": "+___ __ ___ __ __"
 	},
 	"CookiesPage": {
-		"title": "Cookie-Richtlinie",
-		"description": "Informationen über die Verwendung von Cookies auf unserer Website und Cookie-Verwaltungsoptionen.",
 		"Hero": {
-			"badge": "Cookie-Richtlinie",
 			"title": "Cookie-Verwendungsrichtlinie",
 			"description": "Informationen darüber, wie wir Cookies auf unserer Website verwenden und wie Sie Ihre Cookie-Einstellungen verwalten können."
 		},
@@ -496,6 +436,11 @@
 			"privacyPolicyLink": "Datenschutzrichtlinie",
 			"contactText": "Wenn Sie Fragen zur Cookie-Verwendung haben, kontaktieren Sie uns unter",
 			"contactEmail": "info@global-technology-innovations.com"
+		},
+		"meta": {
+			"title": "Cookie-Richtlinie",
+			"description": "Informationen über die Verwendung von Cookies auf unserer Website und die Verwaltung Ihrer Einwilligung.",
+			"keywords": "cookies, cookie-dateien, cookie-verwaltung, cookie-zustimmung, DSGVO-cookies"
 		}
 	},
 	"CookieBanner": {
@@ -614,18 +559,17 @@
 			"email": "E-Mail",
 			"address": "Adresse",
 			"phone": "Telefon"
+		},
+		"meta": {
+			"title": "Datenschutzrichtlinie - DSGVO",
+			"description": "Lesen Sie unsere Datenschutzrichtlinie und erfahren Sie, wie wir Ihre persönlichen Daten gemäß der DSGVO verarbeiten und schützen.",
+			"keywords": "datenschutzrichtlinie, DSGVO, datenschutz, personenbezogene daten, datensicherheit"
 		}
 	},
 	"OutstaffingPage": {
 		"Hero": {
-			"badge": "Personal-Outstaffing",
 			"title": "Outstaffing von <highlight>Personal</highlight> für Bauprojekte",
-			"description": "Wir stellen erfahrene Spezialisten für Ihren Bau zur Verfügung ohne unnötige Kosten für Suche und Personalerhaltung.",
-			"ctaButton": "Spezialisten bestellen"
-		},
-		"WhatIs": {
-			"title": "Was ist Outstaffing?",
-			"description": "Outstaffing bedeutet, dass Sie Mitarbeiter unseres Unternehmens für spezifische Aufgaben an Ihrem Objekt erhalten. Sie arbeiten unter Ihrer Leitung, bleiben aber in unserem offiziellen Personal."
+			"description": "Wir stellen erfahrene Spezialisten für Ihren Bau zur Verfügung ohne unnötige Kosten für Suche und Personalerhaltung."
 		},
 		"Experience": {
 			"title": "Erfahrung, die Ergebnisse <highlight>auf der Baustelle</highlight> garantiert",
@@ -637,7 +581,6 @@
 			"imageAlt": "Bauarbeiter für den Outstaffing-Bereich"
 		},
 		"Specialists": {
-			"badge": "Unsere Spezialisten",
 			"title": "Unsere Spezialisten",
 			"subtitle": "Unser Team umfasst eine breite Palette qualifizierter Spezialisten für verschiedene Arten von Bauarbeiten.",
 			"list": {
@@ -652,7 +595,6 @@
 			}
 		},
 		"Benefits": {
-			"badge": "Warum uns wählen",
 			"title": "Vorteile für den Kunden",
 			"subtitle": "Warum unser Outstaffing für Ihr Bauprojekt wählen.",
 			"list": {
@@ -675,9 +617,7 @@
 			}
 		},
 		"HowItWorks": {
-			"badge": "Prozess",
 			"title": "Wie läuft <highlight>unsere Zusammenarbeit?</highlight>",
-			"subtitle": "Einfacher Prozess, um die benötigten Spezialisten in 4 Schritten zu erhalten",
 			"imageAlt": "Arbeiter mit Plan für den Kooperationsbereich",
 			"steps": {
 				"request": {
@@ -707,22 +647,10 @@
 			"title": "Brauchen Sie Fachkräfte schon <highlight>morgen?</highlight>",
 			"description": "Hinterlassen Sie eine Anfrage und wir melden uns innerhalb einer Stunde, um die Details zu besprechen und ein Team erfahrener Spezialisten mit mehr als 5 Jahren Praxis sowie flexiblen Kooperations- und Zahlungsbedingungen zusammenzustellen."
 		},
-		"CTA": {
-			"title": "Brauchen Sie Handwerker schon morgen?",
-			"description": "Stellen Sie eine Anfrage und wir kontaktieren Sie innerhalb einer Stunde, um Details zu besprechen und ein Spezialistenteam auszuwählen.",
-			"benefits": {
-				"immediate": "Sofortige Antwort innerhalb einer Stunde",
-				"experienced": "Erfahrene Spezialisten mit 5+ Jahren Erfahrung",
-				"flexible": "Flexible Kooperations- und Zahlungsbedingungen"
-			},
-			"guarantee": {
-				"title": "Qualitätsgarantie",
-				"description": "Alle unsere Spezialisten haben bestätigte Qualifikationen und Arbeitserfahrung"
-			},
-			"form": {
-				"title": "Spezialisten bestellen",
-				"subtitle": "Füllen Sie das Formular aus und erhalten Sie ein personalisiertes Angebot"
-			}
+		"meta": {
+			"title": "Personal-Outstaffing - Vermietung von Bauspezialisten",
+			"description": "Erhalten Sie erfahrene Bauspezialisten ohne unnötige Kosten für die Suche und Wartung von Mitarbeitern. Schnelle Lösung für Ihre Bauprojekte.",
+			"keywords": "outstaffing, personalvermietung, bauspezialisten, maurer, elektriker, klempner"
 		}
 	},
 	"PortfolioPage": {
@@ -772,6 +700,70 @@
 					"action": "Planen"
 				}
 			}
+		},
+		"meta": {
+			"title": "Projektportfolio - Unsere realisierten Bauprojekte",
+			"description": "Entdecken Sie unsere besten Bauprojekte. Von Wohngebäuden bis hin zu Gewerbeobjekten - Qualität und Zuverlässigkeit in jedem Detail.",
+			"keywords": "portfolio, bauprojekte, realisierte projekte, wohngebäude, gewerbeobjekte"
+		}
+	},
+	"Layout": {
+		"meta": {
+			"description": "Bauunternehmen mit vollständigem Leistungsspektrum"
+		}
+	},
+	"Common": {
+		"accessibility": {
+			"close": "Schließen",
+			"more": "Mehr",
+			"pagination": "Paginierung",
+			"breadcrumb": "Brotkrumen-Navigation"
+		},
+		"pagination": {
+			"previous": "Zurück",
+			"next": "Weiter"
+		}
+	},
+	"LanguageSwitcher": {
+		"languages": {
+			"uk": "Українська",
+			"sk": "Slovenčina",
+			"cs": "Čeština",
+			"de": "Deutsch",
+			"fr": "Français",
+			"en": "English"
+		}
+	},
+	"Seo": {
+		"organization": {
+			"description": "Professionelle Baudienstleistungen und umfassende Lösungen für Wohn-, Gewerbe- und Spezialgebäude.",
+			"founder": "Gründer"
+		},
+		"services": {
+			"outstaffing": {
+				"name": "Outstaffing von Bauspezialisten",
+				"description": "Professionelles Outstaffing von Bauspezialisten für Ihre Projekte. Wir stellen erfahrene Maurer, Elektriker, Klempner und andere Fachkräfte zur Verfügung.",
+				"serviceType": "Outstaffing von Baupersonal"
+			},
+			"portfolio": {
+				"name": "Projektportfolio",
+				"description": "Sehen Sie sich unsere realisierten Bauprojekte an und lassen Sie sich für Ihr eigenes Projekt inspirieren. Breites Spektrum erfolgreich abgeschlossener Gebäude.",
+				"serviceType": "Portfolio von Bauprojekten"
+			}
+		},
+		"geo": {
+			"slovakia": "Slowakei",
+			"czechRepublic": "Tschechien",
+			"ukraine": "Ukraine"
+		},
+		"expertise": {
+			"constructionServices": "Bauleistungen",
+			"buildingRenovation": "Gebäuderenovierung",
+			"projectManagement": "Projektmanagement",
+			"architecturalServices": "Architekturdienstleistungen"
+		},
+		"contactPage": {
+			"contactType": "Kundendienst"
 		}
 	}
 }

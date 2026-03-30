@@ -2,15 +2,15 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const languages = [
-	{ code: "uk", label: "Українська", flag: "ua" },
-	{ code: "sk", label: "Slovenčina", flag: "sk" },
-	{ code: "cs", label: "Čeština", flag: "cz" },
-	{ code: "de", label: "Deutsch", flag: "de" },
-	{ code: "fr", label: "Français", flag: "fr" },
-	{ code: "en", label: "English", flag: "gb" },
+	{ code: "uk", flag: "ua" },
+	{ code: "sk", flag: "sk" },
+	{ code: "cs", flag: "cz" },
+	{ code: "de", flag: "de" },
+	{ code: "fr", flag: "fr" },
+	{ code: "en", flag: "gb" },
 ];
 
 const FlagIcon = ({ flag }: { flag: string }) => (
@@ -21,6 +21,7 @@ const FlagIcon = ({ flag }: { flag: string }) => (
 
 export const LanguageSwitcher = () => {
 	const locale = useLocale();
+	const t = useTranslations("LanguageSwitcher.languages");
 	const pathname = usePathname();
 	const router = useRouter();
 
@@ -42,7 +43,7 @@ export const LanguageSwitcher = () => {
 				<SelectValue>
 					<span className="flex items-center gap-2">
 						{currentLang ? <FlagIcon flag={currentLang.flag} /> : null}
-						<span className="inlone md:hidden lg:inline ">{currentLang?.label}</span>
+						<span className="inlone md:hidden lg:inline ">{currentLang ? t(currentLang.code) : null}</span>
 					</span>
 				</SelectValue>
 			</SelectTrigger>
@@ -51,7 +52,7 @@ export const LanguageSwitcher = () => {
 					<SelectItem value={lang.code} key={lang.code} className="cursor-pointer">
 						<span className="flex items-center gap-2">
 							<FlagIcon flag={lang.flag} />
-							<span className="!font-normal !text-sm">{lang.label}</span>
+							<span className="!font-normal !text-sm">{t(lang.code)}</span>
 						</span>
 					</SelectItem>
 				))}

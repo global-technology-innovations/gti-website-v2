@@ -26,7 +26,7 @@ export function FAQSection() {
 				<div className="min-w-0 w-full lg:w-2/3 xl:w-1/2 shrink-0 z-[1]">
 					<Reveal direction="up">
 						<h2 className="h3 !font-bold text-primary text-center lg:text-left uppercase">
-							Відповіді на ваші <span className="text-secondary">запитання</span>
+							{t("headingStart")} <span className="text-secondary">{t("headingHighlight")}</span>
 						</h2>
 					</Reveal>
 					<Accordion type="multiple" defaultValue={["item-0"]} className=" max-w-full flex flex-col gap-4 mt-6 lg:mt-10">

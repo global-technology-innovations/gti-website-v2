@@ -8,17 +8,14 @@ export const siteContact = {
 	socials: [
 		{
 			key: "whatsapp",
-			label: "WhatsApp",
 			href: "https://wa.me/421917089618",
 		},
 		{
 			key: "facebook",
-			label: "Facebook",
 			href: "https://www.facebook.com/share/19oenjwYPz/",
 		},
 		{
 			key: "tiktok",
-			label: "TikTok",
 			href: "https://www.tiktok.com/@global.technology67?_t=ZM-90eIRc2gy5L&_r=1",
 		},
 	],

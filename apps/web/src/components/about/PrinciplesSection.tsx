@@ -1,51 +1,45 @@
 // Direct path to avoid circular dependency: hero → @/components → hero
 import { Card } from "@/components/ui";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const PRINCIPLES = [
 	{
-		title: "Довіра та надійність",
-		description: "Будуємо довірчі відносини з клієнтами, дотримуємось всіх зобов'язань та забезпечуємо прозорість на всіх етапах.",
+		key: "trust",
 		icon: "/icons/crown-line.svg",
 	},
 	{
-		title: "Бездоганна якість",
-		description:
-			"Використовуємо тільки сертифіковані матеріали та сучасні технології. Кожен проєкт проходить багаторівневий контроль якості.",
+		key: "quality",
 		icon: "/icons/layers.svg",
 	},
 	{
-		title: "Інновації та розвиток",
-		description: "Постійно вдосконалюємо методи роботи, впроваджуємо нові технології та слідкуємо за тенденціями у будівництві.",
+		key: "innovation",
 		icon: "/icons/share-circle.svg",
 	},
 	{
-		title: "Прагнення до досконалості",
-		description: "Кожен проєкт виконуємо з максимальною увагою до деталей, прагнучи перевищити очікування клієнтів.",
+		key: "excellence",
 		icon: "/icons/chart-square.svg",
 	},
 	{
-		title: "Екологічність",
-		description: "Турбуємося про навколишнє середовище, використовуємо екологічні матеріали та енергоефективні рішення.",
+		key: "sustainability",
 		icon: "/icons/paw.svg",
 	},
 	{
-		title: "Командна робота",
-		description: "Цінуємо кожного члена команди, підтримуємо професійний розвиток та створюємо комфортні умови для роботи.",
+		key: "teamwork",
 		icon: "/icons/mask-happly.svg",
 	},
 ] as const;
 
 export function PrinciplesSection() {
+	const t = useTranslations("AboutPage.OurValues");
+
 	return (
 		<section className="relative container mx-auto rounded-3xl pb-10 lg:pb-22 px-4">
 			<div className="flex flex-col items-center justify-center">
 				<h2 className="h3 !font-bold text-primary text-center lg:text-left uppercase">
-					Принципи, якими ми <span className="text-secondary">керуємося</span>
+					{t("headingStart")} <span className="text-secondary">{t("headingHighlight")}</span>
 				</h2>
-				<p className="text-primary-foreground mt-4 text-center lg:text-left">
-					Ми дотримуємося принципів, які визначають наш підхід до роботи, взаємодію з клієнтами та результат кожного проєкту.
-				</p>
+				<p className="text-primary-foreground mt-4 text-center lg:text-left">{t("description")}</p>
 			</div>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 lg:pt-12 pt-6">
@@ -54,8 +48,8 @@ export function PrinciplesSection() {
 						<div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 mx-auto">
 							<Image src={principle.icon} alt="" width={24} height={24} className="text-primary" aria-hidden />
 						</div>
-						<h3 className="!text-lg !leading-normal !font-bold text-primary uppercase">{principle.title}</h3>
-						<p className="text-primary-foreground mt-2 text-sm">{principle.description}</p>
+						<h3 className="!text-lg !leading-normal !font-bold text-primary uppercase">{t(`${principle.key}.title`)}</h3>
+						<p className="text-primary-foreground mt-2 text-sm">{t(`${principle.key}.description`)}</p>
 					</Card>
 				))}
 			</div>

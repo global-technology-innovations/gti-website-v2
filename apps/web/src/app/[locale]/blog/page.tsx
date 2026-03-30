@@ -81,7 +81,7 @@ export default function BlogPage() {
 				)}
 
 				{isArticlesLoading || isArticlesFetching ? (
-					<CardGridSkeleton count={6} />
+					<CardGridSkeleton count={ARTICLES_PER_PAGE} variant="blog" />
 				) : articles.length > 0 ? (
 					<>
 						<BlogGrid articles={paginatedArticles} />

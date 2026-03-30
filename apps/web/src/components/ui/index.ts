@@ -13,6 +13,5 @@ export * from "./media-thumbnail";
 export * from "./pagination";
 export * from "./select";
 export * from "./sheet";
-export * from "./skeleton";
 export * from "./skeletons";
 export * from "./textarea";

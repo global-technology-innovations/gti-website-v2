@@ -7,28 +7,24 @@ const quickContactLinks = [
 	{
 		key: "phone",
 		iconSrc: "/icons/phone-calling.svg",
-		iconAlt: "phone",
 		href: "tel:+421917089618",
 		external: false,
 	},
 	{
 		key: "whatsapp",
 		iconSrc: "/icons/whatsapp.svg",
-		iconAlt: "whatsapp",
 		href: "https://wa.me/421917089618",
 		external: true,
 	},
 	{
 		key: "facebook",
 		iconSrc: "/icons/facebook.svg",
-		iconAlt: "facebook",
 		href: "https://www.facebook.com/share/19oenjwYPz/",
 		external: true,
 	},
 	{
 		key: "email",
 		iconSrc: "/icons/inbox.svg",
-		iconAlt: "email",
 		href: "mailto:info@global-technology-innovations.com",
 		external: false,
 	},
@@ -52,7 +48,7 @@ export function ContactHeroSection() {
 				<div className="mt-6 lg:mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
 					{quickContactLinks.map((item) => (
 						<Card key={item.key} variant="outline" className="flex flex-col items-center justify-between p-6 md:p-8">
-							<Image src={item.iconSrc} alt={item.iconAlt} width={30} height={30} className="size-[30px]" />
+							<Image src={item.iconSrc} alt="" width={30} height={30} className="size-[30px]" aria-hidden />
 							<h3 className="mt-3 md:mt-6 card-title text-primary">{t(`QuickContacts.items.${item.key}.title`)}</h3>
 							<Button asChild variant="secondary" className="mt-3 md:mt-6 w-full sm:w-fit">
 								<a

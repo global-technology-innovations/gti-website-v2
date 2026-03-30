@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 
 export function AboutHeroSection() {
 	const t = useTranslations("AboutPage.Hero");
+	const badges = t.raw("badges") as string[];
 
 	return (
 		<section className="relative mx-4 bg-background rounded-b-3xl overflow-hidden min-h-[400px] px-4">
@@ -27,17 +28,16 @@ export function AboutHeroSection() {
 			<div className="container relative z-10 py-10 lg:py-22 flex justify-between items-center mx-auto">
 				<div className="flex flex-col items-center justify-center w-full">
 					<h2 className="text-primary text-center uppercase">
-						Будуємо <span className="text-secondary">простори,</span> <br />
-						яким довіряють
+						{t("headingStart")} <span className="text-secondary">{t("headingHighlight")}</span> <br />
+						{t("headingEnd")}
 					</h2>
-					<p className="!text-primary-foreground mt-6 text-center max-w-[700px] !text-[18px]">
-						Global Technology Innovations — будівельна компанія з повним циклом робіт. З 2009 року ми реалізуємо житлові,
-						комерційні та промислові проєкти, забезпечуючи стабільну якість, безпеку та дотримання термінів.
-					</p>
+					<p className="!text-primary-foreground mt-6 text-center max-w-[700px] !text-[18px]">{t("descriptionFull")}</p>
 					<div className="flex flex-wrap justify-center gap-3 mt-6 lg:mt-12">
-						<Badge variant="secondary">Комплексні рішення під ключ</Badge>
-						<Badge variant="secondary">Контроль якості на усіх етапах</Badge>
-						<Badge variant="secondary">Ефективність у кожному проекті</Badge>
+						{badges.map((badge) => (
+							<Badge key={badge} variant="secondary">
+								{badge}
+							</Badge>
+						))}
 					</div>
 				</div>
 			</div>

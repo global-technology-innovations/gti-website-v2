@@ -15,6 +15,7 @@ const socialIcons = {
 export const Footer = () => {
 	const t = useTranslations("Footer");
 	const tHeader = useTranslations("Header");
+	const tContact = useTranslations("ContactPage.contacts");
 
 	return (
 		<footer className="relative mx-4 bg-primary rounded-3xl py-12  mt-4">
@@ -48,7 +49,7 @@ export const Footer = () => {
 									key={social.key}
 									href={social.href}
 									className="!text-white"
-									aria-label={social.label}
+									aria-label={tContact(social.key)}
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -87,7 +88,7 @@ export const Footer = () => {
 								key={social.key}
 								href={social.href}
 								className="!text-white transition-transform duration-200 hover:scale-110"
-								aria-label={social.label}
+								aria-label={tContact(social.key)}
 								target="_blank"
 								rel="noopener noreferrer"
 							>

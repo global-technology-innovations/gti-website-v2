@@ -5,13 +5,15 @@ import { useEffect, useState } from "react";
 import { ControllerRenderProps } from "react-hook-form";
 import { FormData } from "./ContactForm";
 
+const DEFAULT_PHONE_PLACEHOLDER = "+___ __ ___ __ __";
+
 // Динамічний імпорт PhoneInput без SSR
 const PhoneInput = dynamic(() => import("react-phone-number-input"), {
 	ssr: false,
 	loading: () => (
 		<input
 			type="tel"
-			placeholder="+380973737240"
+			placeholder={DEFAULT_PHONE_PLACEHOLDER}
 			className="mt-3 w-full rounded-md border border-input px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring/20"
 			disabled
 		/>
@@ -24,6 +26,7 @@ interface PhoneInputFieldProps extends ControllerRenderProps<FormData, "phone"> 
 	"aria-invalid"?: boolean;
 	"aria-describedby"?: string;
 	className?: string;
+	placeholder?: string;
 }
 
 export default function PhoneInputField({
@@ -34,6 +37,7 @@ export default function PhoneInputField({
 	"aria-invalid": ariaInvalid,
 	"aria-describedby": ariaDescribedBy,
 	className,
+	placeholder = DEFAULT_PHONE_PLACEHOLDER,
 }: PhoneInputFieldProps) {
 	const [isMounted, setIsMounted] = useState(false);
 
@@ -46,7 +50,7 @@ export default function PhoneInputField({
 			<input
 				type="tel"
 				id={id}
-				placeholder="+___ __ ___ __ __"
+				placeholder={placeholder}
 				aria-invalid={ariaInvalid}
 				aria-describedby={ariaDescribedBy}
 				className={`w-full rounded-2xl border px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground focus:outline-none ${
@@ -63,7 +67,7 @@ export default function PhoneInputField({
 			onChange={onChange}
 			international
 			defaultCountry="UA"
-			placeholder="+___ __ ___ __ __"
+			placeholder={placeholder}
 			id={id}
 			aria-invalid={ariaInvalid}
 			aria-describedby={ariaDescribedBy}

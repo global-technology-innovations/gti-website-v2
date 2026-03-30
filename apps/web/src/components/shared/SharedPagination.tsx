@@ -3,6 +3,7 @@
 import { Pagination, PaginationItem, PaginationLink } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface SharedPaginationProps {
 	currentPage: number;
@@ -13,14 +14,11 @@ interface SharedPaginationProps {
 	className?: string;
 }
 
-export function SharedPagination({
-	currentPage,
-	totalPages,
-	onChange,
-	previousLabel = "Previous",
-	nextLabel = "Next",
-	className,
-}: SharedPaginationProps) {
+export function SharedPagination({ currentPage, totalPages, onChange, previousLabel, nextLabel, className }: SharedPaginationProps) {
+	const t = useTranslations("Common.pagination");
+	const resolvedPreviousLabel = previousLabel ?? t("previous");
+	const resolvedNextLabel = nextLabel ?? t("next");
+
 	const goTo = (page: number) => {
 		if (page < 1 || page > totalPages) return;
 		onChange(page);
@@ -43,7 +41,7 @@ export function SharedPagination({
 					)}
 				>
 					<ArrowLeft className="size-5" />
-					<span>{previousLabel}</span>
+					<span>{resolvedPreviousLabel}</span>
 				</a>
 
 				<ul className="flex items-center gap-2 md:gap-4">
@@ -84,7 +82,7 @@ export function SharedPagination({
 						currentPage === totalPages && "pointer-events-none opacity-50"
 					)}
 				>
-					<span>{nextLabel}</span>
+					<span>{resolvedNextLabel}</span>
 					<ArrowRight className="size-5" />
 				</a>
 			</div>

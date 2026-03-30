@@ -8,41 +8,16 @@ import {
 	generatePageMetadata,
 } from "@/components";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
-
-	const titleMap = {
-		sk: "Ochrana osobných údajov - GDPR",
-		en: "Privacy Policy - GDPR",
-		uk: "Політика конфіденційності - GDPR",
-		cs: "Ochrana osobních údajů - GDPR",
-		fr: "Politique de confidentialité - RGPD",
-		de: "Datenschutzrichtlinie - DSGVO",
-	};
-
-	const descriptionMap = {
-		sk: "Prečítajte si našu politiku ochrany osobných údajov a zistite, ako spracúvame a chránime vaše osobné informácie v súlade s GDPR.",
-		en: "Read our privacy policy and learn how we process and protect your personal information in accordance with GDPR.",
-		uk: "Ознайомтеся з нашою політикою конфіденційності та дізнайтеся, як ми обробляємо та захищаємо вашу особисту інформацію відповідно до GDPR.",
-		cs: "Přečtěte si naši politiku ochrany osobních údajů a zjistěte, jak zpracováváme a chráníme vaše osobní informace v souladu s GDPR.",
-		fr: "Lisez notre politique de confidentialité et découvrez comment nous traitons et protégeons vos informations personnelles conformément au RGPD.",
-		de: "Lesen Sie unsere Datenschutzrichtlinie und erfahren Sie, wie wir Ihre persönlichen Daten gemäß der DSGVO verarbeiten und schützen.",
-	};
-
-	const keywordsMap = {
-		sk: "ochrana osobných údajov, GDPR, súkromie, osobné údaje, zabezpečenie dát",
-		en: "privacy policy, GDPR, privacy, personal data, data security",
-		uk: "політика конфіденційності, GDPR, приватність, особисті дані, безпека даних",
-		cs: "ochrana osobních údajů, GDPR, soukromí, osobní údaje, zabezpečení dat",
-		fr: "politique de confidentialité, RGPD, vie privée, données personnelles, sécurité des données",
-		de: "datenschutzrichtlinie, DSGVO, datenschutz, personenbezogene daten, datensicherheit",
-	};
+	const t = await getTranslations({ locale, namespace: "PrivacyPolicy.meta" });
 
 	return generatePageMetadata({
-		title: titleMap[locale as keyof typeof titleMap] || titleMap.uk,
-		description: descriptionMap[locale as keyof typeof descriptionMap] || descriptionMap.uk,
-		keywords: keywordsMap[locale as keyof typeof keywordsMap] || keywordsMap.uk,
+		title: t("title"),
+		description: t("description"),
+		keywords: t("keywords"),
 		canonicalUrl: generateCanonicalUrl(locale, "/privacy-policy"),
 		hreflang: generateHreflangUrls("/privacy-policy"),
 		locale,

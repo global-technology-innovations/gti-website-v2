@@ -36,10 +36,13 @@ export const Header = () => {
 			<div className="flex justify-between items-center lg:mx-8 h-16">
 				<div className="flex items-center gap-1">
 					<Link href="/">
-						<Image src={Logo} alt="GTI Logo" width={56} height={56} />
+						<Image src={Logo} alt={t("companyName")} width={56} height={56} />
 					</Link>
-					<Link href="/" className="block md:hidden lg:block leading-[17px] text-[15px] font-semibold text-primary-foreground">
-						Global <br /> Technology <br /> Innovations
+					<Link
+						href="/"
+						className="block whitespace-pre-line md:hidden lg:block leading-[17px] text-[15px] font-semibold text-primary-foreground"
+					>
+						{t("companyNameMultiline")}
 					</Link>
 				</div>
 
@@ -140,7 +143,7 @@ export const Header = () => {
 						</SheetTrigger>
 						<SheetContent side="bottom">
 							<SheetTitle>
-								<VisuallyHidden>Mobile navigation menu</VisuallyHidden>
+								<VisuallyHidden>{t("mobileNavigationMenuLabel")}</VisuallyHidden>
 							</SheetTitle>
 							<nav className="flex flex-col justify-center items-center h-full pb-10 pt-4 gap-3 font-normal">
 								<Link href="/" onClick={() => setOpen(false)} className={mobileNavLinkClassName("/")}>

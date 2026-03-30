@@ -52,7 +52,7 @@ export function PortfolioCTASection({ locale }: PortfolioCTASectionProps) {
 					<Card key={index} variant="default" className="items-center text-center">
 						<CardContent>
 							<div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
-								<Image src={method.icon} alt="icon" width={26} height={26} aria-hidden />
+								<Image src={method.icon} alt="" width={26} height={26} aria-hidden />
 							</div>
 							<h3 className="!text-lg mt-6 !leading-normal !font-semibold text-primary uppercase">{method.title}</h3>
 							<p className="text-primary-foreground mt-2">{method.description}</p>

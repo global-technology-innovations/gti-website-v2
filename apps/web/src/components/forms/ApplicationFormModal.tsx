@@ -123,6 +123,7 @@ export function ApplicationFormModal({
 									aria-invalid={!!errors.phone}
 									aria-describedby={errors.phone ? "phone-error" : undefined}
 									id="application-phone"
+									placeholder={t("phonePlaceholder")}
 									className="border-border bg-white px-5 text-primary-foreground placeholder:text-primary-foreground"
 								/>
 							)}

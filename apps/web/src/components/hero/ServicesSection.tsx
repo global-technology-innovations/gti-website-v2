@@ -2,65 +2,60 @@
 import { Button, Card } from "@/components";
 import { Link } from "@/i18n";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const HERO_SERVICES = [
 	{
-		title: "Штукатурка",
-		description: "Виконуємо внутрішні та зовнішні штукатурні роботи з рівними поверхнями.",
+		key: "plastering",
 		icon: "/icons/key.svg",
 	},
 	{
-		title: "Шпаклівка",
-		description: "Професійне вирівнювання стін і стель під фарбування або шпалери.",
+		key: "putty",
 		icon: "/icons/eraser.svg",
 	},
 	{
-		title: "Монолітні роботи",
-		description: "Монолітні роботи від фундаментів до перекриттів з дотриманням технологій.",
+		key: "monolithic",
 		icon: "/icons/sledgehammer.svg",
 	},
 	{
-		title: "Гіпсокартонні роботи",
-		description: "Монтаж стель, перегородок і декоративних конструкцій з гіпсокартону.",
+		key: "drywall",
 		icon: "/icons/ruler-pen.svg",
 	},
 	{
-		title: "Укладання бруківки",
-		description: "Якісне укладання бруківки для дворів, доріжок та паркінгів.",
+		key: "paving",
 		icon: "/icons/delivery.svg",
 	},
 	{
-		title: "Укладання покриття",
-		description: "Монтаж усіх видів підлогових покриттів з акуратним виконанням.",
+		key: "flooring",
 		icon: "/icons/palette.svg",
 	},
 	{
-		title: "Малярні роботи",
-		description: "Фарбування стін, стель і фасадів з рівномірним покриттям.",
+		key: "painting",
 		icon: "/icons/paint-roller.svg",
 	},
 	{
-		title: "Фасадні роботи",
-		description: "Комплексні фасадні роботи з утеплення та оздоблення будівель.",
+		key: "facade",
 		icon: "/icons/home.svg",
 	},
 ] as const;
 
 export function ServicesSection() {
+	const t = useTranslations("HomePage.ServicesSection");
+
 	return (
 		<section className="relative mx-4 bg-background rounded-3xl py-10 lg:py-22 px-4">
 			<div className="container flex flex-col md:flex-row justify-between items-center relative mx-auto gap-x-6">
 				<div>
-					<h2 className="h3 !font-bold text-primary uppercase text-center md:text-left">Повний цикл робіт - під ключ</h2>
-					<p className="text-primary-foreground mt-3 text-center md:text-left">
-						Від ідеї та проєктування до реалізації та сервісного супроводу — беремо відповідальність за результат.
-					</p>
+					<h2 className="h3 !font-bold text-primary uppercase text-center md:text-left">
+						{t("headingStart")} <span className="text-secondary">{t("headingHighlight")}</span>
+					</h2>
+					<p className="text-primary-foreground mt-3 text-center md:text-left">{t("description")}</p>
 				</div>
 
 				<Button asChild variant="secondary" className="mt-6 md:mt-0 w-full md:w-auto">
 					<Link href="/our-services">
-						Усі сервіси <ArrowRight className="w-4 h-4" />
+						{t("button")} <ArrowRight className="w-4 h-4" />
 					</Link>
 				</Button>
 			</div>
@@ -71,8 +66,10 @@ export function ServicesSection() {
 						<div className="w-12 h-12 rounded-full bg-background flex items-center justify-center mb-4">
 							<Image src={service.icon} alt="" width={24} height={24} className="text-primary" aria-hidden />
 						</div>
-						<h3 className="!text-lg !leading-normal !font-bold text-primary uppercase">{service.title}</h3>
-						<p className="text-primary-foreground mt-2 text-sm max-w-[280px] text-center md:text-left">{service.description}</p>
+						<h3 className="!text-lg !leading-normal !font-bold text-primary uppercase">{t(`items.${service.key}.title`)}</h3>
+						<p className="text-primary-foreground mt-2 text-sm max-w-[280px] text-center md:text-left">
+							{t(`items.${service.key}.description`)}
+						</p>
 					</Card>
 				))}
 			</div>

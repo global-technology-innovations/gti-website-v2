@@ -83,6 +83,7 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "", vari
 						hasError={!!errors.phone}
 						aria-invalid={!!errors.phone}
 						id="contact-phone"
+						placeholder={t("phonePlaceholder")}
 						className={isApplicationVariant ? fieldClassName : undefined}
 					/>
 				)}
@@ -190,7 +191,7 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "", vari
 				disabled={isSubmitting}
 				className={cn("mx-auto w-fit", isApplicationVariant ? "mt-4" : "mt-6")}
 			>
-				{isSubmitting ? "Надсилання..." : t("submitButton")}
+				{isSubmitting ? t("sendingButton") : t("submitButton")}
 				{isApplicationVariant && <ArrowRight className="size-4" />}
 			</Button>
 		</form>

@@ -71,7 +71,7 @@ export function PortfolioListSection() {
 		return (
 			<section className="container mx-auto px-4 py-16">
 				<FilterChipsSkeleton />
-				<CardGridSkeleton />
+				<CardGridSkeleton count={PROJECTS_PER_PAGE} variant="project" />
 			</section>
 		);
 	}
@@ -93,7 +93,7 @@ export function PortfolioListSection() {
 			<FilterChips options={statusFilters} />
 
 			{isFetching ? (
-				<CardGridSkeleton />
+				<CardGridSkeleton count={PROJECTS_PER_PAGE} variant="project" />
 			) : projects.length > 0 ? (
 				<>
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">

@@ -35,7 +35,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
 	const { locale, slug } = await params;
-	const [service, tNav] = await Promise.all([getServiceDetail(slug, locale), getTranslations({ locale, namespace: "Header.nav" })]);
+	const [service, tNav, tServices] = await Promise.all([
+		getServiceDetail(slug, locale),
+		getTranslations({ locale, namespace: "Header.nav" }),
+		getTranslations({ locale, namespace: "OurServicesPage" }),
+	]);
 
 	if (!service) {
 		notFound();
@@ -52,7 +56,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 						<p className="mt-6 max-w-2xl text-center lg:text-left text-primary">{service.shortDescription}</p>
 						<Button asChild variant="secondary" className="mt-8">
 							<Link href="/contact">
-								Замовити послугу <ArrowRight className="w-4 h-4" />
+								{tServices("order")} <ArrowRight className="w-4 h-4" />
 							</Link>
 						</Button>
 					</div>

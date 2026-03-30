@@ -10,12 +10,13 @@
 			"outstaffing": "Outstaffing",
 			"blog": "Blog",
 			"contact": "Contact"
-		}
+		},
+		"companyNameMultiline": "Global\nTechnology\nInnovations",
+		"mobileNavigationMenuLabel": "Mobile navigation menu"
 	},
 	"Media": {
 		"videoNotSupported": "Your browser does not support the video tag.",
 		"videoIndicator": "Video",
-		"noImages": "No images",
 		"mediaThumbnail": "media {index}",
 		"thumbnail": "thumbnail {index}"
 	},
@@ -23,38 +24,32 @@
 		"backToPortfolio": "Back to portfolio",
 		"projectNotFound": "Project not found",
 		"projectNotFoundDesc": "The requested project does not exist or has been deleted.",
-		"projectDescription": "Project description",
-		"projectInfo": "Project information",
-		"projectGallery": "Project gallery",
 		"projectGalleryTitle": "Gallery",
 		"projectGalleryHighlight": "project",
-		"client": "Client",
-		"location": "Location",
-		"executionPeriod": "Execution period",
-		"technologies": "Technologies",
-		"category": "Category",
 		"status": {
 			"completed": "Completed",
 			"inProgress": "In progress",
 			"planned": "Planned"
-		},
-		"interestedInProject": "Interested in our project?",
-		"interestedDesc": "We are ready to discuss your ideas and create something similar for you. Contact us for a free consultation.",
-		"contactUs": "Contact us",
-		"ourServices": "Our services"
+		}
 	},
 	"Footer": {
 		"privacy": "Privacy Policy",
 		"cookies": "Cookie Policy",
-		"email": "Email",
-		"address": "Address",
 		"rights": "© 2025 Global Technology Innovations. All rights reserved."
 	},
 	"HomePage": {
 		"HeroSection": {
 			"title": "Comprehensive Turnkey Construction Solutions",
 			"description": "We provide a full range of construction services for residential, commercial, and specialized facilities.",
-			"button": "Contact Us"
+			"button": "Contact Us",
+			"headingStart": "Comprehensive",
+			"headingHighlight": "construction",
+			"headingEnd": "turnkey solutions",
+			"testimonial": {
+				"name": "Oleksandr Kovalenko",
+				"role": "CEO, Horizon Group",
+				"quote": "The company demonstrated a high level of professionalism and reliability. The project was completed on time, with excellent quality and clear communication at every stage."
+			}
 		},
 		"AboutUsSection": {
 			"stats": {
@@ -83,10 +78,10 @@
 				"second": "The company began as a family construction business and over the years grew into a stable professional structure.",
 				"third": "We combine the practical experience of the previous generation, modern technologies, and a responsible approach to every project, ensuring quality, safety, and stable results."
 			},
-			"button": "Learn more"
+			"button": "Learn more",
+			"imageAlt": "Global Technology Innovations team members with blueprints"
 		},
 		"FAQSection": {
-			"title": "Frequently Asked Questions",
 			"items": [
 				{
 					"question": "How does the cooperation process with a client work?",
@@ -108,55 +103,67 @@
 					"question": "What are the project completion times?",
 					"answer": "The duration depends on the scope of the project. A small renovation may take a few weeks, while a full-scale construction may take several months. We always agree on timelines before starting and stick to the schedule."
 				}
-			]
+			],
+			"headingStart": "Answers to your",
+			"headingHighlight": "questions"
 		},
-		"FeaturedProjects": {
-			"title": "Our Best Projects",
-			"description": "Explore selected works that demonstrate our expertise and quality in construction",
-			"viewAllButton": "View All Projects"
+		"meta": {
+			"keywords": "construction services, building renovation, turnkey solutions, slovakia"
+		},
+		"ServicesSection": {
+			"headingStart": "Full-cycle work",
+			"headingHighlight": "turnkey",
+			"description": "From concept and design to execution and service support, we take responsibility for the result.",
+			"button": "All services",
+			"items": {
+				"plastering": {
+					"title": "Plastering",
+					"description": "We perform interior and exterior plastering works with smooth, even surfaces."
+				},
+				"putty": {
+					"title": "Puttying",
+					"description": "Professional leveling of walls and ceilings before painting or wallpapering."
+				},
+				"monolithic": {
+					"title": "Monolithic works",
+					"description": "Monolithic construction works from foundations to slabs in line with all required technologies."
+				},
+				"drywall": {
+					"title": "Drywall works",
+					"description": "Installation of ceilings, partitions, and decorative drywall structures."
+				},
+				"paving": {
+					"title": "Paving",
+					"description": "High-quality paving for courtyards, pathways, and parking areas."
+				},
+				"flooring": {
+					"title": "Flooring installation",
+					"description": "Installation of all types of floor coverings with careful workmanship."
+				},
+				"painting": {
+					"title": "Painting works",
+					"description": "Painting of walls, ceilings, and facades with an even finish."
+				},
+				"facade": {
+					"title": "Facade works",
+					"description": "Comprehensive facade works including insulation and exterior finishing."
+				}
+			}
 		}
 	},
 	"AboutPage": {
-		"title": "About the Company",
-		"description": "Tailored solutions for every client. Strict adherence to deadlines. Competitive pricing, proven quality, and reliable guarantee.\n\n",
 		"Hero": {
-			"badge": "About Us",
-			"title": "Building trust that lasts",
-			"description": "We combine expertise, innovation, and transparent processes to deliver quality projects on time."
-		},
-		"CompanyHistory": {
-			"badge": "Our History",
-			"title": "15 years of construction experience",
-			"description": "From a small company to a market leader in construction services — we've come a long way thanks to our clients' trust.",
-			"founding": {
-				"title": "Foundation and Development",
-				"description": "Our family's construction business began back in 2009. Since then, we have implemented hundreds of projects of various scales. Today, Global Technology Innovations is a team of experienced engineers and builders that combines the experience of the previous generation with modern innovations."
-			},
-			"milestones": {
-				"projects": {
-					"title": "Over 500 projects",
-					"description": "Successfully completed from private homes to large commercial facilities"
-				},
-				"team": {
-					"title": "Team of 50+ specialists",
-					"description": "Experienced engineers, architects and builders"
-				},
-				"expansion": {
-					"title": "Service expansion",
-					"description": "From classic construction to innovative technologies"
-				}
-			},
-			"stats": {
-				"years": "years of experience",
-				"projects": "completed projects",
-				"employees": "employees",
-				"satisfaction": "satisfied clients",
-				"support": "customer support"
-			}
+			"headingStart": "We build",
+			"headingHighlight": "spaces,",
+			"headingEnd": "people trust",
+			"descriptionFull": "Global Technology Innovations is a full-cycle construction company. Since 2009, we have delivered residential, commercial, and industrial projects with consistent quality, safety, and respect for deadlines.",
+			"badges": [
+				"Turnkey solutions",
+				"Quality control at every stage",
+				"Efficiency in every project"
+			]
 		},
 		"OurValues": {
-			"badge": "Our Values",
-			"title": "Principles that guide us",
 			"description": "Our core values shape the company culture and determine the quality of our services.",
 			"trust": {
 				"title": "Trust and reliability",
@@ -181,109 +188,59 @@
 			"teamwork": {
 				"title": "Teamwork",
 				"description": "We value each team member, support professional development and create a comfortable work environment."
-			}
-		},
-		"Team": {
-			"badge": "Our Team",
-			"title": "Professionals in their field",
-			"description": "Experienced specialists who bring your dreams to reality through expertise and dedication.",
-			"ceo": {
-				"name": "Alexander Petrenko",
-				"position": "Chief Executive Officer",
-				"description": "15 years in the construction industry. Leads strategic company development and ensures high quality standards."
 			},
-			"cto": {
-				"name": "Marina Ivanenko",
-				"position": "Chief Technical Officer",
-				"description": "Construction engineer with 12 years of experience. Responsible for technical aspects of all projects and quality control."
-			},
-			"projectManager": {
-				"name": "Andrew Kovalenko",
-				"position": "Project Manager",
-				"description": "Coordinates work execution, ensures deadlines are met and effective communication with clients."
-			},
-			"architect": {
-				"name": "Catherine Melnyk",
-				"position": "Chief Architect",
-				"description": "Creates unique architectural solutions, combining functionality, aesthetics and modern trends."
-			},
-			"culture": {
-				"title": "Our company culture",
-				"description": "We create an environment where everyone can unlock their potential and contribute to shared success.",
-				"learning": {
-					"title": "Continuous learning",
-					"description": "We support team professional development"
-				},
-				"collaboration": {
-					"title": "Open collaboration",
-					"description": "We value ideas from every team member"
-				},
-				"innovation": {
-					"title": "Innovative approach",
-					"description": "We experiment with new methods and technologies"
-				}
-			}
-		},
-		"MissionVision": {
-			"badge": "Mission and Vision",
-			"title": "Our goal and development direction",
-			"description": "We clearly understand our role in the construction industry and strive to create value for all stakeholders.",
-			"mission": {
-				"title": "Our Mission",
-				"description": "To create comfortable and functional spaces that improve people's quality of life, using best construction practices and an individual approach to each client.",
-				"points": {
-					"quality": "Ensuring the highest quality of work",
-					"innovation": "Implementing innovative solutions",
-					"satisfaction": "Maximum satisfaction of client needs"
-				}
-			},
-			"vision": {
-				"title": "Our Vision",
-				"description": "To be a leading construction company that sets standards for quality and innovation in the industry, creating sustainable and eco-friendly solutions for future generations.",
-				"points": {
-					"sustainability": "Development of eco-friendly technologies",
-					"technology": "Use of advanced technologies",
-					"community": "Contribution to community development"
-				}
-			},
-			"strategy": {
-				"title": "Strategic Priorities",
-				"description": "Our strategy focuses on sustainable development, expanding capabilities and ensuring market leadership positions.",
-				"growth": {
-					"title": "Growth",
-					"description": "Expanding geography and range of services"
-				},
-				"efficiency": {
-					"title": "Efficiency",
-					"description": "Process optimization and productivity improvement"
-				},
-				"expansion": {
-					"title": "Expansion",
-					"description": "Entering new markets and segments"
-				}
-			}
+			"headingStart": "Principles we",
+			"headingHighlight": "follow"
 		},
 		"CallToAction": {
 			"title": "Time to bring your idea to life",
 			"descriptionLine1": "Ready to start your project with a reliable construction team?",
 			"descriptionLine2": "We will help you implement your idea clearly and professionally.",
 			"button": "Contact us"
+		},
+		"meta": {
+			"title": "About Us - Our History and Values",
+			"description": "Learn about Global Technology Innovations - our history, mission, vision and values. We have been providing quality construction services for over 15 years.",
+			"keywords": "about us, company history, our values, team, construction company"
+		},
+		"ReviewsSection": {
+			"headingStart": "Reviews from our",
+			"headingHighlight": "clients",
+			"items": {
+				"muller": {
+					"name": "Hans Müller",
+					"role": "Apartment renovation",
+					"text": "The work was completed with quality and within the agreed timeframe. The team paid close attention to details and stayed in touch throughout the project."
+				},
+				"schneider": {
+					"name": "Peter Schneider",
+					"role": "Commercial construction",
+					"text": "A professional approach, clear process organization, and transparent communication at every stage."
+				},
+				"becker": {
+					"name": "Anna Becker",
+					"role": "Private house renovation",
+					"text": "The result fully met expectations. A reliable team you can truly trust."
+				}
+			}
 		}
 	},
 	"CareersPage": {
-		"title": "Careers",
 		"Hero": {
 			"title": "Join the",
 			"highlight": "team",
 			"description": "Grow with us: exciting projects, mentor support, and transparent conditions."
 		},
 		"apply": "Apply",
-		"jobType": "Job Type",
-		"location": "Location",
 		"errorTitle": "An Error Occurred",
 		"errorLoadingJobs": "Failed to load job listings. Please try again later.",
 		"noJobs": "No job openings",
-		"checkBackLater": "Please check back later."
+		"checkBackLater": "Please check back later.",
+		"meta": {
+			"title": "Careers - Work with Us",
+			"description": "Looking for a job in construction? Check out current openings at Global Technology Innovations and become part of our team.",
+			"keywords": "careers, jobs, vacancies, construction, employment, work"
+		}
 	},
 	"BlogPage": {
 		"title": "Construction articles",
@@ -296,23 +253,29 @@
 	},
 	"BlogArticlePage": {
 		"relatedTitle": "You may",
-		"relatedHighlight": "also like"
+		"relatedHighlight": "also like",
+		"errorTitle": "Article not found",
+		"errorDescription": "Failed to load the article page.",
+		"backToBlog": "Back to blog"
 	},
 	"OurServicesPage": {
-		"title": "Our Services",
-		"button": "Learn More",
 		"order": "Order service",
 		"showMore": "More services",
 		"showLess": "Show fewer services",
 		"Hero": {
-			"badge": "Services",
-			"title": "Full-cycle solutions, turnkey",
-			"description": "From concept and design to execution and service — we take responsibility for the result."
-		}
+			"description": "From concept and design to execution and service — we take responsibility for the result.",
+			"headingStart": "Full-cycle work",
+			"headingHighlight": "turnkey"
+		},
+		"meta": {
+			"title": "Our Services - Comprehensive Construction Solutions",
+			"description": "We offer a wide range of construction services from design to implementation. Residential, commercial and specialized turnkey projects.",
+			"keywords": "construction services, renovations, new builds, project management, construction work"
+		},
+		"loadError": "Failed to load services"
 	},
 	"ContactPage": {
 		"Hero": {
-			"badge": "Contact Information",
 			"title": "Get in touch with us — <highlight>in seconds</highlight>",
 			"description": "We are always ready to answer your questions and provide professional consultation"
 		},
@@ -362,38 +325,15 @@
 				}
 			}
 		},
-		"form": {
-			"title": "Get in touch with us",
-			"description": "Fill out the form, and our manager will contact you during the business day for a detailed consultation.",
-			"formTitle": "Contact Form",
-			"formSubtitle": "Fill in all required fields",
-			"benefits": {
-				"quick": "Quick response within a day",
-				"professional": "Professional consultation",
-				"free": "Free project evaluation"
-			},
-			"responseTime": {
-				"title": "Response Time",
-				"description": "We respond to all inquiries during business hours. Outside of business hours, your message will be processed the next business day."
-			}
-		},
-		"map": {
-			"title": "Find us on the map",
-			"description": "Our office is located in Košice, Slovakia",
-			"iframeTitle": "Office location map",
-			"addressTitle": "Address",
-			"address": "Jenisejská 45A, 040 12 Košice-Nad Jazerom",
-			"viewOnGoogleMaps": "View on Google Maps",
-			"getDirections": "Get directions"
-		},
 		"contacts": {
-			"phones": "Phones",
 			"whatsapp": "WhatsApp",
 			"facebook": "Facebook",
-			"email": "Email",
-			"call": "Call",
-			"open": "Open",
-			"workingHours": "Working hours: Mon–Fri: 09:00–18:00. Weekends: Sat–Sun."
+			"tiktok": "TikTok"
+		},
+		"meta": {
+			"title": "Contact - Get in Touch with Us",
+			"description": "Have questions or interested in our services? Contact us through the form, email or phone. We'll be happy to help you.",
+			"keywords": "contact, contact form, email, phone, address, consultation"
 		}
 	},
 	"ContactFormSection": {
@@ -423,7 +363,9 @@
 		"success": {
 			"title": "Thank you for contacting us!",
 			"message": "Your message has been sent successfully. Our manager will contact you soon."
-		}
+		},
+		"sendingButton": "Sending...",
+		"phonePlaceholder": "+___ __ ___ __ __"
 	},
 	"ApplicationFormModal": {
 		"title": "Apply for Job",
@@ -452,13 +394,11 @@
 		"success": {
 			"title": "Application sent!",
 			"message": "Thank you for your application. We will contact you soon."
-		}
+		},
+		"phonePlaceholder": "+___ __ ___ __ __"
 	},
 	"CookiesPage": {
-		"title": "Cookie Policy",
-		"description": "Information about cookie usage on our website and cookie management options.",
 		"Hero": {
-			"badge": "Cookie Policy",
 			"title": "Cookie Usage Policy",
 			"description": "Information about how we use cookies on our website and how you can manage your cookie preferences."
 		},
@@ -496,6 +436,11 @@
 			"privacyPolicyLink": "Privacy Policy",
 			"contactText": "If you have questions about cookie usage, contact us at",
 			"contactEmail": "info@global-technology-innovations.com"
+		},
+		"meta": {
+			"title": "Cookie Policy",
+			"description": "Information about how we use cookies on our website and how you can manage your consent.",
+			"keywords": "cookies, cookie files, cookie management, cookie consent, GDPR cookies"
 		}
 	},
 	"CookieBanner": {
@@ -614,18 +559,17 @@
 			"email": "Email",
 			"address": "Address",
 			"phone": "Phone"
+		},
+		"meta": {
+			"title": "Privacy Policy - GDPR",
+			"description": "Read our privacy policy and learn how we process and protect your personal information in accordance with GDPR.",
+			"keywords": "privacy policy, GDPR, privacy, personal data, data security"
 		}
 	},
 	"OutstaffingPage": {
 		"Hero": {
-			"badge": "Personnel Outstaffing",
 			"title": "Outstaffing <highlight>personnel</highlight> for construction projects",
-			"description": "We provide experienced specialists for your construction without unnecessary costs for searching and maintaining staff.",
-			"ctaButton": "Order Specialists"
-		},
-		"WhatIs": {
-			"title": "What is outstaffing?",
-			"description": "Outstaffing is when you get our company's employees to perform specific tasks at your facility. They work under your management but remain in our official staff."
+			"description": "We provide experienced specialists for your construction without unnecessary costs for searching and maintaining staff."
 		},
 		"Experience": {
 			"title": "Experience that guarantees results <highlight>on site</highlight>",
@@ -637,7 +581,6 @@
 			"imageAlt": "Construction worker for the outstaffing section"
 		},
 		"Specialists": {
-			"badge": "Our Specialists",
 			"title": "Our Specialists",
 			"subtitle": "Our team includes a wide range of qualified specialists for various types of construction work.",
 			"list": {
@@ -652,7 +595,6 @@
 			}
 		},
 		"Benefits": {
-			"badge": "Why Choose Us",
 			"title": "Benefits for the client",
 			"subtitle": "Why choose our outstaffing for your construction project.",
 			"list": {
@@ -675,9 +617,7 @@
 			}
 		},
 		"HowItWorks": {
-			"badge": "Process",
 			"title": "How does <highlight>our cooperation work?</highlight>",
-			"subtitle": "Simple process to get the specialists you need in 4 steps",
 			"imageAlt": "Worker with blueprint for the cooperation section",
 			"steps": {
 				"request": {
@@ -707,22 +647,10 @@
 			"title": "Do you need craftsmen as early as <highlight>tomorrow?</highlight>",
 			"description": "Leave a request and we will contact you within an hour to discuss the details and assemble a team of experienced specialists with 5+ years of experience, offering flexible cooperation and payment terms."
 		},
-		"CTA": {
-			"title": "Need craftsmen tomorrow?",
-			"description": "Submit a request and we'll contact you within an hour to discuss details and select a team of specialists.",
-			"benefits": {
-				"immediate": "Immediate response within an hour",
-				"experienced": "Experienced specialists with 5+ years of experience",
-				"flexible": "Flexible cooperation and payment terms"
-			},
-			"guarantee": {
-				"title": "Quality guarantee",
-				"description": "All our specialists have confirmed qualifications and work experience"
-			},
-			"form": {
-				"title": "Order Specialists",
-				"subtitle": "Fill out the form and get a personalized offer"
-			}
+		"meta": {
+			"title": "Personnel Outstaffing - Construction Specialists Rental",
+			"description": "Get experienced construction specialists without unnecessary costs for searching and maintaining employees. Quick solution for your construction projects.",
+			"keywords": "outstaffing, personnel rental, construction specialists, bricklayers, electricians, plumbers"
 		}
 	},
 	"PortfolioPage": {
@@ -772,6 +700,70 @@
 					"action": "Schedule"
 				}
 			}
+		},
+		"meta": {
+			"title": "Project Portfolio - Our Completed Construction Projects",
+			"description": "Explore our best construction projects. From residential buildings to commercial facilities - quality and reliability in every detail.",
+			"keywords": "portfolio, construction projects, completed projects, residential buildings, commercial facilities"
+		}
+	},
+	"Layout": {
+		"meta": {
+			"description": "Full-cycle construction company"
+		}
+	},
+	"Common": {
+		"accessibility": {
+			"close": "Close",
+			"more": "More",
+			"pagination": "Pagination",
+			"breadcrumb": "Breadcrumb"
+		},
+		"pagination": {
+			"previous": "Previous",
+			"next": "Next"
+		}
+	},
+	"LanguageSwitcher": {
+		"languages": {
+			"uk": "Українська",
+			"sk": "Slovenčina",
+			"cs": "Čeština",
+			"de": "Deutsch",
+			"fr": "Français",
+			"en": "English"
+		}
+	},
+	"Seo": {
+		"organization": {
+			"description": "Professional construction services and comprehensive solutions for residential, commercial and specialized facilities.",
+			"founder": "Founder"
+		},
+		"services": {
+			"outstaffing": {
+				"name": "Construction Specialists Outstaffing",
+				"description": "Professional outstaffing of construction specialists for your projects. We provide experienced bricklayers, electricians, plumbers and other professionals.",
+				"serviceType": "Construction Personnel Outstaffing"
+			},
+			"portfolio": {
+				"name": "Project Portfolio",
+				"description": "View our completed construction projects and get inspiration for your own project. Wide range of successfully completed buildings.",
+				"serviceType": "Construction Project Portfolio"
+			}
+		},
+		"geo": {
+			"slovakia": "Slovakia",
+			"czechRepublic": "Czech Republic",
+			"ukraine": "Ukraine"
+		},
+		"expertise": {
+			"constructionServices": "Construction Services",
+			"buildingRenovation": "Building Renovation",
+			"projectManagement": "Project Management",
+			"architecturalServices": "Architectural Services"
+		},
+		"contactPage": {
+			"contactType": "customer service"
 		}
 	}
 }
