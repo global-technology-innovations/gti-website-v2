@@ -12,7 +12,7 @@ export function ServiceCard({ slug, title, description, image }: ServiceCardProp
 			href={`/our-services/${slug}`}
 			className="group flex h-full flex-col gap-3 cursor-pointer hover:scale-[1.03] transition-all duration-300"
 		>
-			<div className="relative w-full h-48 md:h-64 shrink-0 overflow-hidden rounded-3xl grayscale group-hover:grayscale-0 transition-all duration-300">
+			<div className="relative w-full h-48 md:h-64 shrink-0 overflow-hidden rounded-3xl group-hover:grayscale-0 transition-all duration-300">
 				<Image
 					src={imageSrc}
 					alt={title}

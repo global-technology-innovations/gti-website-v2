@@ -91,7 +91,7 @@ export function ContactSection({
 		<section className={cn("relative mx-4 rounded-3xl bg-background py-10 lg:py-22 px-4", sectionClassName)}>
 			<div
 				className={cn(
-					"container relative mx-auto flex flex-col lg:flex-row items-start justify-between gap-12",
+					"container relative mx-auto flex flex-col lg:flex-row items-start justify-between gap-6 md:gap-12",
 					containerClassName
 				)}
 			>
@@ -106,7 +106,7 @@ export function ContactSection({
 
 					<div
 						className={cn(
-							contactDetailsVariant === "grid" ? "mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2" : "mt-12 space-y-4",
+							contactDetailsVariant === "grid" ? "mt-6 md:mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2" : "mt-12 space-y-4",
 							detailsClassName
 						)}
 					>

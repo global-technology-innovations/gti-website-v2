@@ -66,7 +66,7 @@ export function JobsList() {
 	}
 
 	return (
-		<section className="container mx-auto px-4 pt-10 lg:pt-16">
+		<section className="container mx-auto px-4 pt-10 pb-3 lg:pt-16">
 			<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 				{currentJobs.map((job) => (
 					<JobCard key={job.id} job={job} />

@@ -105,7 +105,7 @@ export const Footer = () => {
 			<div className="flex flex-col flex-col-reverse lg:flex-row justify-between items-center container mx-auto gap-6 lg:gap-0 px-4 lg:px-0">
 				<div className="text-[15px] font-semibold text-white/60 text-center md:text-left">{t("rights")}</div>
 
-				<div className="flex flex-col md:flex-row items-center gap-6 text-center text-white w-full md:w-auto font-light">
+				<div className="flex flex-col md:flex-row items-center gap-3 text-center text-white w-full md:w-auto font-light">
 					<LocaleLink href="/privacy-policy" className="underline-animate text-[15px] font-semibold">
 						{t("privacy")}
 					</LocaleLink>

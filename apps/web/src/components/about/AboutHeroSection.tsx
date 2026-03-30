@@ -34,7 +34,7 @@ export function AboutHeroSection() {
 						Global Technology Innovations — будівельна компанія з повним циклом робіт. З 2009 року ми реалізуємо житлові,
 						комерційні та промислові проєкти, забезпечуючи стабільну якість, безпеку та дотримання термінів.
 					</p>
-					<div className="flex flex-wrap justify-center gap-3 mt-12">
+					<div className="flex flex-wrap justify-center gap-3 mt-6 lg:mt-12">
 						<Badge variant="secondary">Комплексні рішення під ключ</Badge>
 						<Badge variant="secondary">Контроль якості на усіх етапах</Badge>
 						<Badge variant="secondary">Ефективність у кожному проекті</Badge>

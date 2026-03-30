@@ -25,16 +25,20 @@ export const Header = () => {
 		pathWithoutLocale.startsWith("/outstaffing") ||
 		pathWithoutLocale.startsWith("/cookie-policy") ||
 		pathWithoutLocale.startsWith("/privacy-policy");
+	const mobileNavLinkClassName = (href: string) =>
+		cn(
+			"w-full text-center text-primary font-medium leading-[35px] transition-colors",
+			pathWithoutLocale === href && "font-bold underline decoration-primary decoration-2 underline-offset-4"
+		);
 
 	return (
 		<header className={cn("z-50 mx-4 mt-4 rounded-t-3xl pt-6 px-4 lg:px-0", useHeaderBackground ? "bg-background" : "bg-white")}>
-			<div className="mx-auto flex justify-between items-center container mx-auto h-16">
+			<div className="flex justify-between items-center lg:mx-8 h-16">
 				<div className="flex items-center gap-1">
 					<Link href="/">
 						<Image src={Logo} alt="GTI Logo" width={56} height={56} />
 					</Link>
-					{/*<Link href="/">{t("companyName")} </Link>*/}
-					<Link href="/" className="leading-[17px] text-[15px] font-semibold text-primary-foreground">
+					<Link href="/" className="block md:hidden lg:block leading-[17px] text-[15px] font-semibold text-primary-foreground">
 						Global <br /> Technology <br /> Innovations
 					</Link>
 				</div>
@@ -44,7 +48,7 @@ export const Header = () => {
 					<Link
 						href="/"
 						className={cn(
-							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
+							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
 							pathWithoutLocale !== "/" && "",
 							pathWithoutLocale === "/" && "bg-primary text-white"
 						)}
@@ -54,7 +58,7 @@ export const Header = () => {
 					<Link
 						href="/about"
 						className={cn(
-							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
+							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
 							pathWithoutLocale !== "/about" && "",
 							pathWithoutLocale === "/about" && "bg-primary text-white"
 						)}
@@ -64,7 +68,7 @@ export const Header = () => {
 					<Link
 						href="/our-services"
 						className={cn(
-							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
+							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
 							pathWithoutLocale !== "/our-services" && "",
 							pathWithoutLocale === "/our-services" && "bg-primary text-white"
 						)}
@@ -74,7 +78,7 @@ export const Header = () => {
 					<Link
 						href="/portfolio"
 						className={cn(
-							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
+							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
 							pathWithoutLocale !== "/portfolio" && "",
 							pathWithoutLocale === "/portfolio" && "bg-primary text-white"
 						)}
@@ -84,7 +88,7 @@ export const Header = () => {
 					<Link
 						href="/careers"
 						className={cn(
-							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
+							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
 							pathWithoutLocale !== "/careers" && "",
 							pathWithoutLocale === "/careers" && "bg-primary text-white"
 						)}
@@ -94,7 +98,7 @@ export const Header = () => {
 					<Link
 						href="/outstaffing"
 						className={cn(
-							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
+							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
 							pathWithoutLocale !== "/outstaffing" && "",
 							pathWithoutLocale === "/outstaffing" && "bg-primary text-white"
 						)}
@@ -104,7 +108,7 @@ export const Header = () => {
 					<Link
 						href="/blog"
 						className={cn(
-							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
+							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
 							pathWithoutLocale !== "/blog" && "",
 							pathWithoutLocale === "/blog" && "bg-primary text-white"
 						)}
@@ -114,7 +118,7 @@ export const Header = () => {
 					<Link
 						href="/contact"
 						className={cn(
-							"!text-sm text-primary bg-foreground px-4 py-2 rounded-full",
+							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
 							pathWithoutLocale !== "/contact" && "",
 							pathWithoutLocale === "/contact" && "bg-primary text-white"
 						)}
@@ -139,53 +143,29 @@ export const Header = () => {
 								<VisuallyHidden>Mobile navigation menu</VisuallyHidden>
 							</SheetTitle>
 							<nav className="flex flex-col justify-center items-center h-full pb-10 pt-4 gap-3 font-normal">
-								<Link
-									href="/"
-									onClick={() => setOpen(false)}
-									className="text-primary font-medium leading-[35px] w-full text-center"
-								>
+								<Link href="/" onClick={() => setOpen(false)} className={mobileNavLinkClassName("/")}>
 									{t("nav.home")}
 								</Link>
-								<Link
-									href="/about"
-									onClick={() => setOpen(false)}
-									className="text-primary font-medium leading-[35px] w-full text-center"
-								>
+								<Link href="/about" onClick={() => setOpen(false)} className={mobileNavLinkClassName("/about")}>
 									{t("nav.about")}
 								</Link>
 								<Link
 									href="/our-services"
 									onClick={() => setOpen(false)}
-									className="text-primary font-medium leading-[35px] w-full text-center"
+									className={mobileNavLinkClassName("/our-services")}
 								>
 									{t("nav.services")}
 								</Link>
-								<Link
-									href="/portfolio"
-									onClick={() => setOpen(false)}
-									className="text-primary font-medium leading-[35px] w-full text-center"
-								>
+								<Link href="/portfolio" onClick={() => setOpen(false)} className={mobileNavLinkClassName("/portfolio")}>
 									{t("nav.portfolio")}
 								</Link>
-								<Link
-									href="/careers"
-									onClick={() => setOpen(false)}
-									className="text-primary font-medium leading-[35px] w-full text-center"
-								>
+								<Link href="/careers" onClick={() => setOpen(false)} className={mobileNavLinkClassName("/careers")}>
 									{t("nav.careers")}
 								</Link>
-								<Link
-									href="/outstaffing"
-									onClick={() => setOpen(false)}
-									className="text-primary font-medium leading-[35px] w-full text-center"
-								>
+								<Link href="/outstaffing" onClick={() => setOpen(false)} className={mobileNavLinkClassName("/outstaffing")}>
 									{t("nav.outstaffing")}
 								</Link>
-								<Link
-									href="/contact"
-									onClick={() => setOpen(false)}
-									className="text-primary font-medium leading-[35px] w-full text-center"
-								>
+								<Link href="/contact" onClick={() => setOpen(false)} className={mobileNavLinkClassName("/contact")}>
 									{t("nav.contact")}
 								</Link>
 								<LanguageSwitcher />

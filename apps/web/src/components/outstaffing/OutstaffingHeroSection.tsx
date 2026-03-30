@@ -25,7 +25,7 @@ export function OutstaffingHeroSection() {
 					aria-hidden
 				/>
 			</div>
-			<div className="container relative z-10 mx-auto flex min-h-[320px] flex-col items-center justify-center px-4 py-18 text-center md:min-h-[420px] md:py-24">
+			<div className="container relative z-10 mx-auto flex min-h-[320px] flex-col items-center justify-center px-4 py-10 text-center md:min-h-[420px] md:py-24">
 				<h1 className="h2 text-primary max-w-[810px] uppercase">
 					{t.rich("title", {
 						highlight: (chunks) => <span className="text-secondary">{chunks}</span>,

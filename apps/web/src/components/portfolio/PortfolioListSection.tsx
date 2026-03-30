@@ -89,7 +89,7 @@ export function PortfolioListSection() {
 	}
 
 	return (
-		<div className="container mx-auto px-4 pt-10 lg:pt-16">
+		<div className="container mx-auto px-4 pt-6 lg:pt-16">
 			<FilterChips options={statusFilters} />
 
 			{isFetching ? (

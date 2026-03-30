@@ -9,7 +9,7 @@ export function HeroSection() {
 	return (
 		<section className="relative mx-4 px-4 bg-background rounded-b-3xl overflow-hidden">
 			<div className="absolute inset-0 bg-[url('/hero-bg.svg')] bg-right bg-no-repeat blur-xs lg:blur-none" />
-			<div className="container py-10 lg:py-22 flex flex-col md:flex-row justify-between items-center relative mx-auto z-10">
+			<div className="container pt-10 pb-4 lg:py-22 flex flex-col md:flex-row justify-between items-center relative mx-auto z-10">
 				<div className="flex flex-col items-start">
 					<div className="max-w-[630px]">
 						<h1 className="text-primary text-center md:text-left uppercase">

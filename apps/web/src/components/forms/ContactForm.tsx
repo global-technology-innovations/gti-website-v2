@@ -48,7 +48,7 @@ export function ContactForm({ onSubmitAction, isSubmitting, className = "", vari
 			onSubmit={handleSubmit((data) => onSubmitAction(data, reset))}
 			className={cn(
 				"flex w-full flex-col gap-4 bg-white",
-				isApplicationVariant ? "items-center" : "mx-auto max-w-[650px] rounded-[24px] border border-input p-6",
+				isApplicationVariant ? "items-center" : "mx-auto max-w-[650px] rounded-[24px] border border-input px-3 py-4 md:p-6",
 				className
 			)}
 		>

@@ -15,7 +15,7 @@ export function OutstaffingWorkflowSection() {
 	const t = useTranslations("OutstaffingPage.HowItWorks");
 
 	return (
-		<section className="py-16 md:py-24">
+		<section className="py-10 md:py-16 lg:py-24">
 			<div className="container mx-auto px-4">
 				<div className="mx-auto">
 					<h2 className="mx-auto text-center text-primary uppercase h3 !font-bold">
@@ -43,7 +43,7 @@ export function OutstaffingWorkflowSection() {
 							))}
 						</div>
 
-						<div className="flex items-center justify-center">
+						<div className="hidden lg:inline-flex flex items-center justify-center">
 							<Image
 								src="/outstaffing-worker-plan.png"
 								alt={t("imageAlt")}

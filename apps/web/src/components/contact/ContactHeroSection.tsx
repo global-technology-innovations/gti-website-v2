@@ -38,7 +38,7 @@ export function ContactHeroSection() {
 	const t = useTranslations("ContactPage");
 
 	return (
-		<section className="pb-12 pt-16 md:pb-16 md:pt-20">
+		<section className="py-10 md:py-20">
 			<div className="container mx-auto px-4">
 				<div className="mx-auto max-w-[1080px] text-center">
 					<h1 className="text-primary uppercase h2">
@@ -49,12 +49,12 @@ export function ContactHeroSection() {
 					<p className="mx-auto mt-6 max-w-[760px] text-primary-foreground">{t("Hero.description")}</p>
 				</div>
 
-				<div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+				<div className="mt-6 lg:mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
 					{quickContactLinks.map((item) => (
-						<Card key={item.key} variant="outline" className="flex flex-col items-center justify-between">
+						<Card key={item.key} variant="outline" className="flex flex-col items-center justify-between p-6 md:p-8">
 							<Image src={item.iconSrc} alt={item.iconAlt} width={30} height={30} className="size-[30px]" />
-							<h3 className="mt-6 card-title text-primary">{t(`QuickContacts.items.${item.key}.title`)}</h3>
-							<Button asChild variant="secondary" className="mt-6">
+							<h3 className="mt-3 md:mt-6 card-title text-primary">{t(`QuickContacts.items.${item.key}.title`)}</h3>
+							<Button asChild variant="secondary" className="mt-3 md:mt-6 w-full sm:w-fit">
 								<a
 									href={item.href}
 									target={item.external ? "_blank" : undefined}

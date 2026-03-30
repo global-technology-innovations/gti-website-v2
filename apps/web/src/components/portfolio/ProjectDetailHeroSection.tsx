@@ -53,7 +53,7 @@ export function ProjectDetailHeroSection({
 					<h1 className="h3 text-center text-primary uppercase md:text-left">{title}</h1>
 					<p className="mt-6 max-w-4xl text-center lg:text-left text-primary-foreground">{description}</p>
 
-					<div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+					<div className="mt-6 lg:mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3">
 						<Badge variant="secondaryDark">{statusLabel}</Badge>
 						{projectPeriod ? <Badge variant="white">{projectPeriod}</Badge> : null}
 						{location ? <Badge variant="white">{location}</Badge> : null}
