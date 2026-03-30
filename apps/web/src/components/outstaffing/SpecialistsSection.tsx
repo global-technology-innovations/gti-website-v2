@@ -34,7 +34,7 @@ export function SpecialistsSection() {
 	return (
 		<section className="pb-10 md:pb-16 lg:pb-24">
 			<div className="container mx-auto px-4">
-				<div className="mx-auto max-w-[880px] text-center">
+				<div className="mx-auto max-w-[880px] text-center animate-slide-bottom">
 					<h2 className="text-primary uppercase !text-[32px] !leading-[1.04] md:!text-[42px] lg:!text-[56px]">{t("title")}</h2>
 					<p className="mt-4 text-primary-foreground">{t("subtitle")}</p>
 				</div>
@@ -44,7 +44,7 @@ export function SpecialistsSection() {
 						<div
 							key={specialist.key}
 							className={cn(
-								"flex min-h-[74px] items-center gap-4 rounded-[24px] px-5 py-4 transition-transform duration-300 hover:-translate-y-0.5",
+								"flex min-h-[74px] items-center gap-4 rounded-[24px] px-5 py-4 transition-transform duration-300 hover:-translate-y-0.5 animate-slide-bottom",
 								specialistItemClasses[specialist.variant],
 								specialist.orderClassName
 							)}

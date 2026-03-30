@@ -1,4 +1,12 @@
-import { AnalyticsGate, CookieBanner, CookieConsentProvider, Footer, Header, ReactQueryProvider } from "@/components";
+import {
+	AnalyticsGate,
+	CookieBanner,
+	CookieConsentProvider,
+	Footer,
+	Header,
+	ReactQueryProvider,
+	ScrollAnimationProvider,
+} from "@/components";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -39,6 +47,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
 				<CookieConsentProvider>
 					<ReactQueryProvider>
 						<NextIntlClientProvider>
+							<ScrollAnimationProvider />
 							<Header />
 							<main className="flex-1"> {children}</main>
 							<Footer />

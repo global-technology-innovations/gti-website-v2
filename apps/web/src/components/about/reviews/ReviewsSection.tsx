@@ -20,7 +20,7 @@ export function ReviewsSection() {
 	}));
 
 	return (
-		<section className="container mx-auto overflow-hidden relative mx-4 rounded-3xl py-10 lg:pt-22 px-4">
+		<section className="container mx-auto overflow-hidden relative mx-4 rounded-3xl py-10 lg:pt-22 px-4 animate-slide-bottom">
 			<div className="flex items-center justify-between lg:mb-12 mb-6">
 				<h2 className="h3 !font-bold text-primary text-center lg:text-left uppercase">
 					{t("headingStart")} <span className="text-secondary">{t("headingHighlight")}</span>

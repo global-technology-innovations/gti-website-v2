@@ -8,10 +8,7 @@ interface SuccessMessageProps {
 	translationKey?: string;
 }
 
-export function SuccessMessage({
-	className = "",
-	translationKey = "ContactForm",
-}: SuccessMessageProps) {
+export function SuccessMessage({ className = "", translationKey = "ContactForm" }: SuccessMessageProps) {
 	const t = useTranslations(translationKey);
 
 	return (

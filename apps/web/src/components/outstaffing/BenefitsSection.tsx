@@ -18,14 +18,14 @@ export function BenefitsSection() {
 		<section className="pb-10 md:pb-16 lg:pb-24">
 			<div className="mx-4 rounded-[32px] bg-background py-10 md:py-20">
 				<div className="container mx-auto px-4">
-					<div className="mx-auto max-w-[760px] text-center">
+					<div className="mx-auto max-w-[760px] text-center animate-slide-bottom">
 						<h2 className="text-primary uppercase h3 !font-bold">{t("title")}</h2>
 						<p className="mt-4 text-primary-foreground">{t("subtitle")}</p>
 					</div>
 
 					<div className="mt-6 md:mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
 						{benefits.map((benefit) => (
-							<Card key={benefit.key} variant="outline">
+							<Card key={benefit.key} variant="outline" className="animate-slide-bottom">
 								<div className="flex size-14 items-center justify-center rounded-full bg-secondary/10">
 									<Image src={benefit.icon} alt="" width={28} height={28} className="size-7" aria-hidden="true" />
 								</div>

@@ -27,8 +27,8 @@ export function ProjectDetailHeroSection({
 }: ProjectDetailHeroSectionProps) {
 	return (
 		<section className="relative mx-4 overflow-hidden rounded-b-3xl bg-background">
-			<div className="absolute inset-0 bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat blur-xs lg:blur-none" />
-			<div className="container relative mx-auto flex flex-col py-10 lg:py-16 px-4">
+			<div className="absolute inset-0 bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat blur-xs lg:blur-none animate-slide-right" />
+			<div className="container relative mx-auto flex flex-col py-10 lg:py-16 px-4 animate-slide-left">
 				<Breadcrumb>
 					<BreadcrumbList className="text-[14px] font-medium text-primary-foreground/60">
 						<BreadcrumbItem>

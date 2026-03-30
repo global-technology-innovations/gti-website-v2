@@ -36,7 +36,7 @@ export function BlogRelatedSection({ currentArticleSlug, currentCategoryId }: Pr
 
 	return (
 		<section className="px-4 pt-10 lg:pt-16">
-			<div className="container mx-auto overflow-hidden">
+			<div className="container mx-auto overflow-hidden animate-slide-bottom">
 				<div className="lg:mb-10 mb-6 flex items-center justify-between gap-4">
 					<h2 className="h3 !font-bold text-primary uppercase">
 						{t("relatedTitle")} <span className="text-secondary">{t("relatedHighlight")}</span>

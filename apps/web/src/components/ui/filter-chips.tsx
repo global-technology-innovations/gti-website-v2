@@ -17,7 +17,7 @@ interface Props {
 
 export function FilterChips({ options, className }: Props) {
 	return (
-		<div className={cn("lg:mb-8 mb-6 flex flex-wrap items-center justify-center lg:gap-3 gap-2", className)}>
+		<div className={cn("lg:mb-8 mb-6 flex flex-wrap items-center justify-center lg:gap-3 gap-2 animate-slide-bottom", className)}>
 			{options.map((option) => (
 				<Button
 					key={option.id}

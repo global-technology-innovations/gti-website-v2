@@ -26,7 +26,7 @@ export function JobsList() {
 
 	if (isLoading) {
 		return (
-			<section className="container mx-auto px-4 pt-10 lg:pt-16 pb-6">
+			<section className="container mx-auto px-4 pt-10 lg:pt-16 pb-6 animate-slide-bottom">
 				<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 					{Array.from({ length: JOBS_PER_PAGE }).map((_, i) => (
 						<JobCardSkeleton key={i} />
@@ -39,7 +39,7 @@ export function JobsList() {
 
 	if (error) {
 		return (
-			<section className="container mx-auto px-4 py-16">
+			<section className="container mx-auto px-4 py-16 animate-slide-bottom">
 				<div className="rounded-3xl border border-dashed border-destructive/30 bg-destructive/5 px-6 py-12 text-center text-red-600">
 					<h2 className="text-xl font-semibold">{t("errorTitle")}</h2>
 					<p className="mt-2">{t("errorLoadingJobs")}</p>
@@ -50,7 +50,7 @@ export function JobsList() {
 
 	if (data.length === 0) {
 		return (
-			<section className="container mx-auto px-4 pt-10 lg:pt-16">
+			<section className="container mx-auto px-4 pt-10 lg:pt-16 animate-slide-bottom">
 				<div className="flex min-h-[240px] items-center justify-center rounded-3xl border border-dashed border-border text-center text-primary-foreground">
 					<div>
 						<h2 className="text-xl font-semibold text-primary">{t("noJobs")}</h2>

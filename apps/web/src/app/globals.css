@@ -66,6 +66,120 @@ a {
 	color: rgba(74, 85, 101, 0.7);
 }
 
+/* Scroll reveal animations */
+@keyframes slideInLeftMobile {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInRightMobile {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInBottom {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInUp {
+	from {
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.animate-slide-left,
+.animate-slide-up,
+.animate-slide-bottom,
+.animate-slide-right {
+	opacity: 0;
+	will-change: opacity, transform;
+}
+
+.animate-slide-left.animate-in-view {
+	animation: slideInLeftMobile 0.6s ease-out forwards;
+}
+
+@media (min-width: 768px) {
+	.animate-slide-left.animate-in-view {
+		animation: slideInLeft 0.6s ease-out forwards;
+	}
+}
+
+.animate-slide-up.animate-in-view {
+	animation: slideInUp 0.6s ease-out 0.2s forwards;
+}
+
+.animate-slide-bottom.animate-in-view {
+	animation: slideInBottom 0.6s ease-out 0.2s forwards;
+}
+
+.animate-slide-right.animate-in-view {
+	animation: slideInRightMobile 0.6s ease-out 0.4s forwards;
+}
+
+@media (min-width: 768px) {
+	.animate-slide-right.animate-in-view {
+		animation: slideInRight 0.6s ease-out 0.4s forwards;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.animate-slide-left,
+	.animate-slide-up,
+	.animate-slide-bottom,
+	.animate-slide-right {
+		opacity: 1;
+		transform: none;
+		animation: none !important;
+	}
+}
+
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;

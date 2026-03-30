@@ -11,11 +11,11 @@ export function OutstaffingExperienceSection() {
 	return (
 		<section className="py-10 md:py-16 lg:py-24">
 			<div className="container mx-auto flex flex-col-reverse lg:flex-row justify-between items-center gap-10 px-4">
-				<div className="overflow-hidden rounded-[32px]">
+				<div className="overflow-hidden rounded-[32px] animate-slide-left">
 					<Image src="/outstaffing-worker.png" alt={t("imageAlt")} width={528} height={468} className="h-full object-cover" />
 				</div>
 
-				<div className="lg:w-2/3 xl:w-1/2">
+				<div className="lg:w-2/3 xl:w-1/2 animate-slide-right">
 					<h2 className="text-primary text-center md:text-left uppercase h3 !font-bold">
 						{t.rich("title", {
 							highlight: (chunks) => <span className="text-secondary">{chunks}</span>,
@@ -32,7 +32,7 @@ export function OutstaffingExperienceSection() {
 					</Button>
 				</div>
 			</div>
-			<div className="mt-10 flex justify-center lg:hidden">
+			<div className="mt-10 flex justify-center lg:hidden animate-slide-bottom">
 				<Button asChild>
 					<a href="#outstaffing-cta">
 						{t("button")}

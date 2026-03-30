@@ -87,7 +87,7 @@ export function ContactSection({
 		<section className={cn("relative mx-4 rounded-3xl bg-background py-10 lg:py-22 px-4", sectionClassName)}>
 			<div
 				className={cn(
-					"container relative mx-auto flex flex-col lg:flex-row items-start justify-between gap-6 md:gap-12",
+					"container relative mx-auto flex flex-col lg:flex-row items-start justify-between gap-6 md:gap-12 animate-slide-left",
 					containerClassName
 				)}
 			>
@@ -136,7 +136,7 @@ export function ContactSection({
 						))}
 					</div>
 				</div>
-				<div className={cn("w-full lg:max-w-[650px]", formWrapperClassName)}>
+				<div className={cn("w-full lg:max-w-[650px] animate-slide-right", formWrapperClassName)}>
 					{isSubmitted ? (
 						<SuccessMessage className="rounded-lg bg-white p-6" />
 					) : (

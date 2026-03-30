@@ -40,7 +40,7 @@ export function PortfolioCTASection({ locale }: PortfolioCTASectionProps) {
 
 	return (
 		<section className="container mx-auto py-10 lg:py-30 px-4">
-			<div className="">
+			<div className="animate-slide-bottom">
 				<h2 className="h3 text-center uppercase text-primary">
 					{t("heading")} <span className="text-secondary">{t("headingHighlight")}</span>
 				</h2>
@@ -49,7 +49,7 @@ export function PortfolioCTASection({ locale }: PortfolioCTASectionProps) {
 
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:mt-12 mt-6">
 				{contactMethods.map((method, index) => (
-					<Card key={index} variant="default" className="items-center text-center">
+					<Card key={index} variant="default" className="items-center text-center animate-slide-bottom">
 						<CardContent>
 							<div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto">
 								<Image src={method.icon} alt="" width={26} height={26} aria-hidden />

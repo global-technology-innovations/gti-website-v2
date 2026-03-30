@@ -3,10 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
-export default function renderRichText(
-	nodes: RichTextNode[],
-	className?: Partial<Record<RichTextElementType, string>>
-) {
+export default function renderRichText(nodes: RichTextNode[], className?: Partial<Record<RichTextElementType, string>>) {
 	return nodes.map((node, index) => renderNode(node, index, className));
 }
 
@@ -25,13 +22,7 @@ function renderNode(
 		if (node.strikethrough) content = <s>{content}</s>;
 		if (node.code)
 			content = (
-				<code
-					key={key}
-					className={cn(
-						"bg-gray-100 px-1 py-0.5 rounded text-sm font-mono",
-						className?.code
-					)}
-				>
+				<code key={key} className={cn("bg-gray-100 px-1 py-0.5 rounded text-sm font-mono", className?.code)}>
 					{content}
 				</code>
 			);
@@ -39,9 +30,7 @@ function renderNode(
 		return <React.Fragment key={key}>{content}</React.Fragment>;
 	}
 
-	const children = hasChildren(node)
-		? node.children.map((child, i) => renderNode(child, i, className))
-		: null;
+	const children = hasChildren(node) ? node.children.map((child, i) => renderNode(child, i, className)) : null;
 
 	// Handle block-level elements
 	switch (node.type) {
@@ -54,17 +43,11 @@ function renderNode(
 
 		case "list":
 			return node.format === "ordered" ? (
-				<ol
-					key={key}
-					className={cn("list-decimal list-inside", className?.ol)}
-				>
+				<ol key={key} className={cn("list-decimal list-inside", className?.ol)}>
 					{children}
 				</ol>
 			) : (
-				<ul
-					key={key}
-					className={cn("list-disc list-inside", className?.ul)}
-				>
+				<ul key={key} className={cn("list-disc list-inside", className?.ul)}>
 					{children}
 				</ul>
 			);
@@ -87,13 +70,7 @@ function renderNode(
 		case "quote":
 		case "blockquote":
 			return (
-				<blockquote
-					key={key}
-					className={cn(
-						"border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4",
-						className?.blockquote
-					)}
-				>
+				<blockquote key={key} className={cn("border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4", className?.blockquote)}>
 					{children}
 				</blockquote>
 			);
@@ -113,9 +90,7 @@ function renderNode(
 
 		case "image":
 			const imageNode = node as RichTextImageNode;
-			const imageSrc = resolveMediaUrl(
-				imageNode.image?.formats?.medium?.url || imageNode.image?.url
-			);
+			const imageSrc = resolveMediaUrl(imageNode.image?.formats?.medium?.url || imageNode.image?.url);
 
 			if (!imageSrc) {
 				return null;
@@ -128,16 +103,11 @@ function renderNode(
 						alt={imageNode.image?.alternativeText || "Image"}
 						width={imageNode.image?.width || 800}
 						height={imageNode.image?.height || 600}
-						className={cn(
-							"h-auto w-full object-cover",
-							className?.image
-						)}
+						className={cn("h-auto w-full object-cover", className?.image)}
 						unoptimized
 					/>
 					{imageNode.image?.caption && (
-						<p className="mt-3 text-center text-sm text-primary-foreground/70">
-							{imageNode.image.caption}
-						</p>
+						<p className="mt-3 text-center text-sm text-primary-foreground/70">{imageNode.image.caption}</p>
 					)}
 				</div>
 			);
@@ -180,12 +150,7 @@ function renderHeading(
 }
 
 function hasChildren(node: unknown): node is RichTextBaseNode {
-	return (
-		typeof node === "object" &&
-		node !== null &&
-		"children" in node &&
-		Array.isArray((node as { children?: unknown }).children)
-	);
+	return typeof node === "object" && node !== null && "children" in node && Array.isArray((node as { children?: unknown }).children);
 }
 
 function resolveMediaUrl(url?: string) {
@@ -193,9 +158,7 @@ function resolveMediaUrl(url?: string) {
 		return "";
 	}
 
-	return url.startsWith("http")
-		? url
-		: `${STRAPI_API_URL.replace("/api", "")}${url}`;
+	return url.startsWith("http") ? url : `${STRAPI_API_URL.replace("/api", "")}${url}`;
 }
 
 function getHeadingLevel(node: RichTextHeadingNode): HeadingLevel {
@@ -215,12 +178,7 @@ function getHeadingLevel(node: RichTextHeadingNode): HeadingLevel {
 }
 
 function isHeadingLevel(value: unknown): value is HeadingLevel {
-	return (
-		typeof value === "number" &&
-		Number.isInteger(value) &&
-		value >= 1 &&
-		value <= 6
-	);
+	return typeof value === "number" && Number.isInteger(value) && value >= 1 && value <= 6;
 }
 
 interface RichTextChild {
@@ -271,12 +229,7 @@ interface RichTextHeadingBaseNode extends RichTextBaseNode {
 type RichTextHeadingNode =
 	| (RichTextHeadingBaseNode & { type: "heading" })
 	| (RichTextBaseNode & {
-			type:
-				| "heading2"
-				| "heading3"
-				| "heading4"
-				| "heading5"
-				| "heading6";
+			type: "heading2" | "heading3" | "heading4" | "heading5" | "heading6";
 	  });
 
 type RichTextNode = RichTextBaseNode | RichTextImageNode | RichTextHeadingNode;

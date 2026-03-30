@@ -45,7 +45,7 @@ export function ServicesSection() {
 
 	return (
 		<section className="relative mx-4 bg-background rounded-3xl py-10 lg:py-22 px-4">
-			<div className="container flex flex-col md:flex-row justify-between items-center relative mx-auto gap-x-6">
+			<div className="container flex flex-col md:flex-row justify-between items-center relative mx-auto gap-x-6 animate-slide-bottom">
 				<div>
 					<h2 className="h3 !font-bold text-primary uppercase text-center md:text-left">
 						{t("headingStart")} <span className="text-secondary">{t("headingHighlight")}</span>
@@ -62,7 +62,7 @@ export function ServicesSection() {
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 container mx-auto pt-12">
 				{HERO_SERVICES.map((service, index) => (
-					<Card key={index} variant="outline" className="flex flex-col items-center md:items-start">
+					<Card key={index} variant="outline" className="flex flex-col items-center md:items-start animate-slide-bottom">
 						<div className="w-12 h-12 rounded-full bg-background flex items-center justify-center mb-4">
 							<Image src={service.icon} alt="" width={24} height={24} className="text-primary" aria-hidden />
 						</div>

@@ -18,7 +18,7 @@ export function OutstaffingWorkflowSection() {
 		<section className="py-10 md:py-16 lg:py-24">
 			<div className="container mx-auto px-4">
 				<div className="mx-auto">
-					<h2 className="mx-auto text-center text-primary uppercase h3 !font-bold">
+					<h2 className="mx-auto text-center text-primary uppercase h3 !font-bold animate-slide-bottom">
 						{t.rich("title", {
 							highlight: (chunks) => <span className="text-secondary">{chunks}</span>,
 						})}
@@ -30,7 +30,7 @@ export function OutstaffingWorkflowSection() {
 								<div
 									key={step.key}
 									className={cn(
-										"flex justify-start items-start gap-4 border-border/60 py-5.5 md:gap-6",
+										"flex justify-start items-start gap-4 border-border/60 py-5.5 md:gap-6 animate-slide-left",
 										index !== steps.length - 1 && "border-b"
 									)}
 								>
@@ -43,7 +43,7 @@ export function OutstaffingWorkflowSection() {
 							))}
 						</div>
 
-						<div className="hidden lg:inline-flex flex items-center justify-center">
+						<div className="hidden lg:inline-flex flex items-center justify-center animate-slide-right">
 							<Image
 								src="/outstaffing-worker-plan.png"
 								alt={t("imageAlt")}

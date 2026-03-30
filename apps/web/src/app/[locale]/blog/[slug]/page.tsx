@@ -52,7 +52,7 @@ export default function BlogArticlePage() {
 		: "";
 	if (isLoading) {
 		return (
-			<div className="mt-[75px] flex min-h-screen items-center justify-center">
+			<div className="mt-[75px] flex min-h-screen items-center justify-center animate-slide-bottom">
 				<Loader2 className="h-12 w-12 animate-spin text-primary" />
 			</div>
 		);
@@ -60,7 +60,7 @@ export default function BlogArticlePage() {
 
 	if (error || !article) {
 		return (
-			<div className="mt-[75px] flex min-h-screen items-center justify-center px-6">
+			<div className="mt-[75px] flex min-h-screen items-center justify-center px-6 animate-slide-bottom">
 				<div className="max-w-md text-center">
 					<AlertCircle className="mx-auto mb-4 h-16 w-16 text-destructive" />
 					<h1 className="mb-2 text-3xl font-bold">{t("errorTitle")}</h1>
@@ -78,8 +78,9 @@ export default function BlogArticlePage() {
 
 	return (
 		<>
-			<section className="relative mx-4 bg-background bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] rounded-b-3xl">
-				<div className="container py-10 lg:py-22 flex flex-col relative mx-auto">
+			<section className="relative mx-4 bg-background rounded-b-3xl">
+				<div className="absolute inset-0 bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] blur-xs lg:blur-none animate-slide-right" />
+				<div className="container relative mx-auto flex flex-col py-10 lg:py-16 px-4 animate-slide-left">
 					<Breadcrumb>
 						<BreadcrumbList>
 							<BreadcrumbItem>
@@ -96,10 +97,10 @@ export default function BlogArticlePage() {
 
 					<div className="mt-8 flex flex-col items-start">
 						<h1 className="h3 text-center text-primary uppercase md:text-left">{article.title}</h1>
-						<p className="mt-6 max-w-2xl text-left text-primary">{article.excerpt}</p>
+						<p className="mt-6 max-w-2xl text-center lg:text-left text-primary">{article.excerpt}</p>
 					</div>
-					<div className="mt-6 flex justify-between items-center">
-						<div className="flex items-center gap-2">
+					<div className="mt-6 flex flex-col sm:flex-row gap-6 justify-between items-center">
+						<div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-2">
 							<Badge variant="secondaryDark">{article.category?.name}</Badge>
 							<Badge variant="white">{publishedAt}</Badge>
 						</div>
@@ -125,7 +126,7 @@ export default function BlogArticlePage() {
 			</section>
 
 			{article.content.length > 0 ? (
-				<section className="px-4 py-10 lg:py-16">
+				<section className="px-4 py-10 lg:py-16 animate-slide-bottom">
 					<div className="container mx-auto">
 						<div className="mx-auto max-w-[1100px] space-y-6">{renderRichText(article.content, DETAIL_CONTENT_CLASSNAMES)}</div>
 					</div>

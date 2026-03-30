@@ -46,7 +46,7 @@ export default function BlogPage() {
 	return (
 		<>
 			<div className="container mx-auto px-4 pb-16 pt-20">
-				<div className="mb-10">
+				<div className="mb-10 animate-slide-bottom">
 					<h2 className="text-center uppercase text-primary">
 						{t("title")} <span className="text-secondary">{t("highlight")}</span>
 					</h2>

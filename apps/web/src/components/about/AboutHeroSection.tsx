@@ -7,7 +7,7 @@ export function AboutHeroSection() {
 
 	return (
 		<section className="relative mx-4 bg-background rounded-b-3xl overflow-hidden min-h-[400px] px-4">
-			<div className="absolute top-0 left-0 w-[45%] max-w-[480px] h-full z-0 pointer-events-none">
+			<div className="absolute top-0 left-0 w-[45%] max-w-[480px] h-full z-0 pointer-events-none animate-slide-left">
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img
 					src="/about-bg-left.svg"
@@ -16,7 +16,7 @@ export function AboutHeroSection() {
 					aria-hidden
 				/>
 			</div>
-			<div className="absolute top-0 right-0 w-[45%] max-w-[480px] h-full z-0 pointer-events-none">
+			<div className="absolute top-0 right-0 w-[45%] max-w-[480px] h-full z-0 pointer-events-none animate-slide-right">
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img
 					src="/about-bg-right.svg"
@@ -25,7 +25,7 @@ export function AboutHeroSection() {
 					aria-hidden
 				/>
 			</div>
-			<div className="container relative z-10 py-10 lg:py-22 flex justify-between items-center mx-auto">
+			<div className="container relative z-10 py-10 lg:py-22 flex justify-between items-center mx-auto animate-slide-bottom">
 				<div className="flex flex-col items-center justify-center w-full">
 					<h2 className="text-primary text-center uppercase">
 						{t("headingStart")} <span className="text-secondary">{t("headingHighlight")}</span> <br />

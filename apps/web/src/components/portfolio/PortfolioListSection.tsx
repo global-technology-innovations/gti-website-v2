@@ -78,7 +78,7 @@ export function PortfolioListSection() {
 
 	if (error) {
 		return (
-			<section className="container mx-auto px-4 py-16">
+			<section className="container mx-auto px-4 py-16 animate-slide-bottom">
 				<div className="flex min-h-[320px] flex-col items-center justify-center text-center">
 					<AlertCircle className="mb-4 h-16 w-16 text-destructive" />
 					<h2 className="mb-2 text-2xl font-bold text-primary">{t("ProjectsList.error.title")}</h2>

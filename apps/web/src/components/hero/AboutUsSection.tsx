@@ -25,32 +25,32 @@ export function AboutUsSection() {
 			/>
 			<div className="container relative z-10 gap-6 mx-auto flex flex-col-reverse md:flex-row justify-between items-start">
 				<div className="grid grid-cols-2 gap-4 mt-4 md:mt-0 w-full md:w-fit">
-					<div className="p-7 bg-background rounded-3xl md:max-w-[250px]">
+					<div className="p-7 bg-background rounded-3xl md:max-w-[250px] animate-slide-left">
 						<h2 className="lg:!text-[48px] text-primary font-bold text-center md:text-left">{stats[0].value}</h2>
 						<p className="text-primary-foreground text-center md:text-left">{stats[0].label}</p>
 					</div>
-					<div className="p-7 bg-primary rounded-3xl md:max-w-[250px]">
+					<div className="p-7 bg-primary rounded-3xl md:max-w-[250px] animate-slide-left">
 						<h2 className="lg:!text-[48px] text-white font-bold text-center md:text-left">{stats[1].value}</h2>
 						<p className="text-white/70 text-center md:text-left">{stats[1].label}</p>
 					</div>
-					<div className="p-7 bg-secondary rounded-3xl md:max-w-[250px]">
+					<div className="p-7 bg-secondary rounded-3xl md:max-w-[250px] animate-slide-left">
 						<h2 className="lg:!text-[48px] text-white font-bold text-center md:text-left">{stats[2].value}</h2>
 						<p className="text-white/70 text-center md:text-left">{stats[2].label}</p>
 					</div>
 					<div className="hidden md:block"></div>
 					<div className="hidden md:block"></div>
-					<div className="p-7 bg-background rounded-3xl md:max-w-[250px]">
+					<div className="p-7 bg-background rounded-3xl md:max-w-[250px] animate-slide-left">
 						<h2 className="lg:!text-[48px] text-primary font-bold text-center md:text-left">{stats[3].value}</h2>
 						<p className="text-primary-foreground text-center md:text-left">{stats[3].label}</p>
 					</div>
-					<Button asChild className="mt-6 mx-auto col-span-2 md:hidden">
+					<Button asChild className="mt-6 mx-auto col-span-2 md:hidden animate-slide-bottom">
 						<Link href="/about">
 							{t("button")}
 							<ArrowRight className="size-4 shrink-0" />
 						</Link>
 					</Button>
 				</div>
-				<div className="w-full md:w-1/2">
+				<div className="w-full md:w-1/2 animate-slide-right">
 					<h2 className="h3 !font-bold text-primary uppercase text-center md:text-left">
 						{t("heading")} <span className="text-secondary">{t("highlight")}</span> {t("headingSuffix")}
 					</h2>

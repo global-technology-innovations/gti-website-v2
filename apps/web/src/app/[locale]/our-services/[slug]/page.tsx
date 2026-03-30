@@ -48,8 +48,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 	return (
 		<>
 			<section className="relative mx-4 bg-background rounded-b-3xl">
-				<div className="absolute inset-0 bg-[url('/service-item-bg.svg')]  bg-right bg-no-repeat bg-[length:auto_100%] blur-xs lg:blur-none" />
-				<div className="container py-10 lg:py-22 px-4 flex flex-col relative mx-auto">
+				<div className="absolute inset-0 bg-[url('/service-item-bg.svg')]  bg-right bg-no-repeat bg-[length:auto_100%] blur-xs lg:blur-none animate-slide-right" />
+				<div className="container py-10 lg:py-22 px-4 flex flex-col relative mx-auto animate-slide-left">
 					<ServiceBreadcrumb title={service.title} homeLabel={tNav("home")} servicesLabel={tNav("services")} />
 					<div className="mt-8 flex flex-col items-center lg:items-start">
 						<h1 className="h3 text-center text-primary uppercase md:text-left">{service.title}</h1>
@@ -64,7 +64,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 			</section>
 
 			{service.description.length > 0 ? (
-				<section className="px-4 py-10 lg:py-16">
+				<section className="px-4 py-10 lg:py-16 animate-slide-bottom">
 					<div className="container mx-auto">
 						<div className="mx-auto max-w-[1100px] space-y-6">
 							{renderRichText(service.description, DETAIL_CONTENT_CLASSNAMES)}

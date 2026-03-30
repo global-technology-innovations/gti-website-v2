@@ -15,9 +15,9 @@ const GALLERY_NEXT_BUTTON_CLASS = "project-gallery-swiper-button-next";
 
 export function ProjectDetailGallerySection({ images, title, heading, headingHighlight }: ProjectDetailGallerySectionProps) {
 	return (
-		<section className="px-4 pb-6 lg:pb-6">
+		<section className="px-4 pb-6 lg:pb-6 animate-slide-bottom">
 			<div className="container mx-auto overflow-hidden">
-				<div className="lg:mb-10 mb-6 flex items-center justify-between gap-4">
+				<div className="lg:mb-10 mb-6 flex items-center justify-between gap-4 ">
 					<h2 className="h3 !font-bold uppercase text-primary">
 						{heading} <span className="text-secondary">{headingHighlight}</span>
 					</h2>

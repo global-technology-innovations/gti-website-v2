@@ -27,7 +27,7 @@ export function SharedPagination({ currentPage, totalPages, onChange, previousLa
 	const visiblePages = getVisiblePages(currentPage, totalPages);
 
 	return (
-		<Pagination className={cn("mt-10", className)}>
+		<Pagination className={cn("mt-10 animate-slide-bottom", className)}>
 			<div className="flex w-full items-center justify-between gap-4">
 				<a
 					href="#"

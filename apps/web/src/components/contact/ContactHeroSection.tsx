@@ -36,7 +36,7 @@ export function ContactHeroSection() {
 	return (
 		<section className="py-10 md:py-20">
 			<div className="container mx-auto px-4">
-				<div className="mx-auto max-w-[1080px] text-center">
+				<div className="mx-auto max-w-[1080px] text-center animate-slide-bottom">
 					<h1 className="text-primary uppercase h2">
 						{t.rich("Hero.title", {
 							highlight: (chunks) => <span className="text-secondary">{chunks}</span>,
@@ -47,7 +47,11 @@ export function ContactHeroSection() {
 
 				<div className="mt-6 lg:mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
 					{quickContactLinks.map((item) => (
-						<Card key={item.key} variant="outline" className="flex flex-col items-center justify-between p-6 md:p-8">
+						<Card
+							key={item.key}
+							variant="outline"
+							className="flex flex-col items-center justify-between p-6 md:p-8 animate-slide-bottom"
+						>
 							<Image src={item.iconSrc} alt="" width={30} height={30} className="size-[30px]" aria-hidden />
 							<h3 className="mt-3 md:mt-6 card-title text-primary">{t(`QuickContacts.items.${item.key}.title`)}</h3>
 							<Button asChild variant="secondary" className="mt-3 md:mt-6 w-full sm:w-fit">

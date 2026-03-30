@@ -59,7 +59,7 @@ export function ProjectCard({ project, locale }: ProjectCardProps) {
 		<Link href={`/portfolio/${slug}`}>
 			<Card
 				variant="outline"
-				className="group flex flex-col justify-between h-full overflow-hidden p-4 transition-transform duration-300 hover:-translate-y-1"
+				className="group flex flex-col justify-between h-full overflow-hidden p-4 transition-transform duration-300 hover:-translate-y-1 animate-slide-bottom"
 			>
 				<div>
 					<div className="relative aspect-[9/5] overflow-hidden rounded-3xl">

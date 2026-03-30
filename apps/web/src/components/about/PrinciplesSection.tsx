@@ -35,7 +35,7 @@ export function PrinciplesSection() {
 
 	return (
 		<section className="relative container mx-auto rounded-3xl pb-10 lg:pb-22 px-4">
-			<div className="flex flex-col items-center justify-center">
+			<div className="flex flex-col items-center justify-center animate-slide-bottom">
 				<h2 className="h3 !font-bold text-primary text-center lg:text-left uppercase">
 					{t("headingStart")} <span className="text-secondary">{t("headingHighlight")}</span>
 				</h2>
@@ -44,7 +44,7 @@ export function PrinciplesSection() {
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 lg:pt-12 pt-6">
 				{PRINCIPLES.map((principle, index) => (
-					<Card key={index} variant="default" className="items-center text-center">
+					<Card key={index} variant="default" className="items-center text-center animate-slide-bottom">
 						<div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 mx-auto">
 							<Image src={principle.icon} alt="" width={24} height={24} className="text-primary" aria-hidden />
 						</div>

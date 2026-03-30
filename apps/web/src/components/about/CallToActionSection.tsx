@@ -18,7 +18,7 @@ export function CallToActionSection({
 
 	return (
 		<section id={sectionId} className="relative mx-4 overflow-hidden rounded-3xl bg-secondary py-10 lg:py-16 px-4">
-			<div className="absolute top-0 left-0 w-[45%] max-w-[480px] h-full z-0 pointer-events-none">
+			<div className="absolute top-0 left-0 w-[45%] max-w-[480px] h-full z-0 pointer-events-none animate-slide-up">
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img
 					src="/call-to-action-right-bg.svg"
@@ -27,7 +27,7 @@ export function CallToActionSection({
 					aria-hidden
 				/>
 			</div>
-			<div className="absolute top-1/3 right-0 w-[45%] max-w-[480px] h-full z-0 pointer-events-none">
+			<div className="absolute top-1/3 right-0 w-[45%] max-w-[480px] h-full z-0 pointer-events-none animate-slide-right">
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img
 					src="/call-to-action-left-bg.svg"
@@ -36,7 +36,7 @@ export function CallToActionSection({
 					aria-hidden
 				/>
 			</div>
-			<div className="container flex flex-col items-center justify-center relative z-10 mx-auto">
+			<div className="container flex flex-col items-center justify-center relative z-10 mx-auto animate-slide-bottom">
 				<h2 className="h3 text-center text-white uppercase">{title || t("title")}</h2>
 				<p className="mt-4 text-center text-white/70">
 					{description ? (

@@ -14,7 +14,7 @@ export function JobCard({ job }: { job: Job }) {
 		<ApplicationFormModal jobId={job.id} title={t("apply", { title: job.title })}>
 			<Card
 				variant="outline"
-				className="group flex h-full cursor-pointer flex-col justify-between rounded-[28px] bg-white p-6 text-left transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+				className="group flex h-full cursor-pointer flex-col justify-between rounded-[28px] bg-white p-6 text-left transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 animate-slide-left"
 			>
 				<CardHeader className="block">
 					<CardTitle className="text-[22px] leading-[1.1]">{job.title}</CardTitle>
