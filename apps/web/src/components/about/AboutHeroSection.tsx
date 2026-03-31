@@ -27,10 +27,10 @@ export function AboutHeroSection() {
 			</div>
 			<div className="container relative z-10 py-10 lg:py-22 flex justify-between items-center mx-auto animate-slide-bottom">
 				<div className="flex flex-col items-center justify-center w-full">
-					<h2 className="text-primary text-center uppercase">
+					<h1 className="text-primary text-center uppercase">
 						{t("headingStart")} <span className="text-secondary">{t("headingHighlight")}</span> <br />
 						{t("headingEnd")}
-					</h2>
+					</h1>
 					<p className="!text-primary-foreground mt-6 text-center max-w-[700px] !text-[18px]">{t("descriptionFull")}</p>
 					<div className="flex flex-wrap justify-center gap-3 mt-6 lg:mt-12">
 						{badges.map((badge) => (

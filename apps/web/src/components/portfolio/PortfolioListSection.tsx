@@ -1,26 +1,35 @@
 "use client";
 
-import { CardGridSkeleton, FilterChips, FilterChipsSkeleton, ProjectCard, SharedPagination } from "@/components";
-import { ProjectStatusFilter, useProjectsQuery } from "@/queries";
-import { AlertCircle } from "lucide-react";
+import { FilterChips, ProjectCard, SharedPagination } from "@/components";
+import type { ProjectStatusFilter } from "@/lib/services/projects";
+import { StrapiProject } from "@/types/strapi";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 
 const PROJECTS_PER_PAGE = 9;
 
-export function PortfolioListSection() {
+interface PortfolioListSectionProps {
+	projects: StrapiProject[];
+}
+
+export function PortfolioListSection({ projects }: PortfolioListSectionProps) {
 	const t = useTranslations("PortfolioPage");
 	const locale = useLocale();
 	const [activeStatus, setActiveStatus] = useState<"all" | ProjectStatusFilter>("all");
 	const [currentPage, setCurrentPage] = useState(1);
-	const selectedStatus = activeStatus === "all" ? undefined : activeStatus;
-	const { data: projects = [], isLoading, isFetching, error } = useProjectsQuery(selectedStatus);
-	const totalPages = Math.max(1, Math.ceil(projects.length / PROJECTS_PER_PAGE));
+	const filteredProjects = useMemo(() => {
+		if (activeStatus === "all") {
+			return projects;
+		}
+
+		return projects.filter((project) => project.attributes.status === activeStatus);
+	}, [activeStatus, projects]);
+	const totalPages = Math.max(1, Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE));
 
 	const paginatedProjects = useMemo(() => {
 		const start = (currentPage - 1) * PROJECTS_PER_PAGE;
-		return projects.slice(start, start + PROJECTS_PER_PAGE);
-	}, [currentPage, projects]);
+		return filteredProjects.slice(start, start + PROJECTS_PER_PAGE);
+	}, [currentPage, filteredProjects]);
 
 	useEffect(() => {
 		if (currentPage > totalPages) {
@@ -67,34 +76,11 @@ export function PortfolioListSection() {
 		},
 	];
 
-	if (isLoading) {
-		return (
-			<section className="container mx-auto px-4 py-16">
-				<FilterChipsSkeleton />
-				<CardGridSkeleton count={PROJECTS_PER_PAGE} variant="project" />
-			</section>
-		);
-	}
-
-	if (error) {
-		return (
-			<section className="container mx-auto px-4 py-16 animate-slide-bottom">
-				<div className="flex min-h-[320px] flex-col items-center justify-center text-center">
-					<AlertCircle className="mb-4 h-16 w-16 text-destructive" />
-					<h2 className="mb-2 text-2xl font-bold text-primary">{t("ProjectsList.error.title")}</h2>
-					<p className="text-primary-foreground">{t("ProjectsList.error.description")}</p>
-				</div>
-			</section>
-		);
-	}
-
 	return (
 		<div className="container mx-auto px-4 pt-6 lg:pt-16">
 			<FilterChips options={statusFilters} />
 
-			{isFetching ? (
-				<CardGridSkeleton count={PROJECTS_PER_PAGE} variant="project" />
-			) : projects.length > 0 ? (
+			{filteredProjects.length > 0 ? (
 				<>
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
 						{paginatedProjects.map((project) => (

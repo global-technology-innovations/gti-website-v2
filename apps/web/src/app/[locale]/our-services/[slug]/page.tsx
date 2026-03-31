@@ -1,4 +1,5 @@
 import {
+	BreadcrumbSchema,
 	Breadcrumb,
 	BreadcrumbItem,
 	BreadcrumbLink,
@@ -7,15 +8,33 @@ import {
 	BreadcrumbSeparator,
 	Button,
 	generateCanonicalUrl,
+	generateHreflangUrls,
 	generatePageMetadata,
 } from "@/components";
+import { routing } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { DETAIL_CONTENT_CLASSNAMES } from "@/lib/detailContentClassNames";
 import renderRichText from "@/lib/renderRichText";
 import { getServiceDetail, type ServiceDetail } from "@/lib/services/getServiceDetail";
+import { getServices } from "@/lib/services/services";
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+	const paramsByLocale = await Promise.all(
+		routing.locales.map(async (locale) => {
+			const services = await getServices(locale);
+
+			return services.map((service) => ({
+				locale,
+				slug: service.slug,
+			}));
+		})
+	);
+
+	return paramsByLocale.flat();
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
 	const { locale, slug } = await params;
@@ -29,6 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 		title: service.title,
 		description: service.shortDescription,
 		canonicalUrl: generateCanonicalUrl(locale, `/our-services/${slug}`),
+		hreflang: generateHreflangUrls(`/our-services/${slug}`),
 		locale,
 	});
 }
@@ -45,8 +65,17 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 		notFound();
 	}
 
+	const canonicalUrl = generateCanonicalUrl(locale, `/our-services/${slug}`);
+
 	return (
 		<>
+			<BreadcrumbSchema
+				items={[
+					{ name: tNav("home"), url: generateCanonicalUrl(locale, "/") },
+					{ name: tNav("services"), url: generateCanonicalUrl(locale, "/our-services") },
+					{ name: service.title, url: canonicalUrl },
+				]}
+			/>
 			<section className="relative mx-4 bg-background rounded-b-3xl">
 				<div className="absolute inset-0 bg-[url('/service-item-bg.svg')]  bg-right bg-no-repeat bg-[length:auto_100%] blur-xs lg:blur-none animate-slide-right" />
 				<div className="container py-10 lg:py-22 px-4 flex flex-col relative mx-auto animate-slide-left">

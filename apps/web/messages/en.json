@@ -37,6 +37,11 @@
 		"cookies": "Cookie Policy",
 		"rights": "© 2025 Global Technology Innovations. All rights reserved."
 	},
+	"Layout": {
+		"meta": {
+			"description": "Global Technology Innovations provides construction, renovation, fit-out, project execution, and outstaffing services for residential and commercial spaces across Slovakia and Europe."
+		}
+	},
 	"HomePage": {
 		"HeroSection": {
 			"title": "Comprehensive Turnkey Construction Solutions",
@@ -157,11 +162,7 @@
 			"headingHighlight": "spaces,",
 			"headingEnd": "people trust",
 			"descriptionFull": "Global Technology Innovations is a full-cycle construction company. Since 2009, we have delivered residential, commercial, and industrial projects with consistent quality, safety, and respect for deadlines.",
-			"badges": [
-				"Turnkey solutions",
-				"Quality control at every stage",
-				"Efficiency in every project"
-			]
+			"badges": ["Turnkey solutions", "Quality control at every stage", "Efficiency in every project"]
 		},
 		"OurValues": {
 			"description": "Our core values shape the company culture and determine the quality of our services.",
@@ -249,7 +250,12 @@
 		"allCategories": "All categories",
 		"errorTitle": "Failed to load the blog",
 		"errorDescription": "Please try refreshing the page a bit later.",
-		"noResults": "No articles yet."
+		"noResults": "No articles yet.",
+		"meta": {
+			"title": "Construction Blog and Insights",
+			"description": "Read practical construction articles, renovation insights, project delivery advice, and on-site expertise from Global Technology Innovations.",
+			"keywords": "construction blog, renovation articles, project delivery insights, building advice, GTI blog"
+		}
 	},
 	"BlogArticlePage": {
 		"relatedTitle": "You may",

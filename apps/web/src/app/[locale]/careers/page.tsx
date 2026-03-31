@@ -1,5 +1,5 @@
 import { JobsList, generateCanonicalUrl, generateHreflangUrls, generatePageMetadata } from "@/components";
-import { useTranslations } from "next-intl";
+import { getJobs } from "@/lib/services/jobs";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -16,18 +16,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 	});
 }
 
-export default function CareersPage() {
-	const t = useTranslations("CareersPage");
+export default async function CareersPage({ params }: { params: Promise<{ locale: string }> }) {
+	const { locale } = await params;
+	const [t, jobs] = await Promise.all([getTranslations({ locale, namespace: "CareersPage" }), getJobs(locale)]);
 
 	return (
 		<>
-			<div className="container mx-auto pt-10 lg:pt-20 px-4 animate-slide-bottom">
-				<h2 className="text-center uppercase text-primary">
+			<div className="container mx-auto px-4 pt-10 animate-slide-bottom lg:pt-20">
+				<h1 className="text-center uppercase text-primary">
 					{t("Hero.title")} <span className="text-secondary">{t("Hero.highlight")}</span>
-				</h2>
+				</h1>
 				<p className="mt-5 text-center text-primary-foreground">{t("Hero.description")}</p>
 			</div>
-			<JobsList />
+			<JobsList jobs={jobs} />
 		</>
 	);
 }

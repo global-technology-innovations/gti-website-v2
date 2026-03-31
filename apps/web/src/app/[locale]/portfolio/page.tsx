@@ -6,7 +6,7 @@ import {
 	generateHreflangUrls,
 	generatePageMetadata,
 } from "@/components";
-import { useLocale, useTranslations } from "next-intl";
+import { getProjects } from "@/lib/services/projects";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -23,18 +23,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 	});
 }
 
-export default function PortfolioPage() {
-	const t = useTranslations("PortfolioPage");
-	const locale = useLocale();
+export default async function PortfolioPage({ params }: { params: Promise<{ locale: string }> }) {
+	const { locale } = await params;
+	const [t, projects] = await Promise.all([getTranslations({ locale, namespace: "PortfolioPage" }), getProjects(locale)]);
+
 	return (
 		<>
-			<div className="container mx-auto pt-10 lg:pt-20 px-4 animate-slide-bottom">
-				<h2 className="text-center uppercase text-primary">
+			<div className="container mx-auto px-4 pt-10 animate-slide-bottom lg:pt-20">
+				<h1 className="text-center uppercase text-primary">
 					{t("Hero.title")} <span className="text-secondary">{t("Hero.highlight")}</span>
-				</h2>
+				</h1>
 				<p className="mt-5 text-center text-primary-foreground">{t("Hero.description")}</p>
 			</div>
-			<PortfolioListSection />
+			<PortfolioListSection projects={projects} />
 			<PortfolioCTASection locale={locale} />
 			<ContactSection />
 		</>

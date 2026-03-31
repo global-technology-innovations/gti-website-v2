@@ -4,6 +4,8 @@ export interface StrapiJob {
 		title: string;
 		location: string;
 		shortDescription: string;
+		createdAt?: string;
+		updatedAt?: string;
 	};
 }
 
@@ -67,6 +69,8 @@ export interface StrapiService {
 		description: string;
 		image: StrapiMedia;
 		icon: string;
+		createdAt?: string;
+		updatedAt?: string;
 	};
 }
 
@@ -129,6 +133,8 @@ export interface StrapiProject {
 		};
 		mainImage: StrapiMedia;
 		featured: boolean;
+		createdAt?: string;
+		updatedAt?: string;
 	};
 }
 
@@ -150,6 +156,8 @@ export interface StrapiBlogArticle {
 		image: StrapiMedia;
 		featured: boolean;
 		publishedAt?: string;
+		createdAt?: string;
+		updatedAt?: string;
 		blog_category?: {
 			data: StrapiBlogCategory | null;
 		};

@@ -1,3 +1,4 @@
+export * from "./BlogArchiveSection";
 export * from "./BlogCard";
 export * from "./BlogCategories";
 export * from "./BlogGrid";

@@ -37,6 +37,11 @@
 		"cookies": "Cookie-Richtlinie",
 		"rights": "© 2025 Global Technology Innovations. Alle Rechte vorbehalten."
 	},
+	"Layout": {
+		"meta": {
+			"description": "Global Technology Innovations bietet Bauleistungen, Renovierungen, Fit-out, Projektumsetzung und Outstaffing für Wohn- und Gewerbeprojekte in der Slowakei und in Europa."
+		}
+	},
 	"HomePage": {
 		"HeroSection": {
 			"title": "Umfassende schlüsselfertige Bau­lösungen",
@@ -157,11 +162,7 @@
 			"headingHighlight": "Räume,",
 			"headingEnd": "denen man vertraut",
 			"descriptionFull": "Global Technology Innovations ist ein Bauunternehmen mit vollständigem Leistungsspektrum. Seit 2009 realisieren wir Wohn-, Gewerbe- und Industrieprojekte und sichern dabei konstante Qualität, Sicherheit und Termintreue.",
-			"badges": [
-				"Schlüsselfertige Komplettlösungen",
-				"Qualitätskontrolle in jeder Phase",
-				"Effizienz in jedem Projekt"
-			]
+			"badges": ["Schlüsselfertige Komplettlösungen", "Qualitätskontrolle in jeder Phase", "Effizienz in jedem Projekt"]
 		},
 		"OurValues": {
 			"description": "Unsere Grundwerte prägen die Unternehmenskultur und bestimmen die Qualität unserer Dienstleistungen.",
@@ -249,7 +250,12 @@
 		"allCategories": "Alle Kategorien",
 		"errorTitle": "Der Blog konnte nicht geladen werden",
 		"errorDescription": "Bitte versuchen Sie es etwas später erneut.",
-		"noResults": "Derzeit sind noch keine Artikel vorhanden."
+		"noResults": "Derzeit sind noch keine Artikel vorhanden.",
+		"meta": {
+			"title": "Blog zu Bauwesen und Projektumsetzung",
+			"description": "Lesen Sie praxisnahe Artikel zu Bauwesen, Renovierung, Projektumsetzung und modernen Ansätzen von Global Technology Innovations.",
+			"keywords": "bau blog, renovierungsartikel, projektumsetzung, bauwissen, GTI blog"
+		}
 	},
 	"BlogArticlePage": {
 		"relatedTitle": "Das könnte Ihnen",

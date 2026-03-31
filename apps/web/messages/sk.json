@@ -37,6 +37,11 @@
 		"cookies": "Zásady cookies",
 		"rights": "© 2025 Global Technology Innovations. Všetky práva vyhradené."
 	},
+	"Layout": {
+		"meta": {
+			"description": "Global Technology Innovations poskytuje stavebné práce, rekonštrukcie, fit-out, realizáciu projektov a outstaffing pre rezidenčné aj komerčné priestory na Slovensku a v Európe."
+		}
+	},
 	"HomePage": {
 		"HeroSection": {
 			"title": "Komplexné stavebné riešenia na kľúč",
@@ -157,11 +162,7 @@
 			"headingHighlight": "priestory,",
 			"headingEnd": "ktorým ľudia dôverujú",
 			"descriptionFull": "Global Technology Innovations je stavebná spoločnosť s kompletným cyklom služieb. Od roku 2009 realizujeme rezidenčné, komerčné aj priemyselné projekty a zabezpečujeme stabilnú kvalitu, bezpečnosť a dodržiavanie termínov.",
-			"badges": [
-				"Komplexné riešenia na kľúč",
-				"Kontrola kvality v každej fáze",
-				"Efektivita v každom projekte"
-			]
+			"badges": ["Komplexné riešenia na kľúč", "Kontrola kvality v každej fáze", "Efektivita v každom projekte"]
 		},
 		"OurValues": {
 			"description": "Naše základné hodnoty formujú firemnú kultúru a určujú kvalitu našich služieb.",
@@ -249,7 +250,12 @@
 		"allCategories": "Všetky kategórie",
 		"errorTitle": "Nepodarilo sa načítať blog",
 		"errorDescription": "Skúste stránku obnoviť o chvíľu neskôr.",
-		"noResults": "Zatiaľ tu nie sú žiadne články."
+		"noResults": "Zatiaľ tu nie sú žiadne články.",
+		"meta": {
+			"title": "Blog o stavebníctve a realizácii projektov",
+			"description": "Prečítajte si praktické články o stavebníctve, rekonštrukciách, realizácii projektov a moderných prístupoch od tímu Global Technology Innovations.",
+			"keywords": "stavebný blog, články o rekonštrukciách, realizácia projektov, stavebné rady, GTI blog"
+		}
 	},
 	"BlogArticlePage": {
 		"relatedTitle": "Mohlo by sa vám",

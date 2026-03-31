@@ -1,45 +1,87 @@
-"use client";
-
 import {
+	BreadcrumbSchema,
 	ContactSection,
+	generateCanonicalUrl,
+	generateHreflangUrls,
+	generatePageMetadata,
+	ProjectSchema,
 	ProjectDetailContentSection,
-	ProjectDetailErrorState,
 	ProjectDetailGallerySection,
 	ProjectDetailHeroSection,
-	ProjectDetailLoadingState,
 } from "@/components";
 import { formatProjectPeriod, getProjectStatusKey, parseProjectDescription } from "@/components/portfolio/projectDetailUtils";
-import { useSingleProjectQuery } from "@/queries/useSingleProjectQuery";
+import { siteConfig } from "@/config/site";
+import { routing } from "@/i18n/routing";
+import { getProjectBySlug, getProjectImageUrl, getProjectSlug, getProjects } from "@/lib/services/projects";
 import { cs, de, enUS, fr, sk, uk } from "date-fns/locale";
-import { useLocale, useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { notFound, permanentRedirect } from "next/navigation";
 
 const localeMap = {
-	uk: uk,
-	sk: sk,
-	cs: cs,
+	uk,
+	sk,
+	cs,
 	en: enUS,
-	fr: fr,
-	de: de,
+	fr,
+	de,
 };
 
-export default function ProjectDetailPage() {
-	const params = useParams();
-	const slug = params.slug as string;
-	const locale = useLocale();
-	const t = useTranslations("Portfolio");
-	const tNav = useTranslations("Header.nav");
+export async function generateStaticParams() {
+	const paramsByLocale = await Promise.all(
+		routing.locales.map(async (locale) => {
+			const projects = await getProjects(locale);
 
-	const { data: project, isLoading, error } = useSingleProjectQuery(slug);
+			return projects.map((project) => ({
+				locale,
+				slug: getProjectSlug(project),
+			}));
+		})
+	);
 
-	if (isLoading) {
-		return <ProjectDetailLoadingState />;
+	return paramsByLocale.flat();
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+	const { locale, slug } = await params;
+	const project = await getProjectBySlug(slug, locale);
+
+	if (!project) {
+		return {
+			robots: {
+				index: false,
+				follow: false,
+			},
+		};
 	}
 
-	if (error || !project) {
-		return (
-			<ProjectDetailErrorState title={t("projectNotFound")} description={t("projectNotFoundDesc")} backLabel={t("backToPortfolio")} />
-		);
+	const canonicalSlug = getProjectSlug(project);
+
+	return generatePageMetadata({
+		title: project.attributes.title,
+		description: project.attributes.shortDescription,
+		canonicalUrl: generateCanonicalUrl(locale, `/portfolio/${canonicalSlug}`),
+		hreflang: generateHreflangUrls(`/portfolio/${canonicalSlug}`),
+		locale,
+		ogImage: getProjectImageUrl(project),
+	});
+}
+
+export default async function ProjectDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+	const { locale, slug } = await params;
+	const [project, t, tNav] = await Promise.all([
+		getProjectBySlug(slug, locale),
+		getTranslations({ locale, namespace: "Portfolio" }),
+		getTranslations({ locale, namespace: "Header.nav" }),
+	]);
+
+	if (!project) {
+		notFound();
+	}
+
+	const canonicalSlug = getProjectSlug(project);
+	if (slug !== canonicalSlug) {
+		const redirectPath = locale === siteConfig.defaultLocale ? `/portfolio/${canonicalSlug}` : `/${locale}/portfolio/${canonicalSlug}`;
+		permanentRedirect(redirectPath);
 	}
 
 	const dateLocale = localeMap[locale as keyof typeof localeMap] || uk;
@@ -47,9 +89,29 @@ export default function ProjectDetailPage() {
 	const statusKey = getProjectStatusKey(project.attributes.status);
 	const descriptionContent = parseProjectDescription(project.attributes.description);
 	const hasGallery = Boolean(project.attributes.images?.data?.length);
+	const canonicalUrl = generateCanonicalUrl(locale, `/portfolio/${canonicalSlug}`);
 
 	return (
 		<>
+			<ProjectSchema
+				project={{
+					name: project.attributes.title,
+					description: project.attributes.shortDescription,
+					url: canonicalUrl,
+					image: getProjectImageUrl(project),
+					startDate: project.attributes.startDate,
+					endDate: project.attributes.endDate,
+					location: project.attributes.location,
+					client: project.attributes.client,
+				}}
+			/>
+			<BreadcrumbSchema
+				items={[
+					{ name: tNav("home"), url: generateCanonicalUrl(locale, "/") },
+					{ name: tNav("portfolio"), url: generateCanonicalUrl(locale, "/portfolio") },
+					{ name: project.attributes.title, url: canonicalUrl },
+				]}
+			/>
 			<ProjectDetailHeroSection
 				title={project.attributes.title}
 				description={project.attributes.shortDescription}

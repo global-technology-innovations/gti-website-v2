@@ -30,9 +30,9 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 		<>
 			<OrganizationSchema locale={locale} type="ConstructionCompany" />
 			<div className="container mx-auto pt-10 lg:pt-20 px-4 animate-slide-bottom">
-				<h2 className="text-primary uppercase text-center">
+				<h1 className="text-primary uppercase text-center">
 					{t("Hero.headingStart")} <span className="text-secondary">{t("Hero.headingHighlight")}</span>
-				</h2>
+				</h1>
 				<p className="text-primary-foreground mt-4 text-center">{t("Hero.description")}</p>
 			</div>
 			<ServicesList />

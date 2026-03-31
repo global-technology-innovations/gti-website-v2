@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import { useTranslations } from "next-intl";
 import Script from "next/script";
 
@@ -12,15 +13,16 @@ export function OrganizationSchema({ type = "ConstructionCompany" }: Organizatio
 	const t = useTranslations("Seo.organization");
 	const tGeo = useTranslations("Seo.geo");
 	const tExpertise = useTranslations("Seo.expertise");
+	const siteUrl = siteConfig.url;
 	const organizationSchema = {
 		"@context": "https://schema.org",
 		"@type": type,
-		name: "Global Technology Innovations s. r. o.",
-		alternateName: "GTI",
+		name: siteConfig.legalName,
+		alternateName: siteConfig.shortName,
 		description: t("description"),
-		url: "https://global-technology-innovations.vercel.app",
-		logo: "https://global-technology-innovations.vercel.app/logo.png",
-		image: "https://global-technology-innovations.vercel.app/og-image.png",
+		url: siteUrl,
+		logo: `${siteUrl}/logo.png`,
+		image: `${siteUrl}/opengraph-image`,
 		foundingDate: "2009",
 		founders: [
 			{
@@ -136,6 +138,7 @@ interface ServiceSchemaProps {
 export function ServiceSchema({ serviceType }: ServiceSchemaProps) {
 	const t = useTranslations(`Seo.services.${serviceType}`);
 	const tGeo = useTranslations("Seo.geo");
+	const siteUrl = siteConfig.url;
 
 	const serviceSchema = {
 		"@context": "https://schema.org",
@@ -144,8 +147,8 @@ export function ServiceSchema({ serviceType }: ServiceSchemaProps) {
 		description: t("description"),
 		provider: {
 			"@type": "Organization",
-			name: "Global Technology Innovations s. r. o.",
-			url: "https://global-technology-innovations.vercel.app",
+			name: siteConfig.legalName,
+			url: siteUrl,
 			telephone: "+421021234567",
 			email: "info@global-technology-innovations.com",
 		},
@@ -188,14 +191,15 @@ interface ContactPageSchemaProps {
 export function ContactPageSchema({}: ContactPageSchemaProps = {}) {
 	const t = useTranslations("Seo.contactPage");
 	const tLanguages = useTranslations("LanguageSwitcher.languages");
+	const siteUrl = siteConfig.url;
 	const contactPageSchema = {
 		"@context": "https://schema.org",
 		"@type": "ContactPage",
 		mainEntity: {
 			"@type": "Organization",
-			name: "Global Technology Innovations s. r. o.",
-			url: "https://global-technology-innovations.vercel.app",
-			logo: "https://global-technology-innovations.vercel.app/logo.png",
+			name: siteConfig.legalName,
+			url: siteUrl,
+			logo: `${siteUrl}/logo.png`,
 			contactPoint: {
 				"@type": "ContactPoint",
 				telephone: "+421021234567",
@@ -238,15 +242,16 @@ export function AboutPageSchema({}: AboutPageSchemaProps = {}) {
 	const t = useTranslations("AboutPage.meta");
 	const tSeoOrganization = useTranslations("Seo.organization");
 	const tExpertise = useTranslations("Seo.expertise");
+	const siteUrl = siteConfig.url;
 
 	const aboutPageSchema = {
 		"@context": "https://schema.org",
 		"@type": "AboutPage",
 		mainEntity: {
 			"@type": "Organization",
-			"@id": "https://global-technology-innovations.vercel.app/#organization",
-			name: "Global Technology Innovations s. r. o.",
-			alternateName: "GTI",
+			"@id": `${siteUrl}/#organization`,
+			name: siteConfig.legalName,
+			alternateName: siteConfig.shortName,
 			description: t("description"),
 			foundingDate: "2009",
 			founders: [
@@ -287,6 +292,7 @@ interface JobPostingSchemaProps {
 }
 
 export function JobPostingSchema({ job }: JobPostingSchemaProps) {
+	const siteUrl = siteConfig.url;
 	const jobPostingSchema = {
 		"@context": "https://schema.org",
 		"@type": "JobPosting",
@@ -296,9 +302,9 @@ export function JobPostingSchema({ job }: JobPostingSchemaProps) {
 		employmentType: job.employmentType,
 		hiringOrganization: {
 			"@type": "Organization",
-			name: "Global Technology Innovations s. r. o.",
-			sameAs: "https://global-technology-innovations.vercel.app",
-			logo: "https://global-technology-innovations.vercel.app/logo.png",
+			name: siteConfig.legalName,
+			sameAs: siteUrl,
+			logo: `${siteUrl}/logo.png`,
 		},
 		jobLocation: {
 			"@type": "Place",
@@ -332,6 +338,7 @@ interface ProjectSchemaProps {
 	project: {
 		name: string;
 		description: string;
+		url: string;
 		image: string;
 		startDate?: string;
 		endDate?: string;
@@ -344,14 +351,14 @@ export function ProjectSchema({ project }: ProjectSchemaProps) {
 	const projectSchema = {
 		"@context": "https://schema.org",
 		"@type": "CreativeWork",
-		"@id": `https://global-technology-innovations.vercel.app/portfolio/${encodeURIComponent(project.name)}`,
+		"@id": project.url,
 		name: project.name,
 		description: project.description,
 		image: project.image,
 		creator: {
 			"@type": "Organization",
-			name: "Global Technology Innovations s. r. o.",
-			url: "https://global-technology-innovations.vercel.app",
+			name: siteConfig.legalName,
+			url: siteConfig.url,
 		},
 		...(project.startDate && { dateCreated: project.startDate }),
 		...(project.endDate && { datePublished: project.endDate }),
@@ -372,6 +379,47 @@ export function ProjectSchema({ project }: ProjectSchemaProps) {
 	return <Script id="project-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }} />;
 }
 
+interface ArticleSchemaProps {
+	article: {
+		title: string;
+		description: string;
+		url: string;
+		image?: string;
+		publishedAt?: string;
+		modifiedAt?: string;
+		category?: string;
+	};
+}
+
+export function ArticleSchema({ article }: ArticleSchemaProps) {
+	const articleSchema = {
+		"@context": "https://schema.org",
+		"@type": "Article",
+		mainEntityOfPage: article.url,
+		headline: article.title,
+		description: article.description,
+		image: article.image || `${siteConfig.url}/opengraph-image`,
+		datePublished: article.publishedAt,
+		dateModified: article.modifiedAt || article.publishedAt,
+		articleSection: article.category,
+		author: {
+			"@type": "Organization",
+			name: siteConfig.legalName,
+			url: siteConfig.url,
+		},
+		publisher: {
+			"@type": "Organization",
+			name: siteConfig.legalName,
+			logo: {
+				"@type": "ImageObject",
+				url: `${siteConfig.url}/logo.png`,
+			},
+		},
+	};
+
+	return <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />;
+}
+
 interface WebPageSchemaProps {
 	name: string;
 	description: string;
@@ -380,6 +428,7 @@ interface WebPageSchemaProps {
 }
 
 export function WebPageSchema({ name, description, url, locale = "uk" }: WebPageSchemaProps) {
+	const siteUrl = siteConfig.url;
 	const webPageSchema = {
 		"@context": "https://schema.org",
 		"@type": "WebPage",
@@ -389,14 +438,14 @@ export function WebPageSchema({ name, description, url, locale = "uk" }: WebPage
 		inLanguage: locale,
 		isPartOf: {
 			"@type": "WebSite",
-			"@id": "https://global-technology-innovations.vercel.app/#website",
-			name: "Global Technology Innovations",
-			url: "https://global-technology-innovations.vercel.app",
+			"@id": `${siteUrl}/#website`,
+			name: siteConfig.name,
+			url: siteUrl,
 		},
 		publisher: {
 			"@type": "Organization",
-			"@id": "https://global-technology-innovations.vercel.app/#organization",
-			name: "Global Technology Innovations s. r. o.",
+			"@id": `${siteUrl}/#organization`,
+			name: siteConfig.legalName,
 		},
 	};
 
@@ -412,6 +461,7 @@ const JsonLdSchema = {
 	AboutPageSchema,
 	JobPostingSchema,
 	ProjectSchema,
+	ArticleSchema,
 	WebPageSchema,
 };
 

@@ -65,7 +65,7 @@ function renderNode(
 		case "heading5":
 		case "heading6":
 		case "heading":
-			return renderHeading(node, key, children, className);
+			return renderHeading(node as RichTextHeadingNode, key, children, className);
 
 		case "quote":
 		case "blockquote":

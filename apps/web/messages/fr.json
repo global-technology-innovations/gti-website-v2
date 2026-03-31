@@ -37,6 +37,11 @@
 		"cookies": "Politique des cookies",
 		"rights": "© 2025 Global Technology Innovations. Tous droits réservés."
 	},
+	"Layout": {
+		"meta": {
+			"description": "Global Technology Innovations propose des services de construction, rénovation, fit-out, exécution de projets et outstaffing pour des espaces résidentiels et commerciaux en Slovaquie et en Europe."
+		}
+	},
 	"HomePage": {
 		"HeroSection": {
 			"title": "Solutions complètes de construction clé en main",
@@ -157,11 +162,7 @@
 			"headingHighlight": "espaces,",
 			"headingEnd": "auxquels on fait confiance",
 			"descriptionFull": "Global Technology Innovations est une entreprise de construction à cycle complet. Depuis 2009, nous réalisons des projets résidentiels, commerciaux et industriels en garantissant une qualité constante, la sécurité et le respect des délais.",
-			"badges": [
-				"Solutions clés en main",
-				"Contrôle qualité à chaque étape",
-				"Efficacité dans chaque projet"
-			]
+			"badges": ["Solutions clés en main", "Contrôle qualité à chaque étape", "Efficacité dans chaque projet"]
 		},
 		"OurValues": {
 			"description": "Nos valeurs fondamentales façonnent la culture d'entreprise et déterminent la qualité de nos services.",
@@ -249,7 +250,12 @@
 		"allCategories": "Toutes les catégories",
 		"errorTitle": "Impossible de charger le blog",
 		"errorDescription": "Veuillez réessayer dans quelques instants.",
-		"noResults": "Aucun article pour le moment."
+		"noResults": "Aucun article pour le moment.",
+		"meta": {
+			"title": "Blog sur la construction et l’exécution de projets",
+			"description": "Consultez des articles pratiques sur la construction, la rénovation, l’exécution de projets et les approches modernes de Global Technology Innovations.",
+			"keywords": "blog construction, articles rénovation, exécution de projets, conseils bâtiment, blog GTI"
+		}
 	},
 	"BlogArticlePage": {
 		"relatedTitle": "Vous pourriez",

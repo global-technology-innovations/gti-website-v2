@@ -1,9 +1,8 @@
 "use client";
 
-import { BlogArticle, useBlogArticlesQuery } from "@/queries";
+import type { BlogArticle } from "@/lib/services/blog";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useMemo } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -14,23 +13,14 @@ import { BlogCard } from "./BlogCard";
 const MAX_RELATED_ARTICLES = 6;
 
 interface Props {
-	currentArticleSlug: string;
-	currentCategoryId?: string | null;
+	articles: BlogArticle[];
 }
 
-export function BlogRelatedSection({ currentArticleSlug, currentCategoryId }: Props) {
+export function BlogRelatedSection({ articles }: Props) {
 	const t = useTranslations("BlogArticlePage");
-	const { data: articles = [], isLoading, error } = useBlogArticlesQuery();
+	const relatedArticles = articles.slice(0, MAX_RELATED_ARTICLES);
 
-	const relatedArticles = useMemo(() => {
-		const otherArticles = articles.filter((article) => article.slug !== currentArticleSlug);
-		const sameCategoryArticles = otherArticles.filter((article) => article.category?.id === currentCategoryId);
-		const fallbackArticles = otherArticles.filter((article) => article.category?.id !== currentCategoryId);
-
-		return [...sameCategoryArticles, ...fallbackArticles].slice(0, MAX_RELATED_ARTICLES);
-	}, [articles, currentArticleSlug, currentCategoryId]);
-
-	if (isLoading || error || relatedArticles.length === 0) {
+	if (relatedArticles.length === 0) {
 		return null;
 	}
 

@@ -1,26 +1,28 @@
-"use client";
-
 import {
+	ArticleSchema,
 	Badge,
 	BlogRelatedSection,
+	BreadcrumbSchema,
 	Breadcrumb,
 	BreadcrumbItem,
 	BreadcrumbLink,
 	BreadcrumbList,
 	BreadcrumbPage,
 	BreadcrumbSeparator,
-	Button,
+	generateCanonicalUrl,
+	generateHreflangUrls,
+	generatePageMetadata,
 } from "@/components";
 import { siteContact } from "@/config/site-contact";
+import { routing } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
+import { getBlogArticleBySlug, getBlogArticles, getRelatedBlogArticles } from "@/lib/services/blog";
 import { DETAIL_CONTENT_CLASSNAMES } from "@/lib/detailContentClassNames";
 import renderRichText from "@/lib/renderRichText";
-import { useSingleBlogArticleQuery } from "@/queries";
 import { format } from "date-fns";
 import { cs, de, enUS, fr, sk, uk } from "date-fns/locale";
-import { AlertCircle, ArrowLeft, Loader2 } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
 import { FaFacebook, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 const socialIcons = {
@@ -30,57 +32,98 @@ const socialIcons = {
 };
 
 const localeMap = {
-	uk: uk,
-	sk: sk,
-	cs: cs,
+	uk,
+	sk,
+	cs,
 	en: enUS,
-	fr: fr,
-	de: de,
+	fr,
+	de,
 };
-export default function BlogArticlePage() {
-	const params = useParams();
-	const locale = useLocale();
-	const t = useTranslations("BlogArticlePage");
-	const tNav = useTranslations("Header.nav");
-	const tContact = useTranslations("ContactPage.contacts");
-	const slug = params.slug as string;
-	const { data: article, isLoading, error } = useSingleBlogArticleQuery(slug);
-	const publishedAt = article?.publishedAt
+
+export async function generateStaticParams() {
+	const paramsByLocale = await Promise.all(
+		routing.locales.map(async (locale) => {
+			const articles = await getBlogArticles(locale);
+
+			return articles.map((article) => ({
+				locale,
+				slug: article.slug,
+			}));
+		})
+	);
+
+	return paramsByLocale.flat();
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+	const { locale, slug } = await params;
+	const article = await getBlogArticleBySlug(slug, locale);
+
+	if (!article) {
+		return {
+			robots: {
+				index: false,
+				follow: false,
+			},
+		};
+	}
+
+	return generatePageMetadata({
+		title: article.title,
+		description: article.excerpt,
+		canonicalUrl: generateCanonicalUrl(locale, `/blog/${article.slug}`),
+		hreflang: generateHreflangUrls(`/blog/${article.slug}`),
+		locale,
+		ogImage: article.image || "/opengraph-image",
+		openGraphType: "article",
+		publishedTime: article.publishedAt,
+		modifiedTime: article.updatedAt,
+	});
+}
+
+export default async function BlogArticlePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+	const { locale, slug } = await params;
+	const [article, allArticles, tNav, tContact] = await Promise.all([
+		getBlogArticleBySlug(slug, locale),
+		getBlogArticles(locale),
+		getTranslations({ locale, namespace: "Header.nav" }),
+		getTranslations({ locale, namespace: "ContactPage.contacts" }),
+	]);
+
+	if (!article) {
+		notFound();
+	}
+
+	const publishedAt = article.publishedAt
 		? format(new Date(article.publishedAt), "d MMMM yyyy", {
 				locale: localeMap[locale as keyof typeof localeMap] || uk,
 			})
 		: "";
-	if (isLoading) {
-		return (
-			<div className="mt-[75px] flex min-h-screen items-center justify-center animate-slide-bottom">
-				<Loader2 className="h-12 w-12 animate-spin text-primary" />
-			</div>
-		);
-	}
-
-	if (error || !article) {
-		return (
-			<div className="mt-[75px] flex min-h-screen items-center justify-center px-6 animate-slide-bottom">
-				<div className="max-w-md text-center">
-					<AlertCircle className="mx-auto mb-4 h-16 w-16 text-destructive" />
-					<h1 className="mb-2 text-3xl font-bold">{t("errorTitle")}</h1>
-					<p className="mb-6 text-muted-foreground">{t("errorDescription")}</p>
-					<Button asChild>
-						<Link href="/blog">
-							<ArrowLeft className="mr-2 h-4 w-4" />
-							{t("backToBlog")}
-						</Link>
-					</Button>
-				</div>
-			</div>
-		);
-	}
+	const relatedArticles = getRelatedBlogArticles(allArticles, article.slug, article.category?.id);
+	const canonicalUrl = generateCanonicalUrl(locale, `/blog/${article.slug}`);
 
 	return (
 		<>
-			<section className="relative mx-4 bg-background rounded-b-3xl">
+			<ArticleSchema
+				article={{
+					title: article.title,
+					description: article.excerpt,
+					url: canonicalUrl,
+					image: article.image || undefined,
+					publishedAt: article.publishedAt,
+					modifiedAt: article.updatedAt,
+					category: article.category?.name || undefined,
+				}}
+			/>
+			<BreadcrumbSchema
+				items={[
+					{ name: tNav("blog"), url: generateCanonicalUrl(locale, "/blog") },
+					{ name: article.title, url: canonicalUrl },
+				]}
+			/>
+			<section className="relative mx-4 rounded-b-3xl bg-background">
 				<div className="absolute inset-0 bg-[url('/service-item-bg.svg')] bg-right bg-no-repeat bg-[length:auto_100%] blur-xs lg:blur-none animate-slide-right" />
-				<div className="container relative mx-auto flex flex-col py-10 lg:py-16 px-4 animate-slide-left">
+				<div className="container relative mx-auto flex flex-col px-4 py-10 animate-slide-left lg:py-16">
 					<Breadcrumb>
 						<BreadcrumbList>
 							<BreadcrumbItem>
@@ -97,16 +140,17 @@ export default function BlogArticlePage() {
 
 					<div className="mt-8 flex flex-col items-start">
 						<h1 className="h3 text-center text-primary uppercase md:text-left">{article.title}</h1>
-						<p className="mt-6 max-w-2xl text-center lg:text-left text-primary">{article.excerpt}</p>
+						<p className="mt-6 max-w-2xl text-center text-primary lg:text-left">{article.excerpt}</p>
 					</div>
-					<div className="mt-6 flex flex-col sm:flex-row gap-6 justify-between items-center">
-						<div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-2">
-							<Badge variant="secondaryDark">{article.category?.name}</Badge>
-							<Badge variant="white">{publishedAt}</Badge>
+					<div className="mt-6 flex flex-col items-center justify-between gap-6 sm:flex-row">
+						<div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-2">
+							{article.category ? <Badge variant="secondaryDark">{article.category.name}</Badge> : null}
+							{publishedAt ? <Badge variant="white">{publishedAt}</Badge> : null}
 						</div>
 						<div className="flex items-center gap-3">
 							{siteContact.socials.map((social) => {
 								const Icon = socialIcons[social.key];
+
 								return (
 									<a
 										key={social.key}
@@ -114,7 +158,7 @@ export default function BlogArticlePage() {
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label={tContact(social.key)}
-										className="flex size-8 items-center justify-center rounded-full bg-secondary/50 text-white hover:scale-105 transition-all duration-300"
+										className="flex size-8 items-center justify-center rounded-full bg-secondary/50 text-white transition-all duration-300 hover:scale-105"
 									>
 										<Icon className="size-6" />
 									</a>
@@ -126,14 +170,14 @@ export default function BlogArticlePage() {
 			</section>
 
 			{article.content.length > 0 ? (
-				<section className="px-4 py-10 lg:py-16 animate-slide-bottom">
+				<section className="px-4 py-10 animate-slide-bottom lg:py-16">
 					<div className="container mx-auto">
 						<div className="mx-auto max-w-[1100px] space-y-6">{renderRichText(article.content, DETAIL_CONTENT_CLASSNAMES)}</div>
 					</div>
 				</section>
 			) : null}
 
-			<BlogRelatedSection currentArticleSlug={article.slug} currentCategoryId={article.category?.id} />
+			<BlogRelatedSection articles={relatedArticles} />
 		</>
 	);
 }

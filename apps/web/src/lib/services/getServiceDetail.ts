@@ -19,36 +19,31 @@ interface StrapiServiceDetail {
 	};
 }
 
-export const getServiceDetail = cache(
-	async (slug: string, locale: string): Promise<ServiceDetail | null> => {
-		const response = await fetch(
-			`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/services?filters[slug][$eq]=${encodeURIComponent(
-				slug
-			)}&locale=${locale}&populate=*`,
-			{
-				next: { revalidate: 60 },
-			}
-		);
-
-		if (!response.ok) {
-			throw new Error(`Failed to fetch service: ${response.status}`);
+export const getServiceDetail = cache(async (slug: string, locale: string): Promise<ServiceDetail | null> => {
+	const response = await fetch(
+		`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/services?filters[slug][$eq]=${encodeURIComponent(slug)}&locale=${locale}&populate=*`,
+		{
+			next: { revalidate: 60 },
 		}
+	);
 
-		const json =
-			(await response.json()) as StrapiResponse<StrapiServiceDetail>;
-		const service = json.data?.[0];
-
-		if (!service) {
-			return null;
-		}
-
-		return {
-			title: service.attributes.title,
-			shortDescription: service.attributes.shortDescription,
-			description: normalizeDescription(service.attributes.description),
-		};
+	if (!response.ok) {
+		throw new Error(`Failed to fetch service: ${response.status}`);
 	}
-);
+
+	const json = (await response.json()) as StrapiResponse<StrapiServiceDetail>;
+	const service = json.data?.[0];
+
+	if (!service) {
+		return null;
+	}
+
+	return {
+		title: service.attributes.title,
+		shortDescription: service.attributes.shortDescription,
+		description: normalizeDescription(service.attributes.description),
+	};
+});
 
 function normalizeDescription(value: unknown): ServiceDescription {
 	if (Array.isArray(value)) {

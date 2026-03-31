@@ -9,7 +9,6 @@
 		"dev": "node ../../scripts/with-node20.cjs next dev",
 		"dev:webpack": "node ../../scripts/with-node20.cjs next dev",
 		"build": "node ../../scripts/with-node20.cjs next build",
-		"postbuild": "node ../../scripts/with-node20.cjs next-sitemap",
 		"start": "node ../../scripts/with-node20.cjs next start",
 		"lint": "node ../../scripts/with-node20.cjs next lint"
 	},

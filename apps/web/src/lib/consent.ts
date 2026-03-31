@@ -49,10 +49,7 @@ export function readConsentFromDocument(): Consent | null {
 		const raw = decodeURIComponent(match.split("=")[1] || "");
 		const parsed = JSON.parse(raw);
 		// мінімальна валідація ключів
-		if (
-			typeof parsed === "object" &&
-			["necessary", "preferences", "analytics", "marketing"].every((k) => k in parsed)
-		) {
+		if (typeof parsed === "object" && ["necessary", "preferences", "analytics", "marketing"].every((k) => k in parsed)) {
 			return parsed as Consent;
 		}
 	} catch {}
@@ -66,17 +63,12 @@ export function writeConsentToDocument(consent: Consent) {
 }
 
 // ---- SERVER ONLY helper (використаємо пізніше в layout при потребі) ----
-export function readConsentFromHeaderCookie(
-	getCookie: (name: string) => string | undefined
-): Consent | null {
+export function readConsentFromHeaderCookie(getCookie: (name: string) => string | undefined): Consent | null {
 	try {
 		const raw = getCookie(CONSENT_COOKIE);
 		if (!raw) return null;
 		const parsed = JSON.parse(decodeURIComponent(raw));
-		if (
-			typeof parsed === "object" &&
-			["necessary", "preferences", "analytics", "marketing"].every((k) => k in parsed)
-		) {
+		if (typeof parsed === "object" && ["necessary", "preferences", "analytics", "marketing"].every((k) => k in parsed)) {
 			return parsed as Consent;
 		}
 	} catch {}
