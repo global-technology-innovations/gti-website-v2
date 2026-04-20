@@ -1,8 +1,10 @@
 "use client";
 
-import { Badge, Card } from "@/components";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
 import { STRAPI_API_URL } from "@/lib/api";
+import { getProjectSlug } from "@/lib/services/projects";
 import { StrapiProject } from "@/types/strapi";
 import { format } from "date-fns";
 import { cs, de, enUS, fr, sk, uk } from "date-fns/locale";
@@ -38,7 +40,7 @@ export function ProjectCard({ project, locale }: ProjectCardProps) {
 			? mainImageUrl
 			: `${STRAPI_API_URL.replace("/api", "")}${mainImageUrl}`
 		: "/placeholder.png";
-	const slug = project.attributes.slug || `project-${project.id}`;
+	const slug = getProjectSlug(project);
 	const dateLocale = localeMap[locale as keyof typeof localeMap] || uk;
 	const startDate = project.attributes.startDate
 		? format(new Date(project.attributes.startDate), "LLLL yyyy", {

@@ -15,8 +15,7 @@ import { routing } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { DETAIL_CONTENT_CLASSNAMES } from "@/lib/detailContentClassNames";
 import renderRichText from "@/lib/renderRichText";
-import { getServiceDetail, type ServiceDetail } from "@/lib/services/getServiceDetail";
-import { getServices } from "@/lib/services/services";
+import { getServiceBySlug, getServices, type Service } from "@/lib/services/services";
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -38,10 +37,15 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
 	const { locale, slug } = await params;
-	const service = await getServiceDetail(slug, locale);
+	const service = await getServiceBySlug(slug, locale);
 
 	if (!service) {
-		return {};
+		return {
+			robots: {
+				index: false,
+				follow: false,
+			},
+		};
 	}
 
 	return generatePageMetadata({
@@ -56,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function ServiceDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
 	const { locale, slug } = await params;
 	const [service, tNav, tServices] = await Promise.all([
-		getServiceDetail(slug, locale),
+		getServiceBySlug(slug, locale),
 		getTranslations({ locale, namespace: "Header.nav" }),
 		getTranslations({ locale, namespace: "OurServicesPage" }),
 	]);
@@ -105,15 +109,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 	);
 }
 
-function ServiceBreadcrumb({
-	title,
-	homeLabel,
-	servicesLabel,
-}: {
-	title: ServiceDetail["title"];
-	homeLabel: string;
-	servicesLabel: string;
-}) {
+function ServiceBreadcrumb({ title, homeLabel, servicesLabel }: { title: Service["title"]; homeLabel: string; servicesLabel: string }) {
 	return (
 		<Breadcrumb>
 			<BreadcrumbList className="text-[14px] font-medium text-primary-foreground/60">

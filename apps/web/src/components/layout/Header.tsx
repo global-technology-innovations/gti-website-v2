@@ -1,7 +1,8 @@
 "use client";
 
 import Logo from "@/../public/logo.png";
-import { Button, LanguageSwitcher, Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -10,6 +11,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Header = () => {
 	const t = useTranslations("Header");

@@ -1,9 +1,10 @@
 "use client";
 
-import { JobCard, SharedPagination } from "@/components";
+import { SharedPagination } from "@/components/shared/SharedPagination";
 import type { Job } from "@/lib/services/jobs";
 import { useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
+import { JobCard } from "./JobCard";
 
 const JOBS_PER_PAGE = 6;
 

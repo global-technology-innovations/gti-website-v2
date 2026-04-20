@@ -1,8 +1,8 @@
 "use client";
 
-import { MediaRenderer } from "@/components";
 import { Play } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { MediaRenderer } from "./media-renderer";
 
 interface MediaThumbnailProps {
 	src: string;

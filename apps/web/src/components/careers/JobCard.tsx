@@ -1,6 +1,6 @@
 "use client";
 
-import { Job } from "@/queries";
+import type { Job } from "@/lib/services/jobs";
 import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";

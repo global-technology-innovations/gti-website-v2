@@ -1,8 +1,9 @@
 "use client";
 
-import { CookieBanner, useConsent } from "@/components";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { CookieBanner } from "./CookieBanner";
+import { useConsent } from "./CookieConsentProvider";
 
 export function ChangeConsentButton() {
 	const { consent } = useConsent();

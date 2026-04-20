@@ -27,7 +27,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		siteConfig.locales.forEach((locale) => {
 			urls.push({
 				url: generateCanonicalUrl(locale, page),
-				lastModified: new Date(),
 				changeFrequency: page === "" ? "weekly" : page === "/blog" ? "weekly" : "monthly",
 				priority: page === "" ? 1 : page === "/blog" ? 0.9 : 0.8,
 				alternates: {

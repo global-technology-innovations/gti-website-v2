@@ -7,4 +7,3 @@ export * from "./useSendContactForm";
 export * from "./useServiceQuery";
 export * from "./useSingleBlogArticleQuery";
 export * from "./useSingleProjectQuery";
-export * from "./useSingleServiceQuery";

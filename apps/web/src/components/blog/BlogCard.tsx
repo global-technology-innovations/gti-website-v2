@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "@/i18n/navigation";
-import type { BlogArticle } from "@/queries";
+import type { BlogArticle } from "@/lib/services/blog";
 import { format } from "date-fns";
 import { cs, de, enUS, fr, sk, uk } from "date-fns/locale";
 import { useLocale } from "next-intl";

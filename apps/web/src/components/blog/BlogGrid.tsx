@@ -3,7 +3,7 @@ import { BlogCard } from "./BlogCard";
 
 export function BlogGrid({ articles }: Props) {
 	return (
-		<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+		<div className="grid animate-slide-bottom gap-6 md:grid-cols-2 xl:grid-cols-3">
 			{articles.map((article) => (
 				<BlogCard key={article.id} article={article} />
 			))}

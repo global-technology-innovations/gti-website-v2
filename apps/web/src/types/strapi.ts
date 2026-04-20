@@ -66,7 +66,7 @@ export interface StrapiService {
 		title: string;
 		slug: string;
 		shortDescription: string;
-		description: string;
+		description: unknown;
 		image: StrapiMedia;
 		icon: string;
 		createdAt?: string;

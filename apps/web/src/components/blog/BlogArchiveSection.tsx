@@ -1,9 +1,11 @@
 "use client";
 
-import { BlogGrid, FilterChips, SharedPagination } from "@/components";
+import { SharedPagination } from "@/components/shared/SharedPagination";
+import { FilterChips } from "@/components/ui/filter-chips";
 import type { BlogArticle, BlogCategory } from "@/lib/services/blog";
 import { useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
+import { BlogGrid } from "./BlogGrid";
 
 const ARTICLES_PER_PAGE = 9;
 

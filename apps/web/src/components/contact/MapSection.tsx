@@ -1,6 +1,7 @@
 "use client";
 
-import { Button, Card } from "@/components";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { MapPin, Navigation } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 

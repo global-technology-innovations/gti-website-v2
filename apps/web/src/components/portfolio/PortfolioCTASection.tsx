@@ -1,6 +1,7 @@
 "use client";
 
-import { Button, Card, CardContent } from "@/components";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { siteContact } from "@/config/site-contact";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";

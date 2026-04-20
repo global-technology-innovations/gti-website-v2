@@ -1,6 +1,8 @@
 "use client";
 
-import { Card, ContactForm, FormData, SuccessMessage } from "@/components";
+import { ContactForm, type FormData } from "@/components/forms/ContactForm";
+import { SuccessMessage } from "@/components/forms/SuccessMessage";
+import { Card } from "@/components/ui/card";
 import { useSendContactForm } from "@/queries/useSendContactForm";
 import { MessageCircle, Send } from "lucide-react";
 import { useTranslations } from "next-intl";

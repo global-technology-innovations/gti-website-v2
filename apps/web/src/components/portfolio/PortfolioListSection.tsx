@@ -1,10 +1,12 @@
 "use client";
 
-import { FilterChips, ProjectCard, SharedPagination } from "@/components";
+import { FilterChips } from "@/components/ui/filter-chips";
+import { SharedPagination } from "@/components/shared/SharedPagination";
 import type { ProjectStatusFilter } from "@/lib/services/projects";
 import { StrapiProject } from "@/types/strapi";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
+import { ProjectCard } from "./ProjectCard";
 
 const PROJECTS_PER_PAGE = 9;
 

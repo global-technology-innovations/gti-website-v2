@@ -1,17 +1,10 @@
 "use client";
 
-import {
-	Button,
-	ContactForm,
-	Dialog,
-	DialogContent,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-	FormData,
-	SuccessMessage,
-} from "@/components";
-import { useSendContactForm } from "@/queries";
+import { ContactForm, type FormData } from "@/components/forms/ContactForm";
+import { SuccessMessage } from "@/components/forms/SuccessMessage";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { useSendContactForm } from "@/queries/useSendContactForm";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 

@@ -1,7 +1,9 @@
 "use client";
 
-import { Button, ServiceCard, ServiceCardSkeleton } from "@/components";
-import { useServicesQuery } from "@/queries";
+import { Button } from "@/components/ui/button";
+import { ServiceCard } from "./ServiceCard";
+import { ServiceCardSkeleton } from "@/components/ui/skeletons/service-card-skeleton";
+import { useServicesQuery } from "@/queries/useServiceQuery";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";

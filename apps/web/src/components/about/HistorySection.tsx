@@ -1,8 +1,5 @@
 "use client";
 
-import { Link } from "@/i18n/navigation";
-import { Button } from "@/index";
-import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -19,12 +16,6 @@ export function HistorySection() {
 					<p className="text-primary-foreground mt-4 text-center lg:text-left">{t("paragraphs.first")}</p>
 					<p className="text-primary-foreground mt-4 text-center lg:text-left">{t("paragraphs.second")}</p>
 					<p className="text-primary-foreground mt-4 text-center lg:text-left">{t("paragraphs.third")}</p>
-					<Button asChild className="hidden lg:inline-flex mt-12">
-						<Link href="/about">
-							{t("button")}
-							<ArrowRight className="size-4 shrink-0" />
-						</Link>
-					</Button>
 				</div>
 				<Image
 					src="/history-img.png"
@@ -33,12 +24,6 @@ export function HistorySection() {
 					height={400}
 					className="w-full h-auto max-w-[528px] rounded-lg object-cover mx-auto lg:mx-0 lg:self-center animate-slide-right"
 				/>
-				<Button asChild className="lg:hidden mt-6 mx-auto animate-slide-bottom">
-					<Link href="/about">
-						{t("button")}
-						<ArrowRight className="size-4 shrink-0" />
-					</Link>
-				</Button>
 			</div>
 		</section>
 	);

@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardDescription, CardTitle } from "@/components";
+import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Link } from "@/i18n";
 import { STRAPI_API_URL } from "@/lib/api";
 import Image from "next/image";

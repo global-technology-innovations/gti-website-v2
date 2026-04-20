@@ -62,7 +62,7 @@ export default function FileInput({
 	};
 
 	return (
-		<div className={cn("space-y-2", className)}>
+		<div className={cn("space-y-2 w-full", className)}>
 			{!selectedFile ? (
 				<div
 					{...getRootProps()}
@@ -93,7 +93,7 @@ export default function FileInput({
 							type="button"
 							variant="outline"
 							onClick={handleRemoveFile}
-							className="text-destructive hover:bg-destructive/5 hover:text-destructive"
+							className="text-destructive hover:bg-destructive/5 hover:text-destructive border-none"
 						>
 							<X className="h-4 w-4" />
 						</Button>

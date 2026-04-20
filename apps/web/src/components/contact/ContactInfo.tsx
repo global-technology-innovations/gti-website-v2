@@ -1,6 +1,7 @@
 "use client";
 
-import { Button, Card } from "@/components";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Facebook, Mail, MessageCircleMore, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 

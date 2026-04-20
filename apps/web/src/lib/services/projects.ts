@@ -5,7 +5,15 @@ import { cache } from "react";
 export type ProjectStatusFilter = StrapiProject["attributes"]["status"];
 
 export function getProjectSlug(project: StrapiProject) {
-	return project.attributes.slug || `project-${project.id}`;
+	const explicitSlug = project.attributes.slug?.trim();
+
+	if (explicitSlug) {
+		return explicitSlug;
+	}
+
+	const fallbackTitleSlug = slugifyProjectTitle(project.attributes.title);
+
+	return fallbackTitleSlug ? `${fallbackTitleSlug}-${project.id}` : `project-${project.id}`;
 }
 
 export function getProjectImageUrl(project: StrapiProject) {
@@ -47,25 +55,68 @@ export async function fetchProjects(locale: string, status?: ProjectStatusFilter
 export const getProjects = cache(fetchProjects);
 
 export async function fetchProjectBySlug(slug: string, locale: string): Promise<StrapiProject | null> {
-	const projectIdMatch = slug.match(/^project-(\d+)$/);
 	const response = await fetchStrapiData<StrapiResponse<StrapiProject>>(
 		"/projects",
 		{
 			locale,
-			filters: projectIdMatch
-				? {
-						id: {
-							$eq: projectIdMatch[1],
-						},
-					}
-				: {
-						slug: {
-							$eq: slug,
-						},
-					},
+			filters: {
+				slug: {
+					$eq: slug,
+				},
+			},
 			populate: {
 				mainImage: true,
 				images: true,
+			},
+			pagination: {
+				limit: 1,
+			},
+		},
+		{ revalidate: 300 }
+	);
+
+	const exactSlugMatch = response.data[0];
+
+	if (exactSlugMatch) {
+		return exactSlugMatch;
+	}
+
+	const projectId = extractProjectIdFromSlug(slug);
+
+	if (!projectId) {
+		return null;
+	}
+
+	const fallbackProject = await fetchProjectById(projectId, locale);
+
+	if (!fallbackProject) {
+		return null;
+	}
+
+	const legacySlug = `project-${fallbackProject.id}`;
+	const canonicalSlug = getProjectSlug(fallbackProject);
+
+	return slug === legacySlug || slug === canonicalSlug ? fallbackProject : null;
+}
+
+export const getProjectBySlug = cache(fetchProjectBySlug);
+
+async function fetchProjectById(projectId: number, locale: string): Promise<StrapiProject | null> {
+	const response = await fetchStrapiData<StrapiResponse<StrapiProject>>(
+		"/projects",
+		{
+			locale,
+			filters: {
+				id: {
+					$eq: projectId,
+				},
+			},
+			populate: {
+				mainImage: true,
+				images: true,
+			},
+			pagination: {
+				limit: 1,
 			},
 		},
 		{ revalidate: 300 }
@@ -74,4 +125,24 @@ export async function fetchProjectBySlug(slug: string, locale: string): Promise<
 	return response.data[0] || null;
 }
 
-export const getProjectBySlug = cache(fetchProjectBySlug);
+function extractProjectIdFromSlug(slug: string) {
+	const match = slug.match(/-(\d+)$/) || slug.match(/^project-(\d+)$/);
+
+	if (!match) {
+		return null;
+	}
+
+	const parsedId = Number(match[1]);
+
+	return Number.isInteger(parsedId) && parsedId > 0 ? parsedId : null;
+}
+
+function slugifyProjectTitle(title: string) {
+	return title
+		.toLocaleLowerCase()
+		.normalize("NFKD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/[^\p{Letter}\p{Number}]+/gu, "-")
+		.replace(/^-+|-+$/g, "")
+		.replace(/-{2,}/g, "-");
+}

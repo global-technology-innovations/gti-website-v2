@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components";
-import type { BlogCategory } from "@/queries";
+import { Button } from "@/components/ui/button";
+import type { BlogCategory } from "@/lib/services/blog";
 
 export function BlogCategories({ categories }: Props) {
 	return (

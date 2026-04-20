@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@/components";
+import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 export default function MultiHeroSection({ title, description, className, badgeText }: MultiHeroSectionProps) {
