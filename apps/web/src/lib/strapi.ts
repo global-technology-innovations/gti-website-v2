@@ -1,5 +1,17 @@
 export const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL!;
 
+export class StrapiFetchError extends Error {
+	status: number;
+	path: string;
+
+	constructor(path: string, status: number) {
+		super(`Failed to fetch ${path}: ${status}`);
+		this.name = "StrapiFetchError";
+		this.status = status;
+		this.path = path;
+	}
+}
+
 function appendSearchParams(searchParams: URLSearchParams, value: unknown, prefix = "") {
 	if (typeof value !== "object" || value === null) {
 		if (prefix && value !== undefined) {
@@ -32,7 +44,7 @@ export async function fetchStrapiData<T>(path: string, params?: Record<string, u
 	});
 
 	if (!response.ok) {
-		throw new Error(`Failed to fetch ${path}: ${response.status}`);
+		throw new StrapiFetchError(path, response.status);
 	}
 
 	return (await response.json()) as T;
