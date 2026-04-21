@@ -1,5 +1,5 @@
 import type renderRichText from "@/lib/renderRichText";
-import { fetchStrapiData, resolveStrapiMediaUrl } from "@/lib/strapi";
+import { fetchStrapiData, resolveStrapiMediaUrl, StrapiFetchError } from "@/lib/strapi";
 import { StrapiResponse, StrapiService } from "@/types/strapi";
 import { cache } from "react";
 
@@ -57,46 +57,62 @@ function normalizeService(item: StrapiService): Service {
 }
 
 export async function fetchServices(locale: string): Promise<Service[]> {
-	const response = await fetchStrapiData<StrapiResponse<StrapiService>>(
-		"/services",
-		{
-			locale,
-			populate: {
-				image: true,
+	try {
+		const response = await fetchStrapiData<StrapiResponse<StrapiService>>(
+			"/services",
+			{
+				locale,
+				populate: {
+					image: true,
+				},
+				sort: ["title:asc"],
 			},
-			sort: ["title:asc"],
-		},
-		{ revalidate: 300 }
-	);
+			{ revalidate: 300 }
+		);
 
-	return response.data.map(normalizeService);
+		return response.data.map(normalizeService);
+	} catch (error) {
+		if (error instanceof StrapiFetchError && (error.status === 404 || error.status >= 500)) {
+			return [];
+		}
+
+		throw error;
+	}
 }
 
 export const getServices = cache(fetchServices);
 
 export async function fetchServiceBySlug(slug: string, locale: string): Promise<Service | null> {
-	const response = await fetchStrapiData<StrapiResponse<StrapiService>>(
-		"/services",
-		{
-			locale,
-			filters: {
-				slug: {
-					$eq: slug,
+	try {
+		const response = await fetchStrapiData<StrapiResponse<StrapiService>>(
+			"/services",
+			{
+				locale,
+				filters: {
+					slug: {
+						$eq: slug,
+					},
+				},
+				populate: {
+					image: true,
+				},
+				pagination: {
+					limit: 1,
 				},
 			},
-			populate: {
-				image: true,
-			},
-			pagination: {
-				limit: 1,
-			},
-		},
-		{ revalidate: 300 }
-	);
+			{ revalidate: 300 }
+		);
 
-	const service = response.data[0];
+		const service = response.data[0];
 
-	return service ? normalizeService(service) : null;
+		return service ? normalizeService(service) : null;
+	} catch (error) {
+		if (error instanceof StrapiFetchError && (error.status === 404 || error.status >= 500)) {
+			return null;
+		}
+
+		throw error;
+	}
 }
 
 export const getServiceBySlug = cache(fetchServiceBySlug);

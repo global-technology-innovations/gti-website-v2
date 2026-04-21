@@ -1,4 +1,4 @@
-import { fetchStrapiData, resolveStrapiMediaUrl } from "@/lib/strapi";
+import { fetchStrapiData, resolveStrapiMediaUrl, StrapiFetchError } from "@/lib/strapi";
 import { StrapiProject, StrapiResponse } from "@/types/strapi";
 import { cache } from "react";
 
@@ -27,76 +27,92 @@ export function getProjectImageUrl(project: StrapiProject) {
 }
 
 export async function fetchProjects(locale: string, status?: ProjectStatusFilter): Promise<StrapiProject[]> {
-	const response = await fetchStrapiData<StrapiResponse<StrapiProject>>(
-		"/projects",
-		{
-			locale,
-			populate: {
-				mainImage: true,
-				images: true,
-			},
-			...(status
-				? {
-						filters: {
-							status: {
-								$eq: status,
+	try {
+		const response = await fetchStrapiData<StrapiResponse<StrapiProject>>(
+			"/projects",
+			{
+				locale,
+				populate: {
+					mainImage: true,
+					images: true,
+				},
+				...(status
+					? {
+							filters: {
+								status: {
+									$eq: status,
+								},
 							},
-						},
-					}
-				: {}),
-			sort: ["featured:desc", "createdAt:desc"],
-		},
-		{ revalidate: 300 }
-	);
+						}
+					: {}),
+				sort: ["featured:desc", "createdAt:desc"],
+			},
+			{ revalidate: 300 }
+		);
 
-	return response.data;
+		return response.data;
+	} catch (error) {
+		if (error instanceof StrapiFetchError && (error.status === 404 || error.status >= 500)) {
+			return [];
+		}
+
+		throw error;
+	}
 }
 
 export const getProjects = cache(fetchProjects);
 
 export async function fetchProjectBySlug(slug: string, locale: string): Promise<StrapiProject | null> {
-	const response = await fetchStrapiData<StrapiResponse<StrapiProject>>(
-		"/projects",
-		{
-			locale,
-			filters: {
-				slug: {
-					$eq: slug,
+	try {
+		const response = await fetchStrapiData<StrapiResponse<StrapiProject>>(
+			"/projects",
+			{
+				locale,
+				filters: {
+					slug: {
+						$eq: slug,
+					},
+				},
+				populate: {
+					mainImage: true,
+					images: true,
+				},
+				pagination: {
+					limit: 1,
 				},
 			},
-			populate: {
-				mainImage: true,
-				images: true,
-			},
-			pagination: {
-				limit: 1,
-			},
-		},
-		{ revalidate: 300 }
-	);
+			{ revalidate: 300 }
+		);
 
-	const exactSlugMatch = response.data[0];
+		const exactSlugMatch = response.data[0];
 
-	if (exactSlugMatch) {
-		return exactSlugMatch;
+		if (exactSlugMatch) {
+			return exactSlugMatch;
+		}
+
+		const projectId = extractProjectIdFromSlug(slug);
+
+		if (!projectId) {
+			return null;
+		}
+
+		const fallbackProject = await fetchProjectById(projectId, locale);
+
+		if (!fallbackProject) {
+			return null;
+		}
+
+		const legacySlug = `project-${fallbackProject.id}`;
+		const canonicalSlug = getProjectSlug(fallbackProject);
+
+		return slug === legacySlug || slug === canonicalSlug ? fallbackProject : null;
+	} catch (error) {
+		if (error instanceof StrapiFetchError && (error.status === 404 || error.status >= 500)) {
+			return null;
+		}
+
+		throw error;
 	}
-
-	const projectId = extractProjectIdFromSlug(slug);
-
-	if (!projectId) {
-		return null;
-	}
-
-	const fallbackProject = await fetchProjectById(projectId, locale);
-
-	if (!fallbackProject) {
-		return null;
-	}
-
-	const legacySlug = `project-${fallbackProject.id}`;
-	const canonicalSlug = getProjectSlug(fallbackProject);
-
-	return slug === legacySlug || slug === canonicalSlug ? fallbackProject : null;
 }
 
 export const getProjectBySlug = cache(fetchProjectBySlug);

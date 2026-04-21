@@ -19,6 +19,7 @@ import { Link } from "@/i18n/navigation";
 import { getBlogArticleBySlug, getBlogArticles, getRelatedBlogArticles } from "@/lib/services/blog";
 import { DETAIL_CONTENT_CLASSNAMES } from "@/lib/detailContentClassNames";
 import renderRichText from "@/lib/renderRichText";
+import { StrapiFetchError } from "@/lib/strapi";
 import { format } from "date-fns";
 import { cs, de, enUS, fr, sk, uk } from "date-fns/locale";
 import { getTranslations } from "next-intl/server";
@@ -43,12 +44,21 @@ const localeMap = {
 export async function generateStaticParams() {
 	const paramsByLocale = await Promise.all(
 		routing.locales.map(async (locale) => {
-			const articles = await getBlogArticles(locale);
+			try {
+				const articles = await getBlogArticles(locale);
 
-			return articles.map((article) => ({
-				locale,
-				slug: article.slug,
-			}));
+				return articles.map((article) => ({
+					locale,
+					slug: article.slug,
+				}));
+			} catch (error) {
+				if (error instanceof StrapiFetchError && error.status >= 500) {
+					console.error(`Skipping blog static params generation for locale "${locale}" because Strapi returned ${error.status}.`);
+					return [];
+				}
+
+				throw error;
+			}
 		})
 	);
 
