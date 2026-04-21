@@ -100,7 +100,7 @@ export async function fetchBlogArticles(locale: string, categoryId?: string): Pr
 
 		return response.data.map(normalizeBlogArticle);
 	} catch (error) {
-		if (error instanceof StrapiFetchError && error.status === 404) {
+		if (error instanceof StrapiFetchError && (error.status === 404 || error.status >= 500)) {
 			return [];
 		}
 

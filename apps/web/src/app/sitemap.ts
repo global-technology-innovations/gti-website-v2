@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { getBlogArticles } from "@/lib/services/blog";
 import { getProjects, getProjectSlug } from "@/lib/services/projects";
 import { getServices } from "@/lib/services/services";
+import { StrapiFetchError } from "@/lib/strapi";
 import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -38,9 +39,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 	const localizedDynamicContent = await Promise.all(
 		siteConfig.locales.map(async (locale) => {
-			const [articles, projects, services] = await Promise.all([getBlogArticles(locale), getProjects(locale), getServices(locale)]);
+			try {
+				const [articles, projects, services] = await Promise.all([
+					getBlogArticles(locale),
+					getProjects(locale),
+					getServices(locale),
+				]);
 
-			return { locale, articles, projects, services };
+				return { locale, articles, projects, services };
+			} catch (error) {
+				if (error instanceof StrapiFetchError && error.status >= 500) {
+					console.error(`Skipping sitemap dynamic content for locale "${locale}" because Strapi returned ${error.status}.`);
+					return { locale, articles: [], projects: [], services: [] };
+				}
+
+				throw error;
+			}
 		})
 	);
 
