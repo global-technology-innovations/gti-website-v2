@@ -2,6 +2,9 @@
   "name": "gti-monorepo",
   "private": true,
   "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20 <21"
+  },
   "scripts": {
     "dev": "node ./scripts/with-node20.cjs turbo dev",
     "build": "node ./scripts/with-node20.cjs turbo build",
