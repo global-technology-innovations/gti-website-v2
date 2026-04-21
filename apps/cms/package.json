@@ -7,7 +7,6 @@
   "author": {
     "name": "A Strapi developer"
   },
-  "packageManager": "pnpm@9.15.0",
   "scripts": {
     "develop": "node ../../scripts/with-node20.cjs strapi develop",
     "dev": "node ../../scripts/with-node20.cjs strapi develop",

@@ -11997,7 +11997,7 @@ snapshots:
   co-body@5.2.0:
     dependencies:
       inflation: 2.1.0
-      qs: 6.15.1
+      qs: 6.11.1
       raw-body: 2.5.3
       type-is: 1.6.18
 
@@ -12005,7 +12005,7 @@ snapshots:
     dependencies:
       '@hapi/bourne': 3.0.0
       inflation: 2.1.0
-      qs: 6.15.1
+      qs: 6.11.1
       raw-body: 2.5.3
       type-is: 1.6.18
 
