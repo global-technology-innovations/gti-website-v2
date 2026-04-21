@@ -158,7 +158,13 @@ function resolveMediaUrl(url?: string) {
 		return "";
 	}
 
-	return url.startsWith("http") ? url : `${STRAPI_API_URL.replace("/api", "")}${url}`;
+	const uploadsBaseUrl = STRAPI_API_URL.replace("/api", "");
+
+	if (url.startsWith("http://localhost:1337") || url.startsWith("https://localhost:1337")) {
+		return `${uploadsBaseUrl}${url.replace(/^https?:\/\/localhost:1337/, "")}`;
+	}
+
+	return url.startsWith("http") ? url : `${uploadsBaseUrl}${url}`;
 }
 
 function getHeadingLevel(node: RichTextHeadingNode): HeadingLevel {

@@ -3,7 +3,13 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
 	images: {
-		domains: ["glowing-duck-95751bc0bf.media.strapiapp.com", "localhost"],
+		domains: [
+			"glowing-duck-95751bc0bf.media.strapiapp.com",
+			"glowing-duck-95751bc0bf.strapiapp.com",
+			"incredible-presence-5bff245248.media.strapiapp.com",
+			"incredible-presence-5bff245248.strapiapp.com",
+			"localhost",
+		],
 	},
 	webpack: (config, { dev }) => {
 		if (dev) {
