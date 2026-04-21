@@ -44,6 +44,11 @@ export function ProjectGallery({ images, title, navigationPrevEl, navigationNext
 	const [index, setIndex] = useState(0);
 	const tMedia = useTranslations("Media");
 
+	const getMediaDimensions = (image: ProjectGalleryMediaItem) => ({
+		width: image.attributes.width || 1280,
+		height: image.attributes.height || 720,
+	});
+
 	const getImageUrl = (image: ProjectGalleryMediaItem, size: "full" | "large" | "medium" = "medium") => {
 		let url = image.attributes.url;
 
@@ -64,12 +69,13 @@ export function ProjectGallery({ images, title, navigationPrevEl, navigationNext
 	const slides = images.map((image) => {
 		const isVideo = image.attributes.mime.startsWith("video/");
 		const fullUrl = getImageUrl(image, "full");
+		const { width, height } = getMediaDimensions(image);
 
 		if (isVideo) {
 			return {
 				type: "video" as const,
-				width: image.attributes.width,
-				height: image.attributes.height,
+				width,
+				height,
 				sources: [
 					{
 						src: fullUrl,
@@ -118,12 +124,13 @@ export function ProjectGallery({ images, title, navigationPrevEl, navigationNext
 								aria-label={image.attributes.alternativeText || tMedia("mediaThumbnail", { index: i + 1 })}
 							>
 								<div className="relative aspect-[492/320] w-full">
-									{isVideo ? (
+								{isVideo ? (
 										<video
 											src={imageUrl}
 											className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 											muted
 											playsInline
+											preload="metadata"
 										/>
 									) : (
 										<Image
