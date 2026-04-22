@@ -708,6 +708,12 @@ export interface ApiProjectProject extends Schema.CollectionType {
 					localized: true;
 				};
 			}>;
+		slug: Attribute.UID<"api::project.project", "title"> &
+			Attribute.SetPluginOptions<{
+				i18n: {
+					localized: true;
+				};
+			}>;
 		startDate: Attribute.Date &
 			Attribute.SetPluginOptions<{
 				i18n: {
