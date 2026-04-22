@@ -1,9 +1,11 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { ControllerRenderProps } from "react-hook-form";
 import { FormData } from "./ContactForm";
+import styles from "./PhoneInputField.module.css";
 
 const DEFAULT_PHONE_PLACEHOLDER = "+___ __ ___ __ __";
 
@@ -71,9 +73,12 @@ export default function PhoneInputField({
 			id={id}
 			aria-invalid={ariaInvalid}
 			aria-describedby={ariaDescribedBy}
-			className={`w-full rounded-2xl border text-sm pl-4 focus:outline-none mb-0 ${
-				hasError ? "border-destructive focus:ring-2 focus:ring-destructive/30" : "!border-input !focus:ring-2 !focus:ring-ring/20"
-			} ${className || ""}`}
+			className={cn(
+				styles.phoneInputRoot,
+				"w-full rounded-2xl border text-sm pl-4 focus:outline-none mb-0",
+				hasError ? "border-destructive focus:ring-2 focus:ring-destructive/30" : "!border-input !focus:ring-2 !focus:ring-ring/20",
+				className
+			)}
 		/>
 	);
 }
