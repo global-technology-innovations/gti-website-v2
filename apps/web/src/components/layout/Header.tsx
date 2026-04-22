@@ -139,7 +139,7 @@ export const Header = () => {
 				<div className="md:hidden">
 					<Sheet open={open} onOpenChange={setOpen}>
 						<SheetTrigger asChild>
-							<Button variant="ghost">
+							<Button variant="ghost" aria-label={t("mobileNavigationMenuLabel")}>
 								<Menu className="size-7" />
 							</Button>
 						</SheetTrigger>
