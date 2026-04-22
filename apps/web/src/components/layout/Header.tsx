@@ -3,13 +3,12 @@
 import Logo from "@/../public/logo.png";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -17,20 +16,20 @@ export const Header = () => {
 	const t = useTranslations("Header");
 	const [open, setOpen] = useState(false);
 	const pathname = usePathname();
-	const pathWithoutLocale = `/${pathname.split("/").slice(2).join("/")}`;
+	const currentPath = pathname || "/";
 	const PAGES_WITH_BACKGROUND = ["/", "/about"];
 	const useHeaderBackground =
-		PAGES_WITH_BACKGROUND.includes(pathWithoutLocale) ||
-		pathWithoutLocale.startsWith("/our-services/") ||
-		pathWithoutLocale.startsWith("/blog/") ||
-		pathWithoutLocale.startsWith("/portfolio/") ||
-		pathWithoutLocale.startsWith("/outstaffing") ||
-		pathWithoutLocale.startsWith("/cookie-policy") ||
-		pathWithoutLocale.startsWith("/privacy-policy");
+		PAGES_WITH_BACKGROUND.includes(currentPath) ||
+		currentPath.startsWith("/our-services/") ||
+		currentPath.startsWith("/blog/") ||
+		currentPath.startsWith("/portfolio/") ||
+		currentPath.startsWith("/outstaffing") ||
+		currentPath.startsWith("/cookie-policy") ||
+		currentPath.startsWith("/privacy-policy");
 	const mobileNavLinkClassName = (href: string) =>
 		cn(
 			"w-full text-center text-primary font-medium leading-[35px] transition-colors",
-			pathWithoutLocale === href && "font-bold underline decoration-primary decoration-2 underline-offset-4"
+			currentPath === href && "font-bold underline decoration-primary decoration-2 underline-offset-4"
 		);
 
 	return (
@@ -54,8 +53,8 @@ export const Header = () => {
 						href="/"
 						className={cn(
 							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
-							pathWithoutLocale !== "/" && "",
-							pathWithoutLocale === "/" && "bg-primary text-white"
+							currentPath !== "/" && "",
+							currentPath === "/" && "bg-primary text-white"
 						)}
 					>
 						{t("nav.home")}
@@ -64,8 +63,8 @@ export const Header = () => {
 						href="/about"
 						className={cn(
 							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
-							pathWithoutLocale !== "/about" && "",
-							pathWithoutLocale === "/about" && "bg-primary text-white"
+							currentPath !== "/about" && "",
+							currentPath === "/about" && "bg-primary text-white"
 						)}
 					>
 						{t("nav.about")}
@@ -74,8 +73,8 @@ export const Header = () => {
 						href="/our-services"
 						className={cn(
 							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
-							pathWithoutLocale !== "/our-services" && "",
-							pathWithoutLocale === "/our-services" && "bg-primary text-white"
+							currentPath !== "/our-services" && "",
+							currentPath === "/our-services" && "bg-primary text-white"
 						)}
 					>
 						{t("nav.services")}
@@ -84,8 +83,8 @@ export const Header = () => {
 						href="/portfolio"
 						className={cn(
 							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
-							pathWithoutLocale !== "/portfolio" && "",
-							pathWithoutLocale === "/portfolio" && "bg-primary text-white"
+							currentPath !== "/portfolio" && "",
+							currentPath === "/portfolio" && "bg-primary text-white"
 						)}
 					>
 						{t("nav.portfolio")}
@@ -94,8 +93,8 @@ export const Header = () => {
 						href="/careers"
 						className={cn(
 							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
-							pathWithoutLocale !== "/careers" && "",
-							pathWithoutLocale === "/careers" && "bg-primary text-white"
+							currentPath !== "/careers" && "",
+							currentPath === "/careers" && "bg-primary text-white"
 						)}
 					>
 						{t("nav.careers")}
@@ -104,8 +103,8 @@ export const Header = () => {
 						href="/outstaffing"
 						className={cn(
 							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
-							pathWithoutLocale !== "/outstaffing" && "",
-							pathWithoutLocale === "/outstaffing" && "bg-primary text-white"
+							currentPath !== "/outstaffing" && "",
+							currentPath === "/outstaffing" && "bg-primary text-white"
 						)}
 					>
 						{t("nav.outstaffing")}
@@ -114,8 +113,8 @@ export const Header = () => {
 						href="/blog"
 						className={cn(
 							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
-							pathWithoutLocale !== "/blog" && "",
-							pathWithoutLocale === "/blog" && "bg-primary text-white"
+							currentPath !== "/blog" && "",
+							currentPath === "/blog" && "bg-primary text-white"
 						)}
 					>
 						{t("nav.blog")}
@@ -124,8 +123,8 @@ export const Header = () => {
 						href="/contact"
 						className={cn(
 							"text-xs xl:text-sm text-primary bg-foreground px-2.5 py-1.5 xl:px-4 xl:py-2 rounded-full",
-							pathWithoutLocale !== "/contact" && "",
-							pathWithoutLocale === "/contact" && "bg-primary text-white"
+							currentPath !== "/contact" && "",
+							currentPath === "/contact" && "bg-primary text-white"
 						)}
 					>
 						{t("nav.contact")}
