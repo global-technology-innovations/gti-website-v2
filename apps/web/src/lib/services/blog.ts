@@ -1,6 +1,6 @@
 import { fetchStrapiData, resolveStrapiMediaUrl, StrapiFetchError } from "@/lib/strapi";
 import type renderRichText from "@/lib/renderRichText";
-import { StrapiBlogArticle, StrapiBlogCategory, StrapiResponse } from "@/types/strapi";
+import { StrapiBlogArticle, StrapiBlogCategory, StrapiLocalizationEntry, StrapiResponse } from "@/types/strapi";
 import { cache } from "react";
 
 export type BlogArticleContent = Parameters<typeof renderRichText>[0];
@@ -25,6 +25,7 @@ export interface BlogArticle {
 	imageAlt?: string;
 	featured: boolean;
 	publishedAt?: string;
+	localizations: StrapiLocalizationEntry[];
 	updatedAt?: string;
 	category: BlogArticleCategory | null;
 }
@@ -62,6 +63,7 @@ function normalizeBlogArticle(item: StrapiBlogArticle): BlogArticle {
 		imageAlt: item.attributes.image?.data?.attributes?.alternativeText,
 		featured: item.attributes.featured,
 		publishedAt: item.attributes.publishedAt,
+		localizations: item.attributes.localizations?.data ?? [],
 		updatedAt: item.attributes.updatedAt,
 		category: item.attributes.blog_category?.data
 			? {
@@ -81,6 +83,9 @@ export async function fetchBlogArticles(locale: string, categoryId?: string): Pr
 				populate: {
 					image: true,
 					blog_category: true,
+					localizations: {
+						fields: ["locale", "slug", "title"],
+					},
 				},
 				...(categoryId
 					? {
@@ -150,6 +155,9 @@ export async function fetchBlogArticleBySlug(slug: string, locale: string): Prom
 				populate: {
 					image: true,
 					blog_category: true,
+					localizations: {
+						fields: ["locale", "slug", "title"],
+					},
 				},
 				pagination: {
 					limit: 1,

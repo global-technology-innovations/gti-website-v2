@@ -1,6 +1,6 @@
 import type renderRichText from "@/lib/renderRichText";
 import { fetchStrapiData, resolveStrapiMediaUrl, StrapiFetchError } from "@/lib/strapi";
-import { StrapiResponse, StrapiService } from "@/types/strapi";
+import { StrapiLocalizationEntry, StrapiResponse, StrapiService } from "@/types/strapi";
 import { cache } from "react";
 
 export type ServiceDescription = Parameters<typeof renderRichText>[0];
@@ -13,6 +13,7 @@ export interface Service {
 	description: ServiceDescription;
 	image: string;
 	icon: string;
+	localizations: StrapiLocalizationEntry[];
 	updatedAt?: string;
 }
 
@@ -52,6 +53,7 @@ function normalizeService(item: StrapiService): Service {
 		description: normalizeServiceDescription(item.attributes.description),
 		image: resolveStrapiMediaUrl(item.attributes.image?.data?.attributes?.url),
 		icon: item.attributes.icon,
+		localizations: item.attributes.localizations?.data ?? [],
 		updatedAt: item.attributes.updatedAt,
 	};
 }
@@ -64,6 +66,9 @@ export async function fetchServices(locale: string): Promise<Service[]> {
 				locale,
 				populate: {
 					image: true,
+					localizations: {
+						fields: ["locale", "slug", "title"],
+					},
 				},
 				sort: ["title:asc"],
 			},
@@ -95,6 +100,9 @@ export async function fetchServiceBySlug(slug: string, locale: string): Promise<
 				},
 				populate: {
 					image: true,
+					localizations: {
+						fields: ["locale", "slug", "title"],
+					},
 				},
 				pagination: {
 					limit: 1,

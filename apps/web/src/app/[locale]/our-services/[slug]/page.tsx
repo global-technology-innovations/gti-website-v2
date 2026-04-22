@@ -8,12 +8,12 @@ import {
 	BreadcrumbSeparator,
 	Button,
 	generateCanonicalUrl,
-	generateHreflangUrls,
 	generatePageMetadata,
 } from "@/components";
 import { routing } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { DETAIL_CONTENT_CLASSNAMES } from "@/lib/detailContentClassNames";
+import { generateDynamicHreflangUrls } from "@/lib/localizedSeo";
 import renderRichText from "@/lib/renderRichText";
 import { getServiceBySlug, getServices, type Service } from "@/lib/services/services";
 import { ArrowRight } from "lucide-react";
@@ -51,8 +51,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 	return generatePageMetadata({
 		title: service.title,
 		description: service.shortDescription,
-		canonicalUrl: generateCanonicalUrl(locale, `/our-services/${slug}`),
-		hreflang: generateHreflangUrls(`/our-services/${slug}`),
+		canonicalUrl: generateCanonicalUrl(locale, `/our-services/${service.slug}`),
+		hreflang: generateDynamicHreflangUrls({
+			kind: "service",
+			currentLocale: locale,
+			currentSlug: service.slug,
+			currentId: service.id,
+			currentTitle: service.title,
+			localizations: service.localizations,
+		}),
 		locale,
 	});
 }
@@ -69,7 +76,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 		notFound();
 	}
 
-	const canonicalUrl = generateCanonicalUrl(locale, `/our-services/${slug}`);
+	const canonicalUrl = generateCanonicalUrl(locale, `/our-services/${service.slug}`);
 
 	return (
 		<>

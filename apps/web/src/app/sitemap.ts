@@ -1,5 +1,6 @@
 import { generateCanonicalUrl, generateHreflangUrls } from "@/components/seo/PageMeta";
 import { siteConfig } from "@/config/site";
+import { generateDynamicHreflangUrls } from "@/lib/localizedSeo";
 import { getBlogArticles } from "@/lib/services/blog";
 import { getProjects, getProjectSlug } from "@/lib/services/projects";
 import { getServices } from "@/lib/services/services";
@@ -70,7 +71,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 				changeFrequency: "monthly",
 				priority: 0.72,
 				alternates: {
-					languages: generateHreflangUrls(`/blog/${article.slug}`),
+					languages: generateDynamicHreflangUrls({
+						kind: "blog",
+						currentLocale: locale,
+						currentSlug: article.slug,
+						currentId: article.id,
+						currentTitle: article.title,
+						localizations: article.localizations,
+					}),
 				},
 			});
 		});
@@ -84,7 +92,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 				changeFrequency: "monthly",
 				priority: 0.76,
 				alternates: {
-					languages: generateHreflangUrls(`/portfolio/${projectSlug}`),
+					languages: generateDynamicHreflangUrls({
+						kind: "project",
+						currentLocale: locale,
+						currentSlug: projectSlug,
+						currentId: project.id,
+						currentTitle: project.attributes.title,
+						localizations: project.attributes.localizations?.data,
+					}),
 				},
 			});
 		});
@@ -96,7 +111,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 				changeFrequency: "monthly",
 				priority: 0.74,
 				alternates: {
-					languages: generateHreflangUrls(`/our-services/${service.slug}`),
+					languages: generateDynamicHreflangUrls({
+						kind: "service",
+						currentLocale: locale,
+						currentSlug: service.slug,
+						currentId: service.id,
+						currentTitle: service.title,
+						localizations: service.localizations,
+					}),
 				},
 			});
 		});

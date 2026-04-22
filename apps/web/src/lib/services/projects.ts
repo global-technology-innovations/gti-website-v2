@@ -35,6 +35,9 @@ export async function fetchProjects(locale: string, status?: ProjectStatusFilter
 				populate: {
 					mainImage: true,
 					images: true,
+					localizations: {
+						fields: ["locale", "slug", "title"],
+					},
 				},
 				...(status
 					? {
@@ -76,6 +79,9 @@ export async function fetchProjectBySlug(slug: string, locale: string): Promise<
 				populate: {
 					mainImage: true,
 					images: true,
+					localizations: {
+						fields: ["locale", "slug", "title"],
+					},
 				},
 				pagination: {
 					limit: 1,
@@ -130,6 +136,9 @@ async function fetchProjectById(projectId: number, locale: string): Promise<Stra
 			populate: {
 				mainImage: true,
 				images: true,
+				localizations: {
+					fields: ["locale", "slug", "title"],
+				},
 			},
 			pagination: {
 				limit: 1,

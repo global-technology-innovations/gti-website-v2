@@ -60,6 +60,19 @@ export interface StrapiMedia {
 // Backward compatibility
 export type StrapiImage = StrapiMedia;
 
+export interface StrapiLocalizationEntry {
+	id: number;
+	attributes: {
+		locale: string;
+		slug?: string | null;
+		title?: string;
+	};
+}
+
+export interface StrapiLocalizationsRelation {
+	data: StrapiLocalizationEntry[];
+}
+
 export interface StrapiService {
 	id: number;
 	attributes: {
@@ -69,6 +82,7 @@ export interface StrapiService {
 		description: unknown;
 		image: StrapiMedia;
 		icon: string;
+		localizations?: StrapiLocalizationsRelation;
 		createdAt?: string;
 		updatedAt?: string;
 	};
@@ -133,6 +147,7 @@ export interface StrapiProject {
 		};
 		mainImage: StrapiMedia;
 		featured: boolean;
+		localizations?: StrapiLocalizationsRelation;
 		createdAt?: string;
 		updatedAt?: string;
 	};
@@ -156,6 +171,7 @@ export interface StrapiBlogArticle {
 		image: StrapiMedia;
 		featured: boolean;
 		publishedAt?: string;
+		localizations?: StrapiLocalizationsRelation;
 		createdAt?: string;
 		updatedAt?: string;
 		blog_category?: {

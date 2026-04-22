@@ -2,7 +2,6 @@ import {
 	BreadcrumbSchema,
 	ContactSection,
 	generateCanonicalUrl,
-	generateHreflangUrls,
 	generatePageMetadata,
 	ProjectSchema,
 	ProjectDetailContentSection,
@@ -12,6 +11,7 @@ import {
 import { formatProjectPeriod, getProjectStatusKey, parseProjectDescription } from "@/components/portfolio/projectDetailUtils";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
+import { generateDynamicHreflangUrls } from "@/lib/localizedSeo";
 import { getProjectBySlug, getProjectImageUrl, getProjectSlug, getProjects } from "@/lib/services/projects";
 import { cs, de, enUS, fr, sk, uk } from "date-fns/locale";
 import { getTranslations } from "next-intl/server";
@@ -60,7 +60,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 		title: project.attributes.title,
 		description: project.attributes.shortDescription,
 		canonicalUrl: generateCanonicalUrl(locale, `/portfolio/${canonicalSlug}`),
-		hreflang: generateHreflangUrls(`/portfolio/${canonicalSlug}`),
+		hreflang: generateDynamicHreflangUrls({
+			kind: "project",
+			currentLocale: locale,
+			currentSlug: canonicalSlug,
+			currentId: project.id,
+			currentTitle: project.attributes.title,
+			localizations: project.attributes.localizations?.data,
+		}),
 		locale,
 		ogImage: getProjectImageUrl(project),
 	});

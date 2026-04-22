@@ -1,6 +1,7 @@
 import { routing } from "@/i18n/routing";
 
 const FALLBACK_SITE_URL = "https://global-technology-innovations.com";
+const CONFIGURED_SITE_URL = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL;
 
 function normalizeSiteUrl(value: string) {
 	return value.endsWith("/") ? value.slice(0, -1) : value;
@@ -10,7 +11,7 @@ export const siteConfig = {
 	name: "Global Technology Innovations",
 	legalName: "Global Technology Innovations s. r. o.",
 	shortName: "GTI",
-	url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL),
+	url: normalizeSiteUrl(CONFIGURED_SITE_URL),
 	defaultLocale: routing.defaultLocale,
 	locales: [...routing.locales],
 	defaultTitle: "Global Technology Innovations",

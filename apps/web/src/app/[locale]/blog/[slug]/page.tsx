@@ -10,12 +10,12 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 	generateCanonicalUrl,
-	generateHreflangUrls,
 	generatePageMetadata,
 } from "@/components";
 import { siteContact } from "@/config/site-contact";
 import { routing } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
+import { generateDynamicHreflangUrls } from "@/lib/localizedSeo";
 import { getBlogArticleBySlug, getBlogArticles, getRelatedBlogArticles } from "@/lib/services/blog";
 import { DETAIL_CONTENT_CLASSNAMES } from "@/lib/detailContentClassNames";
 import renderRichText from "@/lib/renderRichText";
@@ -82,7 +82,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 		title: article.title,
 		description: article.excerpt,
 		canonicalUrl: generateCanonicalUrl(locale, `/blog/${article.slug}`),
-		hreflang: generateHreflangUrls(`/blog/${article.slug}`),
+		hreflang: generateDynamicHreflangUrls({
+			kind: "blog",
+			currentLocale: locale,
+			currentSlug: article.slug,
+			currentId: article.id,
+			currentTitle: article.title,
+			localizations: article.localizations,
+		}),
 		locale,
 		ogImage: article.image || "/opengraph-image",
 		openGraphType: "article",
