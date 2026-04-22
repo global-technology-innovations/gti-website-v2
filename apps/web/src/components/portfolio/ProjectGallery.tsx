@@ -124,7 +124,7 @@ export function ProjectGallery({ images, title, navigationPrevEl, navigationNext
 								aria-label={image.attributes.alternativeText || tMedia("mediaThumbnail", { index: i + 1 })}
 							>
 								<div className="relative aspect-[492/320] w-full">
-								{isVideo ? (
+									{isVideo ? (
 										<video
 											src={imageUrl}
 											className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
