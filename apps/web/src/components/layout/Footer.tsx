@@ -18,7 +18,7 @@ export const Footer = () => {
 	const tContact = useTranslations("ContactPage.contacts");
 
 	return (
-		<footer className="relative mx-4 bg-primary rounded-3xl py-12  mt-4">
+		<footer className="relative mx-4 bg-primary rounded-3xl py-12 px-4 mt-4">
 			<div className="flex flex-col md:flex-row text-sm justify-between gap-5 container mx-auto px-6">
 				{/* mobile */}
 				<div className="flex justify-around md:hidden">
